@@ -1,4 +1,4 @@
-# Portafolio V3 - Astro + React + Tailwind CSS
+# Portafolio version final - Astro + React + Tailwind CSS
 
 Proyecto de portafolio construido con Astro, React y Tailwind CSS, con una configuración completa de desarrollo profesional.
 
