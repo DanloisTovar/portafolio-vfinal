@@ -30,13 +30,13 @@
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
-    "@astrojs/react": "^3.6.3",
     "astro": "^5.16.6",
     "conventional-changelog-cli": "^5.0.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   },
   "devDependencies": {
+    "@astrojs/react": "^4.4.2",
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.1.0",
     "@swc/core": "^1.15.0",
