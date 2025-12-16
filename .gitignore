@@ -1,0 +1,42 @@
+# build output
+dist/
+.output/
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# environment variables
+.env
+.env.local
+.env.production.local
+.env.*.local
+
+# macOS-specific files
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Testing
+coverage/
+.nyc_output/
+
+# Nightwatch
+tests_output/
+screenshots/
+logs/
+
+# Misc
+*.log
+.cache
