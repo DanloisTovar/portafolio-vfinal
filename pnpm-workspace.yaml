@@ -1,0 +1,7 @@
+ignoredBuiltDependencies:
+  - '@nightwatch/nightwatch-inspector'
+  - '@swc/core'
+  - chromedriver
+  - esbuild
+  - geckodriver
+  - sharp

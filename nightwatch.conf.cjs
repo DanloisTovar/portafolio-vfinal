@@ -1,55 +1,110 @@
-module.exports = {
-  src_folders: ['tests/e2e'],
-  page_objects_path: ['tests/e2e/page-objects'],
-  custom_commands_path: ['tests/e2e/custom-commands'],
+/* eslint-disable */
+// Refer to the online docs for more details:
+// https://nightwatchjs.org/gettingstarted/configuration/
+//
 
-  webdriver: {
-    start_process: true,
-    server_path: '',
+//  _   _  _         _      _                     _          _
+// | \ | |(_)       | |    | |                   | |        | |
+// |  \| | _   __ _ | |__  | |_ __      __  __ _ | |_   ___ | |__
+// | . ` || | / _` || '_ \ | __|\ \ /\ / / / _` || __| / __|| '_ \
+// | |\  || || (_| || | | || |_  \ V  V / | (_| || |_ | (__ | | | |
+// \_| \_/|_| \__, ||_| |_| \__|  \_/\_/   \__,_| \__| \___||_| |_|
+//             __/ |
+//            |___/
+
+module.exports = {
+  // An array of folders (excluding subfolders) where your tests are located;
+  // if this is not specified, the test source must be passed as the second argument to the test runner.
+  src_folders: ['testing/testing-astro/e2e'],
+
+  // Exclude Vitest unit test files from Nightwatch
+  exclude: ['testing/**/unit/**'],
+
+  // See https://nightwatchjs.org/guide/concepts/page-object-model.html
+  page_objects_path: ['testing/testing-astro/e2e/page-objects'],
+
+  // See https://nightwatchjs.org/guide/extending-nightwatch/adding-custom-commands.html
+  custom_commands_path: ['testing/testing-astro/e2e/custom-commands'],
+
+  // See https://nightwatchjs.org/guide/extending-nightwatch/adding-custom-assertions.html
+  custom_assertions_path: [],
+
+  // See https://nightwatchjs.org/guide/extending-nightwatch/adding-plugins.html
+  /* plugins: ['@nightwatch/react'], */
+
+  // See https://nightwatchjs.org/guide/concepts/test-globals.html
+  globals_path: '',
+
+  webdriver: {},
+
+  test_workers: {
+    enabled: true,
   },
 
   test_settings: {
     default: {
-      launch_url: 'http://localhost:4321',
-      desiredCapabilities: {
-        browserName: 'chrome',
-      },
-    },
+      disable_error_log: false,
+      launch_url: 'http://localhost:4321/',
 
-    chrome: {
-      webdriver: {
-        port: 9515,
-        server_path: require('chromedriver').path,
+      screenshots: {
+        enabled: false,
+        path: 'screens',
+        on_failure: true,
       },
+
       desiredCapabilities: {
         browserName: 'chrome',
-        'goog:chromeOptions': {
-          args: ['--headless', '--no-sandbox', '--disable-dev-shm-usage'],
-        },
+      },
+
+      webdriver: {
+        start_process: true,
+        server_path: '',
       },
     },
 
     firefox: {
-      webdriver: {
-        port: 4444,
-        server_path: require('geckodriver').path,
-      },
       desiredCapabilities: {
         browserName: 'firefox',
-        'moz:firefoxOptions': {
-          args: ['-headless'],
+        alwaysMatch: {
+          acceptInsecureCerts: true,
+          'moz:firefoxOptions': {
+            args: [
+              //'-headless',
+              // '-verbose'
+            ],
+          },
         },
+      },
+      webdriver: {
+        start_process: true,
+        server_path: require('geckodriver').path,
+        cli_args: [
+          // very verbose geckodriver logs
+          // '-vv'
+        ],
       },
     },
 
-    docker: {
-      selenium: {
-        start_process: false,
-        host: 'selenium',
-        port: 4444,
-      },
+    chrome: {
       desiredCapabilities: {
         browserName: 'chrome',
+        'goog:chromeOptions': {
+          // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
+          args: [
+            //'--no-sandbox',
+            //'--ignore-certificate-errors',
+            //'--allow-insecure-localhost',
+            //'--headless=new'
+          ],
+        },
+      },
+
+      webdriver: {
+        start_process: true,
+        server_path: require('path').resolve(__dirname, 'bin/chromedriver'),
+        cli_args: [
+          // --verbose
+        ],
       },
     },
   },
