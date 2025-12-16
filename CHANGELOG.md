@@ -1,0 +1,18 @@
+## <small>0.0.1 (2025-12-16)</small>
+
+- chore(cleanup): eliminar archivo de prueba test.txt ([9a1c4d8](https://github.com/DanloisTovar/portafolio-vfinal/commit/9a1c4d8))
+- chore(config): actualizar nombre del proyecto a portafolio-vfinal ([05f76c7](https://github.com/DanloisTovar/portafolio-vfinal/commit/05f76c7))
+- chore(config): actualizar reglas de commitlint con validaciones ([702ffe8](https://github.com/DanloisTovar/portafolio-vfinal/commit/702ffe8))
+- chore(deps): actualizar @astrojs/react a v4.4.2 para soporte React 19 ([a8236f0](https://github.com/DanloisTovar/portafolio-vfinal/commit/a8236f0))
+- chore(deps): actualizar React a v19.2.3 y React-DOM a v19.2.3 ([838cd1c](https://github.com/DanloisTovar/portafolio-vfinal/commit/838cd1c))
+- chore(husky): agregar hook pre-push para generar CHANGELOG con pnpm changelog ([ef65ce3](https://github.com/DanloisTovar/portafolio-vfinal/commit/ef65ce3))
+- chore(license): agregar licencia MIT al proyecto ([93396b4](https://github.com/DanloisTovar/portafolio-vfinal/commit/93396b4))
+- docs(readme): actualizar documentación del proyecto ([d81962e](https://github.com/DanloisTovar/portafolio-vfinal/commit/d81962e))
+- docs(setup): agregar guía detallada de Conventional Commits ([94a6637](https://github.com/DanloisTovar/portafolio-vfinal/commit/94a6637))
+- test(config): configurar estructura pruebas E2E y unitarias para Astro y Docker ([0b9be50](https://github.com/DanloisTovar/portafolio-vfinal/commit/0b9be50))
+- test(unit): agregar tests unitarios con Vitest y Testing Library ([2d51e58](https://github.com/DanloisTovar/portafolio-vfinal/commit/2d51e58))
+- fix(auth): corregir validación de email ([3898da5](https://github.com/DanloisTovar/portafolio-vfinal/commit/3898da5))
+- fix(react): revertir a client:load para renderización correcta del Counter ([1a32106](https://github.com/DanloisTovar/portafolio-vfinal/commit/1a32106))
+- fix(react19): corregir compatibilidad con React 19 en Astro ([60df757](https://github.com/DanloisTovar/portafolio-vfinal/commit/60df757))
+- feat(navbar): agregar navegación responsiva con menú mobile ([34d1b2c](https://github.com/DanloisTovar/portafolio-vfinal/commit/34d1b2c))
+- feat(setup): configuración inicial del proyecto Astro + React + Tailwind ([9070022](https://github.com/DanloisTovar/portafolio-vfinal/commit/9070022))
