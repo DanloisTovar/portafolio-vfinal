@@ -1,5 +1,9 @@
 ## <small>0.0.1 (2026-01-19)</small>
 
+* fix(auth): corregir validación de email ([3898da5](https://github.com/DanloisTovar/portafolio-vfinal/commit/3898da5))
+* fix(deploy): add vercel adapter and ignore build output ([ca74daf](https://github.com/DanloisTovar/portafolio-vfinal/commit/ca74daf))
+* fix(react): revertir a client:load para renderización correcta del Counter ([1a32106](https://github.com/DanloisTovar/portafolio-vfinal/commit/1a32106))
+* fix(react19): corregir compatibilidad con React 19 en Astro ([60df757](https://github.com/DanloisTovar/portafolio-vfinal/commit/60df757))
 * docs(changelog): 📝 actualizar CHANGELOG con nuevos cambios ([50d39f7](https://github.com/DanloisTovar/portafolio-vfinal/commit/50d39f7))
 * docs(changelog): 📝 actualizar CHANGELOG.md ([cbd69d1](https://github.com/DanloisTovar/portafolio-vfinal/commit/cbd69d1))
 * docs(changelog): 📝 actualizar CHANGELOG.md ([dd4160d](https://github.com/DanloisTovar/portafolio-vfinal/commit/dd4160d))
@@ -30,9 +34,6 @@
 * chore(license): agregar licencia MIT al proyecto ([93396b4](https://github.com/DanloisTovar/portafolio-vfinal/commit/93396b4))
 * test(config): configurar estructura pruebas E2E y unitarias para Astro y Docker ([0b9be50](https://github.com/DanloisTovar/portafolio-vfinal/commit/0b9be50))
 * test(unit): agregar tests unitarios con Vitest y Testing Library ([2d51e58](https://github.com/DanloisTovar/portafolio-vfinal/commit/2d51e58))
-* fix(auth): corregir validación de email ([3898da5](https://github.com/DanloisTovar/portafolio-vfinal/commit/3898da5))
-* fix(react): revertir a client:load para renderización correcta del Counter ([1a32106](https://github.com/DanloisTovar/portafolio-vfinal/commit/1a32106))
-* fix(react19): corregir compatibilidad con React 19 en Astro ([60df757](https://github.com/DanloisTovar/portafolio-vfinal/commit/60df757))
 
 
 
