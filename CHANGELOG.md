@@ -1,5 +1,10 @@
 ## <small>0.0.1 (2026-01-19)</small>
 
+* fix(assets): move CV to public folder and update link ([a29f5d0](https://github.com/DanloisTovar/portafolio-vfinal/commit/a29f5d0))
+* fix(auth): corregir validación de email ([3898da5](https://github.com/DanloisTovar/portafolio-vfinal/commit/3898da5))
+* fix(deploy): add vercel adapter and ignore build output ([ca74daf](https://github.com/DanloisTovar/portafolio-vfinal/commit/ca74daf))
+* fix(react): revertir a client:load para renderización correcta del Counter ([1a32106](https://github.com/DanloisTovar/portafolio-vfinal/commit/1a32106))
+* fix(react19): corregir compatibilidad con React 19 en Astro ([60df757](https://github.com/DanloisTovar/portafolio-vfinal/commit/60df757))
 * chore(changelog): update changelog ([2bc0351](https://github.com/DanloisTovar/portafolio-vfinal/commit/2bc0351))
 * chore(cleanup): eliminar archivo de prueba test.txt ([9a1c4d8](https://github.com/DanloisTovar/portafolio-vfinal/commit/9a1c4d8))
 * chore(config): actualizar nombre del proyecto a portafolio-vfinal ([05f76c7](https://github.com/DanloisTovar/portafolio-vfinal/commit/05f76c7))
@@ -8,10 +13,6 @@
 * chore(deps): actualizar React a v19.2.3 y React-DOM a v19.2.3 ([838cd1c](https://github.com/DanloisTovar/portafolio-vfinal/commit/838cd1c))
 * chore(husky): agregar hook pre-push para generar CHANGELOG con pnpm changelog ([ef65ce3](https://github.com/DanloisTovar/portafolio-vfinal/commit/ef65ce3))
 * chore(license): agregar licencia MIT al proyecto ([93396b4](https://github.com/DanloisTovar/portafolio-vfinal/commit/93396b4))
-* fix(auth): corregir validación de email ([3898da5](https://github.com/DanloisTovar/portafolio-vfinal/commit/3898da5))
-* fix(deploy): add vercel adapter and ignore build output ([ca74daf](https://github.com/DanloisTovar/portafolio-vfinal/commit/ca74daf))
-* fix(react): revertir a client:load para renderización correcta del Counter ([1a32106](https://github.com/DanloisTovar/portafolio-vfinal/commit/1a32106))
-* fix(react19): corregir compatibilidad con React 19 en Astro ([60df757](https://github.com/DanloisTovar/portafolio-vfinal/commit/60df757))
 * docs(changelog): 📝 actualizar CHANGELOG con nuevos cambios ([50d39f7](https://github.com/DanloisTovar/portafolio-vfinal/commit/50d39f7))
 * docs(changelog): 📝 actualizar CHANGELOG.md ([cbd69d1](https://github.com/DanloisTovar/portafolio-vfinal/commit/cbd69d1))
 * docs(changelog): 📝 actualizar CHANGELOG.md ([dd4160d](https://github.com/DanloisTovar/portafolio-vfinal/commit/dd4160d))
