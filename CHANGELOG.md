@@ -3,6 +3,7 @@
 * fix(assets): move CV to public folder and update link ([a29f5d0](https://github.com/DanloisTovar/portafolio-vfinal/commit/a29f5d0))
 * fix(auth): corregir validación de email ([3898da5](https://github.com/DanloisTovar/portafolio-vfinal/commit/3898da5))
 * fix(deploy): add vercel adapter and ignore build output ([ca74daf](https://github.com/DanloisTovar/portafolio-vfinal/commit/ca74daf))
+* fix(deps): downgrade zod to v3 to resolve instance mismatch ([1d5cc18](https://github.com/DanloisTovar/portafolio-vfinal/commit/1d5cc18))
 * fix(react): revertir a client:load para renderización correcta del Counter ([1a32106](https://github.com/DanloisTovar/portafolio-vfinal/commit/1a32106))
 * fix(react19): corregir compatibilidad con React 19 en Astro ([60df757](https://github.com/DanloisTovar/portafolio-vfinal/commit/60df757))
 * chore(changelog): update changelog ([2bc0351](https://github.com/DanloisTovar/portafolio-vfinal/commit/2bc0351))
