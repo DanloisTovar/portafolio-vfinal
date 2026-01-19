@@ -40,3 +40,4 @@ logs/
 # Misc
 *.log
 .cache
+.vercel/

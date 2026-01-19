@@ -1,4 +1,4 @@
-import { Languages } from 'lucide-react';
+/* import { Languages } from 'lucide-react'; */
 
 interface Props {
   currentLang: 'es' | 'en';
