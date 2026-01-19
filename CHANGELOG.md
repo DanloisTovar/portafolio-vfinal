@@ -1,5 +1,8 @@
 ## <small>0.0.1 (2026-01-19)</small>
 
+- refactor(components): 🔧 limpiar import innecesario en LanguageToggle ([2e6c71f](https://github.com/DanloisTovar/portafolio-vfinal/commit/2e6c71f))
+- refactor(deps): reorganizar dependencias siguiendo buenas prácticas ([66941b7](https://github.com/DanloisTovar/portafolio-vfinal/commit/66941b7))
+- refactor(i18n): mejorar tipado y validación en utils.ts ([13e7638](https://github.com/DanloisTovar/portafolio-vfinal/commit/13e7638))
 - docs(changelog): 📝 actualizar CHANGELOG con nuevos cambios ([50d39f7](https://github.com/DanloisTovar/portafolio-vfinal/commit/50d39f7))
 - docs(changelog): actualizar CHANGELOG.md ([9b4822f](https://github.com/DanloisTovar/portafolio-vfinal/commit/9b4822f))
 - docs(changelog): actualizar CHANGELOG.md ([cc91711](https://github.com/DanloisTovar/portafolio-vfinal/commit/cc91711))
@@ -11,8 +14,6 @@
 - docs(readme): actualizar documentación del proyecto ([d81962e](https://github.com/DanloisTovar/portafolio-vfinal/commit/d81962e))
 - docs(readme): actualizar documentación del proyecto con nuevas características ([1813334](https://github.com/DanloisTovar/portafolio-vfinal/commit/1813334))
 - docs(setup): agregar guía detallada de Conventional Commits ([94a6637](https://github.com/DanloisTovar/portafolio-vfinal/commit/94a6637))
-- refactor(deps): reorganizar dependencias siguiendo buenas prácticas ([66941b7](https://github.com/DanloisTovar/portafolio-vfinal/commit/66941b7))
-- refactor(i18n): mejorar tipado y validación en utils.ts ([13e7638](https://github.com/DanloisTovar/portafolio-vfinal/commit/13e7638))
 - 🎨 refactor: actualizar configuración de Tailwind CSS v4 y Stylelint ([f94151b](https://github.com/DanloisTovar/portafolio-vfinal/commit/f94151b))
 - 🐛 fix: corregir notación de import en global.css ([febdcf1](https://github.com/DanloisTovar/portafolio-vfinal/commit/febdcf1))
 - feat(astro): 🎨 deshabilitar dev toolbar para mejorar experiencia de desarrollo ([0dd155f](https://github.com/DanloisTovar/portafolio-vfinal/commit/0dd155f))
