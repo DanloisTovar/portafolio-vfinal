@@ -25,42 +25,45 @@ const projects: Project[] = [
   {
     title: t('projects.portfolio.title'),
     desc: t('projects.portfolio.desc'),
-    tags: ["Astro", "React", "TypeScript", "Tailwind CSS", "Motion", "i18n", "Zod", "Vercel"],
+    tags: ['Astro', 'React', 'TypeScript', 'Tailwind CSS', 'Motion', 'i18n', 'Zod', 'Vercel'],
     image: imgPortfolio.src,
-    url: "",
-    repo: ""
+    url: '',
+    repo: '',
   },
 
   /* Workgroup */
   {
     title: t('projects.workgroup.title'),
     desc: t('projects.workgroup.desc'),
-    tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "PHP", "Responsive", "Accesibilidad", "SEO"],
+    tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP', 'Responsive', 'Accesibilidad', 'SEO'],
     image: imgWorkgroup.src,
-    url: "https://www.workgroup.com.ar/website.v3/",
-    repo: ""
+    url: 'https://www.workgroup.com.ar/website.v3/',
+    repo: '',
   },
-  
+
   /* LATI */
   {
     title: t('projects.lati.title'),
     desc: t('projects.lati.desc'),
-    tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "PHP", "Responsive", "Accesibilidad", "SEO"],
+    tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP', 'Responsive', 'Accesibilidad', 'SEO'],
     image: imgLati.src,
-    url: "https://www.latisrl.com.ar/",
-    repo: ""
-  }
+    url: 'https://www.latisrl.com.ar/',
+    repo: '',
+  },
 ];
 ---
 
+{/* contenedor principal de proyectos */}
 <section id="projects" class="relative lg:h-[300vh] projects-pattern bg-white dark:bg-[#050b1b]">
-  <!-- Sticky Container for Desktop -->
-  <div class="projects-sticky lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden flex flex-col justify-center py-20 lg:py-0">
-    
+  {/* Sticky Container for Desktop */}
+  <div
+    class="projects-sticky lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden flex flex-col justify-center py-20 lg:py-0"
+  >
     <div class="w-full max-w-[1400px] mx-auto px-4 md:px-8 mb-8 lg:mb-12 relative z-10">
-      
       <div class="text-center mb-16">
-        <h2 class="text-4xl tracking-tight sm:text-5xl mb-4 text-gray-900 dark:text-white font-orbitron font-medium">
+        <h2
+          class="text-4xl tracking-tight sm:text-5xl mb-4 text-gray-900 dark:text-white font-orbitron font-medium"
+        >
           <span class="bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
             {t('projects.title')}
           </span>
@@ -68,113 +71,236 @@ const projects: Project[] = [
         <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
           {t('projects.subtitle')}
         </p>
-        <div class="w-24 h-1 bg-linear-to-r from-blue-600 to-cyan-500 mx-auto mt-6 rounded-full"></div>
+        <div class="w-24 h-1 bg-linear-to-r from-blue-600 to-cyan-500 mx-auto mt-6 rounded-full">
+        </div>
       </div>
-      
-      <!-- Desktop Instructions (Absolute Right) -->
+
+      {/* Desktop Instructions (Absolute Right) */}
       <div class="hidden lg:flex flex-col items-end gap-1 opacity-60 absolute right-8 bottom-0">
         <span class="text-sm font-medium">SCROLL DOWN</span>
         <div class="w-px h-12 bg-current"></div>
       </div>
-      
-      <!-- Mobile Instructions (Centered below title for mobile) -->
-      <div class="lg:hidden flex justify-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 animate-pulse mt-6">
+
+      {/* Mobile Instructions (Centered below title for mobile)*/}
+      <div
+        class="lg:hidden flex justify-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 animate-pulse mt-6"
+      >
         <span>← Swipe to explore →</span>
       </div>
     </div>
 
-    <!-- Scroll Track Container -->
-    <div class="w-full overflow-x-auto lg:overflow-visible no-scrollbar px-4 md:px-8 lg:px-0 pb-8 lg:pb-0" id="projects-track-container">
-      <!-- 
-        Mobile: Flex row with native scroll
-        Desktop: Flex row that gets transformed via JS
-      -->
-      <div class="projects-track flex gap-6 md:gap-8 lg:gap-12 lg:px-[10vw] w-fit" id="projects-track">
-        {projects.map((project, index) => (
-          <article 
-            class="relative flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[40vw] max-w-[800px] group rounded-[2rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
-          >
-            <StarBorder 
-              client:visible 
-              color="#3b82f6" 
-              speed={`${6 + Math.random() * 4}s`} 
-              delay={`-${Math.random() * 10}s`} 
-              className="transition-opacity duration-300 group-hover:opacity-0"
-            />
-            <!-- Image Area -->
-            <div class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-50 dark:opacity-60 lg:opacity-30 lg:dark:opacity-65 lg:group-hover:opacity-20 lg:dark:group-hover:opacity-60 transition-opacity duration-500"></div>
-              <img 
-                src={project.image} 
-                alt={project.title}
-                class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-105 transition-transform duration-700 ease-out"
-                loading="lazy"
+    {/* Scroll Track Container */}
+    <div
+      class="w-full overflow-x-auto lg:overflow-visible no-scrollbar px-4 md:px-8 lg:px-0 pb-8 lg:pb-0"
+      id="projects-track-container"
+    >
+      {
+        /* Mobile: Flex row with native scroll
+        Desktop: Flex row that gets transformed via JS */
+      }
+      <div
+        class="projects-track flex gap-6 md:gap-8 lg:gap-12 lg:px-[10vw] w-fit"
+        id="projects-track"
+      >
+        {
+          projects.map((project, index) => (
+            <article class="relative flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[40vw] max-w-[800px] group rounded-[2rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800">
+              <StarBorder
+                client:visible
+                color="#3b82f6"
+                speed={`${6 + Math.random() * 4}s`}
+                delay={`-${Math.random() * 10}s`}
+                className="transition-opacity duration-300 group-hover:opacity-0"
               />
-              
-              <!-- Floating Tags (Top Right) -->
-              <div class="absolute top-4 right-4 z-[60] flex flex-wrap justify-end gap-2 max-w-[80%]">
-                {project.tags.slice(0, 4).map((tag) => (
-                  <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            <!-- Content Area - Now below image on mobile for better readability, overlay on desktop  ajustamos el overlay de las cards  con esto clases: lg:dark:opacity-100 y lg:dark:bg-transparent -->
+              {/* imagen area*/}
+              <div class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-50 dark:opacity-60 lg:opacity-30 lg:dark:opacity-65 lg:group-hover:opacity-20 lg:dark:group-hover:opacity-60 transition-opacity duration-500" />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-105 transition-transform duration-700 ease-out"
+                  loading="lazy"
+                />
 
-            <div class="p-6 md:p-8 relative z-20 bg-white dark:bg-gray-900 lg:absolute lg:inset-0 lg:bg-transparent lg:flex lg:flex-col lg:justify-end lg:bg-gradient-to-t lg:from-black/90 lg:via-black/50 lg:to-transparent lg:opacity-100 lg:dark:opacity-100 lg:dark:bg-transparent">
-              
-              <div class="lg:transform lg:translate-y-4 lg:group-hover:translate-y-0 lg:transition-transform lg:duration-1000 lg:ease-in-out">
-                <!-- Mobile only tags (remaining) -->
-                <div class="flex lg:hidden flex-wrap gap-2 mb-3">
-                  {project.tags.slice(2).map((tag) => (
-                    <span class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md">
+                {/*Floating Tags (Top Right)*/}
+                <div class="absolute top-4 right-4 z-[60] flex flex-wrap justify-end gap-2 max-w-[80%]">
+                  {project.tags.slice(0, 4).map((tag) => (
+                    <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg">
                       {tag}
                     </span>
                   ))}
                 </div>
+              </div>
 
-                <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg">
-                  {project.title}
-                </h3>
-                
-                <p class="text-gray-600 dark:text-gray-300 lg:text-gray-200 text-sm md:text-base leading-relaxed line-clamp-3 lg:line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500 lg:mb-0 lg:dark:drop-shadow-md">
-                  {project.desc}
-                </p>
+              {/* Content Area - Now below image on mobile for better readability, overlay on desktop  ajustamos el overlay de las cards  con esto clases: lg:dark:opacity-100 y lg:dark:bg-transparent*/}
+              <div class="p-6 md:p-8 relative z-20 bg-white dark:bg-gray-900 lg:absolute lg:inset-0 lg:bg-transparent lg:flex lg:flex-col lg:justify-end lg:bg-gradient-to-t lg:from-black/90 lg:via-black/50 lg:to-transparent lg:opacity-100 lg:dark:opacity-100 lg:dark:bg-transparent">
+                <div class="lg:transform lg:translate-y-4 lg:group-hover:translate-y-0 lg:transition-transform lg:duration-1000 lg:ease-in-out">
+                  {/* Mobile only tags (remaining) */}
+                  <div class="flex lg:hidden flex-wrap gap-2 mb-3">
+                    {project.tags.slice(2).map((tag) => (
+                      <span class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-                <!-- Action Buttons -->
-                <div class="mt-4 lg:mt-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 lg:delay-100">
-                  <div class="flex gap-3 flex-wrap">
-                    {project.url ? (
-                      <a href={project.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline">
-                        {lang === 'es' ? 'Ver sitio' : 'View site'} <span class="text-lg">↗</span>
-                      </a>
-                    ) : (
-                      <span class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 dark:text-gray-500 cursor-not-allowed">
-                        {lang === 'es' ? 'Sin enlace' : 'No link'}
-                      </span>
-                    )}
-                    {project.repo ? (
-                      <a href={project.repo} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline">
-                        {lang === 'es' ? 'Ver código' : 'View code'} <span class="text-lg">↗</span>
-                      </a>
-                    ) : (
-                      <span class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 dark:text-gray-500 cursor-not-allowed">
-                        {lang === 'es' ? 'Repositorio privado' : 'Private repo'}
-                      </span>
-                    )}
+                  <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg">
+                    {project.title}
+                  </h3>
+
+                  <p class="text-gray-600 dark:text-gray-300 lg:text-gray-200 text-sm md:text-base leading-relaxed line-clamp-3 lg:line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500 lg:mb-0 lg:dark:drop-shadow-md">
+                    {project.desc}
+                  </p>
+
+                  {/* Action Buttons */}
+                  <div class="mt-4 lg:mt-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 lg:delay-100">
+                    <div class="flex gap-3 flex-wrap">
+                      {project.url ? (
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline"
+                        >
+                          {lang === 'es' ? 'Ver sitio' : 'View site'} <span class="text-lg">↗</span>
+                        </a>
+                      ) : (
+                        <span class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 dark:text-gray-500 cursor-not-allowed">
+                          {lang === 'es' ? 'Sin enlace' : 'No link'}
+                        </span>
+                      )}
+                      {project.repo ? (
+                        <a
+                          href={project.repo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline"
+                        >
+                          {lang === 'es' ? 'Ver código' : 'View code'}{' '}
+                          <span class="text-lg">↗</span>
+                        </a>
+                      ) : (
+                        <span class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 dark:text-gray-500 cursor-not-allowed">
+                          {lang === 'es' ? 'Repositorio privado' : 'Private repo'}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))
+        }
       </div>
     </div>
   </div>
 </section>
+{/* Caso de de estudio */}
+<section id="case-study" class="py-20 lg:py-32 bg-white dark:bg-[#050b1b] projects-pattern">
+  <div class="w-full max-w-[1400px] mx-auto px-4 md:px-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-4xl tracking-tight sm:text-5xl mb-4 text-gray-900 dark:text-white font-orbitron font-medium"
+      >
+        <span class="bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+          Caso de estudio
+        </span>
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+        Proceso de Refactorización
+      </p>
+      <div class="w-24 h-1 bg-linear-to-r from-blue-600 to-cyan-500 mx-auto mt-6 rounded-full">
+      </div>
+    </div>
 
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-12">
+      <article
+        class="relative flex-shrink-0 w-full group rounded-[2rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
+      >
+        <StarBorder
+          client:visible
+          color="#3b82f6"
+          speed={`${6 + Math.random() * 4}s`}
+          delay={`-${Math.random() * 10}s`}
+          className="transition-opacity duration-300 group-hover:opacity-0"
+        />
+        {/* Image Area (simulada) */}
+        <div
+          class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-center text-gray-500 dark:text-gray-400 text-sm p-4"
+        >
+          <p>IMAGEN 1: CÓDIGO ANTIGUO O UI ANTIGUA (DESORDENADA)</p>
+        </div>
+
+        {/* Content Area */}
+        <div
+          class="p-6 md:p-8 relative z-20 bg-white dark:bg-gray-900 lg:absolute lg:inset-0 lg:bg-transparent lg:flex lg:flex-col lg:justify-end lg:bg-gradient-to-t lg:from-black/90 lg:via-black/50 lg:to-transparent lg:opacity-100 lg:dark:opacity-100 lg:dark:bg-transparent"
+        >
+          <div
+            class="lg:transform lg:translate-y-4 lg:group-hover:translate-y-0 lg:transition-transform lg:duration-1000 lg:ease-in-out"
+          >
+            <h3
+              class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg"
+            >
+              Imagen 1 (El Caos)
+            </h3>
+            <p
+              class="text-gray-600 dark:text-gray-300 lg:text-gray-200 text-sm md:text-base leading-relaxed line-clamp-3 lg:line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500 lg:mb-0 lg:dark:drop-shadow-md"
+            >
+              Captura de código antiguo o de la UI antigua (desordenada). Aquí se mostraría una
+              captura de pantalla del código o UI antes de la refactorización. Representa el estado
+              original, posiblemente complejo o desorganizado.
+            </p>
+          </div>
+        </div>
+      </article>
+      <article
+        class="relative flex-shrink-0 w-full group rounded-[2rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
+      >
+        <StarBorder
+          client:visible
+          color="#3b82f6"
+          speed={`${6 + Math.random() * 4}s`}
+          delay={`-${Math.random() * 10}s`}
+          className="transition-opacity duration-300 group-hover:opacity-0"
+        />
+        {/* Image Area (simulada) */}
+        <div
+          class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-center text-gray-500 dark:text-gray-400 text-sm p-4"
+        >
+          <p>IMAGEN 2: CÓDIGO NUEVO O UI LIMPIA</p>
+        </div>
+
+        {/* Content Area */}
+        <div
+          class="p-6 md:p-8 relative z-20 bg-white dark:bg-gray-900 lg:absolute lg:inset-0 lg:bg-transparent lg:flex lg:flex-col lg:justify-end lg:bg-gradient-to-t lg:from-black/90 lg:via-black/50 lg:to-transparent lg:opacity-100 lg:dark:opacity-100 lg:dark:bg-transparent"
+        >
+          <div
+            class="lg:transform lg:translate-y-4 lg:group-hover:translate-y-0 lg:transition-transform lg:duration-1000 lg:ease-in-out"
+          >
+            <h3
+              class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg"
+            >
+              Imagen 2 (La Solución)
+            </h3>
+            <p
+              class="text-gray-600 dark:text-gray-300 lg:text-gray-200 text-sm md:text-base leading-relaxed line-clamp-3 lg:line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500 lg:mb-0 lg:dark:drop-shadow-md"
+            >
+              Captura de tu código nuevo (limpio, identado, componentizado). Evidencia la solución
+              limpia, organizada y modular.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p
+      class="text-center text-gray-600 dark:text-gray-300 text-lg md:text-xl leading-relaxed mt-12 px-4"
+    >
+      Achieved 40% code reduction and improved maintainability by migrating from legacy Bootstrap to
+      Astro components.
+    </p>
+  </div>
+</section>
 <style>
   .projects-pattern {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%232172ff' fill-opacity='0.03' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'/%3E%3C/svg%3E");
@@ -189,7 +315,7 @@ const projects: Project[] = [
 
   function initScroll() {
     if (!section || !track) return;
-    
+
     // Reset transforms if switching modes
     if (!isDesktop) {
       track.style.transform = 'none';
@@ -201,24 +327,24 @@ const projects: Project[] = [
 
       const rect = section!.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-      
+
       // Calculate how far we've scrolled into the section
       // The section is tall (300vh), so top goes negative
       const offsetTop = -rect.top;
       const totalScrollDistance = rect.height - viewportHeight;
-      
+
       if (totalScrollDistance > 0) {
         let percentage = offsetTop / totalScrollDistance;
         // Clamp percentage between 0 and 1
         percentage = Math.max(0, Math.min(1, percentage));
-        
+
         // Calculate max horizontal scroll
         const containerWidth = window.innerWidth;
         const trackWidth = track!.scrollWidth;
-        const maxTranslate = trackWidth - containerWidth + (containerWidth * 0.2); // Add some padding (20vw)
-        
+        const maxTranslate = trackWidth - containerWidth + containerWidth * 0.2; // Add some padding (20vw)
+
         const translateX = -(maxTranslate * percentage);
-        
+
         requestAnimationFrame(() => {
           track!.style.transform = `translateX(${translateX}px)`;
         });
@@ -241,7 +367,7 @@ const projects: Project[] = [
 
   // Initialize
   initScroll();
-  
+
   // Re-run on View Transitions (if using Astro ViewTransitions)
   document.addEventListener('astro:page-load', () => {
     section = document.getElementById('projects');
