@@ -1,6 +1,7 @@
 ## <small>0.0.1 (2026-01-19)</small>
 
 - docs(changelog): 📝 actualizar CHANGELOG con nuevos cambios ([50d39f7](https://github.com/DanloisTovar/portafolio-vfinal/commit/50d39f7))
+- docs(changelog): actualizar CHANGELOG.md ([9b4822f](https://github.com/DanloisTovar/portafolio-vfinal/commit/9b4822f))
 - docs(changelog): actualizar CHANGELOG.md ([cc91711](https://github.com/DanloisTovar/portafolio-vfinal/commit/cc91711))
 - docs(changelog): actualizar CHANGELOG.md ([6f58f34](https://github.com/DanloisTovar/portafolio-vfinal/commit/6f58f34))
 - docs(changelog): actualizar CHANGELOG.md ([342a95b](https://github.com/DanloisTovar/portafolio-vfinal/commit/342a95b))
