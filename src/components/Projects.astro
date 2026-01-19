@@ -401,12 +401,44 @@ const projects: Project[] = [
       </article>
     </div>
 
-    <p
-      class="text-center text-gray-600 dark:text-gray-300 text-lg md:text-xl leading-relaxed mt-12 px-4"
-    >
-      Achieved 40% code reduction and improved maintainability by migrating from legacy Bootstrap to
-      Astro components.
-    </p>
+    <div class="max-w-3xl mx-auto px-4 md:px-8 mt-12">
+      <div class="grid grid-cols-1 gap-6">
+        <div
+          class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-8 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          >
+          </div>
+          <div
+            class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          >
+          </div>
+          <div class="relative z-10 text-center">
+            <div
+              class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500 mx-auto"
+            >
+              <svg
+                class="w-6 h-6 text-blue-600 dark:text-blue-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 text-lg md:text-xl leading-relaxed">
+              Achieved 40% code reduction and improved maintainability by migrating from legacy
+              Bootstrap to Astro components.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <style>
@@ -532,10 +564,25 @@ const projects: Project[] = [
     });
   }
 
-  // Initialize LightGallery on DOMContentLoaded for initial load
+  // Initialize LightGallery and triggers on DOMContentLoaded for initial load
   document.addEventListener('DOMContentLoaded', () => {
     initLightGallery();
     initLightboxTriggers();
+
+    // Card-level glow effect
+    const cards = document.querySelectorAll('.card-glow');
+    cards.forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const mouseEvent = e as MouseEvent;
+        const htmlCard = card as HTMLElement;
+        const rect = htmlCard.getBoundingClientRect();
+        const x = ((mouseEvent.clientX - rect.left) / rect.width) * 100;
+        const y = ((mouseEvent.clientY - rect.top) / rect.height) * 100;
+
+        htmlCard.style.setProperty('--mouse-x', `${x}%`);
+        htmlCard.style.setProperty('--mouse-y', `${y}%`);
+      });
+    });
   });
 </script>
 
@@ -550,6 +597,24 @@ const projects: Project[] = [
       0 0 15px rgb(168 103 4 / 70%),
       0 0 30px rgb(168 103 4 / 40%) !important;
     transition: all 0.3s ease-out;
+  }
+
+  /* Card-level cursor glow */
+  .cursor-glow {
+    border-radius: 1.5rem;
+    background: radial-gradient(
+      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgb(59 130 246 / 25%),
+      transparent 40%
+    );
+  }
+
+  .dark .cursor-glow {
+    background: radial-gradient(
+      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgb(96 165 250 / 20%),
+      transparent 40%
+    );
   }
 
   /* Estilos para lightbox - VERSIÓN FUNCIONAL */
