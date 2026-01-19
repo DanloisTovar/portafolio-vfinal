@@ -1,0 +1,17 @@
+/* !import letra Orbitron */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+
+/* !import tailwindcss */
+@import "tailwindcss";
+
+/* !variante dark mode */
+@variant dark (&:where(.dark, .dark *));
+
+/* ! definicion de variables globales */
+
+/* ? tipografia */
+@theme {
+  --font-orbitron: orbitron, sans-serif;
+  --font-sans: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', sans-serif;
+}
+

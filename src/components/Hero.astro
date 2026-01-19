@@ -1,0 +1,399 @@
+---
+import { useTranslations } from '../i18n/utils';
+import LightRays from './Backgrounds/LightRays/LightRays';
+import CircularText from './TextAnimations/CircularText/CircularText';
+
+/*imagen personal */
+import portfolioImg from '../assets/imagen-portafolio.png';
+
+interface Props {
+	lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<!-- ELIMINAR pt-20 lg:pt-0 y AGREGAR z-0 -->
+<div
+	id="home"
+	class="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center justify-center relative overflow-hidden z-0 transition-colors duration-300"
+>
+	<!-- Efectos de fondo -->
+	<div
+		aria-hidden="true"
+		class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+	>
+		<div
+			style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+			class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#60a5fa] to-[#3b82f6] opacity-20 sm:left-[calc(50%-30rem)] sm:w-288.75"
+		>
+		</div>
+	</div>
+
+	<div class="absolute inset-0 z-0">
+		<LightRays
+			client:only="react"
+			raysOrigin="top-center"
+			raysColor="#3b82f6"
+			raysSpeed={1.5}
+			lightSpread={0.8}
+			rayLength={1.2}
+			followMouse={true}
+			mouseInfluence={0.1}
+			noiseAmount={0.1}
+			distortion={0.05}
+		/>
+	</div>
+
+	<div class="relative isolate px-6 lg:px-8 max-w-7xl mx-auto w-full z-10">
+		<div
+			class="mx-auto max-w-2xl lg:max-w-7xl flex flex-col lg:flex-row items-center gap-8 lg:gap-16 pt-32 pb-12 lg:py-0"
+		>
+			<!-- Lado derecho: Imagen circular - PRIMERO EN MÓVIL -->
+			<div class="lg:w-1/2 flex justify-center order-1 lg:order-2">
+				<div class="relative">
+					<!-- Contenedor de imagen circular - SIN ANIMACIÓN -->
+					<div
+						class="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-blue-500/30 shadow-2xl"
+					>
+						<img
+							src={portfolioImg.src}
+							alt="Foto de perfil de DanloisDev"
+							class="w-full h-full object-cover"
+						/>
+					</div>
+
+					<!-- Efecto de brillo -->
+					<div
+						class="absolute inset-0 rounded-full bg-blue-500/10 blur-xl -z-10"
+					>
+					</div>
+
+					<!-- Badge 1: ¡Hola! 👋 - Aparece primero -->
+					<div
+						class="absolute -top-4 -right-4 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-badge-1"
+					>
+						{t('hero.badge1')}
+					</div>
+
+					<!-- Badge 2: Soy Danlois Tovar - Aparece segundo -->
+					<div
+						class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg whitespace-nowrap animate-badge-2"
+					>
+						{t('hero.badge2')}
+					</div>
+				</div>
+			</div>
+
+			<!-- Lado izquierdo: Texto - SEGUNDO EN MÓVIL -->
+			<div
+				class="text-center lg:text-left lg:w-1/2 lg:pr-8 order-2 lg:order-1"
+			>
+				<h1
+					class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl mt-6 lg:mt-0 font-orbitron"
+				>
+					{
+						lang === 'es' ? (
+							<>
+								{t('hero.role').split(' ')[0]}{' '}
+								<span class="text-blue-600 dark:text-blue-400">
+									{t('hero.role')
+										.split(' ')
+										.slice(1)
+										.join(' ')}
+								</span>
+							</>
+						) : (
+							<>
+								{t('hero.role')
+									.split(' ')
+									.slice(0, 2)
+									.join(' ')}{' '}
+								<span class="text-blue-600 dark:text-blue-400">
+									{t('hero.role').split(' ')[2]}
+								</span>
+							</>
+						)
+					}
+				</h1>
+
+				<p
+					class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0"
+				>
+					{t('hero.description')}
+				</p>
+
+				<div
+					class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+				>
+					<!-- Botón Ver Proyectos con icono de ojo -->
+					<a
+						href="#projects"
+						class="w-full sm:w-auto rounded-md bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-colors duration-200 text-center flex items-center justify-center gap-2"
+					>
+						<svg
+							class="w-4 h-4"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+							></path>
+						</svg>
+						{t('hero.viewProjects')}
+					</a>
+
+					<!-- Botón Descargar CV con icono -->
+					<a
+						href="/cv-danlois-tovar.pdf"
+						download
+						class="w-full sm:w-auto rounded-md bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-colors duration-200 text-center flex items-center justify-center gap-2"
+					>
+						<svg
+							class="w-4 h-4"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+							></path>
+						</svg>
+						{t('hero.downloadCV')}
+					</a>
+
+					<!-- Botón Contactar con icono -->
+					<a
+						href="#contact"
+						class="w-full sm:w-auto rounded-md bg-gray-800 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500 transition-colors duration-200 text-center flex items-center justify-center gap-2"
+					>
+						<svg
+							class="w-4 h-4"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+							></path>
+						</svg>
+						{t('hero.contact')}
+					</a>
+				</div>
+
+				<!-- Stack tecnológico -->
+				<div class="mt-12">
+					<p
+						class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-4 text-center lg:text-left"
+					>
+						{t('hero.techStack')}
+					</p>
+					<div
+						class="flex flex-wrap gap-3 justify-center lg:justify-start"
+					>
+						<span
+							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20"
+						>
+							JavaScript
+						</span>
+						<span
+							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20"
+						>
+							React
+						</span>
+						<span
+							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20"
+						>
+							Astro
+						</span>
+						<span
+							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20"
+						>
+							Tailwind CSS
+						</span>
+						<span
+							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20"
+						>
+							Bootstrap
+						</span>
+						<span
+							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20"
+						>
+							Node.js
+						</span>
+						<span
+							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20"
+						>
+							SQL (MySQL)
+						</span>
+						<span
+							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20"
+						>
+							MongoDB
+						</span>
+						<span
+							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20"
+						>
+							Git & GitHub
+						</span>
+						<span
+							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20"
+						>
+							Kubernetes
+						</span>
+						<span
+							class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20"
+						>
+							Linux
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Efecto de fondo inferior -->
+	<div
+		aria-hidden="true"
+		class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+	>
+		<div
+			style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+			class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#60a5fa] to-[#3b82f6] opacity-20 sm:left-[calc(50%+36rem)] sm:w-288.75"
+		>
+		</div>
+	</div>
+
+	<!-- Circular Text animacion -->
+	<div class="absolute bottom-8 right-8 z-10 hidden lg:block">
+		<CircularText
+			client:only="react"
+			text="DANLOIS*TOVAR*"
+			onHover="speedUp"
+			spinDuration={20}
+			className="text-blue-500 dark:text-blue-400 font-orbitron"
+		/>
+	</div>
+</div>
+
+<style is:global>
+	/* CAMBIAR: Usar 100vh en lugar de calc(100vh - 80px) */
+	.min-h-screen {
+		min-height: 100vh;
+	}
+
+	/* AGREGAR: Posicionar el hero detrás del navbar */
+	.z-0 {
+		z-index: 0;
+	}
+
+	/* Control de orden para responsive */
+	.order-1 {
+		order: 1;
+	}
+
+	.order-2 {
+		order: 2;
+	}
+
+	/* En escritorio, revertimos el orden */
+	@media (min-width: 1024px) {
+		.lg\:order-1 {
+			order: 1;
+		}
+
+		.lg\:order-2 {
+			order: 2;
+		}
+	}
+
+	/* Mejoras de responsive */
+	@media (max-width: 1024px) {
+		.lg\:pt-0 {
+			padding-top: 2rem;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.text-4xl {
+			font-size: 2.25rem;
+			line-height: 2.5rem;
+		}
+
+		.sm\:text-5xl {
+			font-size: 2.5rem;
+			line-height: 2.75rem;
+		}
+	}
+
+	/* Animaciones para los badges */
+	@keyframes badgeFloat {
+		0%,
+		100% {
+			transform: translateY(0) translateX(-50%);
+		}
+		50% {
+			transform: translateY(-8px) translateX(-50%);
+		}
+	}
+
+	@keyframes badgeSlideInRight {
+		0% {
+			opacity: 0;
+			transform: translateX(20px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes badgeSlideInBottom {
+		0% {
+			opacity: 0;
+			transform: translateY(20px) translateX(-50%);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0) translateX(-50%);
+		}
+	}
+
+	/* Badge 1: ¡Hola! 👋 - Aparece primero con movimiento */
+	.animate-badge-1 {
+		animation:
+			badgeSlideInRight 0.8s ease-out 0.5s both,
+			badgeFloat 3s ease-in-out 1.8s infinite;
+	}
+
+	/* Badge 2: Soy Danlois Tovar - Aparece segundo con movimiento */
+	.animate-badge-2 {
+		animation:
+			badgeSlideInBottom 0.8s ease-out 1.2s both,
+			badgeFloat 3s ease-in-out 2.2s infinite;
+	}
+
+	/* Estilos para los botones con iconos */
+	.flex.items-center.justify-center.gap-2 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+	}
+</style>

@@ -1,0 +1,348 @@
+---
+import { useTranslations } from '../i18n/utils';
+import LogoLoop from './Animations/LogoLoop/LogoLoop';
+import {
+	MessageSquare,
+	Brain,
+	Users,
+	Zap,
+	GraduationCap,
+	BookOpen,
+	Award,
+} from 'lucide-react';
+
+interface Props {
+	lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+// Education Data
+const education = [
+	{
+		degree:
+			lang === 'es'
+				? 'Licenciatura en Tecnologías Digitales'
+				: 'Bachelor in Digital Technologies',
+		institution: 'Universidad de la Ciudad de Buenos Aires, Argentina',
+		year: '2025',
+		icon: GraduationCap,
+	},
+	{
+		degree:
+			lang === 'es'
+				? 'Técnico Superior en Análisis de Sistemas'
+				: 'Higher Technician in Systems Analysis',
+		institution: 'IFTS N° 12, Buenos Aires, Argentina',
+		year: '2023',
+		icon: BookOpen,
+	},
+	{
+		degree:
+			lang === 'es'
+				? 'Técnico Superior en Administración'
+				: 'Higher Technician in Administration',
+		institution: 'IUDAG, Caracas, Venezuela',
+		year: '2008',
+		icon: Award,
+	},
+];
+
+const softSkills = [
+	{
+		key: 'communication',
+		icon: MessageSquare,
+		color: 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300',
+	},
+	{
+		key: 'problem_solving',
+		icon: Brain,
+		color: 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300',
+	},
+	{
+		key: 'teamwork',
+		icon: Users,
+		color: 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300',
+	},
+	{
+		key: 'adaptability',
+		icon: Zap,
+		color: 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300',
+	},
+];
+---
+
+<section
+	id="skills"
+	class="section-glow isolate py-24 px-4 bg-gray-50 dark:bg-gray-900/50 transition-colors duration-300 overflow-hidden relative"
+>
+	<!-- Cursor glow effect for entire section -->
+	<div
+		class="section-cursor-glow pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300"
+	>
+	</div>
+	<!-- Background gradient effects -->
+	<div
+		class="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20"
+	>
+	</div>
+
+	<div class="max-w-7xl mx-auto relative z-10">
+		<div class="text-center mb-16 lg:mb-24">
+			<h2
+				class="text-4xl tracking-tight sm:text-5xl mb-4 text-gray-900 dark:text-white font-orbitron font-medium"
+			>
+				{
+					lang === 'es' ? (
+						<>
+							Habilidades y{' '}
+							<span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">
+								Estudios
+							</span>
+						</>
+					) : (
+						<>
+							Skills and{' '}
+							<span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">
+								Education
+							</span>
+						</>
+					)
+				}
+			</h2>
+			<p
+				class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto"
+			>
+				{
+					lang === 'es'
+						? 'Dominio técnico y formación académica'
+						: 'Technical expertise and academic background'
+				}
+			</p>
+			<div class="w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+		</div>
+
+		<!-- Technical Skills Title + Logo Loop -->
+		<div class="mb-16">
+			<h3
+				class="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-3 text-gray-900 dark:text-white"
+			>
+				<span
+					class="p-3 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg"
+				>
+					<svg
+						class="w-6 h-6"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+					</svg>
+				</span>
+				{t('skills.hard')}
+			</h3>
+			<LogoLoop client:visible speed={25} />
+		</div>
+
+		<!-- Education Grid (Left) + Robot (Center) Layout -->
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
+			<!-- Robot on Left (mobile: arriba) -->
+			<div class="flex items-center justify-center order-1 lg:order-1">
+				<div
+					class="w-full max-w-md h-[400px] lg:h-[500px] relative overflow-hidden"
+				>
+					<!-- robot grande: -->
+
+					<script
+						type="module"
+						src="https://unpkg.com/@splinetool/viewer@1.12.23/build/spline-viewer.js"
+					></script>
+					<spline-viewer
+						class="robot-habilidades block h-full w-full"
+						url="https://prod.spline.design/4c8KoXXCMm-nFWlE/scene.splinecode"
+					></spline-viewer>
+
+					<!-- robot pequeño: -->
+					<!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.6/build/spline-viewer.js"></script>
+					<spline-viewer url="https://prod.spline.design/wYmVAwFQIL3qrH3r/scene.splinecode"></spline-viewer> -->
+				</div>
+			</div>
+
+			<!-- Education Bento Grid on Right (mobile: debajo) -->
+			<div class="space-y-6 order-2 lg:order-2">
+				<h3
+					class="text-2xl font-bold mb-6 flex items-center gap-3 text-gray-900 dark:text-white"
+				>
+					<span
+						class="p-3 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg"
+					>
+						<GraduationCap size={24} />
+					</span>
+					{lang === 'es' ? 'Educación' : 'Education'}
+				</h3>
+
+				<div class="space-y-4">
+					{
+						education.map((edu) => (
+							<div class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-6 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow">
+								<div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-500/5 dark:from-blue-500/10 dark:to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+								<div class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+								<div class="relative z-10 flex gap-4">
+									<div class="flex-shrink-0">
+										<div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+											<edu.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+										</div>
+									</div>
+									<div class="flex-1">
+										<h4 class="font-bold text-gray-900 dark:text-white mb-1">
+											{edu.degree}
+										</h4>
+										<p class="text-sm text-gray-600 dark:text-gray-400 mb-1">
+											{edu.institution}
+										</p>
+										<p class="text-xs text-blue-600 dark:text-blue-400 font-medium">
+											{edu.year}
+										</p>
+									</div>
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</div>
+
+		<!-- Soft Skills Grid (Full Width) -->
+		<div>
+			<h3
+				class="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-3 text-gray-900 dark:text-white"
+			>
+				<span
+					class="p-3 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg"
+				>
+					<Users size={24} />
+				</span>
+				{t('skills.soft')}
+			</h3>
+
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+				{
+					softSkills.map((skill, index) => (
+						<div class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-8 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2 min-h-[160px] flex flex-col items-center justify-center text-center card-glow">
+							<div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+							<div class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+							<div
+								class={`relative z-10 w-14 h-14 rounded-2xl flex items-center justify-center mb-4 ${skill.color} group-hover:scale-110 transition-transform duration-500`}
+							>
+								<skill.icon size={28} />
+							</div>
+
+							<div class="relative z-10">
+								<h4 class="text-lg font-bold text-gray-900 dark:text-white">
+									{t(`skills.soft.${skill.key}` as any)}
+								</h4>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	/* Card-level cursor glow */
+	.cursor-glow {
+		border-radius: 1.5rem;
+		background: radial-gradient(
+			600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+			rgba(59, 130, 246, 0.25),
+			transparent 40%
+		);
+	}
+
+	.dark .cursor-glow {
+		background: radial-gradient(
+			600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+			rgba(96, 165, 250, 0.2),
+			transparent 40%
+		);
+	}
+
+	/* Section-wide cursor glow */
+	.section-cursor-glow {
+		background: radial-gradient(
+			800px circle at var(--section-mouse-x, 50%)
+				var(--section-mouse-y, 50%),
+			rgba(59, 130, 246, 0.15),
+			transparent 50%
+		);
+	}
+
+	.dark .section-cursor-glow {
+		background: radial-gradient(
+			800px circle at var(--section-mouse-x, 50%)
+				var(--section-mouse-y, 50%),
+			rgba(96, 165, 250, 0.12),
+			transparent 50%
+		);
+	}
+
+	.section-glow:hover .section-cursor-glow {
+		opacity: 1 !important;
+	}
+/* !Efecto de robot: */
+	.robot-habilidades {
+		mask-image: linear-gradient(to top, transparent 10%, black 90%);
+		-webkit-mask-image: linear-gradient(to top, transparent 10%, black 100%);
+	}
+</style>
+
+<script>
+	function setupGlowEffects() {
+		// Card-level glow effect
+		const cards = document.querySelectorAll('.card-glow');
+
+		cards.forEach((card) => {
+			card.addEventListener('mousemove', (e) => {
+				const mouseEvent = e as MouseEvent;
+				const htmlCard = card as HTMLElement;
+				const rect = htmlCard.getBoundingClientRect();
+				const x = ((mouseEvent.clientX - rect.left) / rect.width) * 100;
+				const y = ((mouseEvent.clientY - rect.top) / rect.height) * 100;
+
+				htmlCard.style.setProperty('--mouse-x', `${x}%`);
+				htmlCard.style.setProperty('--mouse-y', `${y}%`);
+			});
+		});
+
+		// Section-wide glow effect
+		const section = document.getElementById('skills');
+
+		if (section) {
+			section.addEventListener('mousemove', (e) => {
+				const mouseEvent = e as MouseEvent;
+				const htmlSection = section as HTMLElement;
+				const rect = htmlSection.getBoundingClientRect();
+				const x = ((mouseEvent.clientX - rect.left) / rect.width) * 100;
+				const y = ((mouseEvent.clientY - rect.top) / rect.height) * 100;
+
+				htmlSection.style.setProperty('--section-mouse-x', `${x}%`);
+				htmlSection.style.setProperty('--section-mouse-y', `${y}%`);
+			});
+		}
+	}
+
+	// Initial setup
+	setupGlowEffects();
+
+	// Setup on navigation (for transition persistency)
+	document.addEventListener('astro:after-swap', setupGlowEffects);
+</script>

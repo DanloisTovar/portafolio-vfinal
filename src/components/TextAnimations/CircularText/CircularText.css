@@ -1,0 +1,59 @@
+.circular-text {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 200px;
+  position: relative;
+  height: 200px;
+  font-weight: bold;
+  color: #fff;
+  font-weight: 900;
+  text-align: center;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.circular-text span {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 24px;
+  transition: all 0.5s cubic-bezier(0, 0, 0, 1);
+}
+
+/* Accent color for asterisks and TOVAR - light mode uses darker blue, dark mode uses lighter blue */
+.circular-text span.accent-letter {
+  color: #2563eb !important;
+}
+
+:global(.dark) .circular-text span.accent-letter {
+  color: #60a5fa !important;
+}
+
+.circular-text span[data-accent="true"] {
+  color: #2563eb !important;
+}
+
+:global(.dark) .circular-text span[data-accent="true"] {
+  color: #60a5fa !important;
+}
+
+/* DANLOIS color - light mode matches "Desarrollador" (gray-900), dark mode keeps white */
+.circular-text span.danlois-letter {
+  color: #111827 !important;
+}
+
+:global(.dark) .circular-text span.danlois-letter {
+  color: #ffffff !important;
+}
+
+.circular-text span[data-danlois="true"] {
+  color: #111827 !important;
+}
+
+:global(.dark) .circular-text span[data-danlois="true"] {
+  color: #ffffff !important;
+}

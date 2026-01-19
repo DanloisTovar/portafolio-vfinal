@@ -14,6 +14,7 @@ describe('Counter Component', () => {
     render(<Counter />);
     const buttons = screen.getAllByRole('button');
     const incrementButton = buttons[2]; // El botón +
+    if (!incrementButton) throw new Error('Increment button not found');
 
     fireEvent.click(incrementButton);
 
@@ -25,6 +26,8 @@ describe('Counter Component', () => {
     const buttons = screen.getAllByRole('button');
     const decrementButton = buttons[0]; // El botón -
     const incrementButton = buttons[2]; // El botón +
+
+    if (!decrementButton || !incrementButton) throw new Error('Buttons not found');
 
     // Primero incrementar
     fireEvent.click(incrementButton);
@@ -41,6 +44,8 @@ describe('Counter Component', () => {
     const buttons = screen.getAllByRole('button');
     const incrementButton = buttons[2];
     const resetButton = buttons[1];
+
+    if (!incrementButton || !resetButton) throw new Error('Buttons not found');
 
     // Incrementar varias veces
     fireEvent.click(incrementButton);
