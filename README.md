@@ -1,14 +1,24 @@
-# Portafolio version final - Astro + React + Tailwind CSS
+# Portafolio version final - Astro + React + Tailwind CSS v4
 
-Proyecto de portafolio construido con Astro, React y Tailwind CSS, con una configuración completa de desarrollo profesional.
+Proyecto de portafolio construido con Astro, React y Tailwind CSS v4, con una configuración completa de desarrollo profesional, soporte multiidioma (ES/EN) y animaciones avanzadas.
 
 ## 🚀 Stack Tecnológico
 
 - **Framework**: Astro 5.x
-- **UI Library**: React 18.x
-- **Styling**: Tailwind CSS 4.x
+- **UI Library**: React 19.x
+- **Styling**: Tailwind CSS 4.x (con @theme y @variant)
 - **Language**: TypeScript 5.x
 - **Package Manager**: pnpm
+- **Internacionalización**: i18n personalizado (ES/EN)
+
+## 🎨 Características Principales
+
+- ✨ **Soporte Multiidioma**: Sistema i18n integrado para español e inglés
+- 🌓 **Dark Mode**: Variable de tema con @variant de Tailwind v4
+- 🎭 **Animaciones Avanzadas**: GlareHover, LogoLoop, StarBorder, TargetCursor, LightRays
+- 🎯 **Componentes Reutilizables**: Navbar, LanguageToggle, ThemeToggle, SocialMenu
+- 📱 **Diseño Responsive**: Totalmente responsive con Tailwind CSS
+- ♿ **Accesibilidad**: Componentes con atributos ARIA
 
 ## 🛠️ Herramientas de Desarrollo
 
@@ -16,6 +26,7 @@ Proyecto de portafolio construido con Astro, React y Tailwind CSS, con una confi
 - **Testing**: Vitest (Unit Tests) + Nightwatch (E2E)
 - **Git Hooks**: Husky + lint-staged
 - **Commits**: Commitlint (Conventional Commits)
+- **Changelog**: Conventional Changelog automatizado
 
 ## 📦 Scripts Disponibles
 
@@ -60,28 +71,56 @@ pnpm changelog    # Generar CHANGELOG.md
 
 ```
 /
-├── public/
+├── public/                   # Archivos estáticos
 ├── src/
-│   ├── assets/
+│   ├── assets/              # Imágenes y recursos
+│   ├── actions/             # Acciones de servidor
 │   ├── components/
-│   │   ├── Counter.tsx       # Componente React de ejemplo
-│   │   └── Welcome.astro     # Componente Astro
+│   │   ├── Animations/      # Componentes de animación
+│   │   │   ├── GlareHover/
+│   │   │   ├── LogoLoop/
+│   │   │   ├── StarBorder/
+│   │   │   └── TargetCursor/
+│   │   ├── Backgrounds/     # Componentes de fondo
+│   │   │   └── LightRays/
+│   │   ├── TextAnimations/  # Animaciones de texto
+│   │   │   └── CircularText/
+│   │   ├── About.astro      # Sección About
+│   │   ├── Contact.astro    # Sección Contact
+│   │   ├── Experience.astro # Sección Experience
+│   │   ├── Footer.astro     # Footer
+│   │   ├── Hero.astro       # Sección Hero
+│   │   ├── LanguageToggle.tsx # Toggle idioma (ES/EN)
+│   │   ├── Navbar.tsx       # Barra de navegación
+│   │   ├── News.astro       # Sección News
+│   │   ├── Projects.astro   # Sección Projects
+│   │   ├── Skills.astro     # Sección Skills
+│   │   ├── SocialMenu.astro # Menú de redes sociales
+│   │   ├── ThemeToggle.tsx  # Toggle de tema (Light/Dark)
+│   │   └── Welcome.astro    # Componente Welcome
+│   ├── i18n/
+│   │   ├── ui.ts           # Traducciones
+│   │   └── utils.ts        # Utilidades i18n
 │   ├── layouts/
-│   │   └── Layout.astro      # Layout principal
+│   │   └── Layout.astro    # Layout principal
 │   ├── pages/
-│   │   └── index.astro       # Página de inicio
-│   └── app.css               # Estilos globales (Tailwind)
-├── tests/
-│   └── e2e/                  # Tests end-to-end
-├── astro.config.mjs          # Configuración de Astro
-├── tsconfig.json             # Configuración de TypeScript
-├── eslint.config.js          # Configuración de ESLint
-├── .prettierrc               # Configuración de Prettier
-├── .stylelintrc.json         # Configuración de Stylelint
-├── vitest.config.ts          # Configuración de Vitest
-├── nightwatch.conf.cjs       # Configuración de Nightwatch
-├── commitlint.config.js      # Configuración de Commitlint
-└── package.json
+│   │   ├── index.astro     # Página de inicio (redirect)
+│   │   └── [lang]/
+│   │       └── index.astro # Página principal multiidioma
+│   └── styles/
+│       └── global.css      # Estilos globales (Tailwind v4)
+├── testing/                # Configuración de tests
+├── tests/                  # Archivos de test
+├── astro.config.mjs        # Configuración de Astro
+├── tsconfig.json           # Configuración de TypeScript
+├── eslint.config.js        # Configuración de ESLint
+├── .prettierrc             # Configuración de Prettier
+├── .stylelintrc.json       # Configuración de Stylelint
+├── vitest.config.ts        # Configuración de Vitest
+├── nightwatch.conf.cjs     # Configuración de Nightwatch
+├── commitlint.config.js    # Configuración de Commitlint
+├── package.json
+└── README.md
 ```
 
 ## 🚦 Comenzar
@@ -101,12 +140,113 @@ pnpm changelog    # Generar CHANGELOG.md
 3. **Abrir navegador**:
    Visita `http://localhost:4321`
 
+## 🌐 Internacionalización (i18n)
+
+El proyecto soporta múltiples idiomas (Español e Inglés) mediante un sistema i18n personalizado:
+
+### Estructura de Traducciones
+
+```typescript
+// src/i18n/ui.ts
+export const ui = {
+  es: {
+    'nav.home': 'Inicio',
+    'nav.about': 'Acerca de',
+    // ... más traducciones
+  },
+  en: {
+    'nav.home': 'Home',
+    'nav.about': 'About',
+    // ... more translations
+  },
+};
+```
+
+### Usar Traducciones
+
+```astro
+---
+import { useTranslations, getLangFromUrl } from '@/i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<h1>{t('nav.home')}</h1>
+```
+
+## 🎨 Tailwind CSS v4
+
+El proyecto utiliza Tailwind CSS v4 con nuevas características:
+
+### At-rules de Tailwind v4
+
+```css
+/* Modo oscuro personalizado */
+@variant dark (&:where(.dark, .dark *));
+
+/* Variables de tema */
+@theme {
+  --font-orbitron: orbitron, sans-serif;
+  --font-sans: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', sans-serif;
+}
+```
+
+### Configuración de Stylelint para Tailwind v4
+
+El archivo `.stylelintrc.json` está configurado para reconocer las at-rules de Tailwind v4:
+
+```json
+{
+  "ignoreAtRules": [
+    "tailwind",
+    "apply",
+    "variants",
+    "variant",
+    "responsive",
+    "screen",
+    "layer",
+    "theme"
+  ]
+}
+```
+
+## 🌓 Dark Mode
+
+El proyecto soporta modo oscuro mediante:
+
+- Variable CSS personalizada: `--theme-mode`
+- Componente `ThemeToggle.tsx` para cambiar el tema
+- Estilos adaptados para cada tema
+
+## 🎯 Componentes Destacados
+
+### LanguageToggle
+
+Componente para cambiar entre idiomas (ES/EN) con banderas emoji.
+
+### ThemeToggle
+
+Componente para cambiar entre modo claro y oscuro.
+
+### Animaciones Avanzadas
+
+- **GlareHover**: Efecto de brillo al pasar el mouse
+- **LogoLoop**: Animación de loop para logos
+- **StarBorder**: Borde con efecto de estrellas
+- **TargetCursor**: Cursor personalizado con efecto de objetivo
+- **LightRays**: Efecto de rayos de luz de fondo
+
 ## 📝 Commits Convencionales
 
-Este proyecto usa [Conventional Commits](https://www.conventionalcommits.org/):
+Este proyecto usa [Conventional Commits](https://www.conventionalcommits.org/) con emojis:
 
-- `feat:` Nueva característica
-- `fix:` Corrección de bug
+- `feat:` ✨ Nueva característica
+- `fix:` 🐛 Corrección de bug
+- `refactor:` 🎨 Refactorización de código
+- `docs:` 📝 Cambios en documentación
+- `style:` 💅 Cambios en estilos
+- `test:` ✅ Cambios en tests
+- `chore:` 🔧 Cambios en configuración o dependencias
 - `docs:` Cambios en documentación
 - `style:` Formateo, punto y coma faltante, etc.
 - `refactor:` Refactorización de código

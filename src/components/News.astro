@@ -1,0 +1,328 @@
+---
+import { useTranslations } from '../i18n/utils';
+import {
+	Newspaper,
+	ExternalLink,
+	ChevronLeft,
+	ChevronRight,
+	Clock,
+} from 'lucide-react';
+
+interface Props {
+	lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section
+	id="news"
+	class="py-24 px-4 bg-white dark:bg-[#050b1b] relative overflow-hidden"
+>
+	<!-- Soft Blue Radial Background (light mode only) -->
+	<div
+		class="absolute inset-0 z-0 dark:hidden pointer-events-none"
+		style="background: #ffffff; background-image: radial-gradient(circle at top center, rgba(59, 130, 246, 0.5), transparent 70%);"
+	></div>
+
+	<!-- Steel Blue top glow (dark mode only) -->
+	<div
+		class="absolute inset-0 z-0 hidden dark:block pointer-events-none"
+		style="background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(120, 180, 255, 0.25), transparent 70%), #040816;"
+	></div>
+
+	<!-- Background Accents -->
+	<div class="absolute inset-0 opacity-20 pointer-events-none">
+		<div
+			class="absolute top-1/2 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"
+		>
+		</div>
+		<div
+			class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] translate-x-1/4 translate-y-1/4"
+		>
+		</div>
+	</div>
+
+	<div class="max-w-7xl mx-auto relative z-10">
+		<div class="text-center mb-16">
+			<h2
+				class="text-4xl tracking-tight sm:text-5xl mb-4 text-gray-900 dark:text-white font-orbitron font-medium"
+			>
+				{
+					lang === 'es' ? (
+						<>
+							Noticias y{' '}
+							<span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">
+								Novedades
+							</span>
+						</>
+					) : (
+						<>
+							Notices and{' '}
+							<span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">
+								News
+							</span>
+						</>
+					)
+				}
+			</h2>
+			<p
+				class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto"
+			>
+				{t('news.subtitle')}
+			</p>
+			<div class="w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+		</div>
+
+		<!-- News Carousel Container -->
+		<div class="relative group" id="news-carousel-container">
+			<!-- Carousel Controls -->
+			<button
+				id="news-prev"
+				class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-20 p-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-white shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 active:scale-95 disabled:opacity-30"
+				aria-label="Previous news"
+			>
+				<ChevronLeft size={24} />
+			</button>
+
+			<button
+				id="news-next"
+				class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-20 p-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-white shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 active:scale-95 disabled:opacity-30"
+				aria-label="Next news"
+			>
+				<ChevronRight size={24} />
+			</button>
+
+			<div
+				id="news-track"
+				class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth py-4 px-2"
+			>
+				<!-- Skeleton Loader -->
+				{
+					[1, 2, 3, 4].map(() => (
+						<div class="news-skeleton shrink-0 w-[85vw] sm:w-87.5 aspect-4/5 rounded-4xl bg-gray-100 dark:bg-gray-800 animate-pulse border border-gray-200/50 dark:border-gray-700/50" />
+					))
+				}
+			</div>
+
+			<!-- Indicators -->
+			<div id="news-indicators" class="flex justify-center gap-2 mt-10">
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+	}
+	.scrollbar-hide {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+</style>
+
+<script
+	is:inline
+	define:vars={{ readMore: t('news.readMore'), source: t('news.source') }}
+>
+	const CACHE_KEY = 'news_feed_cache_v3_multi';
+	const CACHE_TTL = 24 * 60 * 60 * 1000; // Control de actualización: 24 horas (86,400,000 ms)
+
+	async function fetchNews() {
+		const track = document.getElementById('news-track');
+		if (!track) return;
+
+		try {
+			// Check Cache
+			const cachedData = localStorage.getItem(CACHE_KEY);
+			if (cachedData) {
+				const { timestamp, items } = JSON.parse(cachedData);
+				if (Date.now() - timestamp < CACHE_TTL) {
+					renderNews(items);
+					return;
+				}
+			}
+
+			// Feeds to fetch
+			const feeds = [
+				'https://www.theverge.com/rss/ai-artificial-intelligence/index.xml', // AI
+				'https://www.theverge.com/rss/tech/index.xml', // Tech
+				'https://dev.to/feed', // Dev
+			];
+
+			const fetchPromises = feeds.map((url) =>
+				fetch(
+					`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`,
+				).then((res) => res.json()),
+			);
+
+			const results = await Promise.all(fetchPromises);
+			let allItems = [];
+
+			results.forEach((data) => {
+				if (data.status === 'ok') {
+					allItems = [...allItems, ...data.items];
+				}
+			});
+
+			// Remove duplicates by link and sort by date
+			const uniqueItems = Array.from(
+				new Map(allItems.map((item) => [item.link, item])).values(),
+			)
+				.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
+				.slice(0, 15); // Top 15 news
+
+			if (uniqueItems.length > 0) {
+				localStorage.setItem(
+					CACHE_KEY,
+					JSON.stringify({
+						timestamp: Date.now(),
+						items: uniqueItems,
+					}),
+				);
+				renderNews(uniqueItems);
+			} else {
+				throw new Error('No news found');
+			}
+		} catch (error) {
+			console.error('Error fetching news:', error);
+			track.innerHTML =
+				'<p class="text-center w-full text-gray-500">Error loading news. Please try again later.</p>';
+		}
+	}
+
+	function renderNews(items) {
+		const track = document.getElementById('news-track');
+		const indicatorsContainer = document.getElementById('news-indicators');
+		if (!track || !indicatorsContainer) return;
+
+		track.innerHTML = '';
+		indicatorsContainer.innerHTML = '';
+
+		items.forEach((item, index) => {
+			const date = new Date(item.pubDate).toLocaleDateString();
+
+			// Extract image from description or content if thumbnail is missing
+			let imageUrl = item.thumbnail;
+			if (
+				!imageUrl ||
+				imageUrl === '' ||
+				imageUrl.includes('techcrunch.com') ||
+				imageUrl.includes('avatar')
+			) {
+				// Search for <img> tags in description or content
+				const combinedContent =
+					(item.description || '') + (item.content || '');
+				const imgRegex = /<img[^>]+src="([^">]+)"/i;
+				const match = imgRegex.exec(combinedContent);
+				if (match && match[1]) {
+					imageUrl = match[1];
+				}
+			}
+
+			// Fallback to a topic-related image with unique signature to avoid repetition if still missing
+			// We use tech-related keywords for the fallback
+			const techKeywords = [
+				'technology',
+				'artificial-intelligence',
+				'coding',
+				'cybersecurity',
+				'metaverse',
+				'robotics',
+			];
+			const keyword = techKeywords[index % techKeywords.length];
+			const fallbackImage = `https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800&sig=${index + 100}`;
+
+			const card = document.createElement('div');
+			card.className =
+				'shrink-0 w-[85vw] sm:w-87.5 snap-center group/card p-[1px] rounded-4xl bg-linear-to-br from-blue-500/20 to-transparent hover:from-blue-500/40 transition-all duration-500';
+
+			card.innerHTML = `
+				<div class="h-full w-full bg-white dark:bg-gray-900 rounded-[calc(2rem-1px)] overflow-hidden flex flex-col shadow-xl">
+					<div class="h-48 overflow-hidden relative">
+						<img src="${imageUrl || fallbackImage}" 
+							 class="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700" 
+							 alt="${item.title}"
+							 onerror="this.src='${fallbackImage}'">
+						<div class="absolute inset-0 bg-linear-to-t from-gray-900/80 to-transparent"></div>
+						<div class="absolute bottom-4 left-4 flex items-center gap-2 text-white/90 text-xs font-medium bg-blue-600/30 backdrop-blur-md px-2 py-1 rounded-lg">
+							<span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> ${date}</span>
+						</div>
+					</div>
+					
+					<div class="p-6 flex flex-col flex-1">
+						<h3 class="text-lg font-bold text-gray-900 dark:text-white line-clamp-2 mb-3 group-hover/card:text-blue-500 transition-colors">
+							${item.title}
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-3 mb-6 flex-1">
+							${item.description.replace(/<[^>]*>?/gm, '')}
+						</p>
+						
+						<div class="mt-auto flex items-center justify-between">
+							<a href="${item.link}" target="_blank" rel="noopener noreferrer" 
+							   class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:gap-3 transition-all">
+								${readMore} <i data-lucide="external-link" class="w-4 h-4"></i>
+							</a>
+							<span class="text-[10px] uppercase tracking-wider text-gray-400 font-bold">${source}: TechCrunch</span>
+						</div>
+					</div>
+				</div>
+			`;
+			track.appendChild(card);
+
+			// Indicator dot
+			const dot = document.createElement('button');
+			dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-blue-600 w-6' : 'bg-gray-300 dark:bg-gray-700'}`;
+			dot.onclick = () => {
+				track.scrollTo({
+					left: card.offsetLeft - track.offsetLeft,
+					behavior: 'smooth',
+				});
+			};
+			indicatorsContainer.appendChild(dot);
+		});
+
+		// Scroll logic for indicators
+		track.addEventListener('scroll', () => {
+			const index = Math.round(
+				track.scrollLeft /
+					(track.querySelector('.snap-center').offsetWidth + 24),
+			);
+			const dots = indicatorsContainer.querySelectorAll('button');
+			dots.forEach((dot, i) => {
+				if (i === index) {
+					dot.classList.add('bg-blue-600', 'w-6');
+					dot.classList.remove('bg-gray-300', 'dark:bg-gray-700');
+				} else {
+					dot.classList.remove('bg-blue-600', 'w-6');
+					dot.classList.add('bg-gray-300', 'dark:bg-gray-700');
+				}
+			});
+
+			// Update buttons
+			document.getElementById('news-prev').disabled =
+				track.scrollLeft <= 0;
+			document.getElementById('news-next').disabled =
+				track.scrollLeft + track.offsetWidth >= track.scrollWidth;
+		});
+
+		// Prev/Next buttons
+		document.getElementById('news-prev').onclick = () => {
+			track.scrollBy({
+				left: -(track.offsetWidth * 0.8),
+				behavior: 'smooth',
+			});
+		};
+		document.getElementById('news-next').onclick = () => {
+			track.scrollBy({
+				left: track.offsetWidth * 0.8,
+				behavior: 'smooth',
+			});
+		};
+	}
+
+	// Initialize
+	fetchNews();
+</script>

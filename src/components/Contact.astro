@@ -1,0 +1,489 @@
+---
+import { useTranslations } from '../i18n/utils';
+import {
+	Send,
+	User,
+	Mail,
+	MessageSquare,
+	Tag,
+	CheckCircle2,
+	AlertCircle,
+	Loader2,
+} from 'lucide-react';
+import StarBorder from './Animations/StarBorder/StarBorder';
+
+interface Props {
+	lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section
+	id="contact"
+	class="py-16 px-4 bg-gray-50/50 dark:bg-gray-950/20 transition-colors duration-300 relative overflow-hidden z-0"
+>
+	<!-- Cursor glow effect for entire section -->
+	<div
+		class="section-cursor-glow pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300"
+	>
+	</div>
+
+	<!-- Background gradient effects -->
+	<div
+		class="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20"
+	>
+	</div>
+
+	<!-- Light Horizon Glow (Light Mode Only) -->
+	<div
+		class="absolute inset-0 -z-10 dark:hidden"
+		style="background: radial-gradient(125% 125% at 50% 10%, #ffffff 40%, #93c5fd 100%);"
+	>
+	</div>
+
+	<!-- Dark Horizon Glow (Dark Mode Only) -->
+	<div
+		class="absolute inset-0 -z-10 hidden dark:block"
+		style="background: radial-gradient(125% 125% at 50% 10%, #030712 40%, #0d1a36 100%);"
+	>
+	</div>
+
+	<div class="max-w-4xl mx-auto relative z-10">
+		<div class="text-center mb-20">
+			<h2
+				class="text-4xl tracking-tight sm:text-5xl mb-4 text-gray-900 dark:text-white font-orbitron font-medium"
+			>
+				{
+					lang === 'es' ? (
+						<>
+							<span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">
+								¡
+							</span>
+							Hablemos
+							<span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">
+								!
+							</span>
+						</>
+					) : (
+						<>
+							Let's Talk
+							<span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">
+								!
+							</span>
+						</>
+					)
+				}
+			</h2>
+			<p
+				class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto"
+			>
+				{
+					lang === 'es'
+						? '¿Tienes un proyecto en mente o solo quieres saludar? Mi bandeja de entrada siempre está abierta.'
+						: 'Have a project in mind or just want to say hi? My inbox is always open.'
+				}
+			</p>
+			<div class="w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+		</div>
+
+		<div
+			class="relative group max-w-2xl mx-auto rounded-4xl overflow-hidden border border-gray-100 dark:border-gray-800 bg-gray-50/70 dark:bg-gray-900/70 backdrop-blur-xl shadow-2xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 ring-1 ring-blue-500/10 dark:ring-blue-400/10"
+		>
+			<!-- Form Glow Backdrop -->
+			<div
+				class="absolute -inset-1 bg-blue-600/20 rounded-4xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"
+			>
+			</div>
+
+			<StarBorder
+				client:visible
+				color="#2563eb"
+				colorEnd="#2563eb"
+				speed={`${6 + Math.random() * 4}s`}
+				delay={`-${Math.random() * 10}s`}
+				starWidth="500px"
+				starHeight="6px"
+				borderRadius="2rem"
+				className="transition-opacity duration-300 group-hover:opacity-0"
+			/>
+
+			<form id="contact-form" class="relative p-8 md:p-10 bg-transparent">
+				<!-- Status Messages -->
+				<div
+					id="form-status"
+					class="hidden mb-6 p-4 rounded-2xl items-start gap-3 animate-in fade-in slide-in-from-top-4 duration-300"
+				>
+					<div id="status-icon" class="mt-0.5"></div>
+					<p id="status-message" class="text-sm font-medium"></p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+					<!-- Name Field -->
+					<div class="space-y-2">
+						<label
+							for="name"
+							class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1"
+						>
+							<User size={16} />
+							{lang === 'es' ? 'Nombre' : 'Name'}
+						</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							placeholder={lang === 'es'
+								? 'Tu nombre'
+								: 'Your name'}
+							class="w-full px-5 py-3.5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 focus:border-blue-500 dark:focus:border-blue-400 focus:bg-gray-50 dark:focus:bg-gray-800 outline-none transition-all duration-300 focus:ring-4 focus:ring-blue-500/10 dark:focus:ring-blue-400/5 placeholder:text-gray-400 dark:placeholder:text-gray-500 text-gray-900 dark:text-white"
+						/>
+						<p
+							id="error-name"
+							class="text-xs text-red-500 ml-2 hidden"
+						>
+						</p>
+					</div>
+
+					<!-- Email Field -->
+					<div class="space-y-2">
+						<label
+							for="email"
+							class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1"
+						>
+							<Mail size={16} />
+							{
+								lang === 'es'
+									? 'Correo Electrónico'
+									: 'Email Address'
+							}
+						</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							placeholder="example@gmail.com"
+							class="w-full px-5 py-3.5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 focus:border-blue-500 dark:focus:border-blue-400 focus:bg-gray-50 dark:focus:bg-gray-800 outline-none transition-all duration-300 focus:ring-4 focus:ring-blue-500/10 dark:focus:ring-blue-400/5 placeholder:text-gray-400 dark:placeholder:text-gray-500 text-gray-900 dark:text-white"
+						/>
+						<p
+							id="error-email"
+							class="text-xs text-red-500 ml-2 hidden"
+						>
+						</p>
+					</div>
+				</div>
+
+				<!-- Subject Field -->
+				<div class="space-y-2 mb-6">
+					<label
+						for="subject"
+						class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1"
+					>
+						<Tag size={16} />
+						{lang === 'es' ? 'Asunto' : 'Subject'}
+					</label>
+					<input
+						type="text"
+						id="subject"
+						name="subject"
+						placeholder={lang === 'es'
+							? '¿En qué puedo ayudarte?'
+							: 'How can I help you?'}
+						class="w-full px-5 py-3.5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 focus:border-blue-500 dark:focus:border-blue-400 focus:bg-gray-50 dark:focus:bg-gray-800 outline-none transition-all duration-300 focus:ring-4 focus:ring-blue-500/10 dark:focus:ring-blue-400/5 placeholder:text-gray-400 dark:placeholder:text-gray-500 text-gray-900 dark:text-white"
+					/>
+					<p
+						id="error-subject"
+						class="text-xs text-red-500 ml-2 hidden"
+					>
+					</p>
+				</div>
+
+				<!-- Message Field -->
+				<div class="space-y-2 mb-8">
+					<label
+						for="message"
+						class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1"
+					>
+						<MessageSquare size={16} />
+						{lang === 'es' ? 'Mensaje' : 'Message'}
+					</label>
+					<textarea
+						id="message"
+						name="message"
+						rows="5"
+						placeholder={lang === 'es'
+							? 'Cuéntame sobre tu proyecto...'
+							: 'Tell me about your project...'}
+						class="w-full px-5 py-3.5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 focus:border-blue-500 dark:focus:border-blue-400 focus:bg-gray-50 dark:focus:bg-gray-800 outline-none transition-all duration-300 focus:ring-4 focus:ring-blue-500/10 dark:focus:ring-blue-400/5 placeholder:text-gray-400 dark:placeholder:text-gray-500 text-gray-900 dark:text-white resize-none"
+					></textarea>
+					<p
+						id="error-message"
+						class="text-xs text-red-500 ml-2 hidden"
+					>
+					</p>
+				</div>
+
+				<!-- Honeypot (Bot Trap) -->
+				<div class="sr-only">
+					<input
+						type="text"
+						name="honeypot"
+						tabindex="-1"
+						autocomplete="off"
+					/>
+				</div>
+
+				<!-- Submit Button -->
+				<div class="flex justify-center">
+					<button
+						type="submit"
+						id="submit-button"
+						class="group/btn relative inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-500 disabled:bg-blue-400 disabled:hover:translate-y-0 disabled:cursor-not-allowed text-white font-bold text-base shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all duration-300 hover:-translate-y-1 overflow-hidden w-full md:w-auto min-w-[180px]"
+					>
+						<div
+							class="absolute inset-0 w-full h-full bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"
+						>
+						</div>
+						<span
+							class="relative flex items-center gap-2 whitespace-nowrap"
+						>
+							<span id="button-text"
+								>{
+									lang === 'es'
+										? 'Enviar Mensaje'
+										: 'Send Message'
+								}</span
+							>
+							<span id="button-icon">
+								<Send
+									size={18}
+									className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
+								/>
+							</span>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
+<script>
+	import { actions } from 'astro:actions';
+
+	function setupCursorGlow() {
+		const section = document.getElementById('contact');
+		if (section) {
+			section.addEventListener('mousemove', (e) => {
+				const mouseEvent = e as MouseEvent;
+				const htmlSection = section as HTMLElement;
+				const rect = htmlSection.getBoundingClientRect();
+				const x = ((mouseEvent.clientX - rect.left) / rect.width) * 100;
+				const y = ((mouseEvent.clientY - rect.top) / rect.height) * 100;
+
+				htmlSection.style.setProperty('--section-mouse-x', `${x}%`);
+				htmlSection.style.setProperty('--section-mouse-y', `${y}%`);
+			});
+		}
+	}
+
+	// Initial setup
+	setupCursorGlow();
+	document.addEventListener('astro:after-swap', setupCursorGlow);
+
+	const form = document.getElementById('contact-form') as HTMLFormElement;
+	const statusDiv = document.getElementById('form-status') as HTMLDivElement;
+	const statusIcon = document.getElementById('status-icon') as HTMLDivElement;
+	const statusMessage = document.getElementById(
+		'status-message',
+	) as HTMLParagraphElement;
+	const submitBtn = document.getElementById(
+		'submit-button',
+	) as HTMLButtonElement;
+	const buttonText = document.getElementById(
+		'button-text',
+	) as HTMLSpanElement;
+	const buttonIcon = document.getElementById(
+		'button-icon',
+	) as HTMLSpanElement;
+
+	const lang = document.documentElement.lang === 'es' ? 'es' : 'en';
+
+	const messages = {
+		es: {
+			loading: 'Enviando...',
+			success: '¡Mensaje enviado con éxito! Te contactaré pronto.',
+			error: 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.',
+		},
+		en: {
+			loading: 'Sending...',
+			success: 'Message sent successfully! I will contact you soon.',
+			error: 'An error occurred while sending the message. Please try again.',
+		},
+	};
+
+	form?.addEventListener('submit', async (e) => {
+		e.preventDefault();
+
+		// Disable button and show loading state
+		submitBtn.disabled = true;
+		const originalText = buttonText.innerText;
+		buttonText.innerText = messages[lang].loading;
+		buttonIcon.innerHTML = `<svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>`;
+
+		// Hide previous status
+		statusDiv.classList.add('hidden');
+		statusDiv.classList.remove(
+			'flex',
+			'bg-green-500/10',
+			'text-green-600',
+			'bg-red-500/10',
+			'text-red-600',
+		);
+
+		// Clear field errors
+		['name', 'email', 'subject', 'message'].forEach((field) => {
+			const errEl = document.getElementById(`error-${field}`);
+			if (errEl) {
+				errEl.innerText = '';
+				errEl.classList.add('hidden');
+			}
+		});
+
+		const formData = new FormData(form);
+		const { data, error } = await actions.contact(formData);
+
+		// Reset button state
+		submitBtn.disabled = false;
+		buttonText.innerText = originalText;
+		buttonIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>`;
+
+		if (error) {
+			statusDiv.classList.remove(
+				'hidden',
+				'bg-green-500/10',
+				'text-green-600',
+				'dark:text-green-400',
+			);
+			statusDiv.classList.add(
+				'bg-red-500/10',
+				'text-red-600',
+				'dark:text-red-400',
+			);
+			statusDiv.classList.add('flex'); // Add flex for layout
+			statusIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>`;
+
+			// Handle validation errors from Zod
+			if (error.code === 'BAD_REQUEST' && (error as any).fields) {
+				const fields = (error as any).fields;
+				Object.keys(fields).forEach((field) => {
+					const errEl = document.getElementById(`error-${field}`);
+					if (errEl) {
+						const fieldErrors = fields[field];
+						const rawMsg = Array.isArray(fieldErrors)
+							? fieldErrors[0]
+							: fieldErrors?.message || '';
+
+						// Enhanced translation for specific fields
+						let finalMsg = rawMsg;
+						if (lang === 'es') {
+							if (rawMsg.includes('Name must be at least'))
+								finalMsg =
+									'El nombre necesita al menos 2 letras.';
+							else if (rawMsg.includes('Name must be under'))
+								finalMsg = 'Nombre demasiado largo.';
+							else if (rawMsg.includes('Invalid email'))
+								finalMsg = 'Introduce un correo válido.';
+							else if (
+								rawMsg.includes('Subject must be at least')
+							)
+								finalMsg =
+									'El asunto debe ser más descriptivo.';
+							else if (
+								rawMsg.includes('Message must be at least')
+							)
+								finalMsg = 'El mensaje es demasiado corto.';
+							else if (
+								rawMsg.toLowerCase().includes('required') ||
+								rawMsg.toLowerCase().includes('null') ||
+								rawMsg.toLowerCase().includes('expected string')
+							)
+								finalMsg = 'Este campo es obligatorio.';
+						}
+
+						errEl.innerText = finalMsg;
+						errEl.classList.remove('hidden');
+					}
+				});
+				statusMessage.innerText =
+					lang === 'es'
+						? 'Por favor, revisa los campos marcados en rojo.'
+						: 'Please check the fields marked in red.';
+			} else {
+				// If error message contains HTML (like a Vite error page), show a generic message
+				const msg =
+					error.message && error.message.includes('<')
+						? messages[lang].error
+						: error.message || messages[lang].error;
+				statusMessage.innerText = msg;
+			}
+		} else if (data?.success) {
+			form.reset();
+			statusDiv.classList.remove(
+				'hidden',
+				'bg-red-500/10',
+				'text-red-600',
+				'dark:text-red-400',
+			);
+			statusDiv.classList.add(
+				'bg-green-500/10',
+				'text-green-600',
+				'dark:text-green-400',
+			);
+			statusDiv.classList.add('flex'); // Add flex for layout
+			statusIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>`;
+			statusMessage.innerText = messages[lang].success;
+		}
+	});
+</script>
+
+<style>
+	/* Section-wide cursor glow */
+	.section-cursor-glow {
+		background: radial-gradient(
+			800px circle at var(--section-mouse-x, 50%)
+				var(--section-mouse-y, 50%),
+			rgba(59, 130, 246, 0.15),
+			transparent 50%
+		);
+	}
+
+	.dark .section-cursor-glow {
+		background: radial-gradient(
+			800px circle at var(--section-mouse-x, 50%)
+				var(--section-mouse-y, 50%),
+			rgba(96, 165, 250, 0.12),
+			transparent 50%
+		);
+	}
+
+	#contact:hover .section-cursor-glow {
+		opacity: 1 !important;
+	}
+
+	#contact::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 60%;
+		height: 60%;
+		background: radial-gradient(
+			circle,
+			rgba(59, 130, 246, 0.05) 0%,
+			transparent 70%
+		);
+		transform: translate(-50%, -50%);
+		pointer-events: none;
+	}
+</style>
