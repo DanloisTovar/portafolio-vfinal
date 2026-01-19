@@ -213,7 +213,7 @@ const projects: Project[] = [
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-12">
+    <div id="case-study-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-12">
       <article
         class="relative flex-shrink-0 w-full group rounded-[2rem] h-[45rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
       >
@@ -240,25 +240,6 @@ const projects: Project[] = [
             class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-105 transition-transform duration-700 ease-out"
             loading="lazy"
           />
-
-          {/*Floating Tags (Top Right)*/}
-          <div class="absolute top-4 right-4 z-[60] flex flex-wrap justify-end gap-2 max-w-[80%]">
-            <span
-              class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg"
-            >
-              HTML
-            </span>
-            <span
-              class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg"
-            >
-              CSS
-            </span>
-            <span
-              class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg"
-            >
-              JavaScript
-            </span>
-          </div>
         </a>
 
         {
@@ -316,10 +297,10 @@ const projects: Project[] = [
               <div class="flex gap-3 flex-wrap">
                 <a
                   href={imgWorkgroup.src}
-                  class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline case-study-item"
+                  class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline js-trigger-lightbox"
                   data-sub-html="<h4>IMAGEN 1: CÓDIGO ANTIGUO O UI ANTIGUA (DESORDENADA)</h4><p>Captura de código antiguo o de la UI antigua (desordenada). Aquí se mostraría una captura de pantalla del código o UI antes de la refactorización. Representa el estado original, posiblemente complejo o desorganizado.</p>"
                 >
-                  Ver en pantalla completa <span class="text-lg">↗</span>
+                  Ver en pantalla completa
                 </a>
               </div>
             </div>
@@ -352,25 +333,6 @@ const projects: Project[] = [
             class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-105 transition-transform duration-700 ease-out"
             loading="lazy"
           />
-
-          {/*Floating Tags (Top Right)*/}
-          <div class="absolute top-4 right-4 z-[60] flex flex-wrap justify-end gap-2 max-w-[80%]">
-            <span
-              class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg"
-            >
-              HTML
-            </span>
-            <span
-              class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg"
-            >
-              CSS
-            </span>
-            <span
-              class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg"
-            >
-              JavaScript
-            </span>
-          </div>
         </a>
 
         {
@@ -427,10 +389,10 @@ const projects: Project[] = [
               <div class="flex gap-3 flex-wrap">
                 <a
                   href={imgWorkgroup.src}
-                  class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline case-study-item"
+                  class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline js-trigger-lightbox"
                   data-sub-html="<h4>IMAGEN 2: CÓDIGO NUEVO</h4><p>Captura de tu código nuevo (limpio, identado, componentizado). Evidencia la solución limpia, organizada y modular.</p>"
                 >
-                  Ver en pantalla completa <span class="text-lg">↗</span>
+                  Ver en pantalla completa
                 </a>
               </div>
             </div>
@@ -519,6 +481,8 @@ const projects: Project[] = [
   // Initialize Scroll
   initScroll();
 
+  let lgInstance = null;
+
   // Re-run Scroll initialization on View Transitions (if using Astro ViewTransitions)
   document.addEventListener('astro:page-load', () => {
     section = document.getElementById('projects');
@@ -526,13 +490,20 @@ const projects: Project[] = [
     isDesktop = window.matchMedia('(min-width: 1024px)').matches;
     initScroll();
     initLightGallery(); // <--- Inicializar lightGallery en cada carga de página
+    initLightboxTriggers();
   });
 
   // LightGallery Initialization
   function initLightGallery() {
     const gallery = document.getElementById('case-study-gallery');
+
+    if (lgInstance) {
+      lgInstance.destroy();
+      lgInstance = null;
+    }
+
     if (gallery) {
-      lightGallery(gallery, {
+      lgInstance = lightGallery(gallery, {
         plugins: [lgZoom, lgThumbnail], // Incluir plugins si se importaron
         licenseKey: '0000-0000-000-0000', // Reemplazar con tu licencia si es necesario
         selector: '.case-study-item', // lightGallery se inicializará en todos los <a> con esta clase dentro de la galería
@@ -543,11 +514,32 @@ const projects: Project[] = [
     }
   }
 
+  function initLightboxTriggers() {
+    const triggers = document.querySelectorAll('.js-trigger-lightbox');
+    const articles = document.querySelectorAll('#case-study-gallery article');
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const parentArticle = trigger.closest('article');
+        if (parentArticle && lgInstance) {
+          const articleIndex = Array.from(articles).indexOf(parentArticle);
+          if (articleIndex !== -1) {
+            lgInstance.openGallery(articleIndex);
+          }
+        }
+      });
+    });
+  }
+
   // Initialize LightGallery on DOMContentLoaded for initial load
-  document.addEventListener('DOMContentLoaded', initLightGallery);
+  document.addEventListener('DOMContentLoaded', () => {
+    initLightGallery();
+    initLightboxTriggers();
+  });
 </script>
 
-<style is:inline>
+<style is:global>
   @import 'lightgallery/css/lightgallery.css';
   @import 'lightgallery/css/lg-zoom.css';
   @import 'lightgallery/css/lg-thumbnail.css';
