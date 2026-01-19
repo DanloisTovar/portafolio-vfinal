@@ -1,9 +1,8 @@
-## <small>0.0.1 (2026-01-17)</small>
+## <small>0.0.1 (2026-01-19)</small>
 
-- fix(auth): corregir validación de email ([3898da5](https://github.com/DanloisTovar/portafolio-vfinal/commit/3898da5))
-- fix(init): resolucion de conflicto de merge ([759c742](https://github.com/DanloisTovar/portafolio-vfinal/commit/759c742))
-- fix(react): revertir a client:load para renderización correcta del Counter ([1a32106](https://github.com/DanloisTovar/portafolio-vfinal/commit/1a32106))
-- fix(react19): corregir compatibilidad con React 19 en Astro ([60df757](https://github.com/DanloisTovar/portafolio-vfinal/commit/60df757))
+- feat(astro): 🎨 deshabilitar dev toolbar para mejorar experiencia de desarrollo ([0dd155f](https://github.com/DanloisTovar/portafolio-vfinal/commit/0dd155f))
+- feat(navbar): agregar navegación responsiva con menú mobile ([34d1b2c](https://github.com/DanloisTovar/portafolio-vfinal/commit/34d1b2c))
+- feat(setup): configuración inicial del proyecto Astro + React + Tailwind ([9070022](https://github.com/DanloisTovar/portafolio-vfinal/commit/9070022))
 - refactor(deps): reorganizar dependencias siguiendo buenas prácticas ([66941b7](https://github.com/DanloisTovar/portafolio-vfinal/commit/66941b7))
 - docs(changelog): generar CHANGELOG inicial con conventional-changelog ([82cc45d](https://github.com/DanloisTovar/portafolio-vfinal/commit/82cc45d))
 - docs(readme): actualizar documentación del proyecto ([d81962e](https://github.com/DanloisTovar/portafolio-vfinal/commit/d81962e))
@@ -17,5 +16,6 @@
 - chore(license): agregar licencia MIT al proyecto ([93396b4](https://github.com/DanloisTovar/portafolio-vfinal/commit/93396b4))
 - test(config): configurar estructura pruebas E2E y unitarias para Astro y Docker ([0b9be50](https://github.com/DanloisTovar/portafolio-vfinal/commit/0b9be50))
 - test(unit): agregar tests unitarios con Vitest y Testing Library ([2d51e58](https://github.com/DanloisTovar/portafolio-vfinal/commit/2d51e58))
-- feat(navbar): agregar navegación responsiva con menú mobile ([34d1b2c](https://github.com/DanloisTovar/portafolio-vfinal/commit/34d1b2c))
-- feat(setup): configuración inicial del proyecto Astro + React + Tailwind ([9070022](https://github.com/DanloisTovar/portafolio-vfinal/commit/9070022))
+- fix(auth): corregir validación de email ([3898da5](https://github.com/DanloisTovar/portafolio-vfinal/commit/3898da5))
+- fix(react): revertir a client:load para renderización correcta del Counter ([1a32106](https://github.com/DanloisTovar/portafolio-vfinal/commit/1a32106))
+- fix(react19): corregir compatibilidad con React 19 en Astro ([60df757](https://github.com/DanloisTovar/portafolio-vfinal/commit/60df757))
