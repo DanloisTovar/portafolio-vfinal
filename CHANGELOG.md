@@ -6,6 +6,7 @@
 - docs(changelog): actualizar CHANGELOG.md ([342a95b](https://github.com/DanloisTovar/portafolio-vfinal/commit/342a95b))
 - docs(changelog): actualizar CHANGELOG.md con nuevos cambios ([7b9b68b](https://github.com/DanloisTovar/portafolio-vfinal/commit/7b9b68b))
 - docs(changelog): generar CHANGELOG inicial con conventional-changelog ([82cc45d](https://github.com/DanloisTovar/portafolio-vfinal/commit/82cc45d))
+- docs(changelog): prueba de hooks funcionando correctamente ([11b3385](https://github.com/DanloisTovar/portafolio-vfinal/commit/11b3385))
 - docs(readme): actualizar documentación del proyecto ([d81962e](https://github.com/DanloisTovar/portafolio-vfinal/commit/d81962e))
 - docs(readme): actualizar documentación del proyecto con nuevas características ([1813334](https://github.com/DanloisTovar/portafolio-vfinal/commit/1813334))
 - docs(setup): agregar guía detallada de Conventional Commits ([94a6637](https://github.com/DanloisTovar/portafolio-vfinal/commit/94a6637))
