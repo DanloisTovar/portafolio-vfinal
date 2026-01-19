@@ -1,5 +1,13 @@
 ## <small>0.0.1 (2026-01-19)</small>
 
+* chore(changelog): update changelog ([2bc0351](https://github.com/DanloisTovar/portafolio-vfinal/commit/2bc0351))
+* chore(cleanup): eliminar archivo de prueba test.txt ([9a1c4d8](https://github.com/DanloisTovar/portafolio-vfinal/commit/9a1c4d8))
+* chore(config): actualizar nombre del proyecto a portafolio-vfinal ([05f76c7](https://github.com/DanloisTovar/portafolio-vfinal/commit/05f76c7))
+* chore(config): actualizar reglas de commitlint con validaciones ([702ffe8](https://github.com/DanloisTovar/portafolio-vfinal/commit/702ffe8))
+* chore(deps): actualizar @astrojs/react a v4.4.2 para soporte React 19 ([a8236f0](https://github.com/DanloisTovar/portafolio-vfinal/commit/a8236f0))
+* chore(deps): actualizar React a v19.2.3 y React-DOM a v19.2.3 ([838cd1c](https://github.com/DanloisTovar/portafolio-vfinal/commit/838cd1c))
+* chore(husky): agregar hook pre-push para generar CHANGELOG con pnpm changelog ([ef65ce3](https://github.com/DanloisTovar/portafolio-vfinal/commit/ef65ce3))
+* chore(license): agregar licencia MIT al proyecto ([93396b4](https://github.com/DanloisTovar/portafolio-vfinal/commit/93396b4))
 * fix(auth): corregir validación de email ([3898da5](https://github.com/DanloisTovar/portafolio-vfinal/commit/3898da5))
 * fix(deploy): add vercel adapter and ignore build output ([ca74daf](https://github.com/DanloisTovar/portafolio-vfinal/commit/ca74daf))
 * fix(react): revertir a client:load para renderización correcta del Counter ([1a32106](https://github.com/DanloisTovar/portafolio-vfinal/commit/1a32106))
@@ -25,13 +33,6 @@
 * feat(astro): 🎨 deshabilitar dev toolbar para mejorar experiencia de desarrollo ([0dd155f](https://github.com/DanloisTovar/portafolio-vfinal/commit/0dd155f))
 * feat(navbar): agregar navegación responsiva con menú mobile ([34d1b2c](https://github.com/DanloisTovar/portafolio-vfinal/commit/34d1b2c))
 * feat(setup): configuración inicial del proyecto Astro + React + Tailwind ([9070022](https://github.com/DanloisTovar/portafolio-vfinal/commit/9070022))
-* chore(cleanup): eliminar archivo de prueba test.txt ([9a1c4d8](https://github.com/DanloisTovar/portafolio-vfinal/commit/9a1c4d8))
-* chore(config): actualizar nombre del proyecto a portafolio-vfinal ([05f76c7](https://github.com/DanloisTovar/portafolio-vfinal/commit/05f76c7))
-* chore(config): actualizar reglas de commitlint con validaciones ([702ffe8](https://github.com/DanloisTovar/portafolio-vfinal/commit/702ffe8))
-* chore(deps): actualizar @astrojs/react a v4.4.2 para soporte React 19 ([a8236f0](https://github.com/DanloisTovar/portafolio-vfinal/commit/a8236f0))
-* chore(deps): actualizar React a v19.2.3 y React-DOM a v19.2.3 ([838cd1c](https://github.com/DanloisTovar/portafolio-vfinal/commit/838cd1c))
-* chore(husky): agregar hook pre-push para generar CHANGELOG con pnpm changelog ([ef65ce3](https://github.com/DanloisTovar/portafolio-vfinal/commit/ef65ce3))
-* chore(license): agregar licencia MIT al proyecto ([93396b4](https://github.com/DanloisTovar/portafolio-vfinal/commit/93396b4))
 * test(config): configurar estructura pruebas E2E y unitarias para Astro y Docker ([0b9be50](https://github.com/DanloisTovar/portafolio-vfinal/commit/0b9be50))
 * test(unit): agregar tests unitarios con Vitest y Testing Library ([2d51e58](https://github.com/DanloisTovar/portafolio-vfinal/commit/2d51e58))
 
