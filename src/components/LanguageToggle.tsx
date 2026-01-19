@@ -16,11 +16,11 @@ export default function LanguageToggle({ currentLang }: Props) {
   return (
     <button
       onClick={toggleLang}
-      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors flex items-center gap-2 font-medium"
+      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors flex items-center gap-1 sm:gap-2 font-medium"
       aria-label="Change language"
     >
       <span className="text-lg leading-none">{currentLang === 'es' ? '🇪🇸' : '🇺🇸'}</span>
-      <span className="uppercase text-sm font-orbitron">{currentLang}</span>
+      <span className="uppercase text-sm font-orbitron hidden sm:inline">{currentLang}</span>
     </button>
   );
 }
