@@ -207,7 +207,7 @@ const projects: Project[] = [
         </span>
       </h2>
       <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-        Proceso de Refactorización
+        Proceso de Refactorización de la pagina web de Workgroup.
       </p>
       <div class="w-24 h-1 bg-linear-to-r from-blue-600 to-cyan-500 mx-auto mt-6 rounded-full">
       </div>
@@ -215,7 +215,7 @@ const projects: Project[] = [
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-12">
       <article
-        class="relative flex-shrink-0 w-full group rounded-[2rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
+        class="relative flex-shrink-0 w-full group rounded-[2rem] h-[45rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
       >
         <StarBorder
           client:visible
@@ -224,25 +224,82 @@ const projects: Project[] = [
           delay={`-${Math.random() * 10}s`}
           className="transition-opacity duration-300 group-hover:opacity-0"
         />
-        {/* Image Area (simulada) */}
-        <div
-          class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-center text-gray-500 dark:text-gray-400 text-sm p-4"
+        {/* imagen area*/}
+        <a
+          href={imgWorkgroup.src}
+          class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative cursor-pointer case-study-item"
+          data-sub-html="<h4>IMAGEN 1: CÓDIGO ANTIGUO O UI ANTIGUA (DESORDENADA)</h4><p>Captura de código antiguo o de la UI antigua (desordenada). Aquí se mostraría una captura de pantalla del código o UI antes de la refactorización. Representa el estado original, posiblemente complejo o desorganizado.</p>"
         >
-          <p>IMAGEN 1: CÓDIGO ANTIGUO O UI ANTIGUA (DESORDENADA)</p>
-        </div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-50 dark:opacity-60 lg:opacity-30 lg:dark:opacity-65 lg:group-hover:opacity-20 lg:dark:group-hover:opacity-60 transition-opacity duration-500"
+          >
+          </div>
+          <img
+            src={imgWorkgroup.src}
+            alt="Imagen 1 (El Caos)"
+            class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-105 transition-transform duration-700 ease-out"
+            loading="lazy"
+          />
 
-        {/* Content Area */}
+          {/*Floating Tags (Top Right)*/}
+          <div class="absolute top-4 right-4 z-[60] flex flex-wrap justify-end gap-2 max-w-[80%]">
+            <span
+              class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg"
+            >
+              HTML
+            </span>
+            <span
+              class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg"
+            >
+              CSS
+            </span>
+            <span
+              class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg"
+            >
+              JavaScript
+            </span>
+          </div>
+        </a>
+
+        {
+          /* Content Area - Now below image on mobile for better readability, overlay on desktop  ajustamos el overlay de las cards  con esto clases: lg:dark:opacity-100 y lg:dark:bg-transparent*/
+        }
         <div
           class="p-6 md:p-8 relative z-20 bg-white dark:bg-gray-900 lg:absolute lg:inset-0 lg:bg-transparent lg:flex lg:flex-col lg:justify-end lg:bg-gradient-to-t lg:from-black/90 lg:via-black/50 lg:to-transparent lg:opacity-100 lg:dark:opacity-100 lg:dark:bg-transparent"
         >
           <div
             class="lg:transform lg:translate-y-4 lg:group-hover:translate-y-0 lg:transition-transform lg:duration-1000 lg:ease-in-out"
           >
+            {/* Mobile only tags (remaining) */}
+            <div class="flex lg:hidden flex-wrap gap-2 mb-3">
+              <span
+                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
+              >
+                Bootstrap
+              </span>
+              <span
+                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
+              >
+                PHP
+              </span>
+              <span
+                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
+              >
+                Responsive
+              </span>
+              <span
+                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
+              >
+                Accesibilidad
+              </span>
+            </div>
+
             <h3
               class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg"
             >
               Imagen 1 (El Caos)
             </h3>
+
             <p
               class="text-gray-600 dark:text-gray-300 lg:text-gray-200 text-sm md:text-base leading-relaxed line-clamp-3 lg:line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500 lg:mb-0 lg:dark:drop-shadow-md"
             >
@@ -250,6 +307,24 @@ const projects: Project[] = [
               captura de pantalla del código o UI antes de la refactorización. Representa el estado
               original, posiblemente complejo o desorganizado.
             </p>
+
+            {/* Action Buttons */}
+            <div
+              class="mt-4 lg:mt-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 lg:delay-100"
+            >
+              <div class="flex gap-3 flex-wrap">
+                <span
+                  class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 dark:text-gray-500 cursor-not-allowed"
+                >
+                  Sin enlace
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 dark:text-gray-500 cursor-not-allowed"
+                >
+                  Repositorio privado
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </article>
@@ -263,31 +338,106 @@ const projects: Project[] = [
           delay={`-${Math.random() * 10}s`}
           className="transition-opacity duration-300 group-hover:opacity-0"
         />
-        {/* Image Area (simulada) */}
-        <div
-          class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-center text-gray-500 dark:text-gray-400 text-sm p-4"
+        {/* imagen area*/}
+        <a
+          href={imgWorkgroup.src}
+          class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative cursor-pointer case-study-item"
+          data-sub-html="<h4>IMAGEN 2: CÓDIGO NUEVO</h4><p>Captura de tu código nuevo (limpio, identado, componentizado). Evidencia la solución limpia, organizada y modular.</p>"
         >
-          <p>IMAGEN 2: CÓDIGO NUEVO O UI LIMPIA</p>
-        </div>
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-50 dark:opacity-60 lg:opacity-30 lg:dark:opacity-65 lg:group-hover:opacity-20 lg:dark:group-hover:opacity-60 transition-opacity duration-500"
+          >
+          </div>
+          <img
+            src={imgWorkgroup.src}
+            alt="Imagen 2 (La Solución)"
+            class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-105 transition-transform duration-700 ease-out"
+            loading="lazy"
+          />
 
-        {/* Content Area */}
+          {/*Floating Tags (Top Right)*/}
+          <div class="absolute top-4 right-4 z-[60] flex flex-wrap justify-end gap-2 max-w-[80%]">
+            <span
+              class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg"
+            >
+              HTML
+            </span>
+            <span
+              class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg"
+            >
+              CSS
+            </span>
+            <span
+              class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg"
+            >
+              JavaScript
+            </span>
+          </div>
+        </a>
+
+        {
+          /* Content Area - Now below image on mobile for better readability, overlay on desktop  ajustamos el overlay de las cards  con esto clases: lg:dark:opacity-100 y lg:dark:bg-transparent*/
+        }
         <div
           class="p-6 md:p-8 relative z-20 bg-white dark:bg-gray-900 lg:absolute lg:inset-0 lg:bg-transparent lg:flex lg:flex-col lg:justify-end lg:bg-gradient-to-t lg:from-black/90 lg:via-black/50 lg:to-transparent lg:opacity-100 lg:dark:opacity-100 lg:dark:bg-transparent"
         >
           <div
             class="lg:transform lg:translate-y-4 lg:group-hover:translate-y-0 lg:transition-transform lg:duration-1000 lg:ease-in-out"
           >
+            {/* Mobile only tags (remaining) */}
+            <div class="flex lg:hidden flex-wrap gap-2 mb-3">
+              <span
+                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
+              >
+                Bootstrap
+              </span>
+              <span
+                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
+              >
+                PHP
+              </span>
+              <span
+                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
+              >
+                Responsive
+              </span>
+              <span
+                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
+              >
+                Accesibilidad
+              </span>
+            </div>
+
             <h3
               class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg"
             >
               Imagen 2 (La Solución)
             </h3>
+
             <p
               class="text-gray-600 dark:text-gray-300 lg:text-gray-200 text-sm md:text-base leading-relaxed line-clamp-3 lg:line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500 lg:mb-0 lg:dark:drop-shadow-md"
             >
               Captura de tu código nuevo (limpio, identado, componentizado). Evidencia la solución
               limpia, organizada y modular.
             </p>
+
+            {/* Action Buttons */}
+            <div
+              class="mt-4 lg:mt-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 lg:delay-100"
+            >
+              <div class="flex gap-3 flex-wrap">
+                <span
+                  class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 dark:text-gray-500 cursor-not-allowed"
+                >
+                  Sin enlace
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 text-sm font-bold text-gray-400 dark:text-gray-500 cursor-not-allowed"
+                >
+                  Repositorio privado
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </article>
@@ -309,6 +459,11 @@ const projects: Project[] = [
 </style>
 
 <script>
+  // Import LightGallery and plugins directly within the client-side script
+  import lightGallery from 'lightgallery/lightgallery.min.js';
+  import lgZoom from 'lightgallery/plugins/zoom/lg-zoom.min.js';
+  import lgThumbnail from 'lightgallery/plugins/thumbnail/lg-thumbnail.min.js';
+
   let section = document.getElementById('projects');
   let track = document.getElementById('projects-track');
   let isDesktop = window.matchMedia('(min-width: 1024px)').matches;
@@ -365,14 +520,123 @@ const projects: Project[] = [
     }
   });
 
-  // Initialize
+  // Initialize Scroll
   initScroll();
 
-  // Re-run on View Transitions (if using Astro ViewTransitions)
+  // Re-run Scroll initialization on View Transitions (if using Astro ViewTransitions)
   document.addEventListener('astro:page-load', () => {
     section = document.getElementById('projects');
     track = document.getElementById('projects-track');
     isDesktop = window.matchMedia('(min-width: 1024px)').matches;
     initScroll();
+    initLightGallery(); // <--- Inicializar lightGallery en cada carga de página
   });
+
+  // LightGallery Initialization
+  function initLightGallery() {
+    const gallery = document.getElementById('case-study-gallery');
+    if (gallery) {
+      lightGallery(gallery, {
+        plugins: [lgZoom, lgThumbnail], // Incluir plugins si se importaron
+        licenseKey: '0000-0000-000-0000', // Reemplazar con tu licencia si es necesario
+        selector: '.case-study-item', // lightGallery se inicializará en todos los <a> con esta clase dentro de la galería
+        actualSize: false, // Desactiva el botón de tamaño real ya que es contenido HTML
+        download: false, // Desactiva el botón de descarga
+        // Puedes añadir más opciones según la documentación de lightGallery
+      });
+    }
+  }
+
+  // Initialize LightGallery on DOMContentLoaded for initial load
+  document.addEventListener('DOMContentLoaded', initLightGallery);
 </script>
+
+<style is:inline>
+  @import 'lightgallery/css/lightgallery.css';
+  @import 'lightgallery/css/lg-zoom.css';
+  @import 'lightgallery/css/lg-thumbnail.css';
+
+  /* Efectos hover personalizados */
+  .group:hover img {
+    box-shadow:
+      0 0 15px rgb(168 103 4 / 70%),
+      0 0 30px rgb(168 103 4 / 40%) !important;
+    transition: all 0.3s ease-out;
+  }
+
+  /* Estilos para lightbox - VERSIÓN FUNCIONAL */
+  .lg-custom-theme .lg-close {
+    color: #a86704 !important;
+    font-size: 28px !important;
+    background: rgb(0 0 0 / 70%) !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    border-radius: 50% !important;
+    text-shadow: 0 0 5px #000 !important;
+    transition: all 0.3s !important;
+    opacity: 1 !important;
+    z-index: 999999 !important;
+    top: 20px !important;
+    right: 20px !important;
+  }
+
+  .lg-custom-theme .lg-close:hover {
+    color: #d4a017 !important;
+    transform: scale(1.1) !important;
+  }
+
+  .lg-custom-theme .lg-backdrop {
+    background-color: rgb(0 0 0 / 95%) !important;
+  }
+
+  .lg-custom-theme .lg-image {
+    border-radius: 8px !important;
+    box-shadow: 0 0 20px rgb(0 0 0 / 50%) !important;
+  }
+
+  .lg-custom-theme .lg-sub-html {
+    background: rgb(0 0 0 / 70%) !important;
+    padding: 15px !important;
+    border-radius: 0 0 8px 8px !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+    max-width: 80% !important;
+  }
+
+  .lg-custom-theme .lg-sub-html h4 {
+    color: #a86704 !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+    font-size: 1.2rem !important;
+    text-align: center !important;
+  }
+
+  .lg-custom-theme .lg-toolbar {
+    background-color: transparent !important;
+  }
+
+  .lg-custom-theme .lg-actions .lg-next,
+  .lg-custom-theme .lg-actions .lg-prev {
+    background-color: rgb(168 103 4 / 70%) !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    border: none !important; /* Añadido para igualar el hover */
+  }
+
+  .lg-custom-theme .lg-actions .lg-next:hover,
+  .lg-custom-theme .lg-actions .lg-prev:hover {
+    background-color: rgb(168 103 4 / 90%) !important;
+  }
+
+  /* stylelint-disable-next-line */
+  .galeria__font-h2--styles {
+    font-family: var(--font-forum);
+    color: var(--color-primario-titulos-gris);
+    font-weight: 400;
+  }
+</style>
