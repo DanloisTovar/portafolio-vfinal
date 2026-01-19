@@ -1,11 +1,12 @@
 ## <small>0.0.1 (2026-01-19)</small>
 
-- 🎨 refactor: actualizar configuración de Tailwind CSS v4 y Stylelint ([f94151b](https://github.com/DanloisTovar/portafolio-vfinal/commit/f94151b))
-- 🐛 fix: corregir notación de import en global.css ([febdcf1](https://github.com/DanloisTovar/portafolio-vfinal/commit/febdcf1))
 - docs(changelog): 📝 actualizar CHANGELOG con nuevos cambios ([50d39f7](https://github.com/DanloisTovar/portafolio-vfinal/commit/50d39f7))
+- docs(changelog): actualizar CHANGELOG.md con nuevos cambios ([7b9b68b](https://github.com/DanloisTovar/portafolio-vfinal/commit/7b9b68b))
 - docs(changelog): generar CHANGELOG inicial con conventional-changelog ([82cc45d](https://github.com/DanloisTovar/portafolio-vfinal/commit/82cc45d))
 - docs(readme): actualizar documentación del proyecto ([d81962e](https://github.com/DanloisTovar/portafolio-vfinal/commit/d81962e))
 - docs(setup): agregar guía detallada de Conventional Commits ([94a6637](https://github.com/DanloisTovar/portafolio-vfinal/commit/94a6637))
+- 🎨 refactor: actualizar configuración de Tailwind CSS v4 y Stylelint ([f94151b](https://github.com/DanloisTovar/portafolio-vfinal/commit/f94151b))
+- 🐛 fix: corregir notación de import en global.css ([febdcf1](https://github.com/DanloisTovar/portafolio-vfinal/commit/febdcf1))
 - feat(astro): 🎨 deshabilitar dev toolbar para mejorar experiencia de desarrollo ([0dd155f](https://github.com/DanloisTovar/portafolio-vfinal/commit/0dd155f))
 - feat(navbar): agregar navegación responsiva con menú mobile ([34d1b2c](https://github.com/DanloisTovar/portafolio-vfinal/commit/34d1b2c))
 - feat(setup): configuración inicial del proyecto Astro + React + Tailwind ([9070022](https://github.com/DanloisTovar/portafolio-vfinal/commit/9070022))
