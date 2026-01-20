@@ -1,8 +1,9 @@
-## <small>0.0.1 (2026-01-19)</small>
+## <small>0.0.1 (2026-01-20)</small>
 
 - feat(astro): 🎨 deshabilitar dev toolbar para mejorar experiencia de desarrollo ([0dd155f](https://github.com/DanloisTovar/portafolio-vfinal/commit/0dd155f))
 - feat(case-study): 🚀 Añade sección "Caso de estudio" con cards inspiradas en proyectos ([56272d8](https://github.com/DanloisTovar/portafolio-vfinal/commit/56272d8))
 - feat(navbar): agregar navegación responsiva con menú mobile ([34d1b2c](https://github.com/DanloisTovar/portafolio-vfinal/commit/34d1b2c))
+- feat(portfolio): ✨ add QA and SQL sections ([8017cc0](https://github.com/DanloisTovar/portafolio-vfinal/commit/8017cc0))
 - feat(projects): ✨ add lightbox link to case study cards and remove old links ([de170be](https://github.com/DanloisTovar/portafolio-vfinal/commit/de170be))
 - feat(projects): ✨ style summary text as bento grid card ([e587825](https://github.com/DanloisTovar/portafolio-vfinal/commit/e587825))
 - feat(responsive): ✨ Mejora el responsive en móviles pequeños para navbar y toggles ([41ba55d](https://github.com/DanloisTovar/portafolio-vfinal/commit/41ba55d))
@@ -11,6 +12,7 @@
 - docs(changelog): 📝 actualizar CHANGELOG con nuevos cambios ([50d39f7](https://github.com/DanloisTovar/portafolio-vfinal/commit/50d39f7))
 - docs(changelog): 📝 actualizar CHANGELOG.md ([cbd69d1](https://github.com/DanloisTovar/portafolio-vfinal/commit/cbd69d1))
 - docs(changelog): 📝 actualizar CHANGELOG.md ([dd4160d](https://github.com/DanloisTovar/portafolio-vfinal/commit/dd4160d))
+- docs(changelog): 📝 update CHANGELOG.md ([faf04ff](https://github.com/DanloisTovar/portafolio-vfinal/commit/faf04ff))
 - docs(changelog): 📝 update CHANGELOG.md ([c594a4e](https://github.com/DanloisTovar/portafolio-vfinal/commit/c594a4e))
 - docs(changelog): 📝 update CHANGELOG.md ([2c61887](https://github.com/DanloisTovar/portafolio-vfinal/commit/2c61887))
 - docs(changelog): actualizar CHANGELOG.md ([9b4822f](https://github.com/DanloisTovar/portafolio-vfinal/commit/9b4822f))
