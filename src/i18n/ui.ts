@@ -18,23 +18,29 @@ export const ui = {
     'hero.badge1': '¡Hola! 👋',
     'hero.badge2': 'Soy Danlois Tovar 💻',
     'hero.role': 'Desarrollador Front End',
-    'hero.description': 'Enfocado en crear aplicaciones web modernas, optimizadas y escalables. Combino una sólida base técnica en refactorización de código con la entrega de interfaces funcionales de calidad.',
+    'hero.description':
+      'Enfocado en crear aplicaciones web modernas, optimizadas y escalables. Combino una sólida base técnica en refactorización de código con la entrega de interfaces funcionales de calidad.',
     'hero.viewProjects': 'Ver proyectos',
     'hero.downloadCV': 'Descargar CV',
     'hero.contact': 'Contactar',
     'hero.techStack': 'COMPETENCIAS TÉCNICAS:',
     'about.title': 'Sobre Mí',
     'about.intro': 'Desarrollador Front End',
-    'about.description': 'Desarrollador Web con sólida experiencia en refactorización de código y maquetación responsive. Me especializo en mantenibilidad y escalabilidad, aplicando buenas prácticas de desarrollo.',
-    'about.experience': 'Cuento con una sólida base en Soporte de Integraciones, complementada por mi experiencia en QA. Esta trayectoria me aporta una comprensión profunda del ciclo de vida del dato (JSON/APIs) y una visión detallista para la detección temprana de errores. Esto se traduce en interfaces que no solo son estéticas, sino técnicamente robustas en el manejo de datos y la lógica de negocio.',
+    'about.description':
+      'Desarrollador Web con sólida experiencia en refactorización de código y maquetación responsive. Me especializo en mantenibilidad y escalabilidad, aplicando buenas prácticas de desarrollo.',
+    'about.experience':
+      'Cuento con una sólida base en Soporte de Integraciones, complementada por mi experiencia en QA. Esta trayectoria me aporta una comprensión profunda del ciclo de vida del dato (JSON/APIs) y una visión detallista para la detección temprana de errores. Esto se traduce en interfaces que no solo son estéticas, sino técnicamente robustas en el manejo de datos y la lógica de negocio.',
     'projects.title': 'Proyectos',
     'projects.subtitle': 'Una selección de mis trabajos más recientes y destacados',
     'projects.portfolio.title': 'Portafolio Web — Astro, React, Motion',
-    'projects.portfolio.desc': 'Sitio personal construido con Astro (SSR), React, TypeScript y Tailwind CSS. Animaciones con Motion, efectos visuales interactivos, multi-idioma (i18n es/en), formulario con Astro Actions + Nodemailer y validación con Zod. Despliegue en Vercel.',
+    'projects.portfolio.desc':
+      'Sitio personal construido con Astro (SSR), React, TypeScript y Tailwind CSS. Animaciones con Motion, efectos visuales interactivos, multi-idioma (i18n es/en), formulario con Astro Actions + Nodemailer y validación con Zod. Despliegue en Vercel.',
     'projects.workgroup.title': 'Workgroup',
-    'projects.workgroup.desc': 'Maquetación responsiva e implementación de componentes UI con Bootstrap, integración con backend en PHP. Enfoque en accesibilidad semántica, optimización de assets para performance y compatibilidad cross‑browser en entorno corporativo.',
+    'projects.workgroup.desc':
+      'Maquetación responsiva e implementación de componentes UI con Bootstrap, integración con backend en PHP. Enfoque en accesibilidad semántica, optimización de assets para performance y compatibilidad cross‑browser en entorno corporativo.',
     'projects.lati.title': 'Laboratorio de Asistencia Técnica a la Industria (LATI)',
-    'projects.lati.desc': 'Maquetación institucional orientada a claridad y cumplimiento: estructura semántica, optimización básica de SEO y carga, integración con flujo existente en PHP. Entregables consistentes y mantenibles.',
+    'projects.lati.desc':
+      'Maquetación institucional orientada a claridad y cumplimiento: estructura semántica, optimización básica de SEO y carga, integración con flujo existente en PHP. Entregables consistentes y mantenibles.',
     'skills.title': 'Habilidades',
     'skills.hard': 'Habilidades Técnicas',
     'skills.soft': 'Habilidades Blandas',
@@ -53,15 +59,39 @@ export const ui = {
     'experience.job1.role': 'Desarrollador Web / Analista QA / Soporte de Integraciones',
     'experience.job1.company': 'Workgroup S.L., Buenos Aires, Argentina',
     'experience.job1.duration': '2021 - 2025',
-    'experience.job1.desc': '<strong>Desarrollador Front End:</strong> Lideré la refactorización de 11.000 líneas de código CSS y la maquetación responsive (Bootstrap, HTML5, CSS3), además de desarrollar nuevas funcionalidades con JavaScript y jQuery.<br><br><strong>Analista QA:</strong> Ejecución de testing manual y funcional, diseño de casos de prueba y seguimiento de bugs.<br><br><strong>Soporte de Integraciones:</strong> Resolución de incidencias críticas en integraciones SQL/JSON y soporte técnico a nivel regional.',
+    'experience.job1.desc':
+      '<strong>Desarrollador Front End:</strong> Lideré la refactorización de 11.000 líneas de código CSS y la maquetación responsive (Bootstrap, HTML5, CSS3), además de desarrollar nuevas funcionalidades con JavaScript y jQuery.<br><br><strong>Analista QA:</strong> Ejecución de testing manual y funcional, diseño de casos de prueba y seguimiento de bugs.<br><br><strong>Soporte de Integraciones:</strong> Resolución de incidencias críticas en integraciones SQL/JSON y soporte técnico a nivel regional.',
     'experience.job2.role': 'Soporte Técnico Nivel 1',
     'experience.job2.company': 'JPH Lions LATAM, Buenos Aires, Argentina',
     'experience.job2.duration': '2018 - 2021',
-    'experience.job2.desc': 'Soporte funcional de aplicaciones web y sistemas (SecurOS). Enlace clave entre usuarios y equipo de desarrollo para la resolución de incidencias.',
+    'experience.job2.desc':
+      'Soporte funcional de aplicaciones web y sistemas (SecurOS). Enlace clave entre usuarios y equipo de desarrollo para la resolución de incidencias.',
     'experience.job3.role': 'Analista en Organización y Sistemas',
     'experience.job3.company': 'Instituto Nacional de Tierras, Caracas, Venezuela',
     'experience.job3.duration': '2007 - 2017',
-    'experience.job3.desc': 'Análisis y levantamiento de procesos organizacionales. Documentación técnica de normas y procedimientos.',
+    'experience.job3.desc':
+      'Análisis y levantamiento de procesos organizacionales. Documentación técnica de normas y procedimientos.',
+    'qa.showcase.title': 'QA Showcase',
+    'qa.showcase.subtitle': 'Documentación y ejemplos de bug hunting.',
+    'qa.showcase.testplan': 'Plan de Pruebas (Sanitizado)',
+    'qa.showcase.bug_hunting_title': 'Ejemplos de Bug Hunting',
+    'qa.showcase.bug1_title': 'Bug 1',
+    'qa.showcase.bug1_desc':
+      'Error crítico en el flujo de pago identificado mediante pruebas manuales.',
+    'qa.showcase.bug2_title': 'Bug 2',
+    'qa.showcase.bug2_desc': 'UI responsiveness break on mobile devices.',
+    'qa.showcase.documentation': 'Documentation',
+    'qa.showcase.testplan_title': 'Test Plan (Sanitized Excel)',
+    'qa.showcase.testplan_desc':
+      'Complete document detailing the testing strategy, test cases, and methodologies used to ensure software quality.',
+    'qa.showcase.placeholder_image': 'Placeholder: Upload your Test Plan image here',
+    'qa.showcase.placeholder_bug1': 'Placeholder: Upload Bug 1 GIF here',
+    'qa.showcase.placeholder_bug2': 'Placeholder: Upload Bug 2 GIF here',
+    'projects.caseStudy.title': 'Caso de estudio',
+    'projects.caseStudy.subtitle': 'Proceso de Refactorización de la página web de Workgroup.',
+    'projects.caseStudy.desc':
+      'Se logró una reducción del 40% en el código y se mejoró la mantenibilidad migrando desde Bootstrap legacy a componentes responsivos modernos.',
+    'skills.advancedSql.title': 'Muestras Avanzadas de SQL',
   },
   en: {
     'nav.home': 'Home',
@@ -75,23 +105,29 @@ export const ui = {
     'hero.badge1': 'Hello! 👋',
     'hero.badge2': 'I am Danlois Tovar 💻',
     'hero.role': 'Front End Developer',
-    'hero.description': 'Focused on creating modern, optimized, and scalable web applications. I combine a strong technical foundation in code refactoring with the delivery of functional interfaces of quality.',
+    'hero.description':
+      'Focused on creating modern, optimized, and scalable web applications. I combine a strong technical foundation in code refactoring with the delivery of functional interfaces of quality.',
     'hero.viewProjects': 'View projects',
     'hero.downloadCV': 'Download CV',
     'hero.contact': 'Contact',
     'hero.techStack': 'TECHNICAL SKILLS:',
     'about.title': 'About Me',
     'about.intro': 'Front End Developer',
-    'about.description': 'Web Developer with solid experience in code refactoring and responsive layout. I specialize in maintainability and scalability, applying development best practices.',
-    'about.experience': 'I have a solid background in Integration Support, complemented by my experience in QA. This trajectory provides me with a deep understanding of the data lifecycle (JSON/APIs) and a detailed vision for early bug detection. This translates into interfaces that are not only aesthetic but technically robust in data handling and business logic.',
+    'about.description':
+      'Web Developer with solid experience in code refactoring and responsive layout. I specialize in maintainability and scalability, applying development best practices.',
+    'about.experience':
+      'I have a solid background in Integration Support, complemented by my experience in QA. This trajectory provides me with a deep understanding of the data lifecycle (JSON/APIs) and a detailed vision for early bug detection. This translates into interfaces that are not only aesthetic but technically robust in data handling and business logic.',
     'projects.title': 'Projects',
     'projects.subtitle': 'A selection of my most recent and outstanding works',
     'projects.portfolio.title': 'Web Portfolio — Astro, React, Motion',
-    'projects.portfolio.desc': 'Personal site built with Astro (SSR), React, TypeScript, and Tailwind CSS. Motion animations, interactive visual effects, multi-language (i18n es/en), form with Astro Actions + Nodemailer, and Zod validation. Deployed on Vercel.',
+    'projects.portfolio.desc':
+      'Personal site built with Astro (SSR), React, TypeScript, and Tailwind CSS. Motion animations, interactive visual effects, multi-language (i18n es/en), form with Astro Actions + Nodemailer, and Zod validation. Deployed on Vercel.',
     'projects.workgroup.title': 'Workgroup',
-    'projects.workgroup.desc': 'Responsive layout and UI component implementation with Bootstrap, integration with PHP backend. Focus on semantic accessibility, asset optimization for performance, and cross-browser compatibility in a corporate environment.',
+    'projects.workgroup.desc':
+      'Responsive layout and UI component implementation with Bootstrap, integration with PHP backend. Focus on semantic accessibility, asset optimization for performance, and cross-browser compatibility in a corporate environment.',
     'projects.lati.title': 'Technical Assistance to Industry Laboratory (LATI)',
-    'projects.lati.desc': 'Institutional layout oriented towards clarity and compliance: semantic structure, basic SEO and load optimization, integration with existing PHP flow. Consistent and maintainable deliverables.',
+    'projects.lati.desc':
+      'Institutional layout oriented towards clarity and compliance: semantic structure, basic SEO and load optimization, integration with existing PHP flow. Consistent and maintainable deliverables.',
     'skills.title': 'Skills',
     'skills.hard': 'Hard Skills',
     'skills.soft': 'Soft Skills',
@@ -110,14 +146,49 @@ export const ui = {
     'experience.job1.role': 'Web Developer / QA Analyst / Integration Support',
     'experience.job1.company': 'Workgroup S.L., Buenos Aires, Argentina',
     'experience.job1.duration': '2021 - 2025',
-    'experience.job1.desc': '<strong>Front End Developer:</strong> Led the refactoring of 11,000 lines of CSS code and responsive layout (Bootstrap, HTML5, CSS3), in addition to developing new features with JavaScript and jQuery.<br><br><strong>QA Analyst:</strong> Execution of manual and functional testing, test case design, and bug tracking.<br><br><strong>Integration Support:</strong> Resolution of critical incidents in SQL/JSON integrations and regional technical support.',
+    'experience.job1.desc':
+      '<strong>Front End Developer:</strong> Led the refactoring of 11,000 lines of CSS code and responsive layout (Bootstrap, HTML5, CSS3), in addition to developing new features with JavaScript and jQuery.<br><br><strong>QA Analyst:</strong> Execution of manual and functional testing, test case design, and bug tracking.<br><br><strong>Integration Support:</strong> Resolution of critical incidents in SQL/JSON integrations and regional technical support.',
     'experience.job2.role': 'Level 1 Technical Support',
     'experience.job2.company': 'JPH Lions LATAM, Buenos Aires, Argentina',
     'experience.job2.duration': '2018 - 2021',
-    'experience.job2.desc': 'Functional support for web applications and systems (SecurOS). Key liaison between users and development team for incident resolution.',
+    'experience.job2.desc':
+      'Functional support for web applications and systems (SecurOS). Key liaison between users and development team for incident resolution.',
     'experience.job3.role': 'Organization and Systems Analyst',
     'experience.job3.company': 'National Land Institute, Caracas, Venezuela',
     'experience.job3.duration': '2007 - 2017',
-    'experience.job3.desc': 'Analysis and survey of organizational processes. Technical documentation of norms and procedures.',
+    'experience.job3.desc':
+      'Analysis and survey of organizational processes. Technical documentation of norms and procedures.',
+    'qa.showcase.title': 'QA Showcase',
+    'qa.showcase.subtitle': 'Documentation and bug hunting examples.',
+    'qa.showcase.testplan': 'Test Plan (Sanitized)',
+    'qa.showcase.bug_hunting_title': 'Bug Hunting Examples',
+    'qa.showcase.bug1_title': 'Bug 1',
+    'qa.showcase.bug1_desc': 'Critical payment flow error identified via manual testing.',
+    'qa.showcase.bug2_title': 'Bug 2',
+    'qa.showcase.bug2_desc': 'UI responsiveness break on mobile devices.',
+    'qa.showcase.documentation': 'Documentación',
+    'qa.showcase.testplan_title': 'Plan de Pruebas (Excel sanitizado)',
+    'qa.showcase.testplan_desc':
+      'Documento completo que detalla la estrategia de testing, casos de prueba, y metodologías utilizadas para asegurar la calidad del software.',
+    'qa.showcase.placeholder_image': 'Placeholder: Sube tu imagen del Plan de Pruebas aquí',
+    'qa.showcase.placeholder_bug1': 'Placeholder: Sube GIF del Bug 1 aquí',
+    'qa.showcase.placeholder_bug2': 'Placeholder: Sube GIF del Bug 2 aquí',
+    'projects.caseStudy.title': 'Caso de estudio',
+    'projects.caseStudy.subtitle': 'Proceso de Refactorización de la página web de Workgroup.',
+    'projects.caseStudy.desc':
+      'Se logró una reducción del 40% en el código y se mejoró la mantenibilidad migrando desde Bootstrap legacy a componentes responsivos modernos.',
+    'skills.advancedSql.title': 'Muestras Avanzadas de SQL',
+    'skills.advancedSql.subtitle':
+      'Queries complejas de integración con nombres de tablas sanitizados.',
+    'skills.advancedSql.gist_link': 'Ver Gist completo de SQL en GitHub',
+    'skills.advancedSql.query1.title': 'Consulta 1: Agregación de Ventas',
+    'skills.advancedSql.query1.desc':
+      'Esta consulta realiza una agregación de ventas por orden y cliente, filtrando órdenes con total mayor a 1000.',
+    'skills.advancedSql.query2.title': 'Consulta 2: Análisis de Clientes',
+    'skills.advancedSql.query2.desc':
+      'Esta consulta analiza los clientes, mostrando el total de órdenes y el promedio de valor por orden.',
+    'skills.advancedSql.query3.title': 'Consulta 3: Reporte de Inventario',
+    'skills.advancedSql.query3.desc':
+      'Esta consulta genera un reporte de inventario, mostrando productos, stock disponible y vendido.',
   },
 } as const;
