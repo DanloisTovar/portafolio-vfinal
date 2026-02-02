@@ -91,7 +91,20 @@ export const ui = {
     'projects.caseStudy.subtitle': 'Proceso de Refactorización de la página web de Workgroup.',
     'projects.caseStudy.desc':
       'Se logró una reducción del 40% en el código y se mejoró la mantenibilidad migrando desde Bootstrap legacy a componentes responsivos modernos.',
+    /* fix de español para habilidades de sql */
     'skills.advancedSql.title': 'Muestras Avanzadas de SQL',
+    'skills.advancedSql.subtitle':
+      'Queries complejas de integración con nombres de tablas sanitizados.',
+    'skills.advancedSql.gist_link': 'Ver Gist completo de SQL en GitHub',
+    'skills.advancedSql.query1.title': 'Consulta 1: Agregación de Ventas',
+    'skills.advancedSql.query1.desc':
+      'Esta consulta realiza una agregación de ventas por orden y cliente, filtrando órdenes con total mayor a 1000.',
+    'skills.advancedSql.query2.title': 'Consulta 2: Análisis de Clientes',
+    'skills.advancedSql.query2.desc':
+      'Esta consulta analiza los clientes, mostrando el total de órdenes y el promedio de valor por orden.',
+    'skills.advancedSql.query3.title': 'Consulta 3: Reporte de Inventario',
+    'skills.advancedSql.query3.desc':
+      'Esta consulta genera un reporte de inventario, mostrando productos, stock disponible y vendido.',
   },
   en: {
     'nav.home': 'Home',
@@ -177,18 +190,17 @@ export const ui = {
     'projects.caseStudy.subtitle': 'Proceso de Refactorización de la página web de Workgroup.',
     'projects.caseStudy.desc':
       'Se logró una reducción del 40% en el código y se mejoró la mantenibilidad migrando desde Bootstrap legacy a componentes responsivos modernos.',
-    'skills.advancedSql.title': 'Muestras Avanzadas de SQL',
-    'skills.advancedSql.subtitle':
-      'Queries complejas de integración con nombres de tablas sanitizados.',
-    'skills.advancedSql.gist_link': 'Ver Gist completo de SQL en GitHub',
-    'skills.advancedSql.query1.title': 'Consulta 1: Agregación de Ventas',
+    'skills.advancedSql.title': 'Advanced SQL Samples',
+    'skills.advancedSql.subtitle': 'Complex integration queries with sanitized table names.',
+    'skills.advancedSql.gist_link': 'View full SQL Gist on GitHub',
+    'skills.advancedSql.query1.title': 'Query 1: Sales Aggregation',
     'skills.advancedSql.query1.desc':
-      'Esta consulta realiza una agregación de ventas por orden y cliente, filtrando órdenes con total mayor a 1000.',
-    'skills.advancedSql.query2.title': 'Consulta 2: Análisis de Clientes',
+      'This query performs a sales aggregation by order and customer, filtering orders with a total greater than 1000.',
+    'skills.advancedSql.query2.title': 'Query 2: Customer Analysis',
     'skills.advancedSql.query2.desc':
-      'Esta consulta analiza los clientes, mostrando el total de órdenes y el promedio de valor por orden.',
-    'skills.advancedSql.query3.title': 'Consulta 3: Reporte de Inventario',
+      'This query analyzes customers, displaying the total number of orders and the average order value.',
+    'skills.advancedSql.query3.title': 'Query 3: Inventory Report',
     'skills.advancedSql.query3.desc':
-      'Esta consulta genera un reporte de inventario, mostrando productos, stock disponible y vendido.',
+      'This query generates an inventory report, showing products, available stock, and quantity sold.',
   },
 } as const;
