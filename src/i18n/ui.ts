@@ -89,8 +89,15 @@ export const ui = {
     'qa.showcase.placeholder_bug2': 'Placeholder: Upload Bug 2 GIF here',
     'projects.caseStudy.title': 'Caso de estudio',
     'projects.caseStudy.subtitle': 'Proceso de Refactorización de la página web de Workgroup.',
-    'projects.caseStudy.desc':
+    'projects.caseStudy.description':
       'Se logró una reducción del 40% en el código y se mejoró la mantenibilidad migrando desde Bootstrap legacy a componentes responsivos modernos.',
+    'projects.caseStudy.image1.title': 'Imagen 1 (El Caos)',
+    'projects.caseStudy.image1.desc':
+      'Captura de código antiguo o de la UI antigua (desordenada). Aquí se mostraría una captura de pantalla del código o UI antes de la refactorización. Representa el estado original, posiblemente complejo o desorganizado.',
+    'projects.caseStudy.image2.title': 'Imagen 2 (La Solución)',
+    'projects.caseStudy.image2.desc':
+      'Captura de tu código nuevo (limpio, identado, componentizado). Evidencia la solución limpia, organizada y modular.',
+    'projects.caseStudy.button.view': 'Ver en pantalla completa',
     /* fix de español para habilidades de sql */
     'skills.advancedSql.title': 'Muestras Avanzadas de SQL',
     'skills.advancedSql.subtitle':
@@ -179,17 +186,24 @@ export const ui = {
     'qa.showcase.bug1_desc': 'Critical payment flow error identified via manual testing.',
     'qa.showcase.bug2_title': 'Bug 2',
     'qa.showcase.bug2_desc': 'UI responsiveness break on mobile devices.',
-    'qa.showcase.documentation': 'Documentación',
-    'qa.showcase.testplan_title': 'Plan de Pruebas (Excel sanitizado)',
+    'qa.showcase.documentation': 'Documentation',
+    'qa.showcase.testplan_title': 'Test Plan (Sanitized Excel)',
     'qa.showcase.testplan_desc':
-      'Documento completo que detalla la estrategia de testing, casos de prueba, y metodologías utilizadas para asegurar la calidad del software.',
-    'qa.showcase.placeholder_image': 'Placeholder: Sube tu imagen del Plan de Pruebas aquí',
-    'qa.showcase.placeholder_bug1': 'Placeholder: Sube GIF del Bug 1 aquí',
-    'qa.showcase.placeholder_bug2': 'Placeholder: Sube GIF del Bug 2 aquí',
-    'projects.caseStudy.title': 'Caso de estudio',
-    'projects.caseStudy.subtitle': 'Proceso de Refactorización de la página web de Workgroup.',
-    'projects.caseStudy.desc':
-      'Se logró una reducción del 40% en el código y se mejoró la mantenibilidad migrando desde Bootstrap legacy a componentes responsivos modernos.',
+      'Complete document detailing the testing strategy, test cases, and methodologies used to ensure software quality.',
+    'qa.showcase.placeholder_image': 'Placeholder: Upload your Test Plan image here',
+    'qa.showcase.placeholder_bug1': 'Placeholder: Upload Bug 1 GIF here',
+    'qa.showcase.placeholder_bug2': 'Placeholder: Upload Bug 2 GIF here',
+    'projects.caseStudy.title': 'Case Study',
+    'projects.caseStudy.subtitle': 'Refactoring Process of the Workgroup website.',
+    'projects.caseStudy.description':
+      'Achieved a 40% reduction in code and improved maintainability by migrating from legacy Bootstrap to modern responsive components.',
+    'projects.caseStudy.image1.title': 'Image 1 (The Chaos)',
+    'projects.caseStudy.image1.desc':
+      'Screenshot of old code or old UI (disorganized). Here a screenshot of the code or UI before refactoring would be shown. Represents the original state, possibly complex or disorganized.',
+    'projects.caseStudy.image2.title': 'Image 2 (The Solution)',
+    'projects.caseStudy.image2.desc':
+      'Screenshot of your new code (clean, indented, componentized). Evidences the clean, organized, and modular solution.',
+    'projects.caseStudy.button.view': 'View full screen',
     'skills.advancedSql.title': 'Advanced SQL Samples',
     'skills.advancedSql.subtitle': 'Complex integration queries with sanitized table names.',
     'skills.advancedSql.gist_link': 'View full SQL Gist on GitHub',

@@ -203,11 +203,11 @@ const projects: Project[] = [
         class="text-4xl tracking-tight sm:text-5xl mb-4 text-gray-900 dark:text-white font-orbitron font-medium"
       >
         <span class="bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-          Caso de estudio
+          {t('projects.caseStudy.title')}
         </span>
       </h2>
       <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-        Proceso de Refactorización de la pagina web de Workgroup.
+        {t('projects.caseStudy.subtitle')}
       </p>
       <div class="w-24 h-1 bg-linear-to-r from-blue-600 to-cyan-500 mx-auto mt-6 rounded-full">
       </div>
@@ -228,7 +228,7 @@ const projects: Project[] = [
         <a
           href={imgWorkgroup.src}
           class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative cursor-pointer case-study-item"
-          data-sub-html="<h4>IMAGEN 1: CÓDIGO ANTIGUO O UI ANTIGUA (DESORDENADA)</h4><p>Captura de código antiguo o de la UI antigua (desordenada). Aquí se mostraría una captura de pantalla del código o UI antes de la refactorización. Representa el estado original, posiblemente complejo o desorganizado.</p>"
+          data-sub-html={`<h4>${t('projects.caseStudy.image1.title')}</h4><p>${t('projects.caseStudy.image1.desc')}</p>`}
         >
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-50 dark:opacity-60 lg:opacity-30 lg:dark:opacity-65 lg:group-hover:opacity-20 lg:dark:group-hover:opacity-60 transition-opacity duration-500"
@@ -236,7 +236,7 @@ const projects: Project[] = [
           </div>
           <img
             src={imgWorkgroup.src}
-            alt="Imagen 1 (El Caos)"
+            alt={t('projects.caseStudy.image1.title')}
             class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-105 transition-transform duration-700 ease-out"
             loading="lazy"
           />
@@ -278,15 +278,13 @@ const projects: Project[] = [
             <h3
               class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg"
             >
-              Imagen 1 (El Caos)
+              {t('projects.caseStudy.image1.title')}
             </h3>
 
             <p
               class="text-gray-600 dark:text-gray-300 lg:text-gray-200 text-sm md:text-base leading-relaxed line-clamp-3 lg:line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500 lg:mb-0 lg:dark:drop-shadow-md"
             >
-              Captura de código antiguo o de la UI antigua (desordenada). Aquí se mostraría una
-              captura de pantalla del código o UI antes de la refactorización. Representa el estado
-              original, posiblemente complejo o desorganizado.
+              {t('projects.caseStudy.image1.desc')}
             </p>
 
             {/* Action Buttons */}
@@ -298,9 +296,9 @@ const projects: Project[] = [
                 <a
                   href={imgWorkgroup.src}
                   class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline js-trigger-lightbox"
-                  data-sub-html="<h4>IMAGEN 1: CÓDIGO ANTIGUO O UI ANTIGUA (DESORDENADA)</h4><p>Captura de código antiguo o de la UI antigua (desordenada). Aquí se mostraría una captura de pantalla del código o UI antes de la refactorización. Representa el estado original, posiblemente complejo o desorganizado.</p>"
+                  data-sub-html={`<h4>${t('projects.caseStudy.image1.title')}</h4><p>${t('projects.caseStudy.image1.desc')}</p>`}
                 >
-                  Ver en pantalla completa
+                  {t('projects.caseStudy.button.view')}
                 </a>
               </div>
             </div>
@@ -321,7 +319,7 @@ const projects: Project[] = [
         <a
           href={imgWorkgroup.src}
           class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative cursor-pointer case-study-item"
-          data-sub-html="<h4>IMAGEN 2: CÓDIGO NUEVO</h4><p>Captura de tu código nuevo (limpio, identado, componentizado). Evidencia la solución limpia, organizada y modular.</p>"
+          data-sub-html={`<h4>${t('projects.caseStudy.image2.title')}</h4><p>${t('projects.caseStudy.image2.desc')}</p>`}
         >
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-50 dark:opacity-60 lg:opacity-30 lg:dark:opacity-65 lg:group-hover:opacity-20 lg:dark:group-hover:opacity-60 transition-opacity duration-500"
@@ -329,7 +327,7 @@ const projects: Project[] = [
           </div>
           <img
             src={imgWorkgroup.src}
-            alt="Imagen 2 (La Solución)"
+            alt={t('projects.caseStudy.image2.title')}
             class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-105 transition-transform duration-700 ease-out"
             loading="lazy"
           />
@@ -371,14 +369,13 @@ const projects: Project[] = [
             <h3
               class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg"
             >
-              Imagen 2 (La Solución)
+              {t('projects.caseStudy.image2.title')}
             </h3>
 
             <p
               class="text-gray-600 dark:text-gray-300 lg:text-gray-200 text-sm md:text-base leading-relaxed line-clamp-3 lg:line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500 lg:mb-0 lg:dark:drop-shadow-md"
             >
-              Captura de tu código nuevo (limpio, identado, componentizado). Evidencia la solución
-              limpia, organizada y modular.
+              {t('projects.caseStudy.image2.desc')}
             </p>
 
             {/* Action Buttons */}
@@ -390,9 +387,9 @@ const projects: Project[] = [
                 <a
                   href={imgWorkgroup.src}
                   class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline js-trigger-lightbox"
-                  data-sub-html="<h4>IMAGEN 2: CÓDIGO NUEVO</h4><p>Captura de tu código nuevo (limpio, identado, componentizado). Evidencia la solución limpia, organizada y modular.</p>"
+                  data-sub-html={`<h4>${t('projects.caseStudy.image2.title')}</h4><p>${t('projects.caseStudy.image2.desc')}</p>`}
                 >
-                  Ver en pantalla completa
+                  {t('projects.caseStudy.button.view')}
                 </a>
               </div>
             </div>
@@ -432,8 +429,7 @@ const projects: Project[] = [
               </svg>
             </div>
             <p class="text-gray-600 dark:text-gray-300 text-lg md:text-xl leading-relaxed">
-              Achieved 40% code reduction and improved maintainability by migrating from legacy
-              Bootstrap to Astro components.
+              {t('projects.caseStudy.description')}
             </p>
           </div>
         </div>
@@ -501,13 +497,15 @@ const projects: Project[] = [
                 ></path>
               </svg>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Documentación</h3>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+              {t('qa.showcase.documentation')}
+            </h3>
           </div>
           <p class="text-lg font-medium text-gray-900 dark:text-white mb-4">
-            Plan de Pruebas (Excel sanitizado)
+            {t('qa.showcase.testplan_title')}
           </p>
           <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-            Sube una imagen (PDF/JPG) de tu Plan de Pruebas (Excel sanitizado).
+            {t('qa.showcase.testplan_desc')}
           </p>
           <div
             class="aspect-[16/9] bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500"
