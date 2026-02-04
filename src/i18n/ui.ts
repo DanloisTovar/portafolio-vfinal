@@ -209,14 +209,15 @@ export const ui = {
     'skills.advancedSql.title': 'Advanced SQL Samples',
     'skills.advancedSql.subtitle': 'Complex integration queries with sanitized table names.',
     'skills.advancedSql.gist_link': 'View full SQL Gist on GitHub',
-    'skills.advancedSql.query1.title': 'Query 1: Sales Aggregation',
+    'skills.advancedSql.query1.title': 'Query 1: Search for data integration logs',
     'skills.advancedSql.query1.desc':
-      'This query performs a sales aggregation by order and customer, filtering orders with a total greater than 1000.',
-    'skills.advancedSql.query2.title': 'Query 2: Customer Analysis',
+      'Search for integration logs filtered by country and endpoint, reducing data volume before applying a text search.',
+    'skills.advancedSql.query2.title':
+      'Query 2: Check in which dispatch centers a product is enabled',
     'skills.advancedSql.query2.desc':
-      'This query analyzes customers, displaying the total number of orders and the average order value.',
-    'skills.advancedSql.query3.title': 'Query 3: Inventory Report',
+      'Determine in which dispatch centers a product is enabled, considering product, warehouse, and business configuration rules.',
+    'skills.advancedSql.query3.title': 'Query 3: Show all active discount promotions',
     'skills.advancedSql.query3.desc':
-      'This query generates an inventory report, showing products, available stock, and quantity sold.',
+      'Show all active customer discount promotions for a specific entity, considering validity date and status flags.',
   },
 } as const;
