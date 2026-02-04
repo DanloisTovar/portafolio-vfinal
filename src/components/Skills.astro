@@ -1,7 +1,16 @@
 ---
 import { useTranslations } from '../i18n/utils';
 import LogoLoop from './Animations/LogoLoop/LogoLoop';
-import { MessageSquare, Brain, Users, Zap, GraduationCap, BookOpen, Award } from 'lucide-react';
+import {
+  MessageSquare,
+  Brain,
+  Users,
+  Zap,
+  GraduationCap,
+  BookOpen,
+  Award,
+  Database,
+} from 'lucide-react';
 
 interface Props {
   lang: 'es' | 'en';
@@ -202,7 +211,7 @@ const softSkills = [
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {
-          softSkills.map((skill, index) => (
+          softSkills.map((skill) => (
             <div class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-8 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:scale-105 min-h-[160px] flex flex-col items-center justify-center text-center card-glow">
               <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -227,19 +236,27 @@ const softSkills = [
     <!-- Advanced SQL Samples -->
     <div class="mt-16">
       <div class="text-center mb-16">
-        <h2
-          class="text-4xl tracking-tight sm:text-5xl mb-4 text-gray-900 dark:text-white font-orbitron font-medium"
+        <h3
+          class="text-2xl font-bold mb-4 text-center flex items-center justify-center gap-3 text-gray-900 dark:text-white"
         >
           <span
-            class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent"
+            class="p-3 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg"
           >
-            {t('skills.advancedSql.title')}
+            <Database size={24} />
           </span>
-        </h2>
+          {t('skills.advancedSql.title')}
+        </h3>
         <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
           {t('skills.advancedSql.subtitle')}
         </p>
+
+        {
+          /* version antigua de linea debajo del subtitle:
         <div class="w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+      </div> */
+        }
+        {/* nueva version transparente para que no choque con el glow de los cards: */}
+        <div class="w-24 h-1 bg-transparent mx-auto mt-0 rounded-full"></div>
       </div>
 
       <!-- SQL Queries Grid -->
@@ -279,17 +296,31 @@ const softSkills = [
                 {t('skills.advancedSql.query1.title')}
               </h4>
             </div>
+            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+              {t('skills.advancedSql.query1.desc')}
+            </p>
             <pre
-              class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto"><code class="language-sql">SELECT
-	sales_orders.order_id,
-	sales_orders.customer_id,
-	SUM(order_items.quantity * order_items.price) AS total_amount
-FROM sales_orders
-JOIN order_items ON sales_orders.order_id = order_items.order_id
-WHERE sales_orders.order_date >= '2023-01-01'
-GROUP BY sales_orders.order_id, sales_orders.customer_id
-HAVING total_amount > 1000
-ORDER BY total_amount DESC;</code></pre>
+              class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto"><code class="language-sql">
+SELECT TOP 10
+    log_id,
+    country_code,
+    api_endpoint,
+    message_payload,
+    created_at
+FROM (
+    SELECT
+        log_id,
+        country_code,
+        api_endpoint,
+        message_payload,
+        created_at
+    FROM integration_logs
+    WHERE country_code = 'XX'
+      AND api_endpoint = 'POST /resource'
+) AS filtered_logs
+WHERE message_payload LIKE CONCAT('%', :reference_id, '%')
+ORDER BY created_at DESC;
+</code></pre>
           </div>
         </div>
 
@@ -328,21 +359,39 @@ ORDER BY total_amount DESC;</code></pre>
                 {t('skills.advancedSql.query2.title')}
               </h4>
             </div>
+            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+              {t('skills.advancedSql.query2.desc')}
+            </p>
             <pre
-              class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto"><code class="language-sql">SELECT
-	customers.customer_id,
-	customers.customer_name,
-	COUNT(sales_orders.order_id) AS total_orders,
-	AVG(order_totals.total) AS avg_order_value
-FROM customers
-LEFT JOIN sales_orders ON customers.customer_id = sales_orders.customer_id
-LEFT JOIN (
-	SELECT order_id, SUM(quantity * price) AS total
-	FROM order_items
-	GROUP BY order_id
-) order_totals ON sales_orders.order_id = order_totals.order_id
-GROUP BY customers.customer_id, customers.customer_name
-ORDER BY total_orders DESC;</code></pre>
+              class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto"><code class="language-sql">
+SELECT
+    dc.dispatch_center_id      AS dispatch_center,
+    pr.product_id              AS sku_code,
+    0                           AS drop_size,
+    cfg.is_enabled              AS is_enabled
+FROM core.dispatch_centers dc
+INNER JOIN core.dispatch_products pr
+    ON dc.dispatch_center_id = pr.dispatch_center_id
+   AND dc.company_id = pr.company_id
+INNER JOIN core.warehouses wh
+    ON pr.company_id = wh.company_id
+   AND pr.warehouse_id = wh.warehouse_id
+   AND pr.product_id = wh.product_id
+INNER JOIN core.product_config cfg
+    ON cfg.product_id = pr.product_id
+   AND cfg.company_id = wh.company_id
+   AND cfg.warehouse_id = wh.warehouse_id
+WHERE cfg.product_id IN (:sku_id)
+  AND dc.company_id = :company_id
+  AND cfg.config_key = 'ENABLED'
+  AND dc.dispatch_center_id IN (
+        SELECT DISTINCT dispatch_center
+        FROM analytics.vendor_dispatch_centers
+  )
+ORDER BY
+    dispatch_center,
+    sku_code;
+</code></pre>
           </div>
         </div>
 
@@ -381,21 +430,27 @@ ORDER BY total_orders DESC;</code></pre>
                 {t('skills.advancedSql.query3.title')}
               </h4>
             </div>
+            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+              {t('skills.advancedSql.query3.desc')}
+            </p>
             <pre
-              class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto"><code class="language-sql">SELECT
-	products.product_id,
-	products.product_name,
-	inventory.quantity_available,
-	SUM(order_items.quantity) AS total_sold,
-	inventory.quantity_available - COALESCE(SUM(order_items.quantity), 0) AS remaining_stock
-FROM products
-LEFT JOIN inventory ON products.product_id = inventory.product_id
-LEFT JOIN order_items ON products.product_id = order_items.product_id
-	AND order_items.order_id IN (
-		SELECT order_id FROM sales_orders WHERE order_date >= '2023-01-01'
-	)
-GROUP BY products.product_id, products.product_name, inventory.quantity_available
-ORDER BY remaining_stock ASC;</code></pre>
+              class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto"><code class="language-sql">
+SELECT
+    def.policy_value
+FROM core.policy_rel rel
+JOIN core.policy_def def
+    ON rel.entity_type = def.entity_type
+   AND rel.policy_id = def.policy_id
+WHERE rel.company_id = :company_id
+  AND def.valid_from &gt;= DATE ':start_date'
+  AND rel.entity_type = :entity_type
+  AND rel.is_active = :rel_flag
+  AND def.is_active = :def_flag
+GROUP BY def.policy_value,
+         rel.company_id,
+         rel.entity_type,
+         rel.policy_id;
+</code></pre>
           </div>
         </div>
       </div>
@@ -403,7 +458,7 @@ ORDER BY remaining_stock ASC;</code></pre>
       <!-- GitHub Gist Link -->
       <div class="text-center">
         <a
-          href="https://gist.github.com/yourusername/sql-queries-gist"
+          href="https://gist.github.com/DanloisTovar/09a8ec38d8c81a7997133b4e22f7205b"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-full font-semibold hover:bg-blue-400 transition-colors duration-300"
@@ -426,7 +481,7 @@ ORDER BY remaining_stock ASC;</code></pre>
     border-radius: 1.5rem;
     background: radial-gradient(
       600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(59, 130, 246, 0.25),
+      rgb(59 130 246 / 25%),
       transparent 40%
     );
   }
@@ -434,7 +489,7 @@ ORDER BY remaining_stock ASC;</code></pre>
   .dark .cursor-glow {
     background: radial-gradient(
       600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(96, 165, 250, 0.2),
+      rgb(96 165 250 / 20%),
       transparent 40%
     );
   }
@@ -443,7 +498,7 @@ ORDER BY remaining_stock ASC;</code></pre>
   .section-cursor-glow {
     background: radial-gradient(
       800px circle at var(--section-mouse-x, 50%) var(--section-mouse-y, 50%),
-      rgba(59, 130, 246, 0.15),
+      rgb(59 130 246 / 15%),
       transparent 50%
     );
   }
@@ -451,7 +506,7 @@ ORDER BY remaining_stock ASC;</code></pre>
   .dark .section-cursor-glow {
     background: radial-gradient(
       800px circle at var(--section-mouse-x, 50%) var(--section-mouse-y, 50%),
-      rgba(96, 165, 250, 0.12),
+      rgb(96 165 250 / 12%),
       transparent 50%
     );
   }
@@ -459,10 +514,11 @@ ORDER BY remaining_stock ASC;</code></pre>
   .section-glow:hover .section-cursor-glow {
     opacity: 1 !important;
   }
+
   /* !Efecto de robot: */
   .robot-habilidades {
     mask-image: linear-gradient(to top, transparent 10%, black 90%);
-    -webkit-mask-image: linear-gradient(to top, transparent 10%, black 100%);
+    mask-image: linear-gradient(to top, transparent 10%, black 100%);
   }
 </style>
 

@@ -103,15 +103,17 @@ export const ui = {
     'skills.advancedSql.subtitle':
       'Queries complejas de integración con nombres de tablas sanitizados.',
     'skills.advancedSql.gist_link': 'Ver Gist completo de SQL en GitHub',
-    'skills.advancedSql.query1.title': 'Consulta 1: Agregación de Ventas',
+    'skills.advancedSql.query1.title': 'Consulta 1: Búsqueda de logs de integración de datos',
     'skills.advancedSql.query1.desc':
-      'Esta consulta realiza una agregación de ventas por orden y cliente, filtrando órdenes con total mayor a 1000.',
-    'skills.advancedSql.query2.title': 'Consulta 2: Análisis de Clientes',
+      'Búsqueda de logs de integración filtrados por país y endpoint, reduciendo el volumen de datos antes de aplicar una búsqueda textual',
+    'skills.advancedSql.query2.title':
+      'Consulta 2: Buscar en qué centros de distribución un producto se encuentra habilitado',
     'skills.advancedSql.query2.desc':
-      'Esta consulta analiza los clientes, mostrando el total de órdenes y el promedio de valor por orden.',
-    'skills.advancedSql.query3.title': 'Consulta 3: Reporte de Inventario',
+      'Determinar en qué centros de distribucion un producto se encuentra habilitado, considerando reglas de producto, depósito y configuración de negocio.',
+    'skills.advancedSql.query3.title':
+      'Consulta 3: Mostrar todas las promociones de descuento activas',
     'skills.advancedSql.query3.desc':
-      'Esta consulta genera un reporte de inventario, mostrando productos, stock disponible y vendido.',
+      'Mostrar todas las promociones de descuento para clientes que se encuentren activas, para una entidad específica, considerando fecha de validez y flags de estado.',
   },
   en: {
     'nav.home': 'Home',
