@@ -4,6 +4,13 @@ import StarBorder from './Animations/StarBorder/StarBorder';
 import imgWorkgroup from '../assets/imagen-workgroup.png';
 import imgLati from '../assets/imagen-lati.png';
 import imgPortfolio from '../assets/imagen-portafolio-web.png';
+
+/* imagenes de caso de estudio */
+import casoDeEstudioBueno1 from '../assets/caso_de_estudio/buen-codigo.png';
+import casoDeEstudioBueno2 from '../assets/caso_de_estudio/buencodigo1.png';
+import casoDeEstudioMalo1 from '../assets/caso_de_estudio/mal-codigo.png';
+import casoDeEstudioMalo2 from '../assets/caso_de_estudio/malcodigo1.png';
+
 interface Props {
   lang: 'es' | 'en';
 }
@@ -226,7 +233,7 @@ const projects: Project[] = [
         />
         {/* imagen area*/}
         <a
-          href={imgWorkgroup.src}
+          href={casoDeEstudioMalo2.src}
           class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative cursor-pointer case-study-item"
           data-sub-html={`<h4>${t('projects.caseStudy.image1.title')}</h4><p>${t('projects.caseStudy.image1.desc')}</p>`}
         >
@@ -235,7 +242,7 @@ const projects: Project[] = [
           >
           </div>
           <img
-            src={imgWorkgroup.src}
+            src={casoDeEstudioMalo1.src}
             alt={t('projects.caseStudy.image1.title')}
             class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-105 transition-transform duration-700 ease-out"
             loading="lazy"
@@ -294,7 +301,7 @@ const projects: Project[] = [
             >
               <div class="flex gap-3 flex-wrap">
                 <a
-                  href={imgWorkgroup.src}
+                  href={casoDeEstudioMalo2.src}
                   class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline js-trigger-lightbox"
                   data-sub-html={`<h4>${t('projects.caseStudy.image1.title')}</h4><p>${t('projects.caseStudy.image1.desc')}</p>`}
                 >
@@ -306,7 +313,7 @@ const projects: Project[] = [
         </div>
       </article>
       <article
-        class="relative flex-shrink-0 w-full group rounded-[2rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
+        class="relative flex-shrink-0 w-full group rounded-[2rem] h-[45rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
       >
         <StarBorder
           client:visible
@@ -317,7 +324,7 @@ const projects: Project[] = [
         />
         {/* imagen area*/}
         <a
-          href={imgWorkgroup.src}
+          href={casoDeEstudioBueno2.src}
           class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative cursor-pointer case-study-item"
           data-sub-html={`<h4>${t('projects.caseStudy.image2.title')}</h4><p>${t('projects.caseStudy.image2.desc')}</p>`}
         >
@@ -326,7 +333,7 @@ const projects: Project[] = [
           >
           </div>
           <img
-            src={imgWorkgroup.src}
+            src={casoDeEstudioBueno1.src}
             alt={t('projects.caseStudy.image2.title')}
             class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-105 transition-transform duration-700 ease-out"
             loading="lazy"
@@ -385,7 +392,7 @@ const projects: Project[] = [
             >
               <div class="flex gap-3 flex-wrap">
                 <a
-                  href={imgWorkgroup.src}
+                  href={casoDeEstudioBueno2.src}
                   class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline js-trigger-lightbox"
                   data-sub-html={`<h4>${t('projects.caseStudy.image2.title')}</h4><p>${t('projects.caseStudy.image2.desc')}</p>`}
                 >
@@ -428,7 +435,9 @@ const projects: Project[] = [
                   d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
             </div>
-            <p class="text-gray-600 dark:text-gray-300 text-lg md:text-xl leading-relaxed">
+            <p
+              class="text-gray-600 dark:text-gray-300 text-lg md:text-xl leading-relaxed whitespace-pre-line"
+            >
               {t('projects.caseStudy.description')}
             </p>
           </div>

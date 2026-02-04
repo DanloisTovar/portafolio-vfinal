@@ -90,7 +90,7 @@ export const ui = {
     'projects.caseStudy.title': 'Caso de estudio',
     'projects.caseStudy.subtitle': 'Proceso de Refactorización de la página web de Workgroup.',
     'projects.caseStudy.description':
-      'Se logró una reducción del 40% en el código y se mejoró la mantenibilidad migrando desde Bootstrap legacy a componentes responsivos modernos.',
+      'Refactorización profunda de CSS: Se redujeron errores en un 70% mediante una revisión exhaustiva de la especificidad de selectores, optimizando componentes Bootstrap y complementándolos con librerías modernas.\n\nEsto resultó en mayor rendimiento (menos conflictos y cálculos CSS), código más predecible y mantenible, y responsividad robusta en todos los dispositivos.',
     'projects.caseStudy.image1.title': 'Imagen 1 (El Caos)',
     'projects.caseStudy.image1.desc':
       'Captura de código antiguo o de la UI antigua (desordenada). Aquí se mostraría una captura de pantalla del código o UI antes de la refactorización. Representa el estado original, posiblemente complejo o desorganizado.',
