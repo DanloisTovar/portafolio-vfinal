@@ -130,7 +130,7 @@ const projects: Project[] = [
                 <img
                   src={project.image}
                   alt={project.title}
-                  class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-105 transition-transform duration-700 ease-out"
+                  class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-102 transition-transform duration-700 ease-out"
                   loading="lazy"
                 />
 
@@ -249,7 +249,7 @@ const projects: Project[] = [
           <img
             src={casoDeEstudioMalo1.src}
             alt={t('projects.caseStudy.image1.title')}
-            class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-105 transition-transform duration-700 ease-out"
+            class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-102 transition-transform duration-700 ease-out"
             loading="lazy"
           />
         </a>
@@ -316,7 +316,7 @@ const projects: Project[] = [
           <img
             src={casoDeEstudioBueno1.src}
             alt={t('projects.caseStudy.image2.title')}
-            class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-105 transition-transform duration-700 ease-out"
+            class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-102 transition-transform duration-700 ease-out"
             loading="lazy"
           />
         </a>
@@ -435,9 +435,9 @@ const projects: Project[] = [
       </div>
     </div>
 
-    <!-- Bento Grid Layout -->
+    {/*Bento Grid Layout */}
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-12">
-      <!-- Fila 1: Documentación (ancho completo) -->
+      {/*Fila 1: Documentación (ancho completo) */}
       <div
         class="lg:col-span-2 group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-8 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
       >
@@ -475,7 +475,7 @@ const projects: Project[] = [
           </p>
           <a
             href={qaDocumentacion.src}
-            class="aspect-[16/9] bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
+            class="aspect-[16/6] bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center group-hover:scale-102 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
             data-sub-html={`<h4>${t('qa.showcase.testplan_title')}</h4><p>${t('qa.showcase.testplan_desc')}</p>`}
           >
             <img
@@ -528,7 +528,7 @@ const projects: Project[] = [
           </p>
           <a
             href={qaBug1.src}
-            class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
+            class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-102 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
             data-sub-html={`<h4>${t('qa.showcase.bug1_title')}</h4><p>${t('qa.showcase.bug1_desc')}</p>`}
           >
             <img src={qaBug1.src} alt="QA Bug 1" class="w-full h-full rounded-2xl" />
@@ -574,7 +574,7 @@ const projects: Project[] = [
           </p>
           <a
             href={qaBug2.src}
-            class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
+            class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-102 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
             data-sub-html={`<h4>${t('qa.showcase.bug2_title')}</h4><p>${t('qa.showcase.bug2_desc')}</p>`}
           >
             <img src={qaBug2.src} alt="QA Bug 2" class="w-full h-full rounded-2xl" />
