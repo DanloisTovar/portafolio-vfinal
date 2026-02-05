@@ -6,6 +6,7 @@
 - fix(deps): downgrade zod to v3 to resolve instance mismatch ([1d5cc18](https://github.com/DanloisTovar/portafolio-vfinal/commit/1d5cc18))
 - fix(i18n): 🌐 corregir traducciones faltantes en inglés para habilidades SQL ([1465a53](https://github.com/DanloisTovar/portafolio-vfinal/commit/1465a53))
 - fix(init): resolucion de conflicto de merge ([759c742](https://github.com/DanloisTovar/portafolio-vfinal/commit/759c742))
+- fix(projects): 🎨 ajustar padding en la sección de showcase ([fd6d118](https://github.com/DanloisTovar/portafolio-vfinal/commit/fd6d118))
 - fix(projects): 🐛 ajustar aspect-ratio y display en cards de caso de estudio ([15646b9](https://github.com/DanloisTovar/portafolio-vfinal/commit/15646b9))
 - fix(projects): 🐛 fix lightbox trigger in case study cards ([21e52a0](https://github.com/DanloisTovar/portafolio-vfinal/commit/21e52a0))
 - fix(react): revertir a client:load para renderización correcta del Counter ([1a32106](https://github.com/DanloisTovar/portafolio-vfinal/commit/1a32106))

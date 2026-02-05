@@ -473,18 +473,26 @@ const projects: Project[] = [
           <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
             {t('qa.showcase.testplan_desc')}
           </p>
-          <div
-            class="aspect-[16/9] bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500"
+          <a
+            href={qaDocumentacion.src}
+            class="aspect-[16/9] bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
+            data-sub-html={`<h4>${t('qa.showcase.testplan_title')}</h4><p>${t('qa.showcase.testplan_desc')}</p>`}
           >
-            <!-- <p class="text-gray-500 dark:text-gray-400 text-center text-lg">
-              {t('qa.showcase.placeholder_image')}
-            </p> -->
-
             <img
               src={qaDocumentacion.src}
               alt="QA Documentation"
               class="w-full h-full rounded-2xl"
             />
+          </a>
+          {/* Action Button */}
+          <div class="mt-4 flex justify-center">
+            <button
+              type="button"
+              class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline js-trigger-lightbox"
+              data-qa-index="0"
+            >
+              {t('projects.caseStudy.button.view')}
+            </button>
           </div>
         </div>
       </div>
@@ -525,14 +533,22 @@ const projects: Project[] = [
             <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
               {t('qa.showcase.bug1_desc')}
             </p>
-            <div
-              class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500"
+            <a
+              href={qaBug1.src}
+              class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
+              data-sub-html={`<h4>${t('qa.showcase.bug1_title')}</h4><p>${t('qa.showcase.bug1_desc')}</p>`}
             >
-              <!--  <p class="text-gray-500 dark:text-gray-400 text-center text-sm">
-                {t('qa.showcase.placeholder_bug1')}
-              </p> -->
-              <!-- <img src={qaBug1.src} alt="" /> -->
               <img src={qaBug1.src} alt="QA Bug 1" class="w-full h-full rounded-2xl" />
+            </a>
+            {/* Action Button */}
+            <div class="mt-3 flex justify-center">
+              <button
+                type="button"
+                class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline js-trigger-lightbox"
+                data-qa-index="1"
+              >
+                {t('projects.caseStudy.button.view')}
+              </button>
             </div>
           </div>
         </div>
@@ -568,13 +584,22 @@ const projects: Project[] = [
             <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
               {t('qa.showcase.bug2_desc')}
             </p>
-            <div
-              class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500"
+            <a
+              href={qaBug2.src}
+              class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
+              data-sub-html={`<h4>${t('qa.showcase.bug2_title')}</h4><p>${t('qa.showcase.bug2_desc')}</p>`}
             >
-              <!-- <p class="text-gray-500 dark:text-gray-400 text-center text-sm">
-                {t('qa.showcase.placeholder_bug2')}
-              </p> -->
               <img src={qaBug2.src} alt="QA Bug 2" class="w-full h-full rounded-2xl" />
+            </a>
+            {/* Action Button */}
+            <div class="mt-3 flex justify-center">
+              <button
+                type="button"
+                class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline js-trigger-lightbox"
+                data-qa-index="2"
+              >
+                {t('projects.caseStudy.button.view')}
+              </button>
             </div>
           </div>
         </div>
@@ -669,38 +694,60 @@ const projects: Project[] = [
 
   // LightGallery Initialization
   function initLightGallery() {
-    const gallery = document.getElementById('case-study-gallery');
+    const caseStudyGallery = document.getElementById('case-study-gallery');
 
     if (lgInstance) {
       lgInstance.destroy();
       lgInstance = null;
     }
 
-    if (gallery) {
-      lgInstance = lightGallery(gallery, {
-        plugins: [lgZoom, lgThumbnail], // Incluir plugins si se importaron
-        licenseKey: '0000-0000-000-0000', // Reemplazar con tu licencia si es necesario
-        selector: '.case-study-item', // lightGallery se inicializará en todos los <a> con esta clase dentro de la galería
-        actualSize: false, // Desactiva el botón de tamaño real ya que es contenido HTML
-        download: false, // Desactiva el botón de descarga
-        // Puedes añadir más opciones según la documentación de lightGallery
+    // Inicializar LightGallery en Caso de Estudio
+    if (caseStudyGallery) {
+      lgInstance = lightGallery(caseStudyGallery, {
+        plugins: [lgZoom, lgThumbnail],
+        licenseKey: '0000-0000-000-0000',
+        selector: '.case-study-item',
+        actualSize: false,
+        download: false,
       });
     }
   }
 
   function initLightboxTriggers() {
     const triggers = document.querySelectorAll('.js-trigger-lightbox');
-    const articles = document.querySelectorAll('#case-study-gallery article');
+    const caseStudyArticles = document.querySelectorAll('#case-study-gallery article');
+    const qaShowcaseGallery = document.getElementById('qa-showcase');
+    let qaLgInstance: any = null;
+
+    // Initialize QA Showcase LightGallery separately
+    if (qaShowcaseGallery) {
+      qaLgInstance = lightGallery(qaShowcaseGallery, {
+        plugins: [lgZoom, lgThumbnail],
+        licenseKey: '0000-0000-000-0000',
+        selector: '.qa-showcase-item',
+        actualSize: false,
+        download: false,
+      });
+    }
 
     triggers.forEach((trigger) => {
       trigger.addEventListener('click', (e) => {
         e.preventDefault();
-        const parentArticle = trigger.closest('article');
+
+        // Check if trigger is in case-study section
+        const parentArticle = trigger.closest('#case-study-gallery article');
         if (parentArticle && lgInstance) {
-          const articleIndex = Array.from(articles).indexOf(parentArticle);
+          const articleIndex = Array.from(caseStudyArticles).indexOf(parentArticle);
           if (articleIndex !== -1) {
             lgInstance.openGallery(articleIndex);
           }
+          return;
+        }
+
+        // Check if trigger is a QA Showcase button (has data-qa-index)
+        const qaIndex = trigger.getAttribute('data-qa-index');
+        if (qaIndex !== null && qaLgInstance) {
+          qaLgInstance.openGallery(parseInt(qaIndex));
         }
       });
     });
