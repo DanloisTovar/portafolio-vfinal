@@ -222,7 +222,7 @@ const projects: Project[] = [
 
     <div id="case-study-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-12">
       <article
-        class="relative flex-shrink-0 w-full group rounded-[2rem] h-[45rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
+        class="relative flex-shrink-0 w-full group rounded-[2rem] h-[28rem] md:h-[36rem] lg:h-[40rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
       >
         <StarBorder
           client:visible
@@ -234,7 +234,7 @@ const projects: Project[] = [
         {/* imagen area*/}
         <a
           href={casoDeEstudioMalo2.src}
-          class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative cursor-pointer case-study-item"
+          class="block aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative cursor-pointer case-study-item"
           data-sub-html={`<h4>${t('projects.caseStudy.image1.title')}</h4><p>${t('projects.caseStudy.image1.desc')}</p>`}
         >
           <div
@@ -258,30 +258,6 @@ const projects: Project[] = [
           <div
             class="lg:transform lg:translate-y-4 lg:group-hover:translate-y-0 lg:transition-transform lg:duration-1000 lg:ease-in-out"
           >
-            {/* Mobile only tags (remaining) */}
-            <div class="flex lg:hidden flex-wrap gap-2 mb-3">
-              <span
-                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
-              >
-                Bootstrap
-              </span>
-              <span
-                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
-              >
-                PHP
-              </span>
-              <span
-                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
-              >
-                Responsive
-              </span>
-              <span
-                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
-              >
-                Accesibilidad
-              </span>
-            </div>
-
             <h3
               class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg"
             >
@@ -313,7 +289,7 @@ const projects: Project[] = [
         </div>
       </article>
       <article
-        class="relative flex-shrink-0 w-full group rounded-[2rem] h-[45rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
+        class="relative flex-shrink-0 w-full group rounded-[2rem] h-[28rem] md:h-[36rem] lg:h-[40rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
       >
         <StarBorder
           client:visible
@@ -325,7 +301,7 @@ const projects: Project[] = [
         {/* imagen area*/}
         <a
           href={casoDeEstudioBueno2.src}
-          class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative cursor-pointer case-study-item"
+          class="block aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative cursor-pointer case-study-item"
           data-sub-html={`<h4>${t('projects.caseStudy.image2.title')}</h4><p>${t('projects.caseStudy.image2.desc')}</p>`}
         >
           <div
@@ -349,30 +325,6 @@ const projects: Project[] = [
           <div
             class="lg:transform lg:translate-y-4 lg:group-hover:translate-y-0 lg:transition-transform lg:duration-1000 lg:ease-in-out"
           >
-            {/* Mobile only tags (remaining) */}
-            <div class="flex lg:hidden flex-wrap gap-2 mb-3">
-              <span
-                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
-              >
-                Bootstrap
-              </span>
-              <span
-                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
-              >
-                PHP
-              </span>
-              <span
-                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
-              >
-                Responsive
-              </span>
-              <span
-                class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md"
-              >
-                Accesibilidad
-              </span>
-            </div>
-
             <h3
               class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg"
             >
@@ -405,7 +357,7 @@ const projects: Project[] = [
       </article>
     </div>
 
-    <div class="max-w-3xl mx-auto px-4 md:px-8 mt-12">
+    <div class="w-full max-w-[1400px] mx-auto px-0 md:px-8 mt-12">
       <div class="grid grid-cols-1 gap-6">
         <div
           class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-8 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
