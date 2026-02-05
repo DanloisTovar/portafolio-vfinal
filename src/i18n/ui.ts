@@ -77,13 +77,14 @@ export const ui = {
     'qa.showcase.bug_hunting_title': 'Ejemplos de Bug Hunting',
     'qa.showcase.bug1_title': 'Bug 1',
     'qa.showcase.bug1_desc':
-      'Error crítico en el flujo de pago identificado mediante pruebas manuales.',
+      'Validación incorrecta de campos de hora vacíos. El sistema permite guardar horarios con valores 00:00 predeterminados cuando los campos deberían estar vacíos, permitiendo la creación de registros inválidos.',
     'qa.showcase.bug2_title': 'Bug 2',
-    'qa.showcase.bug2_desc': 'UI responsiveness break on mobile devices.',
-    'qa.showcase.documentation': 'Documentation',
-    'qa.showcase.testplan_title': 'Test Plan (Sanitized Excel)',
+    'qa.showcase.bug2_desc':
+      'Validación incorrecta de campos obligatorios en creación de feriados. El sistema permite guardar registros con campos de fecha y descripción vacíos, permitiendo la creación de feriados inválidos.',
+    'qa.showcase.documentation': 'Documentación',
+    'qa.showcase.testplan_title': 'Plan de Pruebas Funcionales',
     'qa.showcase.testplan_desc':
-      'Complete document detailing the testing strategy, test cases, and methodologies used to ensure software quality.',
+      'Diseño y ejecución de casos de prueba exhaustivos cubriendo flujos críticos del sistema, criterios de aceptación y escenarios edge case para garantizar la calidad del software.',
     'qa.showcase.placeholder_image': 'Placeholder: Upload your Test Plan image here',
     'qa.showcase.placeholder_bug1': 'Placeholder: Upload Bug 1 GIF here',
     'qa.showcase.placeholder_bug2': 'Placeholder: Upload Bug 2 GIF here',
@@ -185,13 +186,15 @@ export const ui = {
     'qa.showcase.testplan': 'Test Plan (Sanitized)',
     'qa.showcase.bug_hunting_title': 'Bug Hunting Examples',
     'qa.showcase.bug1_title': 'Bug 1',
-    'qa.showcase.bug1_desc': 'Critical payment flow error identified via manual testing.',
+    'qa.showcase.bug1_desc':
+      'Incorrect validation of empty time fields. The system allows saving schedules with default 00:00 values when fields should be empty, permitting the creation of invalid records.',
     'qa.showcase.bug2_title': 'Bug 2',
-    'qa.showcase.bug2_desc': 'UI responsiveness break on mobile devices.',
+    'qa.showcase.bug2_desc':
+      'Incorrect validation of mandatory fields in holiday creation. The system allows saving records with empty date and description fields, permitting the creation of invalid holidays.',
     'qa.showcase.documentation': 'Documentation',
-    'qa.showcase.testplan_title': 'Test Plan (Sanitized Excel)',
+    'qa.showcase.testplan_title': 'Functional Test Plan',
     'qa.showcase.testplan_desc':
-      'Complete document detailing the testing strategy, test cases, and methodologies used to ensure software quality.',
+      'Design and execution of comprehensive test cases covering critical system flows, acceptance criteria, and edge case scenarios to ensure software quality.',
     'qa.showcase.placeholder_image': 'Placeholder: Upload your Test Plan image here',
     'qa.showcase.placeholder_bug1': 'Placeholder: Upload Bug 1 GIF here',
     'qa.showcase.placeholder_bug2': 'Placeholder: Upload Bug 2 GIF here',
