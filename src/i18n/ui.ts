@@ -201,7 +201,7 @@ export const ui = {
     'projects.caseStudy.title': 'Case Study',
     'projects.caseStudy.subtitle': 'Refactoring Process of the Workgroup website.',
     'projects.caseStudy.description':
-      'Achieved a 40% reduction in code and improved maintainability by migrating from legacy Bootstrap to modern responsive components.',
+      'Deep CSS refactoring: Errors were reduced by 70% through a thorough review of selector specificity, optimizing Bootstrap components and complementing them with modern libraries.\n\nThis resulted in higher performance (fewer conflicts and CSS calculations), more predictable and maintainable code, and robust responsiveness across all devices.',
     'projects.caseStudy.image1.title': 'Image 1 (The Chaos)',
     'projects.caseStudy.image1.desc':
       'Screenshot of old code or old UI (disorganized). Here a screenshot of the code or UI before refactoring would be shown. Represents the original state, possibly complex or disorganized.',
