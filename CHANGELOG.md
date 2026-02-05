@@ -1,6 +1,7 @@
-## <small>0.0.1 (2026-02-04)</small>
+## <small>0.0.1 (2026-02-05)</small>
 
 - feat(astro): 🎨 deshabilitar dev toolbar para mejorar experiencia de desarrollo ([0dd155f](https://github.com/DanloisTovar/portafolio-vfinal/commit/0dd155f))
+- feat(case-study): ✨ optimizar cards responsivas y visibilidad ([ea647b1](https://github.com/DanloisTovar/portafolio-vfinal/commit/ea647b1))
 - feat(case-study): 🚀 Añade sección "Caso de estudio" con cards inspiradas en proyectos ([56272d8](https://github.com/DanloisTovar/portafolio-vfinal/commit/56272d8))
 - feat(i18n): 🌐 completar traducciones de caso de estudio y corregir persistencia ([f2604a2](https://github.com/DanloisTovar/portafolio-vfinal/commit/f2604a2))
 - feat(i18n): 🌐 traducir muestras de SQL en componente Skills al inglés ([b52b78e](https://github.com/DanloisTovar/portafolio-vfinal/commit/b52b78e))

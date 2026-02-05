@@ -11,6 +11,11 @@ import casoDeEstudioBueno2 from '../assets/caso_de_estudio/buencodigo1.png';
 import casoDeEstudioMalo1 from '../assets/caso_de_estudio/mal-codigo.png';
 import casoDeEstudioMalo2 from '../assets/caso_de_estudio/malcodigo1.png';
 
+/* imagenes de QA */
+import qaDocumentacion from '../assets/qa_showcases/qa-documentacion.png';
+import qaBug1 from '../assets/qa_showcases/GEF5-C7.gif';
+import qaBug2 from '../assets/qa_showcases/GEF7-C5.gif';
+
 interface Props {
   lang: 'es' | 'en';
 }
@@ -471,9 +476,15 @@ const projects: Project[] = [
           <div
             class="aspect-[16/9] bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500"
           >
-            <p class="text-gray-500 dark:text-gray-400 text-center text-lg">
+            <!-- <p class="text-gray-500 dark:text-gray-400 text-center text-lg">
               {t('qa.showcase.placeholder_image')}
-            </p>
+            </p> -->
+
+            <img
+              src={qaDocumentacion.src}
+              alt="QA Documentation"
+              class="w-full h-full rounded-2xl"
+            />
           </div>
         </div>
       </div>
@@ -517,9 +528,11 @@ const projects: Project[] = [
             <div
               class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500"
             >
-              <p class="text-gray-500 dark:text-gray-400 text-center text-sm">
+              <!--  <p class="text-gray-500 dark:text-gray-400 text-center text-sm">
                 {t('qa.showcase.placeholder_bug1')}
-              </p>
+              </p> -->
+              <!-- <img src={qaBug1.src} alt="" /> -->
+              <img src={qaBug1.src} alt="QA Bug 1" class="w-full h-full rounded-2xl" />
             </div>
           </div>
         </div>
@@ -558,9 +571,10 @@ const projects: Project[] = [
             <div
               class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500"
             >
-              <p class="text-gray-500 dark:text-gray-400 text-center text-sm">
+              <!-- <p class="text-gray-500 dark:text-gray-400 text-center text-sm">
                 {t('qa.showcase.placeholder_bug2')}
-              </p>
+              </p> -->
+              <img src={qaBug2.src} alt="QA Bug 2" class="w-full h-full rounded-2xl" />
             </div>
           </div>
         </div>
