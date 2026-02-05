@@ -436,8 +436,8 @@ const projects: Project[] = [
     </div>
 
     <!-- Bento Grid Layout -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12">
-      <!-- Main documentation card - spans 2 columns on large screens -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-12">
+      <!-- Fila 1: Documentación (ancho completo) -->
       <div
         class="lg:col-span-2 group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-8 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
       >
@@ -497,110 +497,97 @@ const projects: Project[] = [
         </div>
       </div>
 
-      <!-- Bugs section with animated elements -->
-      <div class="space-y-6">
-        <!-- Bug 1 -->
+      <!-- Fila 2: Bug 1 -->
+      <div
+        class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-6 hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
+      >
         <div
-          class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-6 hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
+          class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         >
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          >
-          </div>
-          <div class="relative z-10">
-            <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center"
-              >
-                <svg
-                  class="w-4 h-4 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"
-                  ></path>
-                </svg>
-              </div>
-              <h4 class="font-semibold text-gray-900 dark:text-white">
-                {t('qa.showcase.bug1_title')}
-              </h4>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-justify">
-              {t('qa.showcase.bug1_desc')}
-            </p>
-            <a
-              href={qaBug1.src}
-              class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
-              data-sub-html={`<h4>${t('qa.showcase.bug1_title')}</h4><p>${t('qa.showcase.bug1_desc')}</p>`}
+        </div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-3 mb-4">
+            <div
+              class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center"
             >
-              <img src={qaBug1.src} alt="QA Bug 1" class="w-full h-full rounded-2xl" />
-            </a>
-            {/* Action Button */}
-            <div class="mt-3 flex justify-center">
-              <button
-                type="button"
-                class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline js-trigger-lightbox"
-                data-qa-index="1"
-              >
-                {t('projects.caseStudy.button.view')}
-              </button>
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"
+                ></path>
+              </svg>
             </div>
+            <h4 class="font-semibold text-gray-900 dark:text-white">
+              {t('qa.showcase.bug1_title')}
+            </h4>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-justify">
+            {t('qa.showcase.bug1_desc')}
+          </p>
+          <a
+            href={qaBug1.src}
+            class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
+            data-sub-html={`<h4>${t('qa.showcase.bug1_title')}</h4><p>${t('qa.showcase.bug1_desc')}</p>`}
+          >
+            <img src={qaBug1.src} alt="QA Bug 1" class="w-full h-full rounded-2xl" />
+          </a>
+          {/* Action Button */}
+          <div class="mt-3 flex justify-center">
+            <button
+              type="button"
+              class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline js-trigger-lightbox"
+              data-qa-index="1"
+            >
+              {t('projects.caseStudy.button.view')}
+            </button>
           </div>
         </div>
+      </div>
 
-        <!-- Bug 2 -->
+      <!-- Fila 2: Bug 2 -->
+      <div
+        class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-6 hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
+      >
         <div
-          class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-6 hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
+          class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         >
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          >
-          </div>
-          <div class="relative z-10">
-            <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center"
-              >
-                <svg
-                  class="w-4 h-4 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="m15 9-6 6"></path>
-                  <path d="m9 9 6 6"></path>
-                </svg>
-              </div>
-              <h4 class="font-semibold text-gray-900 dark:text-white">
-                {t('qa.showcase.bug2_title')}
-              </h4>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-justify">
-              {t('qa.showcase.bug2_desc')}
-            </p>
-            <a
-              href={qaBug2.src}
-              class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
-              data-sub-html={`<h4>${t('qa.showcase.bug2_title')}</h4><p>${t('qa.showcase.bug2_desc')}</p>`}
+        </div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-3 mb-4">
+            <div
+              class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center"
             >
-              <img src={qaBug2.src} alt="QA Bug 2" class="w-full h-full rounded-2xl" />
-            </a>
-            {/* Action Button */}
-            <div class="mt-3 flex justify-center">
-              <button
-                type="button"
-                class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline js-trigger-lightbox"
-                data-qa-index="2"
-              >
-                {t('projects.caseStudy.button.view')}
-              </button>
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m15 9-6 6"></path>
+                <path d="m9 9 6 6"></path>
+              </svg>
             </div>
+            <h4 class="font-semibold text-gray-900 dark:text-white">
+              {t('qa.showcase.bug2_title')}
+            </h4>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-justify">
+            {t('qa.showcase.bug2_desc')}
+          </p>
+          <a
+            href={qaBug2.src}
+            class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
+            data-sub-html={`<h4>${t('qa.showcase.bug2_title')}</h4><p>${t('qa.showcase.bug2_desc')}</p>`}
+          >
+            <img src={qaBug2.src} alt="QA Bug 2" class="w-full h-full rounded-2xl" />
+          </a>
+          {/* Action Button */}
+          <div class="mt-3 flex justify-center">
+            <button
+              type="button"
+              class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline js-trigger-lightbox"
+              data-qa-index="2"
+            >
+              {t('projects.caseStudy.button.view')}
+            </button>
           </div>
         </div>
       </div>
