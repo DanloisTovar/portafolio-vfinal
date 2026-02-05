@@ -10,6 +10,7 @@
 - feat(projects): ✨ add lightbox link to case study cards and remove old links ([de170be](https://github.com/DanloisTovar/portafolio-vfinal/commit/de170be))
 - feat(projects): ✨ style summary text as bento grid card ([e587825](https://github.com/DanloisTovar/portafolio-vfinal/commit/e587825))
 - feat(projects): 🎨 actualizar caso de estudio, corregir diseño y formato ([789e5e1](https://github.com/DanloisTovar/portafolio-vfinal/commit/789e5e1))
+- feat(projects): 🎬 agregar GIFs en sección showcase ([c147062](https://github.com/DanloisTovar/portafolio-vfinal/commit/c147062))
 - feat(responsive): ✨ Mejora el responsive en móviles pequeños para navbar y toggles ([41ba55d](https://github.com/DanloisTovar/portafolio-vfinal/commit/41ba55d))
 - feat(setup): configuración inicial del proyecto Astro + React + Tailwind ([9070022](https://github.com/DanloisTovar/portafolio-vfinal/commit/9070022))
 - feat(skills): 🎨 mejorar sección SQL con nuevos estilos y contenido ([cb073f6](https://github.com/DanloisTovar/portafolio-vfinal/commit/cb073f6))
