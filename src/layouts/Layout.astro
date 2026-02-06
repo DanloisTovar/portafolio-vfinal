@@ -5,7 +5,7 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import '../styles/global.css';
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -13,55 +13,61 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const navItems = [
-	{ label: t('nav.home'), href: `/${lang}#home`, icon: 'home' },
-	{ label: t('nav.about'), href: `/${lang}#sobre-mi`, icon: 'about' },
-	{ label: t('nav.skills'), href: `/${lang}#skills`, icon: 'skills' },
-	{
-		label: t('nav.experience'),
-		href: `/${lang}#experiencia`,
-		icon: 'experience',
-	},
-	{ label: t('nav.projects'), href: `/${lang}#projects`, icon: 'projects' },
-	{ label: t('nav.news'), href: `/${lang}#news`, icon: 'news' },
-	{ label: t('nav.contact'), href: `/${lang}#contact`, icon: 'contact' },
+  { label: t('nav.home'), href: `/${lang}#home`, icon: 'home' },
+  { label: t('nav.about'), href: `/${lang}#sobre-mi`, icon: 'about' },
+  { label: t('nav.skills'), href: `/${lang}#skills`, icon: 'skills' },
+  {
+    label: t('nav.experience'),
+    href: `/${lang}#experiencia`,
+    icon: 'experience',
+  },
+  { label: t('nav.projects'), href: `/${lang}#projects`, icon: 'projects' },
+  { label: t('nav.news'), href: `/${lang}#news`, icon: 'news' },
+  { label: t('nav.contact'), href: `/${lang}#contact`, icon: 'contact' },
 ] as const;
 ---
 
 <!doctype html>
-<html lang={lang} class="scroll-smooth">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<script is:inline>
-			const theme = (() => {
-				if (
-					typeof localStorage !== 'undefined' &&
-					localStorage.getItem('theme')
-				) {
-					return localStorage.getItem('theme');
-				}
-				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-					return 'dark';
-				}
-				return 'light';
-			})();
+<html lang={lang} class="scroll-smooth relative">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
 
-			if (theme === 'dark') {
-				document.documentElement.classList.add('dark');
-			} else {
-				document.documentElement.classList.remove('dark');
-			}
-		</script>
-	</head>
-	<body
-		class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300"
-	>
-		<Navbar client:load items={navItems} currentLang={lang} />
-		<SocialMenu lang={lang} />
-		<slot />
-	</body>
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+    <script is:inline>
+      // Cargar Spline Viewer solo si no está ya registrado
+      if (!customElements.get('spline-viewer')) {
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = 'https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js';
+        document.head.appendChild(script);
+      }
+    </script>
+  </head>
+  <body
+    class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300 relative"
+  >
+    <Navbar client:load items={navItems} currentLang={lang} />
+    <SocialMenu lang={lang} />
+    <slot />
+  </body>
 </html>
