@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://danloisdev.com/sitemap-index.xml
+
+# Crawl-delay para evitar sobrecarga
+Crawl-delay: 10
+
+# No permitir acceso a archivos de sistema
+User-agent: *
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.astro/
+Disallow: /dist/

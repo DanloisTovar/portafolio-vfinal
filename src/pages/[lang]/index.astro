@@ -11,23 +11,29 @@ import Footer from '../../components/Footer.astro';
 import { languages } from '../../i18n/ui';
 
 export function getStaticPaths() {
-	return Object.keys(languages).map((lang) => ({ params: { lang } }));
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
 }
 
 const { lang } = Astro.params;
 ---
 
-<Layout title="Portfolio | Danlois Tovar">
+<Layout
+  title={lang === 'es'
+    ? 'Portfolio | Danlois Tovar - Desarrollador Front End'
+    : 'Portfolio | Danlois Tovar - Front End Developer'}
+  description={lang === 'es'
+    ? 'Desarrollador Front End especializado en React, Astro, TypeScript y Tailwind CSS. Creando aplicaciones web modernas, optimizadas y escalables.'
+    : 'Front End Developer specialized in React, Astro, TypeScript and Tailwind CSS. Building modern, optimized and scalable web applications.'}
+>
+  <main>
+    <Hero lang={lang as 'es' | 'en'} />
+    <About lang={lang as 'es' | 'en'} />
+    <Skills lang={lang as 'es' | 'en'} />
+    <Experience lang={lang as 'es' | 'en'} />
+    <Projects lang={lang as 'es' | 'en'} />
+    <News lang={lang as 'es' | 'en'} />
+    <Contact lang={lang as 'es' | 'en'} />
+  </main>
 
-	<main>
-		<Hero lang={lang as 'es' | 'en'} />
-		<About lang={lang as 'es' | 'en'} />
-		<Skills lang={lang as 'es' | 'en'} />
-		<Experience lang={lang as 'es' | 'en'} />
-		<Projects lang={lang as 'es' | 'en'} />
-		<News lang={lang as 'es' | 'en'} />
-		<Contact lang={lang as 'es' | 'en'} />
-	</main>
-
-	<Footer lang={lang as 'es' | 'en'} />
+  <Footer lang={lang as 'es' | 'en'} />
 </Layout>
