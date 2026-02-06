@@ -17,6 +17,7 @@
 - docs(performance): 📊 agregar informe completo de rendimiento y SEO ([5c1c08d](https://github.com/DanloisTovar/portafolio-vfinal/commit/5c1c08d))
 - docs(readme): actualizar documentación del proyecto ([d81962e](https://github.com/DanloisTovar/portafolio-vfinal/commit/d81962e))
 - docs(readme): actualizar documentación del proyecto con nuevas características ([1813334](https://github.com/DanloisTovar/portafolio-vfinal/commit/1813334))
+- docs(reports): 📝 reorganizar archivos de informes de rendimiento ([7d558cd](https://github.com/DanloisTovar/portafolio-vfinal/commit/7d558cd))
 - docs(setup): agregar guía detallada de Conventional Commits ([94a6637](https://github.com/DanloisTovar/portafolio-vfinal/commit/94a6637))
 - perf(core): ⚡ implementar optimizaciones de rendimiento críticas ([1a7d5a1](https://github.com/DanloisTovar/portafolio-vfinal/commit/1a7d5a1))
 - fix(assets): move CV to public folder and update link ([a29f5d0](https://github.com/DanloisTovar/portafolio-vfinal/commit/a29f5d0))
