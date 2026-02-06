@@ -604,9 +604,14 @@ const projects: Project[] = [
 
 <script>
   // Import LightGallery and plugins directly within the client-side script
-  import lightGallery from 'lightgallery/lightgallery.min.js';
-  import lgZoom from 'lightgallery/plugins/zoom/lg-zoom.min.js';
-  import lgThumbnail from 'lightgallery/plugins/thumbnail/lg-thumbnail.min.js';
+  import lightGallery from 'lightgallery';
+  import lgZoom from 'lightgallery/plugins/zoom';
+  import lgThumbnail from 'lightgallery/plugins/thumbnail';
+
+  // Importar estilos de LightGallery
+  import 'lightgallery/css/lightgallery.css';
+  import 'lightgallery/css/lg-zoom.css';
+  import 'lightgallery/css/lg-thumbnail.css';
 
   let section = document.getElementById('projects');
   let track = document.getElementById('projects-track');
@@ -763,8 +768,6 @@ const projects: Project[] = [
 </script>
 
 <style is:global>
-  @import 'lightgallery/css/lightgallery-bundle.css';
-
   /* Efectos hover personalizados */
   .group:hover img {
     box-shadow:
