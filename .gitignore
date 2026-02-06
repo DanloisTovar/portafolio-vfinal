@@ -41,3 +41,4 @@ logs/
 *.log
 .cache
 .vercel/
+performance-trace.json

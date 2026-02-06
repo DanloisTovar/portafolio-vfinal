@@ -68,7 +68,7 @@ const navItems = [
     <meta property="twitter:creator" content="@DanloisDev" />
 
     <!-- Prefetch recursos críticos -->
-    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
     <link rel="dns-prefetch" href="https://prod.spline.design" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -126,7 +126,7 @@ const navItems = [
       if (!customElements.get('spline-viewer')) {
         const script = document.createElement('script');
         script.type = 'module';
-        script.src = 'https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js';
+        script.src = 'https://unpkg.com/@splinetool/viewer@1.12.50/build/spline-viewer.js';
         document.head.appendChild(script);
       }
     </script>
