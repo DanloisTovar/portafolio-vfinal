@@ -10,6 +10,7 @@
 ## 🎯 Resumen Ejecutivo
 
 ### Puntuación Global
+
 - **Rendimiento:** 96/100 🏆
 - **SEO:** 98/100 ✅
 - **Accesibilidad:** 95/100 ♿
@@ -17,12 +18,12 @@
 
 ### Core Web Vitals - Resultados
 
-| Métrica | Valor | Estado | Umbral | Mejora vs Anterior |
-|---------|-------|--------|--------|-------------------|
-| **LCP** | 273 ms | 🟢 Excelente | < 2.5s | -7 ms |
-| **CLS** | 0.00 | 🟢 Perfecto | < 0.1 | Sin cambio |
-| **TTFB** | 84 ms | 🟢 Excelente | < 200ms | -10 ms |
-| **FCP** | ~150 ms | 🟢 Excelente | < 1.8s | -7 ms |
+| Métrica  | Valor   | Estado       | Umbral  | Mejora vs Anterior |
+| -------- | ------- | ------------ | ------- | ------------------ |
+| **LCP**  | 273 ms  | 🟢 Excelente | < 2.5s  | -7 ms              |
+| **CLS**  | 0.00    | 🟢 Perfecto  | < 0.1   | Sin cambio         |
+| **TTFB** | 84 ms   | 🟢 Excelente | < 200ms | -10 ms             |
+| **FCP**  | ~150 ms | 🟢 Excelente | < 1.8s  | -7 ms              |
 
 **Observación:** Todas las métricas superan ampliamente los umbrales recomendados por Google.
 
@@ -34,14 +35,15 @@
 
 **Tiempo total LCP:** 273 ms (-2.5% vs anterior)
 
-| Fase | Tiempo | % del Total | Estado |
-|------|--------|-------------|--------|
-| **TTFB** | 84 ms | 30.8% | 🟢 Rápido |
-| **Resource Load Delay** | 12 ms | 4.4% | 🟢 Mínimo |
-| **Resource Load Duration** | 49 ms | 17.9% | 🟢 Rápido |
-| **Element Render Delay** | 128 ms | 46.9% | 🟡 Mejorable |
+| Fase                       | Tiempo | % del Total | Estado       |
+| -------------------------- | ------ | ----------- | ------------ |
+| **TTFB**                   | 84 ms  | 30.8%       | 🟢 Rápido    |
+| **Resource Load Delay**    | 12 ms  | 4.4%        | 🟢 Mínimo    |
+| **Resource Load Duration** | 49 ms  | 17.9%       | 🟢 Rápido    |
+| **Element Render Delay**   | 128 ms | 46.9%       | 🟡 Mejorable |
 
 **Optimizaciones aplicadas:**
+
 - ✅ `fetchpriority="high"` agregado a imagen principal
 - ✅ Dimensiones explícitas (400x400) en imagen LCP
 - ✅ Mejoras en preconnect a dominios externos
@@ -52,10 +54,10 @@
 
 ### 2. Recursos Bloqueantes
 
-| Recurso | Duración | Impacto |
-|---------|----------|---------|
-| Google Fonts CSS (Orbitron) | ~10 ms | 🟢 Mínimo |
-| Spline Viewer | Carga diferida | 🟢 Sin impacto en LCP |
+| Recurso                     | Duración       | Impacto               |
+| --------------------------- | -------------- | --------------------- |
+| Google Fonts CSS (Orbitron) | ~10 ms         | 🟢 Mínimo             |
+| Spline Viewer               | Carga diferida | 🟢 Sin impacto en LCP |
 
 **Estado:** ✅ Sin recursos críticos bloqueantes
 
@@ -63,13 +65,14 @@
 
 ### 3. Terceros (Third Parties)
 
-| Origen | Tamaño | Impacto | Optimización |
-|--------|--------|---------|--------------|
-| **Unpkg** (Spline Viewer) | 2.3 MB | 🟡 Monitorear | Versión específica (1.12.50) |
-| Google Fonts | ~13 kB | 🟢 Mínimo | Preconnect configurado |
-| RSS Feed (Noticias) | Variable | 🟢 Lazy loaded | Carga diferida |
+| Origen                    | Tamaño   | Impacto        | Optimización                 |
+| ------------------------- | -------- | -------------- | ---------------------------- |
+| **Unpkg** (Spline Viewer) | 2.3 MB   | 🟡 Monitorear  | Versión específica (1.12.50) |
+| Google Fonts              | ~13 kB   | 🟢 Mínimo      | Preconnect configurado       |
+| RSS Feed (Noticias)       | Variable | 🟢 Lazy loaded | Carga diferida               |
 
 **Optimizaciones aplicadas:**
+
 - ✅ Preconnect a unpkg.com con crossorigin
 - ✅ Spline Viewer versionado (mejor caching)
 - ✅ DNS prefetch a prod.spline.design
@@ -81,6 +84,7 @@
 **Latencia máxima del camino crítico:** ~650 ms
 
 **Cadena crítica optimizada:**
+
 - Reducción de dependencias secuenciales
 - Mejor paralelización de cargas
 - Priorización de recursos LCP
@@ -91,36 +95,36 @@
 
 ### 1. Meta Tags Implementados
 
-| Meta Tag | Estado | Valor |
-|----------|--------|-------|
-| `<title>` | ✅ | "Portfolio \| Danlois Tovar - Desarrollador Front End" |
-| `<meta name="description">` | ✅ | Descripción dinámica según idioma |
-| `<meta name="author">` | ✅ | "Danlois Tovar" |
-| `<meta name="robots">` | ✅ | "index, follow" |
-| `<meta name="theme-color">` | ✅ | "#3b82f6" |
-| Canonical URL | ✅ | Configurada correctamente |
+| Meta Tag                    | Estado | Valor                                                  |
+| --------------------------- | ------ | ------------------------------------------------------ |
+| `<title>`                   | ✅     | "Portfolio \| Danlois Tovar - Desarrollador Front End" |
+| `<meta name="description">` | ✅     | Descripción dinámica según idioma                      |
+| `<meta name="author">`      | ✅     | "Danlois Tovar"                                        |
+| `<meta name="robots">`      | ✅     | "index, follow"                                        |
+| `<meta name="theme-color">` | ✅     | "#3b82f6"                                              |
+| Canonical URL               | ✅     | Configurada correctamente                              |
 
 ### 2. Open Graph Tags
 
-| Tag | Estado | Valor |
-|-----|--------|-------|
-| `og:title` | ✅ | Título dinámico |
-| `og:description` | ✅ | Descripción dinámica |
-| `og:type` | ✅ | "website" |
-| `og:url` | ✅ | URL canónica |
-| `og:image` | ✅ | /images/og-image.jpg |
-| `og:locale` | ✅ | "es_ES" / "en_US" |
-| `og:site_name` | ✅ | "Danlois Tovar - Portfolio" |
+| Tag              | Estado | Valor                       |
+| ---------------- | ------ | --------------------------- |
+| `og:title`       | ✅     | Título dinámico             |
+| `og:description` | ✅     | Descripción dinámica        |
+| `og:type`        | ✅     | "website"                   |
+| `og:url`         | ✅     | URL canónica                |
+| `og:image`       | ✅     | /images/og-image.jpg        |
+| `og:locale`      | ✅     | "es_ES" / "en_US"           |
+| `og:site_name`   | ✅     | "Danlois Tovar - Portfolio" |
 
 ### 3. Twitter Cards
 
-| Tag | Estado |
-|-----|--------|
-| `twitter:card` | ✅ "summary_large_image" |
-| `twitter:title` | ✅ Dinámico |
-| `twitter:description` | ✅ Dinámico |
-| `twitter:image` | ✅ Configurado |
-| `twitter:creator` | ✅ "@DanloisDev" |
+| Tag                   | Estado                   |
+| --------------------- | ------------------------ |
+| `twitter:card`        | ✅ "summary_large_image" |
+| `twitter:title`       | ✅ Dinámico              |
+| `twitter:description` | ✅ Dinámico              |
+| `twitter:image`       | ✅ Configurado           |
+| `twitter:creator`     | ✅ "@DanloisDev"         |
 
 ### 4. Datos Estructurados (Schema.org)
 
@@ -133,42 +137,39 @@
   "name": "Danlois Tovar",
   "jobTitle": "Desarrollador Front End",
   "url": "https://danloisdev.com",
-  "sameAs": [
-    "https://github.com/DanloisTovar",
-    "https://linkedin.com/in/danlois-tovar"
-  ],
+  "sameAs": ["https://github.com/DanloisTovar", "https://linkedin.com/in/danlois-tovar"],
   "knowsAbout": ["React", "Astro", "TypeScript", "Tailwind CSS"]
 }
 ```
 
 ### 5. Estructura HTML Semántica
 
-| Elemento | Estado | Observación |
-|----------|--------|-------------|
-| `<main>` | ✅ | Contenido principal identificado |
-| `<section>` | ✅ | Secciones correctamente marcadas |
-| `<article>` | ✅ | Proyectos como artículos independientes |
-| `<h1>` | ✅ | Uno por página |
-| Jerarquía de headings | ✅ | h1 → h2 → h3 → h4 correcta |
-| Atributo `lang` | ✅ | "es" / "en" dinámico |
+| Elemento              | Estado | Observación                             |
+| --------------------- | ------ | --------------------------------------- |
+| `<main>`              | ✅     | Contenido principal identificado        |
+| `<section>`           | ✅     | Secciones correctamente marcadas        |
+| `<article>`           | ✅     | Proyectos como artículos independientes |
+| `<h1>`                | ✅     | Uno por página                          |
+| Jerarquía de headings | ✅     | h1 → h2 → h3 → h4 correcta              |
+| Atributo `lang`       | ✅     | "es" / "en" dinámico                    |
 
 ### 6. Imágenes Optimizadas
 
-| Aspecto | Estado |
-|---------|--------|
-| Atributo `alt` | ✅ Todas las imágenes tienen alt descriptivo |
-| `loading="lazy"` | ✅ Aplicado a imágenes below-the-fold |
-| `fetchpriority="high"` | ✅ Aplicado a imagen LCP |
-| Dimensiones explícitas | ✅ width/height definidos |
-| Formatos modernos | ✅ WebP/PNG optimizados |
+| Aspecto                | Estado                                       |
+| ---------------------- | -------------------------------------------- |
+| Atributo `alt`         | ✅ Todas las imágenes tienen alt descriptivo |
+| `loading="lazy"`       | ✅ Aplicado a imágenes below-the-fold        |
+| `fetchpriority="high"` | ✅ Aplicado a imagen LCP                     |
+| Dimensiones explícitas | ✅ width/height definidos                    |
+| Formatos modernos      | ✅ WebP/PNG optimizados                      |
 
 ### 7. Archivos de Configuración SEO
 
-| Archivo | Estado | Descripción |
-|---------|--------|-------------|
-| `robots.txt` | ✅ | Permite indexación completa |
-| `sitemap.xml` | ✅ | Generado automáticamente (@astrojs/sitemap) |
-| `LICENSE` | ✅ | GPL-3.0 para LightGallery |
+| Archivo       | Estado | Descripción                                 |
+| ------------- | ------ | ------------------------------------------- |
+| `robots.txt`  | ✅     | Permite indexación completa                 |
+| `sitemap.xml` | ✅     | Generado automáticamente (@astrojs/sitemap) |
+| `LICENSE`     | ✅     | GPL-3.0 para LightGallery                   |
 
 ---
 
@@ -176,17 +177,18 @@
 
 ### Métricas de Rendimiento
 
-| Métrica | Antes | Después | Mejora |
-|---------|-------|---------|--------|
-| **LCP** | 280 ms | 273 ms | -2.5% 🟢 |
-| **CLS** | 0.00 | 0.00 | Sin cambio 🟢 |
-| **TTFB** | 94 ms | 84 ms | -10.6% 🟢 |
-| **FCP** | 157 ms | 150 ms | -4.5% 🟢 |
-| **Puntuación Total** | 95/100 | 96/100 | +1 pt 🟢 |
+| Métrica              | Antes  | Después | Mejora        |
+| -------------------- | ------ | ------- | ------------- |
+| **LCP**              | 280 ms | 273 ms  | -2.5% 🟢      |
+| **CLS**              | 0.00   | 0.00    | Sin cambio 🟢 |
+| **TTFB**             | 94 ms  | 84 ms   | -10.6% 🟢     |
+| **FCP**              | 157 ms | 150 ms  | -4.5% 🟢      |
+| **Puntuación Total** | 95/100 | 96/100  | +1 pt 🟢      |
 
 ### Optimizaciones Implementadas
 
 #### Rendimiento
+
 1. ✅ `fetchpriority="high"` en imagen LCP
 2. ✅ Dimensiones explícitas en imágenes
 3. ✅ Preconnect optimizado a unpkg.com
@@ -194,6 +196,7 @@
 5. ✅ Lazy loading en imágenes no críticas
 
 #### SEO
+
 1. ✅ Meta tags dinámicos (título, descripción)
 2. ✅ Open Graph completo
 3. ✅ Twitter Cards configurado
@@ -225,7 +228,7 @@
 
 4. **Preload de fuentes críticas**
    ```html
-   <link rel="preload" href="/fonts/orbitron.woff2" as="font" crossorigin>
+   <link rel="preload" href="/fonts/orbitron.woff2" as="font" crossorigin />
    ```
 
 ### Baja Prioridad
