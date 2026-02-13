@@ -17,6 +17,7 @@ export default defineConfig({
       'testing/testing-docker/e2e/**',
     ],
     setupFiles: ['./vitest.setup.ts'],
+    pool: 'forks',
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
@@ -29,6 +30,13 @@ export default defineConfig({
         '**/*.config.{js,ts,mjs,cjs}',
         '**/nightwatch.conf.cjs',
       ],
+    },
+  },
+  server: {
+    watch: {
+      ignored: ['**/node_modules/**', '**/dist/**', '**/.astro/**'],
+      usePolling: true,
+      interval: 1000,
     },
   },
 });
