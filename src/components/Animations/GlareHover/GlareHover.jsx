@@ -1,3 +1,4 @@
+import React from 'react';
 import './GlareHover.css';
 
 const GlareHover = ({
@@ -14,11 +15,11 @@ const GlareHover = ({
   transitionDuration = 650,
   playOnce = false,
   className = '',
-  style = {}
+  style = {},
 }) => {
   const hex = glareColor.replace('#', '');
   let rgba = glareColor;
-  
+
   if (/^[0-9A-Fa-f]{6}$/.test(hex)) {
     const r = parseInt(hex.slice(0, 2), 16);
     const g = parseInt(hex.slice(2, 4), 16);
@@ -40,7 +41,7 @@ const GlareHover = ({
     '--gh-duration': `${transitionDuration}ms`,
     '--gh-size': `${glareSize}%`,
     '--gh-rgba': rgba,
-    '--gh-border': borderColor
+    '--gh-border': borderColor,
   };
 
   return (
@@ -48,9 +49,7 @@ const GlareHover = ({
       className={`glare-hover ${playOnce ? 'glare-hover--play-once' : ''} ${className}`}
       style={{ ...vars, ...style }}
     >
-      <div className="glare-content">
-        {children}
-      </div>
+      <div className="glare-content">{children}</div>
     </div>
   );
 };

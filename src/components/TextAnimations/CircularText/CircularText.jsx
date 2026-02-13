@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { motion, useAnimation, useMotionValue } from 'motion/react';
 
 import './CircularText.css';
@@ -9,7 +9,7 @@ const getRotationTransition = (duration, from, loop = true) => ({
   ease: 'linear',
   duration,
   type: 'tween',
-  repeat: loop ? Infinity : 0
+  repeat: loop ? Infinity : 0,
 });
 /* ! hola mundo */
 const getTransition = (duration, from) => ({
@@ -17,8 +17,8 @@ const getTransition = (duration, from) => ({
   scale: {
     type: 'spring',
     damping: 20,
-    stiffness: 300
-  }
+    stiffness: 300,
+  },
 });
 
 const CircularText = ({ text, spinDuration = 20, onHover = 'speedUp', className = '' }) => {
@@ -31,18 +31,18 @@ const CircularText = ({ text, spinDuration = 20, onHover = 'speedUp', className 
     controls.start({
       rotate: start + 360,
       scale: 1,
-      transition: getTransition(spinDuration, start)
+      transition: getTransition(spinDuration, start),
     });
   }, [spinDuration, text, onHover, controls, rotation]);
 
   const handleHoverStart = () => {
     const start = rotation.get();
-    
+
     // Check if running in browser before logging
     if (typeof window !== 'undefined') {
-       console.log('CircularText hover start with text:', text);
+      console.log('CircularText hover start with text:', text);
     }
-    
+
     if (!onHover) return;
 
     let transitionConfig;
@@ -58,7 +58,7 @@ const CircularText = ({ text, spinDuration = 20, onHover = 'speedUp', className 
       case 'pause':
         transitionConfig = {
           rotate: { type: 'spring', damping: 20, stiffness: 300 },
-          scale: { type: 'spring', damping: 20, stiffness: 300 }
+          scale: { type: 'spring', damping: 20, stiffness: 300 },
         };
         scaleVal = 1;
         break;
@@ -73,7 +73,7 @@ const CircularText = ({ text, spinDuration = 20, onHover = 'speedUp', className 
     controls.start({
       rotate: start + 360,
       scale: scaleVal,
-      transition: transitionConfig
+      transition: transitionConfig,
     });
   };
 
@@ -82,7 +82,7 @@ const CircularText = ({ text, spinDuration = 20, onHover = 'speedUp', className 
     controls.start({
       rotate: start + 360,
       scale: 1,
-      transition: getTransition(spinDuration, start)
+      transition: getTransition(spinDuration, start),
     });
   };
 
@@ -105,16 +105,18 @@ const CircularText = ({ text, spinDuration = 20, onHover = 'speedUp', className 
         // Determine if this letter should use accent color in dark mode
         // Check if letter is part of "TOVAR" or is an asterisk
         const textUpper = text.toUpperCase();
-        const isTovarLetter = textUpper.indexOf('TOVAR') !== -1 && 
-                             i >= textUpper.indexOf('TOVAR') && 
-                             i < textUpper.indexOf('TOVAR') + 5;
+        const isTovarLetter =
+          textUpper.indexOf('TOVAR') !== -1 &&
+          i >= textUpper.indexOf('TOVAR') &&
+          i < textUpper.indexOf('TOVAR') + 5;
         const isAsterisk = letter === '*';
         const shouldAccent = isTovarLetter || isAsterisk;
-        
+
         // Check if letter is part of "DANLOIS"
-        const isDanloisLetter = textUpper.indexOf('DANLOIS') !== -1 && 
-                               i >= textUpper.indexOf('DANLOIS') && 
-                               i < textUpper.indexOf('DANLOIS') + 7;
+        const isDanloisLetter =
+          textUpper.indexOf('DANLOIS') !== -1 &&
+          i >= textUpper.indexOf('DANLOIS') &&
+          i < textUpper.indexOf('DANLOIS') + 7;
 
         // Build className based on letter type
         let className = '';
@@ -125,8 +127,8 @@ const CircularText = ({ text, spinDuration = 20, onHover = 'speedUp', className 
         }
 
         return (
-          <span 
-            key={i} 
+          <span
+            key={i}
             style={{ transform, WebkitTransform: transform }}
             className={className}
             data-accent={shouldAccent ? 'true' : 'false'}

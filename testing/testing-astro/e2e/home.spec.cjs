@@ -7,7 +7,7 @@ module.exports = {
       .assert.visible('main')
       .verify.visible('#home') // Hero
       .verify.visible('#sobre-mi') // About
-      .verify.visible('#projects') // Projects
+      .verify.visible('#news') // News
       .verify.visible('#contact') // Contact
       .verify.visible('#skills') // Skills
       .verify.visible('#experiencia') // Experience
