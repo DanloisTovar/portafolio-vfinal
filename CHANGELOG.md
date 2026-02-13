@@ -1,5 +1,6 @@
-## <small>0.0.1 (2026-02-10)</small>
+## <small>0.0.1 (2026-02-13)</small>
 
+- style(text): :art: Ajustar alineación de texto a justificado en componentes ([63a8c05](https://github.com/DanloisTovar/portafolio-vfinal/commit/63a8c05))
 - chore(build): update generated files after merge ([b0884c0](https://github.com/DanloisTovar/portafolio-vfinal/commit/b0884c0))
 - chore(changelog): 🤖 actualizar CHANGELOG.md ([8b250da](https://github.com/DanloisTovar/portafolio-vfinal/commit/8b250da))
 - chore(changelog): 🤖 actualizar CHANGELOG.md ([bd93ea2](https://github.com/DanloisTovar/portafolio-vfinal/commit/bd93ea2))
