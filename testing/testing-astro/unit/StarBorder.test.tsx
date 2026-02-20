@@ -1,4 +1,3 @@
-import React from 'react';
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/react';
 import StarBorder from '../../../src/components/Animations/StarBorder/StarBorder';
@@ -20,5 +19,11 @@ describe('StarBorder Component', () => {
   it('debe aplicar clases personalizadas', () => {
     const { container } = render(<StarBorder className="custom-border" />);
     expect(container.querySelector('.custom-border')).toBeDefined();
+  });
+
+  it('debe aplicar velocidad de animación personalizada', () => {
+    const { container } = render(<StarBorder speed="5s" />);
+    const element = container.querySelector('.star-border-container') as HTMLElement;
+    expect(element.style.getPropertyValue('--star-speed')).toBe('5s');
   });
 });

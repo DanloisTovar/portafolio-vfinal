@@ -1,5 +1,9 @@
-## <small>0.0.1 (2026-02-13)</small>
+## <small>0.0.1 (2026-02-19)</small>
 
+- test(config): configurar estructura pruebas E2E y unitarias para Astro y Docker ([0b9be50](https://github.com/DanloisTovar/portafolio-vfinal/commit/0b9be50))
+- test(testing): 🧪 implement comprehensive testing suite and resolve environment issues ([a3ba2f0](https://github.com/DanloisTovar/portafolio-vfinal/commit/a3ba2f0))
+- test(testing): 🧪 implement comprehensive unit/e2e tests and formal test plan ([958d1ec](https://github.com/DanloisTovar/portafolio-vfinal/commit/958d1ec))
+- test(unit): agregar tests unitarios con Vitest y Testing Library ([2d51e58](https://github.com/DanloisTovar/portafolio-vfinal/commit/2d51e58))
 - chore(build): update generated files after merge ([b0884c0](https://github.com/DanloisTovar/portafolio-vfinal/commit/b0884c0))
 - chore(changelog): :memo: Actualizar CHANGELOG.md ([d16a5c8](https://github.com/DanloisTovar/portafolio-vfinal/commit/d16a5c8))
 - chore(changelog): :memo: Actualizar CHANGELOG.md ([5c4e475](https://github.com/DanloisTovar/portafolio-vfinal/commit/5c4e475))
@@ -82,5 +86,3 @@
 - refactor(ui): 🎨 ajustar efecto hover y aspect ratio en imágenes ([d06ae3c](https://github.com/DanloisTovar/portafolio-vfinal/commit/d06ae3c))
 - 🎨 refactor: actualizar configuración de Tailwind CSS v4 y Stylelint ([f94151b](https://github.com/DanloisTovar/portafolio-vfinal/commit/f94151b))
 - 🐛 fix: corregir notación de import en global.css ([febdcf1](https://github.com/DanloisTovar/portafolio-vfinal/commit/febdcf1))
-- test(config): configurar estructura pruebas E2E y unitarias para Astro y Docker ([0b9be50](https://github.com/DanloisTovar/portafolio-vfinal/commit/0b9be50))
-- test(unit): agregar tests unitarios con Vitest y Testing Library ([2d51e58](https://github.com/DanloisTovar/portafolio-vfinal/commit/2d51e58))

@@ -42,5 +42,11 @@ describe('i18n Utilities', () => {
       const t = useTranslations('fr');
       expect(t('nav.home')).toBe('Inicio');
     });
+
+    it('debe caer de espaldas al idioma por defecto si la clave no existe en el idioma actual', () => {
+      const t = useTranslations('en');
+      // @ts-expect-error - Probando clave inexistente
+      expect(t('key.no.existe')).toBeUndefined();
+    });
   });
 });

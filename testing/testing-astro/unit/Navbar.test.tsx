@@ -60,4 +60,12 @@ describe('Navbar Component', () => {
     const homeLink = screen.getByText('Inicio').closest('a');
     expect(homeLink?.getAttribute('href')).toBe('/es#home');
   });
+
+  it('debe renderizar correctamente items sin icono', () => {
+    const itemsWithoutIcon = [{ label: 'Sin Icono', href: '/test' }] as const;
+    // @ts-expect-error - Propiedades de solo lectura
+    render(<Navbar items={itemsWithoutIcon} currentLang="es" />);
+    fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
+    expect(screen.getByText('Sin Icono')).toBeDefined();
+  });
 });
