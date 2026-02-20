@@ -67,6 +67,25 @@ pnpm test:e2e:firefox  # Tests E2E solo Firefox
 pnpm changelog    # Generar CHANGELOG.md
 ```
 
+## 📊 Estado de Cobertura
+
+![Coverage](https://img.shields.io/badge/coverage-98%25-green?style=for-the-badge&logo=vitest)
+
+El proyecto mantiene un alto estándar de calidad con una cobertura global superior al 80%.
+
+- **Sentencias**: 96.7%
+- **Ramas**: 86.9%
+- **Funciones**: 100%
+- **Líneas**: 98.3%
+
+Para generar un reporte detallado:
+
+```bash
+pnpm coverage
+```
+
+Reportes disponibles en `./coverage/index.html`.
+
 ## 🏗️ Estructura del Proyecto
 
 ```

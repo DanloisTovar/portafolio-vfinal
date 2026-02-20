@@ -17,9 +17,16 @@ export default defineConfig({
       'testing/testing-docker/e2e/**',
     ],
     setupFiles: ['./vitest.setup.ts'],
+    pool: 'forks',
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
+      thresholds: {
+        lines: 80,
+        functions: 80,
+        branches: 80,
+        statements: 80,
+      },
       exclude: [
         'node_modules/',
         'dist/',
@@ -28,7 +35,16 @@ export default defineConfig({
         'testing/testing-docker/e2e/**',
         '**/*.config.{js,ts,mjs,cjs}',
         '**/nightwatch.conf.cjs',
+        '**/*.css',
+        '**/*.scss',
       ],
+    },
+  },
+  server: {
+    watch: {
+      ignored: ['**/node_modules/**', '**/dist/**', '**/.astro/**'],
+      usePolling: true,
+      interval: 1000,
     },
   },
 });
