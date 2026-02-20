@@ -1,14 +1,15 @@
-## <small>0.0.1 (2026-02-19)</small>
+## <small>0.0.1 (2026-02-20)</small>
 
 - test(config): configurar estructura pruebas E2E y unitarias para Astro y Docker ([0b9be50](https://github.com/DanloisTovar/portafolio-vfinal/commit/0b9be50))
+- test(testing): ✅ increase TargetCursor coverage to 80% and fix GSAP setup ([850a7a3](https://github.com/DanloisTovar/portafolio-vfinal/commit/850a7a3))
 - test(testing): 🧪 implement comprehensive testing suite and resolve environment issues ([a3ba2f0](https://github.com/DanloisTovar/portafolio-vfinal/commit/a3ba2f0))
 - test(testing): 🧪 implement comprehensive unit/e2e tests and formal test plan ([958d1ec](https://github.com/DanloisTovar/portafolio-vfinal/commit/958d1ec))
 - test(unit): agregar tests unitarios con Vitest y Testing Library ([2d51e58](https://github.com/DanloisTovar/portafolio-vfinal/commit/2d51e58))
 - chore(build): update generated files after merge ([b0884c0](https://github.com/DanloisTovar/portafolio-vfinal/commit/b0884c0))
-- chore(changelog): 🤖 actualizar CHANGELOG.md ([8b250da](https://github.com/DanloisTovar/portafolio-vfinal/commit/8b250da))
-- chore(changelog): 🤖 actualizar CHANGELOG.md ([bd93ea2](https://github.com/DanloisTovar/portafolio-vfinal/commit/bd93ea2))
 - chore(changelog): :memo: Actualizar CHANGELOG.md ([d16a5c8](https://github.com/DanloisTovar/portafolio-vfinal/commit/d16a5c8))
 - chore(changelog): :memo: Actualizar CHANGELOG.md ([5c4e475](https://github.com/DanloisTovar/portafolio-vfinal/commit/5c4e475))
+- chore(changelog): 🤖 actualizar CHANGELOG.md ([8b250da](https://github.com/DanloisTovar/portafolio-vfinal/commit/8b250da))
+- chore(changelog): 🤖 actualizar CHANGELOG.md ([bd93ea2](https://github.com/DanloisTovar/portafolio-vfinal/commit/bd93ea2))
 - chore(changelog): auto-update ([8f2dcf5](https://github.com/DanloisTovar/portafolio-vfinal/commit/8f2dcf5))
 - chore(changelog): update changelog ([464d814](https://github.com/DanloisTovar/portafolio-vfinal/commit/464d814))
 - chore(changelog): update changelog ([2bc0351](https://github.com/DanloisTovar/portafolio-vfinal/commit/2bc0351))
@@ -21,6 +22,7 @@
 - chore(husky): agregar hook pre-push para generar CHANGELOG con pnpm changelog ([ef65ce3](https://github.com/DanloisTovar/portafolio-vfinal/commit/ef65ce3))
 - chore(license): agregar licencia MIT al proyecto ([93396b4](https://github.com/DanloisTovar/portafolio-vfinal/commit/93396b4))
 - chore(project): 🔧 update changelog and assets ([47116c4](https://github.com/DanloisTovar/portafolio-vfinal/commit/47116c4))
+- chore(temp): wip before branch switch ([6fccf85](https://github.com/DanloisTovar/portafolio-vfinal/commit/6fccf85))
 - style(text): :art: Ajustar alineación de texto a justificado en componentes ([63a8c05](https://github.com/DanloisTovar/portafolio-vfinal/commit/63a8c05))
 - fix(assets): move CV to public folder and update link ([a29f5d0](https://github.com/DanloisTovar/portafolio-vfinal/commit/a29f5d0))
 - fix(auth): corregir validación de email ([3898da5](https://github.com/DanloisTovar/portafolio-vfinal/commit/3898da5))
