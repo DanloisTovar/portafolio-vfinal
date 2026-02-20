@@ -4,16 +4,17 @@ module.exports = {
   page_objects_path: [],
   custom_commands_path: [],
 
-  webdriver: {
-    start_process: true,
-    server_path: require('path').resolve(__dirname, 'bin/chromedriver'),
-  },
+  webdriver: {},
 
   test_settings: {
     default: {
-      launch_url: 'http://localhost:3001',
+      launch_url: 'http://localhost:3001/',
       desiredCapabilities: {
         browserName: 'chrome',
+      },
+      webdriver: {
+        start_process: true,
+        server_path: '',
       },
     },
 
@@ -21,11 +22,18 @@ module.exports = {
       webdriver: {
         start_process: true,
         server_path: require('path').resolve(__dirname, 'bin/chromedriver'),
+        port: 9515,
+        host: 'localhost',
       },
       desiredCapabilities: {
         browserName: 'chrome',
         'goog:chromeOptions': {
-          args: [],
+          args: [
+            '--no-sandbox',
+            '--disable-gpu',
+            '--disable-dev-shm-usage',
+            '--remote-debugging-port=9222',
+          ],
         },
       },
     },
@@ -34,11 +42,19 @@ module.exports = {
       webdriver: {
         start_process: true,
         server_path: require('geckodriver').path,
+        port: 4444,
+        host: 'localhost',
+        cli_args: [
+          // very important: do not specify --port here
+        ],
       },
       desiredCapabilities: {
         browserName: 'firefox',
-        'moz:firefoxOptions': {
-          args: [],
+        alwaysMatch: {
+          acceptInsecureCerts: true,
+          'moz:firefoxOptions': {
+            args: [],
+          },
         },
       },
     },
