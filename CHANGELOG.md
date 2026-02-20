@@ -1,6 +1,8 @@
-## <small>0.0.1 (2026-02-19)</small>
+## <small>0.0.1 (2026-02-20)</small>
 
 - test(config): configurar estructura pruebas E2E y unitarias para Astro y Docker ([0b9be50](https://github.com/DanloisTovar/portafolio-vfinal/commit/0b9be50))
+- test(e2e): 🐳 add docker test scripts, fix firefox ([d3b3d97](https://github.com/DanloisTovar/portafolio-vfinal/commit/d3b3d97))
+- test(testing): ✅ increase TargetCursor coverage to 80% and fix GSAP setup ([850a7a3](https://github.com/DanloisTovar/portafolio-vfinal/commit/850a7a3))
 - test(testing): 🧪 implement comprehensive testing suite and resolve environment issues ([a3ba2f0](https://github.com/DanloisTovar/portafolio-vfinal/commit/a3ba2f0))
 - test(testing): 🧪 implement comprehensive unit/e2e tests and formal test plan ([958d1ec](https://github.com/DanloisTovar/portafolio-vfinal/commit/958d1ec))
 - test(unit): agregar tests unitarios con Vitest y Testing Library ([2d51e58](https://github.com/DanloisTovar/portafolio-vfinal/commit/2d51e58))
@@ -12,6 +14,7 @@
 - chore(changelog): update changelog ([2bc0351](https://github.com/DanloisTovar/portafolio-vfinal/commit/2bc0351))
 - chore(changelog): update CHANGELOG.md automatically ([efa1877](https://github.com/DanloisTovar/portafolio-vfinal/commit/efa1877))
 - chore(cleanup): eliminar archivo de prueba test.txt ([9a1c4d8](https://github.com/DanloisTovar/portafolio-vfinal/commit/9a1c4d8))
+- chore(config): 🔧 configurar puerto de desarrollo en 3003 ([75993e1](https://github.com/DanloisTovar/portafolio-vfinal/commit/75993e1))
 - chore(config): actualizar nombre del proyecto a portafolio-vfinal ([05f76c7](https://github.com/DanloisTovar/portafolio-vfinal/commit/05f76c7))
 - chore(config): actualizar reglas de commitlint con validaciones ([702ffe8](https://github.com/DanloisTovar/portafolio-vfinal/commit/702ffe8))
 - chore(deps): actualizar @astrojs/react a v4.4.2 para soporte React 19 ([a8236f0](https://github.com/DanloisTovar/portafolio-vfinal/commit/a8236f0))
