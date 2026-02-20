@@ -11,6 +11,9 @@ export default defineConfig({
   site: 'https://danloisdev.com',
   integrations: [react(), sitemap()],
   adapter: vercel(), // Descomenta cuando depliegues en Vercel
+  server: {
+    port: 3003,
+  },
   vite: {
     plugins: [tailwindcss()],
   },
