@@ -4,6 +4,9 @@ import Hero from '../../components/Hero.astro';
 import About from '../../components/About.astro';
 import Experience from '../../components/Experience.astro';
 import Projects from '../../components/Projects.astro';
+import CaseStudy from '../../components/sections/CaseStudy.astro';
+import QAShowcase from '../../components/sections/QAShowcase.astro';
+import WordPressProjects from '../../components/sections/WordPressProjects.astro';
 import News from '../../components/News.astro';
 import Contact from '../../components/Contact.astro';
 import Skills from '../../components/Skills.astro';
@@ -31,6 +34,9 @@ const { lang } = Astro.params;
     <Skills lang={lang as 'es' | 'en'} />
     <Experience lang={lang as 'es' | 'en'} />
     <Projects lang={lang as 'es' | 'en'} />
+    <CaseStudy lang={lang as 'es' | 'en'} />
+    <QAShowcase lang={lang as 'es' | 'en'} />
+    <WordPressProjects lang={lang as 'es' | 'en'} />
     <News lang={lang as 'es' | 'en'} />
     <Contact lang={lang as 'es' | 'en'} />
   </main>
