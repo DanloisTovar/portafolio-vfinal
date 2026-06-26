@@ -37,6 +37,9 @@ tests_output/
 screenshots/
 logs/
 
+# SDD / Atlassian skill registry (local only)
+.atl/
+
 # Misc
 *.log
 .cache

@@ -5,6 +5,7 @@
 - test(testing): ✅ increase TargetCursor coverage to 80% and fix GSAP setup ([850a7a3](https://github.com/DanloisTovar/portafolio-vfinal/commit/850a7a3))
 - test(testing): 🧪 implement comprehensive testing suite and resolve environment issues ([a3ba2f0](https://github.com/DanloisTovar/portafolio-vfinal/commit/a3ba2f0))
 - test(testing): 🧪 implement comprehensive unit/e2e tests and formal test plan ([958d1ec](https://github.com/DanloisTovar/portafolio-vfinal/commit/958d1ec))
+- test(testing): 🧪 migrar tests E2E a CommonJS y agregar tests unitarios ([8bfffd6](https://github.com/DanloisTovar/portafolio-vfinal/commit/8bfffd6))
 - test(unit): agregar tests unitarios con Vitest y Testing Library ([2d51e58](https://github.com/DanloisTovar/portafolio-vfinal/commit/2d51e58))
 - chore(build): update generated files after merge ([b0884c0](https://github.com/DanloisTovar/portafolio-vfinal/commit/b0884c0))
 - chore(changelog): :memo: Actualizar CHANGELOG.md ([d16a5c8](https://github.com/DanloisTovar/portafolio-vfinal/commit/d16a5c8))
