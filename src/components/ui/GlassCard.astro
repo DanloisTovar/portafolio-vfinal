@@ -1,0 +1,110 @@
+---
+interface Props {
+  variant:
+    | 'glass-card-full'
+    | 'soft-skills'
+    | 'glass-compact'
+    | 'experience'
+    | 'contact-form'
+    | 'project-showcase'
+    | 'news';
+  padding?: string;
+  class?: string;
+  hasCursorGlow?: boolean;
+}
+
+const { variant, padding, class: className, hasCursorGlow } = Astro.props;
+
+const variants: Record<
+  string,
+  {
+    containerClasses: string;
+    gradientOverlay: string;
+    showCursorGlow: boolean;
+    showCardGlow: boolean;
+    zIndex: string;
+  }
+> = {
+  'glass-card-full': {
+    containerClasses:
+      'group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-8 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1',
+    gradientOverlay: 'from-blue-500/5 to-blue-500/5 dark:from-blue-500/10 dark:to-blue-500/10',
+    showCursorGlow: true,
+    showCardGlow: true,
+    zIndex: 'z-10',
+  },
+  'soft-skills': {
+    containerClasses:
+      'group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-8 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:scale-105 min-h-[160px] flex flex-col items-center justify-center text-center',
+    gradientOverlay: 'from-blue-500/5 to-transparent',
+    showCursorGlow: true,
+    showCardGlow: true,
+    zIndex: 'z-10',
+  },
+  'glass-compact': {
+    containerClasses:
+      'group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-6 hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1',
+    gradientOverlay: 'from-blue-500/5 to-transparent',
+    showCursorGlow: false,
+    showCardGlow: true,
+    zIndex: 'z-10',
+  },
+  experience: {
+    containerClasses:
+      'group relative overflow-hidden bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl p-6 sm:p-8 shadow-2xl border border-gray-100 dark:border-gray-800 h-full transition-all duration-500 hover:-translate-y-1',
+    gradientOverlay: '',
+    showCursorGlow: false,
+    showCardGlow: false,
+    zIndex: 'z-10',
+  },
+  'contact-form': {
+    containerClasses:
+      'relative group max-w-2xl mx-auto rounded-4xl overflow-hidden border border-gray-100 dark:border-gray-800 bg-gray-50/70 dark:bg-gray-900/70 backdrop-blur-xl shadow-2xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 ring-1 ring-blue-500/10 dark:ring-blue-400/10',
+    gradientOverlay: '',
+    showCursorGlow: false,
+    showCardGlow: false,
+    zIndex: '',
+  },
+  'project-showcase': {
+    containerClasses:
+      'relative flex-shrink-0 group rounded-[2rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800',
+    gradientOverlay: '',
+    showCursorGlow: false,
+    showCardGlow: false,
+    zIndex: '',
+  },
+  news: {
+    containerClasses:
+      'group relative rounded-4xl overflow-hidden bg-white dark:bg-gray-900 shadow-xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500',
+    gradientOverlay: '',
+    showCursorGlow: false,
+    showCardGlow: false,
+    zIndex: '',
+  },
+};
+
+const v = variants[variant];
+const showCursorGlow = hasCursorGlow !== undefined ? hasCursorGlow : v.showCursorGlow;
+const cardPadding = padding || '';
+const cardGlowClass = v.showCardGlow ? 'card-glow' : '';
+---
+
+<div
+  class={`${v.containerClasses}${cardPadding ? ` ${cardPadding}` : ''}${cardGlowClass ? ` ${cardGlowClass}` : ''}${className ? ` ${className}` : ''}`}
+>
+  {
+    v.gradientOverlay && (
+      <div
+        class={`absolute inset-0 bg-gradient-to-br ${v.gradientOverlay} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+      ></div>
+    )
+  }
+  {
+    showCursorGlow && (
+      <div class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    )
+  }
+  <div class={`relative${v.zIndex ? ` ${v.zIndex}` : ''}`}>
+    <slot />
+  </div>
+</div>

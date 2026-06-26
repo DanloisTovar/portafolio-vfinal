@@ -1,0 +1,96 @@
+---
+export interface Props {
+  variant: 'gradient-accent' | 'gradient-cyan' | 'skills-subsection';
+  title: string;
+  accentText?: string;
+  subtitle?: string;
+  titleTag?: 'h2' | 'h3';
+  marginBottom?: string;
+  class?: string;
+}
+
+const {
+  variant,
+  title,
+  accentText,
+  subtitle,
+  titleTag,
+  marginBottom,
+  class: className,
+} = Astro.props;
+
+const variants: Record<
+  string,
+  {
+    wrapperClasses: string;
+    accentClass: string;
+    dividerClass: string;
+    defaultMarginBottom: string;
+    hTag: string;
+  }
+> = {
+  'gradient-accent': {
+    wrapperClasses: 'text-center',
+    accentClass:
+      'bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent',
+    dividerClass: 'w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full',
+    defaultMarginBottom: 'mb-16',
+    hTag: 'h2',
+  },
+  'gradient-cyan': {
+    wrapperClasses: 'text-center',
+    accentClass: 'bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent',
+    dividerClass: 'w-24 h-1 bg-linear-to-r from-blue-600 to-cyan-500 mx-auto mt-6 rounded-full',
+    defaultMarginBottom: 'mb-16',
+    hTag: 'h2',
+  },
+  'skills-subsection': {
+    wrapperClasses: 'text-center',
+    accentClass: '',
+    dividerClass: 'w-24 h-1 bg-transparent mx-auto mt-0 rounded-full',
+    defaultMarginBottom: '',
+    hTag: 'h3',
+  },
+};
+
+const v = variants[variant];
+const Tag = titleTag || (v.hTag as 'h2' | 'h3');
+const mb = marginBottom !== undefined ? marginBottom : v.defaultMarginBottom;
+
+// Build title HTML with accent wrapping
+let renderedTitle: string = title;
+if (variant === 'gradient-cyan') {
+  // Gradient-cyan: entire title in accent span
+  renderedTitle = `<span class="${v.accentClass}">${title}</span>`;
+} else if (variant === 'gradient-accent' && accentText && title.includes(accentText)) {
+  // Gradient-accent: only accentText gets highlighted
+  renderedTitle = title.replace(accentText, `<span class="${v.accentClass}">${accentText}</span>`);
+}
+---
+
+<div class={`${v.wrapperClasses}${mb ? ` ${mb}` : ''}${className ? ` ${className}` : ''}`}>
+  {
+    variant === 'skills-subsection' ? (
+      <>
+        <Tag class="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-3 text-gray-900 dark:text-white">
+          <span class="p-3 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg">
+            <slot name="icon" />
+          </span>
+          {title}
+        </Tag>
+        {v.dividerClass && <div class={v.dividerClass} />}
+      </>
+    ) : (
+      <>
+        <Tag
+          class="text-4xl tracking-tight sm:text-5xl mb-4 text-gray-900 dark:text-white font-orbitron font-medium"
+          set:html={renderedTitle}
+        />
+        {subtitle && (
+          <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">{subtitle}</p>
+        )}
+        {v.dividerClass && <div class={v.dividerClass} />}
+      </>
+    )
+  }
+</div>
