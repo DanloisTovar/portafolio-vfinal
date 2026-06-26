@@ -31,13 +31,13 @@ const {
   class={`section-glow relative overflow-hidden transition-colors duration-300${isolated ? ' isolate' : ''} ${py} ${bg} ${darkBg}${className ? ` ${className}` : ''}`}
 >
   {
-    hasCursorGlow && (
-      <div class="section-cursor-glow pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300"></div>
+    hasGradientBg && (
+      <div class="absolute inset-0 -z-20 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20" />
     )
   }
   {
-    hasGradientBg && (
-      <div class="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20"></div>
+    hasCursorGlow && (
+      <div class="section-cursor-glow pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300" />
     )
   }
   <div class={`${maxWidth} mx-auto ${px} relative`}>
