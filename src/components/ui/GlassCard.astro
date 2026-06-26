@@ -11,10 +11,18 @@ interface Props {
   padding?: string;
   class?: string;
   hasCursorGlow?: boolean;
+  hasCardGlow?: boolean;
   gradientOverlay?: string;
 }
 
-const { variant, padding, class: className, hasCursorGlow, gradientOverlay } = Astro.props;
+const {
+  variant,
+  padding,
+  class: className,
+  hasCursorGlow,
+  hasCardGlow,
+  gradientOverlay,
+} = Astro.props;
 
 const variants: Record<
   string,
@@ -87,7 +95,7 @@ const variants: Record<
 const v = variants[variant];
 const showCursorGlow = hasCursorGlow !== undefined ? hasCursorGlow : v.showCursorGlow;
 const cardPadding = padding || '';
-const cardGlowClass = v.showCardGlow ? 'card-glow' : '';
+const cardGlowClass = (hasCardGlow !== undefined ? hasCardGlow : v.showCardGlow) ? 'card-glow' : '';
 ---
 
 <div
@@ -97,7 +105,7 @@ const cardGlowClass = v.showCardGlow ? 'card-glow' : '';
     (gradientOverlay || v.gradientOverlay) && (
       <div
         class={`absolute inset-0 bg-gradient-to-br ${gradientOverlay || v.gradientOverlay} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-      ></div>
+      />
     )
   }
   {

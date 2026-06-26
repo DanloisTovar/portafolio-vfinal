@@ -51,6 +51,11 @@ const projects: WPProject[] = [
   id="wordpress-projects"
   class="section-glow relative lg:h-[300vh] projects-pattern bg-white dark:bg-[#050b1b]"
 >
+  <!-- Cursor glow effect for entire section -->
+  <div
+    class="section-cursor-glow pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300"
+  >
+  </div>
   <div
     class="projects-sticky lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden flex flex-col justify-center py-20 lg:py-0"
   >
@@ -89,6 +94,8 @@ const projects: WPProject[] = [
             <GlassCard
               variant="project-showcase"
               class="w-[85vw] sm:w-[400px] lg:w-[40vw] max-w-[800px]"
+              hasCardGlow={true}
+              hasCursorGlow={true}
             >
               <StarBorder
                 client:visible
@@ -150,6 +157,10 @@ const projects: WPProject[] = [
 </style>
 
 <script>
+  import { setupGlowEffects } from '../../lib/cursorGlow';
+
+  setupGlowEffects('#wordpress-projects');
+
   let section = document.getElementById('wordpress-projects');
   let track = document.getElementById('wordpress-track');
   let isDesktop = window.matchMedia('(min-width: 1024px)').matches;
