@@ -36,17 +36,11 @@ const { lang } = Astro.params;
     <Experience lang={lang as 'es' | 'en'} />
     <div class="projects-pattern bg-white dark:bg-[#050b1b]">
       <Projects lang={lang as 'es' | 'en'} />
-      <div class="flex justify-center py-6">
-        <GradientDivider variant="blue-cyan" />
-      </div>
+      <GradientDivider variant="blue-cyan" class="my-16 w-48" />
       <CaseStudy lang={lang as 'es' | 'en'} />
-      <div class="flex justify-center py-6">
-        <GradientDivider variant="blue-cyan" />
-      </div>
+      <GradientDivider variant="blue-cyan" class="my-16 w-48" />
       <WordPressProjects lang={lang as 'es' | 'en'} />
-      <div class="flex justify-center py-6">
-        <GradientDivider variant="blue-cyan" />
-      </div>
+      <GradientDivider variant="blue-cyan" class="my-16 w-48" />
       <QAShowcase lang={lang as 'es' | 'en'} />
     </div>
     <News lang={lang as 'es' | 'en'} />
