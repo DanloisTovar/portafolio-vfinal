@@ -1,0 +1,89 @@
+---
+import {
+  Code,
+  FileText,
+  Zap,
+  Eye,
+  Download,
+  MessageCircle,
+  AlertTriangle,
+  XCircle,
+  Github,
+  Linkedin,
+  Mail,
+  Share2,
+  Copy,
+  Check,
+  User,
+  Send,
+  MessageSquare,
+  Tag,
+  CheckCircle2,
+  AlertCircle,
+  Briefcase,
+  Calendar,
+  Building2,
+  ChevronRight,
+  ChevronLeft,
+  Newspaper,
+  ExternalLink,
+  Clock,
+  Users,
+  Brain,
+  GraduationCap,
+  BookOpen,
+  Award,
+  Database,
+  Loader2,
+} from 'lucide-react';
+
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+}
+
+const iconMap: Record<string, any> = {
+  code: Code,
+  fileText: FileText,
+  zap: Zap,
+  eye: Eye,
+  download: Download,
+  messageCircle: MessageCircle,
+  alertTriangle: AlertTriangle,
+  xCircle: XCircle,
+  github: Github,
+  linkedin: Linkedin,
+  mail: Mail,
+  share: Share2,
+  copy: Copy,
+  check: Check,
+  user: User,
+  send: Send,
+  messageSquare: MessageSquare,
+  tag: Tag,
+  checkCircle: CheckCircle2,
+  alertCircle: AlertCircle,
+  briefcase: Briefcase,
+  calendar: Calendar,
+  building: Building2,
+  chevronRight: ChevronRight,
+  chevronLeft: ChevronLeft,
+  newspaper: Newspaper,
+  externalLink: ExternalLink,
+  clock: Clock,
+  users: Users,
+  brain: Brain,
+  graduationCap: GraduationCap,
+  bookOpen: BookOpen,
+  award: Award,
+  database: Database,
+  loader: Loader2,
+};
+
+const { name, size = 24, class: className } = Astro.props;
+
+const IconComponent = iconMap[name.toLowerCase()];
+---
+
+{IconComponent && <IconComponent size={size} className={className} />}
