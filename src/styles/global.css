@@ -14,3 +14,13 @@
   --font-orbitron: orbitron, sans-serif;
   --font-sans: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', sans-serif;
 }
+
+/* Utility: hide scrollbar for scrollable containers */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
