@@ -1,6 +1,5 @@
 ---
 import { Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
-import IconBox from './ui/IconBox.astro';
 
 interface Props {
   lang: 'es' | 'en';
@@ -133,12 +132,10 @@ const currentYear = new Date().getFullYear();
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group neon-social"
+                class="w-12 h-12 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-white transition-all duration-300 hover:-translate-y-1 group neon-social"
                 aria-label={social.label}
               >
-                <IconBox size="footer" color="dark" class="text-gray-600 dark:text-gray-400">
-                  <social.icon size={20} className="relative z-10" />
-                </IconBox>
+                <social.icon size={20} className="relative z-10" />
               </a>
             ))
           }
