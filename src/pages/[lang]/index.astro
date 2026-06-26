@@ -33,10 +33,12 @@ const { lang } = Astro.params;
     <About lang={lang as 'es' | 'en'} />
     <Skills lang={lang as 'es' | 'en'} />
     <Experience lang={lang as 'es' | 'en'} />
-    <Projects lang={lang as 'es' | 'en'} />
-    <CaseStudy lang={lang as 'es' | 'en'} />
-    <WordPressProjects lang={lang as 'es' | 'en'} />
-    <QAShowcase lang={lang as 'es' | 'en'} />
+    <div class="projects-pattern bg-white dark:bg-[#050b1b]">
+      <Projects lang={lang as 'es' | 'en'} />
+      <CaseStudy lang={lang as 'es' | 'en'} />
+      <WordPressProjects lang={lang as 'es' | 'en'} />
+      <QAShowcase lang={lang as 'es' | 'en'} />
+    </div>
     <News lang={lang as 'es' | 'en'} />
     <Contact lang={lang as 'es' | 'en'} />
   </main>
