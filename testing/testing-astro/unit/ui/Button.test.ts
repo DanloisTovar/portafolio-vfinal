@@ -59,4 +59,11 @@ describe('Button.astro', () => {
     const content = readFileSync(COMPONENT_PATH, 'utf-8');
     expect(content).toContain('class');
   });
+
+  it('should accept download, target, and rel props', () => {
+    const content = readFileSync(COMPONENT_PATH, 'utf-8');
+    expect(content).toContain('download');
+    expect(content).toContain('target');
+    expect(content).toContain('rel');
+  });
 });

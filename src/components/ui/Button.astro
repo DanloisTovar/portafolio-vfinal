@@ -6,6 +6,9 @@ interface Props {
   icon?: string;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
+  download?: boolean;
+  target?: string;
+  rel?: string;
   class?: string;
 }
 
@@ -16,6 +19,9 @@ const {
   icon,
   type = 'button',
   disabled = false,
+  download = false,
+  target,
+  rel,
   class: className,
 } = Astro.props;
 
@@ -85,7 +91,7 @@ const isButton = v.tag === 'button' || (!href && v.tag === 'a');
       </span>
     </button>
   ) : (
-    <a href={href || '#'} class={`${v.classes}${className ? ` ${className}` : ''}`}>
+    <a href={href || '#'} class={`${v.classes}${className ? ` ${className}` : ''}`} download={download || undefined} target={target || undefined} rel={rel || undefined}>
       {icon && <span set:html={icon} />}
       {label}
     </a>
