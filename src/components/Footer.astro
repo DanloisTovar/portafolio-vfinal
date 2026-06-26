@@ -3,42 +3,42 @@ import { Github, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
 import IconBox from './ui/IconBox.astro';
 
 interface Props {
-	lang: 'es' | 'en';
+  lang: 'es' | 'en';
 }
 
 const { lang } = Astro.props;
 
 const translations = {
-	es: {
-		tagline:
-			'Desarrollador Front-end apasionado por crear experiencias digitales únicas y funcionales.',
-		quickLinks: 'Enlaces Rápidos',
-		sections: {
-			'sobre-mi': 'Sobre Mí',
-			skills: 'Habilidades',
-			experiencia: 'Experiencia',
-			projects: 'Proyectos',
-			news: 'Novedades',
-			contact: 'Contacto',
-		},
-		social: 'Redes Sociales',
-		rights: 'Todos los derechos reservados.',
-	},
-	en: {
-		tagline:
-			'Front-end Developer passionate about creating unique and functional digital experiences.',
-		quickLinks: 'Quick Links',
-		sections: {
-			'sobre-mi': 'About Me',
-			skills: 'Skills',
-			experiencia: 'Experience',
-			projects: 'Projects',
-			news: 'News',
-			contact: 'Contact',
-		},
-		social: 'Social Media',
-		rights: 'All rights reserved.',
-	},
+  es: {
+    tagline:
+      'Desarrollador Front-end apasionado por crear experiencias digitales únicas y funcionales.',
+    quickLinks: 'Enlaces Rápidos',
+    sections: {
+      'sobre-mi': 'Sobre Mí',
+      skills: 'Habilidades',
+      experiencia: 'Experiencia',
+      projects: 'Proyectos',
+      news: 'Novedades',
+      contact: 'Contacto',
+    },
+    social: 'Redes Sociales',
+    rights: 'Todos los derechos reservados.',
+  },
+  en: {
+    tagline:
+      'Front-end Developer passionate about creating unique and functional digital experiences.',
+    quickLinks: 'Quick Links',
+    sections: {
+      'sobre-mi': 'About Me',
+      skills: 'Skills',
+      experiencia: 'Experience',
+      projects: 'Projects',
+      news: 'News',
+      contact: 'Contact',
+    },
+    social: 'Social Media',
+    rights: 'All rights reserved.',
+  },
 };
 
 const t = translations[lang] || translations['es'];
@@ -46,195 +46,180 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer
-	class="relative border-t border-blue-500/10 dark:border-blue-400/10 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl overflow-hidden"
+  class="relative border-t border-blue-500/10 dark:border-blue-400/10 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl overflow-hidden"
 >
-	<!-- Background Glows -->
-	<div
-		class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/5 rounded-full blur-[100px] -translate-y-1/2"
-	>
-	</div>
-	<div
-		class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-600/5 rounded-full blur-[100px] translate-y-1/2"
-	>
-	</div>
+  <!-- Background Glows -->
+  <div
+    class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/5 rounded-full blur-[100px] -translate-y-1/2"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 dark:bg-indigo-600/5 rounded-full blur-[100px] translate-y-1/2"
+  >
+  </div>
 
-	<div class="max-w-7xl mx-auto px-6 pt-16 pb-8">
-		<div
-			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
-		>
-			<!-- Brand Column -->
-			<div class="md:col-span-2 space-y-6 text-center md:text-left">
-				<a href="#" class="group inline-block">
-					<h2
-						class="text-3xl font-black tracking-tighter text-gray-900 dark:text-white transition-all duration-300"
-					>
-						PORTAFOLIO<span class="text-blue-600 dark:text-blue-400"
-							>.</span
-						>
-					</h2>
-					<div
-						class="h-1 w-0 group-hover:w-full bg-blue-600 dark:bg-blue-400 transition-all duration-500 rounded-full"
-					>
-					</div>
-				</a>
-				<p
-					class="text-gray-600 dark:text-gray-400 max-w-sm mx-auto md:mx-0 leading-relaxed text-lg"
-				>
-					{t.tagline}
-				</p>
-			</div>
+  <div class="max-w-7xl mx-auto px-6 pt-16 pb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <!-- Brand Column -->
+      <div class="md:col-span-2 space-y-6 text-center md:text-left">
+        <a href="#" class="group inline-block">
+          <h2
+            class="text-3xl font-black tracking-tighter text-gray-900 dark:text-white transition-all duration-300"
+          >
+            PORTAFOLIO<span class="text-blue-600 dark:text-blue-400">.</span>
+          </h2>
+          <div
+            class="h-1 w-0 group-hover:w-full bg-blue-600 dark:bg-blue-400 transition-all duration-500 rounded-full"
+          >
+          </div>
+        </a>
+        <p
+          class="text-gray-600 dark:text-gray-400 max-w-sm mx-auto md:mx-0 leading-relaxed text-lg"
+        >
+          {t.tagline}
+        </p>
+      </div>
 
-			<!-- Links Column -->
-			<div class="space-y-6 text-center md:text-left">
-				<h3
-					class="text-sm font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400"
-				>
-					{t.quickLinks}
-				</h3>
-				<ul class="space-y-4 flex flex-col items-center md:items-start">
-					{
-						Object.entries(t.sections).map(([key, label]) => (
-							<li>
-								<a
-									href={`#${key}`}
-									class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 flex items-center gap-1 group w-fit neon-link"
-								>
-									{label}
-									<ArrowUpRight
-										size={14}
-										className="opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300"
-									/>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</div>
+      <!-- Links Column -->
+      <div class="space-y-6 text-center md:text-left">
+        <h3 class="text-sm font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">
+          {t.quickLinks}
+        </h3>
+        <ul class="space-y-4 flex flex-col items-center md:items-start">
+          {
+            Object.entries(t.sections).map(([key, label]) => (
+              <li>
+                <a
+                  href={`#${key}`}
+                  class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 flex items-center gap-1 group w-fit neon-link"
+                >
+                  {label}
+                  <ArrowUpRight
+                    size={14}
+                    className="opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300"
+                  />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
 
-			<!-- Social Column -->
-			<div class="space-y-6 text-center md:text-left">
-				<h3
-					class="text-sm font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400"
-				>
-					{t.social}
-				</h3>
-				<div class="flex gap-4 justify-center md:justify-start">
-					{
-						[
-							{
-								icon: Github,
-								href: 'http://github.com/DanloisTovar',
-								label: 'GitHub',
-							},
-							{
-								icon: Linkedin,
-								href: 'https://www.linkedin.com/in/danloistovar/',
-								label: 'LinkedIn',
-							},
-							{
-								icon: Mail,
-								href: 'mailto:danlois.tovar@gmail.com',
-								label: 'Email',
-							},
-						].map((social) => (
-							<a
-								href={social.href}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="group neon-social"
-								aria-label={social.label}
-							>
-								<IconBox size="footer" color="dark" class="text-gray-600 dark:text-gray-400">
-									<social.icon
-										size={20}
-										className="relative z-10"
-									/>
-								</IconBox>
-							</a>
-						))
-					}
-				</div>
-			</div>
-		</div>
+      <!-- Social Column -->
+      <div class="space-y-6 text-center md:text-left">
+        <h3 class="text-sm font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">
+          {t.social}
+        </h3>
+        <div class="flex gap-4 justify-center md:justify-start">
+          {
+            [
+              {
+                icon: Github,
+                href: 'http://github.com/DanloisTovar',
+                label: 'GitHub',
+              },
+              {
+                icon: Linkedin,
+                href: 'https://www.linkedin.com/in/danloistovar/',
+                label: 'LinkedIn',
+              },
+              {
+                icon: Mail,
+                href: 'mailto:danlois.tovar@gmail.com',
+                label: 'Email',
+              },
+            ].map((social) => (
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group neon-social"
+                aria-label={social.label}
+              >
+                <IconBox size="footer" color="dark" class="text-gray-600 dark:text-gray-400">
+                  <social.icon size={20} className="relative z-10" />
+                </IconBox>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
 
-		<!-- Bottom Bar -->
-		<div
-			class="pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-center items-center gap-6"
-		>
-			<p class="text-gray-500 dark:text-gray-500 text-sm">
-				&copy; {currentYear} Danlois Tovar. {t.rights}
-			</p>
-		</div>
-	</div>
+    <!-- Bottom Bar -->
+    <hr
+      class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
+    />
+    <div class="pt-8 flex flex-col md:flex-row justify-center items-center gap-6">
+      <p class="text-gray-500 dark:text-gray-500 text-sm">
+        &copy; {currentYear} Danlois Tovar. {t.rights}
+      </p>
+    </div>
+  </div>
 </footer>
 
 <style>
-	footer {
-		box-shadow: 0 -10px 40px -10px rgba(59, 130, 246, 0.05);
-	}
+  footer {
+    box-shadow: 0 -10px 40px -10px rgb(59 130 246 / 5%);
+  }
 
-	.neon-link {
-		position: relative;
-		transition: all 0.3s ease;
-	}
+  .neon-link {
+    position: relative;
+    transition: all 0.3s ease;
+  }
 
-	.neon-link:hover {
-		color: #3b82f6; /* text-blue-500 */
-		text-shadow:
-			0 0 8px rgba(59, 130, 246, 0.6),
-			0 0 16px rgba(59, 130, 246, 0.4),
-			0 0 24px rgba(59, 130, 246, 0.2);
-		transform: translateX(4px);
-	}
+  .neon-link:hover {
+    color: #3b82f6; /* text-blue-500 */
+    text-shadow:
+      0 0 8px rgb(59 130 246 / 60%),
+      0 0 16px rgb(59 130 246 / 40%),
+      0 0 24px rgb(59 130 246 / 20%);
+    transform: translateX(4px);
+  }
 
-	/* Glow line below the link on hover */
-	.neon-link::after {
-		content: '';
-		position: absolute;
-		bottom: -2px;
-		left: 0;
-		width: 0;
-		height: 1.5px;
-		background: #3b82f6;
-		box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
-		transition: width 0.3s ease;
-	}
+  /* Glow line below the link on hover */
+  .neon-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: #3b82f6;
+    box-shadow: 0 0 10px rgb(59 130 246 / 80%);
+    transition: width 0.3s ease;
+  }
 
-	.neon-link:hover::after {
-		width: 100%;
-	}
+  .neon-link:hover::after {
+    width: 100%;
+  }
 
-	.neon-social {
-		position: relative;
-		overflow: hidden;
-		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-		border: 1px solid transparent;
-	}
+  .neon-social {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+  }
 
-	.neon-social:hover {
-		background: #2563eb; /* blue-600 */
-		border-color: rgba(59, 130, 246, 0.5);
-		box-shadow:
-			0 0 15px rgba(37, 99, 235, 0.5),
-			0 0 30px rgba(37, 99, 235, 0.3);
-		transform: translateY(-5px) scale(1.05);
-	}
+  .neon-social:hover {
+    background: #2563eb; /* blue-600 */
+    border-color: rgb(59 130 246 / 50%);
+    box-shadow:
+      0 0 15px rgb(37 99 235 / 50%),
+      0 0 30px rgb(37 99 235 / 30%);
+    transform: translateY(-5px) scale(1.05);
+  }
 
-	.neon-social::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(
-			45deg,
-			transparent,
-			rgba(255, 255, 255, 0.2),
-			transparent
-		);
-		transform: translateX(-100%);
-		transition: transform 0.6s ease;
-	}
+  .neon-social::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent, rgb(255 255 255 / 20%), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
 
-	.neon-social:hover::before {
-		transform: translateX(100%);
-	}
+  .neon-social:hover::before {
+    transform: translateX(100%);
+  }
 </style>
