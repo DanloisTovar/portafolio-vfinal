@@ -1,5 +1,9 @@
 ---
 import { useTranslations } from '../i18n/utils';
+import Section from './ui/Section.astro';
+import SectionHeader from './ui/SectionHeader.astro';
+import GlassCard from './ui/GlassCard.astro';
+import IconBox from './ui/IconBox.astro';
 
 interface Props {
   lang: 'es' | 'en';
@@ -9,327 +13,137 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<section
-  id="sobre-mi"
-  class="section-glow isolate py-20 bg-gray-50 dark:bg-gray-950 transition-colors duration-300 relative overflow-hidden"
->
-  <!-- Background gradient effects -->
-  <div
-    class="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20"
-  >
-  </div>
-  <!-- Cursor glow effect for entire section -->
-  <div
-    class="section-cursor-glow pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300"
-  >
+<Section id="sobre-mi">
+  <!-- Section Title with gradient -->
+  <SectionHeader
+    variant="gradient-accent"
+    title={lang === 'es' ? 'Sobre Mí' : 'About Me'}
+    accentText={lang === 'es' ? 'Mí' : 'Me'}
+    subtitle={t('about.intro')}
+  />
+
+  <!-- Bento Grid Layout -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+    <!-- Main intro card - spans 2 columns on large screens -->
+    <div class="lg:col-span-2">
+      <GlassCard variant="glass-card-full">
+        <div class="flex items-center gap-3 mb-6">
+          <IconBox size="lg" color="gradient">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+          </IconBox>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+            {lang === 'es' ? 'Sobre Mí' : 'About Me'}
+          </h3>
+        </div>
+        <p class="text-lg font-medium text-gray-900 dark:text-white mb-4">
+          {t('about.intro')}
+        </p>
+        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-justify">
+          {t('about.description')}
+        </p>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+          {t('about.experience')}
+        </p>
+      </GlassCard>
+    </div>
+
+    <!-- Stats card with animated counter effect -->
+    <div class="space-y-6">
+      <!-- Robot Animation -->
+      <div class="h-full w-full min-h-[400px] relative overflow-hidden leading-[0]">
+        <spline-viewer url="https://prod.spline.design/wYmVAwFQIL3qrH3r/scene.splinecode"
+        ></spline-viewer>
+      </div>
+
+      <!-- Experience stat (Commented Out)
+      <div ...>
+      </div>
+      -->
+
+      <!-- Projects stat (Commented Out)
+      <div ...>
+      </div>
+      -->
+    </div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
-    <!-- Section Title with gradient -->
-    <div class="text-center mb-16">
-      <h2
-        class="text-4xl tracking-tight sm:text-5xl mb-4 text-gray-900 dark:text-white font-orbitron font-medium"
-      >
-        {
-          lang === 'es' ? (
-            <>
-              Sobre{' '}
-              <span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">
-                Mí
-              </span>
-            </>
-          ) : (
-            <>
-              About <span class="text-blue-600 dark:text-blue-400">Me</span>
-            </>
-          )
-        }
-      </h2>
-      <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-        {t('about.intro')}
+  <!-- Skills/Interests cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Skill card 1 -->
+    <GlassCard variant="glass-card-full" padding="p-6" gradientOverlay="from-blue-500/5 to-transparent dark:from-blue-500/10 to-transparent" class="hover:!shadow-xl">
+      <IconBox size="lg" color="light" class="mb-4">
+        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        </svg>
+      </IconBox>
+      <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
+        {lang === 'es' ? 'Desarrollo Web' : 'Web Development'}
+      </h4>
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        {lang === 'es' ? 'Interfaces modernas y responsive' : 'Modern and responsive interfaces'}
       </p>
-      <div class="w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
-    </div>
+    </GlassCard>
 
-    <!-- Bento Grid Layout -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-      <!-- Main intro card - spans 2 columns on large screens -->
-      <div
-        class="lg:col-span-2 group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-8 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
-      >
-        <div
-          class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-500/5 dark:from-blue-500/10 dark:to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        >
-        </div>
-        <div
-          class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        >
-        </div>
-        <div class="relative z-10">
-          <div class="flex items-center gap-3 mb-6">
-            <div
-              class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center"
-            >
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
-              {lang === 'es' ? 'Sobre Mí' : 'About Me'}
-            </h3>
-          </div>
-          <p class="text-lg font-medium text-gray-900 dark:text-white mb-4">
-            {t('about.intro')}
-          </p>
-          <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-justify">
-            {t('about.description')}
-          </p>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
-            {t('about.experience')}
-          </p>
-        </div>
-      </div>
+    <!-- Skill card 2 -->
+    <GlassCard variant="glass-card-full" padding="p-6" gradientOverlay="from-blue-500/5 to-transparent dark:from-blue-500/10 to-transparent" class="hover:!shadow-xl">
+      <IconBox size="lg" color="light" class="mb-4">
+        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+        </svg>
+      </IconBox>
+      <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
+        {lang === 'es' ? 'Diseño UI/UX' : 'UI/UX Design'}
+      </h4>
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        {lang === 'es' ? 'Experiencias centradas en el usuario' : 'User-centered experiences'}
+      </p>
+    </GlassCard>
 
-      <!-- Stats card with animated counter effect -->
-      <div class="space-y-6">
-        <!-- Robot Animation -->
-        <div class="h-full w-full min-h-[400px] relative overflow-hidden leading-[0]">
-          <spline-viewer url="https://prod.spline.design/wYmVAwFQIL3qrH3r/scene.splinecode"
-          ></spline-viewer>
-        </div>
-
-        <!-- Experience stat (Commented Out)
-				<div
-					class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 p-6 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 hover:scale-105 card-glow"
-				>
-					<div
-						class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-					>
-					</div>
-					<div
-						class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-					>
-					</div>
-					<div class="relative z-10 text-white">
-						<div class="text-5xl font-bold mb-2">3+</div>
-						<div class="text-sm font-medium opacity-90">
-							{
-								lang === 'es'
-									? 'Años de Experiencia'
-									: 'Years of Experience'
-							}
-						</div>
-					</div>
-					<div
-						class="absolute -right-6 -bottom-6 w-24 h-24 bg-white/10 rounded-full blur-2xl"
-					>
-					</div>
-				</div>
-				-->
-
-        <!-- Projects stat (Commented Out)
-				<div
-					class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 p-6 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 hover:scale-105 card-glow"
-				>
-					<div
-						class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-					>
-					</div>
-					<div
-						class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-					>
-					</div>
-					<div class="relative z-10 text-white">
-						<div class="text-5xl font-bold mb-2">20+</div>
-						<div class="text-sm font-medium opacity-90">
-							{
-								lang === 'es'
-									? 'Proyectos Completados'
-									: 'Projects Completed'
-							}
-						</div>
-					</div>
-					<div
-						class="absolute -right-6 -bottom-6 w-24 h-24 bg-white/10 rounded-full blur-2xl"
-					>
-					</div>
-				</div>
-				-->
-      </div>
-    </div>
-
-    <!-- Skills/Interests cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Skill card 1 -->
-      <div
-        class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-6 hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
-      >
-        <div
-          class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        >
-        </div>
-        <div
-          class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        >
-        </div>
-        <div class="relative z-10">
-          <div
-            class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500"
-          >
-            <svg
-              class="w-6 h-6 text-blue-600 dark:text-blue-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-            </svg>
-          </div>
-          <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
-            {lang === 'es' ? 'Desarrollo Web' : 'Web Development'}
-          </h4>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
-            {
-              lang === 'es'
-                ? 'Interfaces modernas y responsive'
-                : 'Modern and responsive interfaces'
-            }
-          </p>
-        </div>
-      </div>
-
-      <!-- Skill card 2 -->
-      <div
-        class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-6 hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
-      >
-        <div
-          class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        >
-        </div>
-        <div
-          class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        >
-        </div>
-        <div class="relative z-10">
-          <div
-            class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500"
-          >
-            <svg
-              class="w-6 h-6 text-blue-600 dark:text-blue-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-              ></path>
-            </svg>
-          </div>
-          <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
-            {lang === 'es' ? 'Diseño UI/UX' : 'UI/UX Design'}
-          </h4>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
-            {lang === 'es' ? 'Experiencias centradas en el usuario' : 'User-centered experiences'}
-          </p>
-        </div>
-      </div>
-
-      <!-- Skill card 3 -->
-      <div
-        class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-6 hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
-      >
-        <div
-          class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        >
-        </div>
-        <div
-          class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        >
-        </div>
-        <div class="relative z-10">
-          <div
-            class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500"
-          >
-            <svg
-              class="w-6 h-6 text-blue-600 dark:text-blue-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
-            {lang === 'es' ? 'Optimización' : 'Performance'}
-          </h4>
-          <p class="text-sm text-gray-600 dark:text-gray-400">
-            {lang === 'es' ? 'Código rápido y eficiente' : 'Fast and efficient code'}
-          </p>
-        </div>
-      </div>
-    </div>
+    <!-- Skill card 3 -->
+    <GlassCard variant="glass-card-full" padding="p-6" gradientOverlay="from-blue-500/5 to-transparent dark:from-blue-500/10 to-transparent" class="hover:!shadow-xl">
+      <IconBox size="lg" color="light" class="mb-4">
+        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+      </IconBox>
+      <h4 class="font-semibold text-gray-900 dark:text-white mb-2">
+        {lang === 'es' ? 'Optimización' : 'Performance'}
+      </h4>
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        {lang === 'es' ? 'Código rápido y eficiente' : 'Fast and efficient code'}
+      </p>
+    </GlassCard>
   </div>
-</section>
+</Section>
 
-<style>
-  /* Card-level cursor glow */
-  .cursor-glow {
-    border-radius: 1.5rem;
-    background: radial-gradient(
-      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgb(59 130 246 / 25%),
-      transparent 40%
-    );
-  }
-
-  .dark .cursor-glow {
-    background: radial-gradient(
-      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgb(96 165 250 / 20%),
-      transparent 40%
-    );
-  }
-
-  /* Section-wide cursor glow */
-  .section-cursor-glow {
-    background: radial-gradient(
-      800px circle at var(--section-mouse-x, 50%) var(--section-mouse-y, 50%),
-      rgb(59 130 246 / 15%),
-      transparent 50%
-    );
-  }
-
-  .dark .section-cursor-glow {
-    background: radial-gradient(
-      800px circle at var(--section-mouse-x, 50%) var(--section-mouse-y, 50%),
-      rgb(96 165 250 / 12%),
-      transparent 50%
-    );
-  }
-
-  .section-glow:hover .section-cursor-glow {
-    opacity: 1 !important;
+<style is:global>
+  /* Spline viewer logo hiding */
+  spline-viewer {
+    display: block;
   }
 </style>
 
 <script>
-  /* 1. Parche para ocultar el logo interno de Spline */
-  // Oculta el logo interno de Spline dentro del shadow DOM del <spline-viewer>
+  import { setupGlowEffects } from '../lib/cursorGlow';
+
   function hideSplineLogo() {
     const viewers = document.querySelectorAll('spline-viewer');
     viewers.forEach((viewer) => {
@@ -355,46 +169,13 @@ const t = useTranslations(lang);
     });
   }
 
-  /* --------------------------------------------------------- */
+  // Initialize cursor glow effects
+  setupGlowEffects('#sobre-mi');
 
+  // Hide Spline logo (with retries for deferred loading)
   document.addEventListener('DOMContentLoaded', () => {
-    /* 2. Parche para ocultar el logo interno de Spline */
-    // Intentos defensivos por cargas diferidas
-
     hideSplineLogo();
     setTimeout(hideSplineLogo, 300);
     setTimeout(hideSplineLogo, 1000);
-    /* ------------------------------------------------- */
-    // Card-level glow effect
-    const cards = document.querySelectorAll('.card-glow');
-
-    cards.forEach((card) => {
-      card.addEventListener('mousemove', (e) => {
-        const mouseEvent = e as MouseEvent;
-        const htmlCard = card as HTMLElement;
-        const rect = htmlCard.getBoundingClientRect();
-        const x = ((mouseEvent.clientX - rect.left) / rect.width) * 100;
-        const y = ((mouseEvent.clientY - rect.top) / rect.height) * 100;
-
-        htmlCard.style.setProperty('--mouse-x', `${x}%`);
-        htmlCard.style.setProperty('--mouse-y', `${y}%`);
-      });
-    });
-
-    // Section-wide glow effect
-    const sections = document.querySelectorAll('.section-glow');
-
-    sections.forEach((section) => {
-      section.addEventListener('mousemove', (e) => {
-        const mouseEvent = e as MouseEvent;
-        const htmlSection = section as HTMLElement;
-        const rect = htmlSection.getBoundingClientRect();
-        const x = ((mouseEvent.clientX - rect.left) / rect.width) * 100;
-        const y = ((mouseEvent.clientY - rect.top) / rect.height) * 100;
-
-        htmlSection.style.setProperty('--section-mouse-x', `${x}%`);
-        htmlSection.style.setProperty('--section-mouse-y', `${y}%`);
-      });
-    });
   });
 </script>
