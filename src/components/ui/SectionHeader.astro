@@ -80,12 +80,17 @@ if (titleHtml) {
   {
     variant === 'skills-subsection' ? (
       <>
-        <Tag class="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-3 text-gray-900 dark:text-white">
+        <Tag
+          class={`text-2xl font-bold text-center flex items-center justify-center gap-3 text-gray-900 dark:text-white ${subtitle ? 'mb-4' : 'mb-8'}`}
+        >
           <span class="p-3 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg">
             {icon && <Icon name={icon} size={24} class="text-white" />}
           </span>
           {title}
         </Tag>
+        {subtitle && (
+          <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">{subtitle}</p>
+        )}
         {v.dividerClass && <div class={v.dividerClass} />}
       </>
     ) : (
