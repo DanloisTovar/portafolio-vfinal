@@ -82,15 +82,15 @@ const softSkills = [
     variant="gradient-accent"
     title={lang === 'es' ? 'Habilidades y Estudios' : 'Skills and Education'}
     accentText={lang === 'es' ? 'Estudios' : 'Education'}
-    subtitle={lang === 'es' ? 'Dominio técnico y formación académica' : 'Technical expertise and academic background'}
+    subtitle={lang === 'es'
+      ? 'Dominio técnico y formación académica'
+      : 'Technical expertise and academic background'}
     marginBottom="mb-16 lg:mb-24"
   />
 
   <!-- Technical Skills Title + Logo Loop -->
   <div class="mb-16">
-    <SectionHeader variant="skills-subsection" title={t('skills.hard')}>
-      <Icon name="code" slot="icon" />
-    </SectionHeader>
+    <SectionHeader variant="skills-subsection" title={t('skills.hard')} icon="code" />
     <LogoLoop client:visible speed={25} />
   </div>
 
@@ -122,7 +122,11 @@ const softSkills = [
             <GlassCard variant="glass-card-full" padding="p-6">
               <div class="flex gap-4">
                 <div class="flex-shrink-0">
-                  <IconBox size="lg" color="light" class="group-hover:scale-110 transition-transform duration-500">
+                  <IconBox
+                    size="lg"
+                    color="light"
+                    class="group-hover:scale-110 transition-transform duration-500"
+                  >
                     <edu.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                   </IconBox>
                 </div>
@@ -141,9 +145,7 @@ const softSkills = [
 
   <!-- Soft Skills Grid (Full Width) -->
   <div>
-    <SectionHeader variant="skills-subsection" title={t('skills.soft')}>
-      <Icon name="users" slot="icon" />
-    </SectionHeader>
+    <SectionHeader variant="skills-subsection" title={t('skills.soft')} icon="users" />
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {
@@ -167,9 +169,11 @@ const softSkills = [
 
   <!-- Advanced SQL Samples -->
   <div class="mt-16">
-    <SectionHeader variant="skills-subsection" title={t('skills.advancedSql.title')}>
-      <Icon name="database" slot="icon" />
-    </SectionHeader>
+    <SectionHeader
+      variant="skills-subsection"
+      title={t('skills.advancedSql.title')}
+      icon="database"
+    />
     <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto mb-0">
       {t('skills.advancedSql.subtitle')}
     </p>
@@ -178,9 +182,17 @@ const softSkills = [
     <!-- SQL Queries Grid -->
     <div class="grid grid-cols-1 gap-8 mb-12 max-w-6xl mx-auto">
       <!-- Query 1 -->
-      <GlassCard variant="glass-card-full" padding="p-6" gradientOverlay="from-blue-500/5 to-transparent dark:from-blue-500/10 to-transparent">
+      <GlassCard
+        variant="glass-card-full"
+        padding="p-6"
+        gradientOverlay="from-blue-500/5 to-transparent dark:from-blue-500/10 to-transparent"
+      >
         <div class="flex items-center gap-3 mb-4">
-          <IconBox size="md" color="light" class="group-hover:scale-110 transition-transform duration-500">
+          <IconBox
+            size="md"
+            color="light"
+            class="group-hover:scale-110 transition-transform duration-500"
+          >
             <Icon name="fileText" size={20} class="text-blue-600 dark:text-blue-400" />
           </IconBox>
           <h4 class="text-lg font-bold text-gray-900 dark:text-white">
@@ -190,7 +202,8 @@ const softSkills = [
         <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm text-justify">
           {t('skills.advancedSql.query1.desc')}
         </p>
-        <pre class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto"><code class="language-sql">
+        <pre
+          class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto"><code class="language-sql">
 SELECT TOP 10
     log_id,
     country_code,
@@ -214,9 +227,17 @@ ORDER BY created_at DESC;
       </GlassCard>
 
       <!-- Query 2 -->
-      <GlassCard variant="glass-card-full" padding="p-6" gradientOverlay="from-blue-500/5 to-transparent dark:from-blue-500/10 to-transparent">
+      <GlassCard
+        variant="glass-card-full"
+        padding="p-6"
+        gradientOverlay="from-blue-500/5 to-transparent dark:from-blue-500/10 to-transparent"
+      >
         <div class="flex items-center gap-3 mb-4">
-          <IconBox size="md" color="light" class="group-hover:scale-110 transition-transform duration-500">
+          <IconBox
+            size="md"
+            color="light"
+            class="group-hover:scale-110 transition-transform duration-500"
+          >
             <Icon name="fileText" size={20} class="text-blue-600 dark:text-blue-400" />
           </IconBox>
           <h4 class="text-lg font-bold text-gray-900 dark:text-white">
@@ -226,7 +247,8 @@ ORDER BY created_at DESC;
         <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm text-justify">
           {t('skills.advancedSql.query2.desc')}
         </p>
-        <pre class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto"><code class="language-sql">
+        <pre
+          class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto"><code class="language-sql">
 SELECT
     dc.dispatch_center_id      AS dispatch_center,
     pr.product_id              AS sku_code,
@@ -258,9 +280,17 @@ ORDER BY
       </GlassCard>
 
       <!-- Query 3 -->
-      <GlassCard variant="glass-card-full" padding="p-6" gradientOverlay="from-blue-500/5 to-transparent dark:from-blue-500/10 to-transparent">
+      <GlassCard
+        variant="glass-card-full"
+        padding="p-6"
+        gradientOverlay="from-blue-500/5 to-transparent dark:from-blue-500/10 to-transparent"
+      >
         <div class="flex items-center gap-3 mb-4">
-          <IconBox size="md" color="light" class="group-hover:scale-110 transition-transform duration-500">
+          <IconBox
+            size="md"
+            color="light"
+            class="group-hover:scale-110 transition-transform duration-500"
+          >
             <Icon name="fileText" size={20} class="text-blue-600 dark:text-blue-400" />
           </IconBox>
           <h4 class="text-lg font-bold text-gray-900 dark:text-white">
@@ -270,7 +300,8 @@ ORDER BY
         <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm text-justify">
           {t('skills.advancedSql.query3.desc')}
         </p>
-        <pre class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto"><code class="language-sql">
+        <pre
+          class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto"><code class="language-sql">
 SELECT
     def.policy_value
 FROM core.policy_rel rel
