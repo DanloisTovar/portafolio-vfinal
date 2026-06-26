@@ -11,7 +11,6 @@ import News from '../../components/News.astro';
 import Contact from '../../components/Contact.astro';
 import Skills from '../../components/Skills.astro';
 import Footer from '../../components/Footer.astro';
-import GradientDivider from '../../components/ui/GradientDivider.astro';
 import { languages } from '../../i18n/ui';
 
 export function getStaticPaths() {
@@ -36,11 +35,11 @@ const { lang } = Astro.params;
     <Experience lang={lang as 'es' | 'en'} />
     <div class="projects-pattern bg-white dark:bg-[#050b1b]">
       <Projects lang={lang as 'es' | 'en'} />
-      <GradientDivider variant="blue-cyan" class="my-16 w-48" />
+      <hr class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-30 my-0" />
       <CaseStudy lang={lang as 'es' | 'en'} />
-      <GradientDivider variant="blue-cyan" class="my-16 w-48" />
+      <hr class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-30 my-0" />
       <WordPressProjects lang={lang as 'es' | 'en'} />
-      <GradientDivider variant="blue-cyan" class="my-16 w-48" />
+      <hr class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-30 my-0" />
       <QAShowcase lang={lang as 'es' | 'en'} />
     </div>
     <News lang={lang as 'es' | 'en'} />
