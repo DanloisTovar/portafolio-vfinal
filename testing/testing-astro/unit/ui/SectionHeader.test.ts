@@ -62,4 +62,14 @@ describe('SectionHeader.astro', () => {
     const content = readFileSync(COMPONENT_PATH, 'utf-8');
     expect(content).toContain('from-blue-600 to-cyan-500');
   });
+
+  it('should accept optional titleHtml prop', () => {
+    const content = readFileSync(COMPONENT_PATH, 'utf-8');
+    expect(content).toContain('titleHtml');
+  });
+
+  it('should use titleHtml when provided instead of accentText', () => {
+    const content = readFileSync(COMPONENT_PATH, 'utf-8');
+    expect(content).toContain('if (titleHtml)');
+  });
 });

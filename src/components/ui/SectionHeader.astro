@@ -2,6 +2,7 @@
 export interface Props {
   variant: 'gradient-accent' | 'gradient-cyan' | 'skills-subsection';
   title: string;
+  titleHtml?: string;
   accentText?: string;
   subtitle?: string;
   titleTag?: 'h2' | 'h3';
@@ -12,6 +13,7 @@ export interface Props {
 const {
   variant,
   title,
+  titleHtml,
   accentText,
   subtitle,
   titleTag,
@@ -59,7 +61,9 @@ const mb = marginBottom !== undefined ? marginBottom : v.defaultMarginBottom;
 
 // Build title HTML with accent wrapping
 let renderedTitle: string = title;
-if (variant === 'gradient-cyan') {
+if (titleHtml) {
+  renderedTitle = titleHtml;
+} else if (variant === 'gradient-cyan') {
   // Gradient-cyan: entire title in accent span
   renderedTitle = `<span class="${v.accentClass}">${title}</span>`;
 } else if (variant === 'gradient-accent' && accentText && title.includes(accentText)) {
