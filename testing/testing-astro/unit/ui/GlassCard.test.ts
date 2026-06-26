@@ -79,6 +79,11 @@ describe('GlassCard.astro', () => {
     expect(content).toContain('<slot');
   });
 
+  it('should accept gradientOverlay override prop', () => {
+    const content = readFileSync(COMPONENT_PATH, 'utf-8');
+    expect(content).toContain('gradientOverlay');
+  });
+
   it('should include gradient overlay for glass-card-full variant', () => {
     const content = readFileSync(COMPONENT_PATH, 'utf-8');
     expect(content).toContain('from-blue-500/5');
