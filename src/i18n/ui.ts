@@ -88,6 +88,17 @@ export const ui = {
     'qa.showcase.placeholder_image': 'Placeholder: Upload your Test Plan image here',
     'qa.showcase.placeholder_bug1': 'Placeholder: Upload Bug 1 GIF here',
     'qa.showcase.placeholder_bug2': 'Placeholder: Upload Bug 2 GIF here',
+    'wordpressProjects.title': 'Proyectos WordPress',
+    'wordpressProjects.subtitle': 'Sitios web construidos con WordPress y Elementor',
+    'wordpressProjects.project1.title': 'Proyecto WordPress 1',
+    'wordpressProjects.project1.desc':
+      'Sitio web corporativo construido con WordPress y Elementor. Diseño responsivo, optimización SEO y configuración de hosting.',
+    'wordpressProjects.project2.title': 'Proyecto WordPress 2',
+    'wordpressProjects.project2.desc':
+      'Tienda online con WooCommerce y Elementor. Catálogo de productos, carrito de compras y pasarela de pago.',
+    'wordpressProjects.project3.title': 'Proyecto WordPress 3',
+    'wordpressProjects.project3.desc':
+      'Landing page de alta conversión con Elementor. Diseño optimizado para campañas de marketing y captación de leads.',
     'projects.caseStudy.title': 'Caso de estudio',
     'projects.caseStudy.subtitle': 'Proceso de Refactorización de la página web de Workgroup.',
     'projects.caseStudy.description':
@@ -198,6 +209,17 @@ export const ui = {
     'qa.showcase.placeholder_image': 'Placeholder: Upload your Test Plan image here',
     'qa.showcase.placeholder_bug1': 'Placeholder: Upload Bug 1 GIF here',
     'qa.showcase.placeholder_bug2': 'Placeholder: Upload Bug 2 GIF here',
+    'wordpressProjects.title': 'WordPress Projects',
+    'wordpressProjects.subtitle': 'Websites built with WordPress and Elementor',
+    'wordpressProjects.project1.title': 'WordPress Project 1',
+    'wordpressProjects.project1.desc':
+      'Corporate website built with WordPress and Elementor. Responsive design, SEO optimization, and hosting setup.',
+    'wordpressProjects.project2.title': 'WordPress Project 2',
+    'wordpressProjects.project2.desc':
+      'Online store with WooCommerce and Elementor. Product catalog, shopping cart, and payment gateway.',
+    'wordpressProjects.project3.title': 'WordPress Project 3',
+    'wordpressProjects.project3.desc':
+      'High-conversion landing page with Elementor. Design optimized for marketing campaigns and lead capture.',
     'projects.caseStudy.title': 'Case Study',
     'projects.caseStudy.subtitle': 'Refactoring Process of the Workgroup website.',
     'projects.caseStudy.description':
