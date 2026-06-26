@@ -1,12 +1,6 @@
 ---
 import { useTranslations } from '../i18n/utils';
-import {
-  Send,
-  User,
-  Mail,
-  MessageSquare,
-  Tag,
-} from 'lucide-react';
+import { Send, User, Mail, MessageSquare, Tag } from 'lucide-react';
 import StarBorder from './Animations/StarBorder/StarBorder';
 import SectionHeader from './ui/SectionHeader.astro';
 import GlassCard from './ui/GlassCard.astro';
@@ -18,42 +12,44 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-const titleHtml = lang === 'es'
-  ? `<span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">¡</span> Hablemos <span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">!</span>`
-  : `Let's Talk <span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">!</span>`;
+const titleHtml =
+  lang === 'es'
+    ? `<span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">¡</span> Hablemos <span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">!</span>`
+    : `Let's Talk <span class="bg-linear-to-r from-blue-600 to-blue-600 dark:from-blue-400 dark:to-blue-400 bg-clip-text text-transparent">!</span>`;
 
-const subtitle = lang === 'es'
-  ? '¿Tienes un proyecto en mente o solo quieres saludar? Mi bandeja de entrada siempre está abierta.'
-  : 'Have a project in mind or just want to say hi? My inbox is always open.';
+const subtitle =
+  lang === 'es'
+    ? '¿Tienes un proyecto en mente o solo quieres saludar? Mi bandeja de entrada siempre está abierta.'
+    : 'Have a project in mind or just want to say hi? My inbox is always open.';
 ---
 
 <section
   id="contact"
   class="section-glow py-16 px-4 bg-gray-50/50 dark:bg-gray-950/20 transition-colors duration-300 relative overflow-hidden z-0"
 >
-  <!-- Cursor glow effect for entire section -->
-  <div
-    class="section-cursor-glow pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300"
-  >
-  </div>
-
   <!-- Background gradient effects -->
   <div
-    class="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20"
+    class="absolute inset-0 -z-20 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20"
   >
   </div>
 
   <!-- Light Horizon Glow (Light Mode Only) -->
   <div
-    class="absolute inset-0 -z-10 dark:hidden"
+    class="absolute inset-0 -z-20 dark:hidden"
     style="background: radial-gradient(125% 125% at 50% 10%, #fff 40%, #93c5fd 100%);"
   >
   </div>
 
   <!-- Dark Horizon Glow (Dark Mode Only) -->
   <div
-    class="absolute inset-0 -z-10 hidden dark:block"
+    class="absolute inset-0 -z-20 hidden dark:block"
     style="background: radial-gradient(125% 125% at 50% 10%, #030712 40%, #0d1a36 100%);"
+  >
+  </div>
+
+  <!-- Cursor glow effect for entire section -->
+  <div
+    class="section-cursor-glow pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300"
   >
   </div>
 
