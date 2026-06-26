@@ -15,10 +15,10 @@ describe('Icon Components', () => {
     it('should define name prop with icon mapping', () => {
       const content = readFileSync(COMPONENT_PATH, 'utf-8');
       expect(content).toContain('name');
-      expect(content).toContain('iconMap');
+      expect(content).toContain('paths');
     });
 
-    it('should map common icon names to lucide components', () => {
+    it('should map common icon names to SVG paths', () => {
       const content = readFileSync(COMPONENT_PATH, 'utf-8');
       const icons = ['eye', 'download', 'github', 'linkedin', 'mail', 'user', 'code'];
       icons.forEach((icon) => {
