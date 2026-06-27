@@ -206,11 +206,11 @@ Proyectos del curso del SEPEPA **"Confecci贸n y Publicaci贸n de P谩ginas Web" 鈥
 ### 8. QA Showcase
 Bug hunting y documentaci贸n de testing con lightbox de GIFs.
 
-### 9. News (Noticias)
-Carrusel de noticias tech v铆a RSS (The Verge, Dev.to).
-
-### 10. Contact (Contacto)
+### 9. Contact (Contacto)
 Formulario con validaci贸n Zod v铆a Astro Actions + glow effects.
+
+### 10. News (Noticias)
+Carrusel de noticias tech v铆a RSS (The Verge, Dev.to).
 
 ### 11. Footer
 Links, iconos de redes sociales con efecto neon y copyright.
