@@ -142,7 +142,9 @@ const t = useTranslations(lang);
 </style>
 
 <script>
-  import { setupGlowEffects } from '../lib/cursorGlow';
+  import { initCardGlow } from '../lib/cursorGlow';
+
+  initCardGlow();
 
   function hideSplineLogo() {
     const viewers = document.querySelectorAll('spline-viewer');
@@ -170,7 +172,6 @@ const t = useTranslations(lang);
   }
 
   // Initialize cursor glow effects
-  setupGlowEffects('#sobre-mi');
 
   // Hide Spline logo (with retries for deferred loading)
   document.addEventListener('DOMContentLoaded', () => {

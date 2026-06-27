@@ -47,7 +47,8 @@ const projects: WPProject[] = [
 ];
 ---
 
-<section id="wordpress-projects" class="relative lg:h-[300vh]">
+<section id="wordpress-projects" class="section-glow relative lg:h-[300vh]">
+  <!-- Cursor glow effect -->
   <div
     class="projects-sticky lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden flex flex-col justify-center py-20 lg:py-0"
   >
@@ -139,6 +140,9 @@ const projects: WPProject[] = [
   </div>
 </section>
 <script>
+
+
+  
   let section = document.getElementById('wordpress-projects');
   let track = document.getElementById('wordpress-track');
   let isDesktop = window.matchMedia('(min-width: 1024px)').matches;

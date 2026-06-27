@@ -21,7 +21,6 @@ const t = useTranslations(lang);
   >
   </div>
   <div
-    class="section-cursor-glow pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300"
   >
   </div>
 
@@ -166,7 +165,6 @@ const t = useTranslations(lang);
   </div>
 </section>
 <script>
-  import { setupGlowEffects } from '../../lib/cursorGlow';
   import lightGallery from 'lightgallery';
   import lgZoom from 'lightgallery/plugins/zoom';
   import lgThumbnail from 'lightgallery/plugins/thumbnail';
@@ -214,12 +212,10 @@ const t = useTranslations(lang);
   document.addEventListener('DOMContentLoaded', () => {
     initLightGallery();
     initLightboxTriggers();
-    setupGlowEffects('#qa-showcase');
   });
 
   document.addEventListener('astro:page-load', () => {
     initLightGallery();
     initLightboxTriggers();
-    setupGlowEffects('#qa-showcase');
   });
 </script>

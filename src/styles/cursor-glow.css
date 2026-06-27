@@ -16,25 +16,21 @@
   );
 }
 
-/* Section-wide cursor glow */
-.section-cursor-glow {
+/* Section-wide cursor glow — global fixed element */
+#global-cursor-glow {
   background: radial-gradient(
-    800px circle at var(--section-mouse-x, 50%) var(--section-mouse-y, 50%),
+    400px circle at var(--section-mouse-x, 50%) var(--section-mouse-y, 50%),
     rgb(59 130 246 / 15%),
     transparent 50%
   );
 }
 
-.dark .section-cursor-glow {
+.dark #global-cursor-glow {
   background: radial-gradient(
-    800px circle at var(--section-mouse-x, 50%) var(--section-mouse-y, 50%),
+    400px circle at var(--section-mouse-x, 50%) var(--section-mouse-y, 50%),
     rgb(96 165 250 / 12%),
     transparent 50%
   );
-}
-
-.section-glow:hover .section-cursor-glow {
-  opacity: 1 !important;
 }
 
 /* Hide scrollbar utility for scrollable containers */

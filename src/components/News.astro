@@ -11,17 +11,17 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<section id="news" class="py-24 px-4 bg-white dark:bg-[#050b1b] relative overflow-hidden">
+<section id="news" class="section-glow py-24 px-4 bg-white dark:bg-[#050b1b] relative overflow-hidden">
   <!-- Soft Blue Radial Background (light mode only) -->
   <div
-    class="absolute inset-0 z-0 dark:hidden pointer-events-none"
+    class="absolute inset-0 -z-20 dark:hidden pointer-events-none"
     style="background: #fff; background-image: radial-gradient(circle at top center, rgb(59 130 246 / 50%), transparent 70%);"
   >
   </div>
 
   <!-- Steel Blue top glow (dark mode only) -->
   <div
-    class="absolute inset-0 z-0 hidden dark:block pointer-events-none"
+    class="absolute inset-0 -z-20 hidden dark:block pointer-events-none"
     style="background: radial-gradient(ellipse 80% 60% at 50% 0%, rgb(120 180 255 / 25%), transparent 70%), #040816;"
   >
   </div>
@@ -37,6 +37,8 @@ const t = useTranslations(lang);
     >
     </div>
   </div>
+
+  <!-- Cursor glow effect -->
 
   <div class="max-w-7xl mx-auto relative z-10">
     <SectionHeader
@@ -93,6 +95,11 @@ const t = useTranslations(lang);
     scrollbar-width: none;
   }
 </style>
+
+<script>
+
+
+  </script>
 
 <script is:inline define:vars={{ readMore: t('news.readMore'), source: t('news.source') }}>
   const CACHE_KEY = 'news_feed_cache_v3_multi';

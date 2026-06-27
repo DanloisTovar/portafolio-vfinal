@@ -138,5 +138,25 @@ const navItems = [
     <Navbar client:load items={navItems} currentLang={lang} />
     <SocialMenu lang={lang} />
     <slot />
+
+    <!-- Global cursor glow — single fixed element, no section-edge clipping -->
+    <div id="global-cursor-glow" class="pointer-events-none fixed inset-0 z-0 opacity-0" style="transition: opacity 0.3s ease;"></div>
   </body>
 </html>
+
+<script>
+  const glow = document.getElementById('global-cursor-glow');
+  if (glow) {
+    document.addEventListener('mousemove', (e: MouseEvent) => {
+      const target = document.elementFromPoint(e.clientX, e.clientY);
+      const sectionGlow = target?.closest('.section-glow');
+      if (sectionGlow) {
+        glow.style.setProperty('--section-mouse-x', `${(e.clientX / window.innerWidth) * 100}%`);
+        glow.style.setProperty('--section-mouse-y', `${(e.clientY / window.innerHeight) * 100}%`);
+        glow.style.opacity = '1';
+      } else {
+        glow.style.opacity = '0';
+      }
+    });
+  }
+</script>
