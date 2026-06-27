@@ -1,6 +1,7 @@
 ## <small>0.0.1 (2026-06-27)</small>
 
 * chore: ⬆️ actualizar chromedriver a v149 ([c5cf545](https://github.com/DanloisTovar/portafolio-vfinal/commit/c5cf545))
+* chore: 📝 actualizar CHANGELOG y openspec ([58720b4](https://github.com/DanloisTovar/portafolio-vfinal/commit/58720b4))
 * chore(build): update generated files after merge ([b0884c0](https://github.com/DanloisTovar/portafolio-vfinal/commit/b0884c0))
 * chore(changelog): :memo: Actualizar CHANGELOG.md ([d16a5c8](https://github.com/DanloisTovar/portafolio-vfinal/commit/d16a5c8))
 * chore(changelog): :memo: Actualizar CHANGELOG.md ([5c4e475](https://github.com/DanloisTovar/portafolio-vfinal/commit/5c4e475))
