@@ -67,12 +67,14 @@ pnpm test:e2e:firefox  # Tests E2E solo Firefox
 
 ## 📊 Estado de Cobertura
 
-![Coverage](https://img.shields.io/badge/coverage-98%25-green?style=for-the-badge&logo=vitest)
+![Coverage](https://img.shields.io/badge/coverage-95%25-green?style=for-the-badge&logo=vitest)
 
-- **Sentencias**: 96.7%
-- **Ramas**: 86.9%
-- **Funciones**: 100%
-- **Líneas**: 98.3%
+- **Sentencias**: 95.31%
+- **Ramas**: 87.09%
+- **Funciones**: 96.55%
+- **Líneas**: 96.66%
+
+> **Nota sobre la baja respecto a 98% anterior**: Las líneas uncovered de `cursorGlow.ts` (55-60) corresponden al event listener `astro:after-swap` que solo se dispara en navegación SPA de Astro — imposible de testear unitariamente. El coverage de componentes `.astro` se mide con análisis estático (62 test files de secciones y componentes UI), no con ejecución directa de V8.
 
 ```bash
 pnpm coverage   # Reporte en ./coverage/index.html
