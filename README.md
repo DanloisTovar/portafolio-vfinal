@@ -27,7 +27,7 @@ Portafolio profesional de Danlois Tovar — Desarrollador Front End. Construido 
 ## 🛠️ Herramientas de Desarrollo
 
 - **Linting**: ESLint + Prettier + Stylelint
-- **Testing**: Vitest (570 tests unitarios) + Nightwatch (23 tests E2E en 7 specs)
+- **Testing**: Vitest (570 tests unitarios, 62 archivos) + Nightwatch (190 assertions E2E en 7 specs, Chrome + Firefox)
 - **Git Hooks**: Husky + lint-staged + commitlint
 - **Changelog**: Conventional Changelog automatizado
 - **CI**: GitHub Actions (push/PR a main)
@@ -266,17 +266,17 @@ pnpm coverage          # Reporte de cobertura (98.3% líneas)
 ```
 
 ### E2E (Nightwatch)
-**23 tests** en 7 specs. Chrome + Firefox + Docker.
+**190 assertions** en 7 specs × 2 navegadores (Chrome + Firefox). También disponible para Docker.
 
 | Spec | Tests | Qué cubre |
 |---|---|---|
-| `home` | 1 | Renderizado de todas las secciones |
+| `home` | 1 | Renderizado de 10 secciones |
 | `interactions` | 3 | Theme toggle, news carrusel, validación formulario |
 | `links` | 4 | Social menu, navbar, footer, proyectos externos |
 | `navigation` | 3 | Cambio idioma, scroll suave, atributos footer |
 | `seo` | 2 | Meta tags ES/EN |
-| `projects` | 5 | EventTwo badge destacado, links externos, WordPress 4 cards |
-| `showcases` | 5 | CaseStudy lightGallery, QA Showcase cards |
+| `projects` | 5 | EventTwo link + target, GitHub repo, WordPress 4 cards |
+| `showcases` | 5 | CaseStudy gallery, QA Showcase cards |
 
 ```bash
 pnpm dev              # Terminal 1
