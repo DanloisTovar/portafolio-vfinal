@@ -116,6 +116,14 @@ const projects: Project[] = [
                   class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-102 transition-transform duration-700 ease-out"
                   loading="lazy"
                 />
+                {index === 0 && (
+                  <div class="absolute top-4 left-4 z-[60]">
+                    <span class="px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full bg-blue-600 text-white shadow-lg flex items-center gap-1.5">
+                      <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                      {lang === 'es' ? 'Destacado' : 'Featured'}
+                    </span>
+                  </div>
+                )}
                 <div class="absolute top-4 right-4 z-[60] flex flex-wrap justify-end gap-2 max-w-[80%]">
                   {project.tags.slice(0, 4).map((tag) => (
                     <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg">

@@ -43,7 +43,7 @@ export const ui = {
       'Maquetación institucional orientada a claridad y cumplimiento: estructura semántica, optimización básica de SEO y carga, integración con flujo existente en PHP. Entregables consistentes y mantenibles.',
     'projects.eventtwo.title': 'EventTwo Media',
     'projects.eventtwo.desc':
-      'Plataforma de eventos en vivo con WordPress Headless como backend. Conciertos, stand-up comedy y conferencias en escenarios globales. Explora eventos por categoría y solicita artistas en tu ciudad. Construido con Astro, React, TypeScript y Tailwind CSS.',
+      'Plataforma de eventos en vivo con WordPress Headless como backend. 105 tests unitarios con 84.5% de cobertura, Schema.org SEO, GDPR compliant. Conciertos, stand-up comedy y conferencias en escenarios globales. Construido con Astro, React, TypeScript y Tailwind CSS.',
     'skills.title': 'Habilidades',
     'skills.hard': 'Habilidades Técnicas',
     'skills.soft': 'Habilidades Blandas',
@@ -170,7 +170,7 @@ export const ui = {
       'Institutional layout oriented towards clarity and compliance: semantic structure, basic SEO and load optimization, integration with existing PHP flow. Consistent and maintainable deliverables.',
     'projects.eventtwo.title': 'EventTwo Media',
     'projects.eventtwo.desc':
-      'Live events platform with WordPress Headless as backend. Concerts, stand-up comedy, and conferences on global stages. Browse events by category and request artists in your city. Built with Astro, React, TypeScript, and Tailwind CSS.',
+      'Live events platform with WordPress Headless as backend. 105 unit tests with 84.5% coverage, Schema.org SEO, GDPR compliant. Concerts, stand-up comedy, and conferences on global stages. Built with Astro, React, TypeScript, and Tailwind CSS.',
     'skills.title': 'Skills',
     'skills.hard': 'Hard Skills',
     'skills.soft': 'Soft Skills',

@@ -7,10 +7,14 @@ module.exports = {
       .assert.visible('main')
       .verify.visible('#home') // Hero
       .verify.visible('#sobre-mi') // About
-      .verify.visible('#news') // News
-      .verify.visible('#contact') // Contact
       .verify.visible('#skills') // Skills
       .verify.visible('#experiencia') // Experience
+      .verify.visible('#projects') // Projects (clean code)
+      .verify.visible('#case-study') // Case Study
+      .verify.visible('#wordpress-projects') // WordPress Projects
+      .verify.visible('#qa-showcase') // QA Showcase
+      .verify.visible('#news') // News
+      .verify.visible('#contact') // Contact
       .end();
   },
 };
