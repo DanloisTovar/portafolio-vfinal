@@ -156,7 +156,7 @@ pnpm coverage   # Reporte en ./coverage/index.html
 
 ## 🧩 Componentes UI Atómicos
 
-8 componentes reutilizables extraídos de patrones duplicados (~920 líneas eliminadas):
+7 componentes reutilizables extraídos de patrones duplicados (~920 líneas eliminadas):
 
 | Componente | Variantes | Uso |
 |---|---|---|
@@ -184,7 +184,7 @@ Timeline vertical con nodos animados y tarjetas glare-hover.
 
 ### 5. Projects (Proyectos — Código Limpio)
 Horizontal scroll con 4 proyectos:
-1. **EventTwo Media** — Plataforma de eventos en vivo (Astro, React, WordPress Headless)
+1. **EventTwo Media** ⭐ — Plataforma de eventos en vivo. **105 tests, 84.5% coverage, WordPress Headless, GDPR compliant, Schema.org SEO.** (Astro, React, TypeScript, Tailwind CSS)
 2. **Portafolio Web** — Este mismo sitio (Astro, React, TypeScript, Tailwind CSS)
 3. **Workgroup** — Sitio corporativo (HTML, CSS, Bootstrap, PHP)
 4. **LATI** — Sitio institucional (HTML, CSS, Bootstrap, PHP)
@@ -193,7 +193,7 @@ Horizontal scroll con 4 proyectos:
 Galería lightbox con antes/después de la refactorización de Workgroup.
 
 ### 7. WordPress Projects
-Horizontal scroll con 4 proyectos WordPress + Elementor:
+Proyectos del curso **"Confección y Publicación de Páginas Web" — Restauradores Bercianos, Oviedo** (formación reglada española). Horizontal scroll con 4 proyectos WordPress + Elementor:
 1. **NIDO Coworking** — Coworking en Asturias
 2. **Brasa Norte** — Restaurante mediterráneo
 3. **Clínica Oria** — Clínica de columna y articulaciones
