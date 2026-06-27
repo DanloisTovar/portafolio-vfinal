@@ -3,6 +3,7 @@
 * docs: 📝 actualizar coverage en README con explicación de la baja ([be4fc32](https://github.com/DanloisTovar/portafolio-vfinal/commit/be4fc32))
 * docs: 📝 actualizar README con 570 unitarios y 190 aserciones E2E ([be6c5d6](https://github.com/DanloisTovar/portafolio-vfinal/commit/be6c5d6))
 * docs: 📝 actualizar README con todas las nuevas características ([c1f6be8](https://github.com/DanloisTovar/portafolio-vfinal/commit/c1f6be8))
+* docs: 📝 agregar bloque destacado del curso WordPress en README ([f3751db](https://github.com/DanloisTovar/portafolio-vfinal/commit/f3751db))
 * docs: 📝 agregar reporte openspec de cursor glow global ([4fdbd71](https://github.com/DanloisTovar/portafolio-vfinal/commit/4fdbd71))
 * docs: 📝 corregir inconsistencias y destacar curso WP + EventTwo ([8552237](https://github.com/DanloisTovar/portafolio-vfinal/commit/8552237))
 * docs(changelog): 📝 Actualiza CHANGELOG.md ([611983c](https://github.com/DanloisTovar/portafolio-vfinal/commit/611983c))
