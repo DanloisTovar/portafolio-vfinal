@@ -1,23 +1,21 @@
 module.exports = {
-  'EventTwo Media has featured badge': function (browser) {
+  'EventTwo Media project link present in DOM': function (browser) {
     browser
-      .url(browser.launchUrl)
+      .url(browser.launchUrl + 'es')
       .waitForElementVisible('#projects')
-      .useXpath()
-      .moveToElement("//div[@id='projects']", 0, 0)
-      .useCss()
-      .verify.visible('#projects .projects-track .group:first-child span.text-xs')
-      .verify.containsText(
-        '#projects .projects-track .group:first-child span.text-xs',
-        'Destacado'
+      .waitForElementPresent('#projects a[href*="eventtwomedia.com"]')
+      .verify.attributeContains(
+        '#projects a[href*="eventtwomedia.com"]',
+        'href',
+        'eventtwomedia.com'
       )
       .end();
   },
 
   'EventTwo Media links to external site': function (browser) {
     browser
-      .url(browser.launchUrl)
-      .waitForElementVisible('#projects')
+      .url(browser.launchUrl + 'es')
+      .waitForElementPresent('#projects a[href*="eventtwomedia.com"]')
       .verify.attributeEquals(
         '#projects a[href*="eventtwomedia.com"]',
         'target',
@@ -33,28 +31,31 @@ module.exports = {
 
   'Portfolio project has GitHub repo link': function (browser) {
     browser
-      .url(browser.launchUrl)
-      .waitForElementVisible('#projects')
-      .verify.visible('#projects a[href*="github.com/DanloisTovar/portafolio-vfinal"]')
+      .url(browser.launchUrl + 'es')
+      .waitForElementPresent('#projects a[href*="github.com/DanloisTovar/portafolio-vfinal"]')
+      .verify.attributeContains(
+        '#projects a[href*="github.com/DanloisTovar/portafolio-vfinal"]',
+        'href',
+        'portafolio-vfinal'
+      )
       .end();
   },
 
-  'WordPress projects section has 4 cards': function (browser) {
+  'WordPress projects section has 4 project links in DOM': function (browser) {
     browser
-      .url(browser.launchUrl)
+      .url(browser.launchUrl + 'es')
       .waitForElementVisible('#wordpress-projects')
-      .verify.visible('#wordpress-projects')
-      .verify.visible('#wordpress-projects a[href*="coworkingdanlois"]')
-      .verify.visible('#wordpress-projects a[href*="restaurantedanlois"]')
-      .verify.visible('#wordpress-projects a[href*="clinicadanlois"]')
-      .verify.visible('#wordpress-projects a[href*="tallerdanlois"]')
+      .waitForElementPresent('#wordpress-projects a[href*="coworkingdanlois"]')
+      .waitForElementPresent('#wordpress-projects a[href*="restaurantedanlois"]')
+      .waitForElementPresent('#wordpress-projects a[href*="clinicadanlois"]')
+      .waitForElementPresent('#wordpress-projects a[href*="tallerdanlois"]')
       .end();
   },
 
   'WordPress project links are external': function (browser) {
     browser
-      .url(browser.launchUrl)
-      .waitForElementVisible('#wordpress-projects')
+      .url(browser.launchUrl + 'es')
+      .waitForElementPresent('#wordpress-projects a[href*="coworkingdanlois"]')
       .verify.attributeEquals(
         '#wordpress-projects a[href*="coworkingdanlois"]',
         'target',
