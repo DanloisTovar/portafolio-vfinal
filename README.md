@@ -18,7 +18,7 @@ Portafolio profesional de Danlois Tovar — Desarrollador Front End. Construido 
 - ✨ **Soporte Multiidioma**: Sistema i18n integrado para español e inglés
 - 🌓 **Dark Mode**: Toggle de tema con soporte de preferencia del sistema
 - 🎭 **Animaciones Avanzadas**: GlareHover, LogoLoop, StarBorder, LightRays, CircularText
-- 🧩 **Componentes UI Atómicos**: 8 componentes reutilizables (SectionHeader, GlassCard, IconBox, Button, TechBadge, Section, GradientDivider, Badge)
+- 🧩 **Componentes UI Atómicos**: 7 componentes reutilizables (SectionHeader, GlassCard, IconBox, Button, TechBadge, Section, GradientDivider)
 - 🖱️ **Cursor Glow Global**: Efecto de brillo que sigue al mouse en todas las secciones sin cortes
 - 📱 **Diseño Responsive**: Totalmente responsive con Tailwind CSS
 - ♿ **Accesibilidad**: Componentes con atributos ARIA
@@ -111,7 +111,6 @@ pnpm coverage   # Reporte en ./coverage/index.html
 │   │   │   ├── IconBox.astro
 │   │   │   ├── Button.astro
 │   │   │   ├── TechBadge.astro
-│   │   │   ├── Badge.astro
 │   │   │   └── GradientDivider.astro
 │   │   ├── About.astro        # Sección About
 │   │   ├── Contact.astro      # Sección Contacto
@@ -165,7 +164,6 @@ pnpm coverage   # Reporte en ./coverage/index.html
 | **Button** | primary, secondary | Botones con icono SVG |
 | **TechBadge** | hero, duration, floating, skill, footer | Badges de tecnología |
 | **Section** | (configurable vía props) | Wrapper de sección con glow y gradiente |
-| **Badge** | default | Badge genérico |
 | **GradientDivider** | default | Divisor horizontal con gradiente |
 
 ## 📂 Secciones del Portafolio
