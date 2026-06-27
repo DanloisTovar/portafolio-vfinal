@@ -199,6 +199,10 @@ Proyectos del curso **"Confección y Publicación de Páginas Web" — Restaurad
 3. **Clínica Oria** — Clínica de columna y articulaciones
 4. **MotorNova** — Taller mecánico
 
+> **Formación reglada española**: Estos proyectos fueron desarrollados durante el curso **"Confección y Publicación de Páginas Web"** en Restauradores Bercianos, Oviedo. La formación abarca WordPress, Elementor, diseño responsivo, SEO técnico, accesibilidad y publicación de sitios web completos con dominio y hosting real.
+>
+> Esto demuestra formación oficial verificable, capacidad de ejecutar proyectos completos desde cero hasta producción, y manejo de herramientas profesionales del ecosistema WordPress.
+
 ### 8. QA Showcase
 Bug hunting y documentación de testing con lightbox de GIFs.
 
