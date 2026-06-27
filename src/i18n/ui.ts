@@ -102,6 +102,9 @@ export const ui = {
     'wordpressProjects.project3.title': 'Clínica Oria',
     'wordpressProjects.project3.desc':
       'Clínica especializada en tratamiento no invasivo de patologías dolorosas de columna y articulaciones en Gijón. Más de 30 años de trayectoria. Sitio web con páginas de tratamientos, blog y formulario de contacto. Construido con WordPress y Elementor.',
+    'wordpressProjects.project4.title': 'MotorNova',
+    'wordpressProjects.project4.desc':
+      'Taller mecánico en Oviedo especializado en mantenimiento, diagnosis y reparación de vehículos. Servicios de revisiones, frenos, neumáticos, diagnosis electrónica y climatización. Construido con WordPress y Elementor.',
     'projects.caseStudy.title': 'Caso de estudio',
     'projects.caseStudy.subtitle': 'Proceso de Refactorización de la página web de Workgroup.',
     'projects.caseStudy.description':
@@ -226,6 +229,9 @@ export const ui = {
     'wordpressProjects.project3.title': 'Clínica Oria',
     'wordpressProjects.project3.desc':
       'Clinic specialized in non-invasive treatment of painful spinal and joint conditions in Gijón, Spain. Over 30 years of experience. Website with treatment pages, blog, and contact form. Built with WordPress and Elementor.',
+    'wordpressProjects.project4.title': 'MotorNova',
+    'wordpressProjects.project4.desc':
+      'Auto repair shop in Oviedo, Spain, specialized in maintenance, diagnosis, and vehicle repair. Services include inspections, brakes, tires, electronic diagnosis, and climate control. Built with WordPress and Elementor.',
     'projects.caseStudy.title': 'Case Study',
     'projects.caseStudy.subtitle': 'Refactoring Process of the Workgroup website.',
     'projects.caseStudy.description':

@@ -7,6 +7,7 @@ import StarBorder from '../Animations/StarBorder/StarBorder';
 import coworkinDanlois from '../../assets/wordpress/coworkin-danlois.png';
 import brasaNorte from '../../assets/wordpress/restaurant-brasa-norte.png';
 import clinicaOria from '../../assets/wordpress/clinica-oria.png';
+import motorNova from '../../assets/wordpress/taller-motornova.png';
 
 interface Props {
   lang: 'es' | 'en';
@@ -45,6 +46,13 @@ const projects: WPProject[] = [
     tags: ['WordPress', 'Elementor', 'Clínica', 'Blog', 'Formulario'],
     image: clinicaOria.src,
     url: 'https://clinicadanlois.rbcampus.es/',
+  },
+  {
+    title: t('wordpressProjects.project4.title'),
+    desc: t('wordpressProjects.project4.desc'),
+    tags: ['WordPress', 'Elementor', 'Taller', 'Servicios', 'Responsive'],
+    image: motorNova.src,
+    url: 'https://tallerdanlois.rbcampus.es/',
   },
 ];
 ---
