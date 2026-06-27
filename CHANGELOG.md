@@ -5,6 +5,7 @@
 * chore(build): update generated files after merge ([b0884c0](https://github.com/DanloisTovar/portafolio-vfinal/commit/b0884c0))
 * chore(changelog): :memo: Actualizar CHANGELOG.md ([d16a5c8](https://github.com/DanloisTovar/portafolio-vfinal/commit/d16a5c8))
 * chore(changelog): :memo: Actualizar CHANGELOG.md ([5c4e475](https://github.com/DanloisTovar/portafolio-vfinal/commit/5c4e475))
+* chore(changelog): 📝 actualizar CHANGELOG ([fd49308](https://github.com/DanloisTovar/portafolio-vfinal/commit/fd49308))
 * chore(changelog): 📝 actualizar CHANGELOG ([fdeeb94](https://github.com/DanloisTovar/portafolio-vfinal/commit/fdeeb94))
 * chore(changelog): 📝 actualizar CHANGELOG ([b17e520](https://github.com/DanloisTovar/portafolio-vfinal/commit/b17e520))
 * chore(changelog): 📝 actualizar CHANGELOG ([bd80b49](https://github.com/DanloisTovar/portafolio-vfinal/commit/bd80b49))

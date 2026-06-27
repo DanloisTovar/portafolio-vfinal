@@ -50,4 +50,23 @@
 > *"Estoy finalizando el curso de Confección y Publicación de Páginas Web en Restauradores Bercianos, aquí en Oviedo. Los proyectos WordPress son de ese curso. En paralelo, desarrollé EventTwo Media, un sitio completo para una productora de eventos: WordPress Headless con GraphQL, 105 tests, GDPR compliance, Schema.org, y CI/CD. Mi portafolio personal lo uso para experimentar con tooling más nuevo: Astro 5, i18n, Docker. Vengo del mundo QA y soporte de integraciones — testear no es algo que 'también hago', es parte de cómo pienso."*
 
 ---
+
+## Actualización — 27 junio 2026 (sesión extensa)
+
+### Completado
+1. ✅ Cursor glow global unificado (400px, 0 cortes)
+2. ✅ 4 proyectos WordPress con datos reales
+3. ✅ EventTwo Media destacado con badge + métricas
+4. ✅ CI/CD GitHub Actions
+5. ✅ 570 tests unitarios (62 files)
+6. ✅ 190 aserciones E2E (7 specs × Chrome + Firefox)
+7. ✅ Tests unitarios para 10 secciones
+8. ✅ README actualizado con todas las métricas
+
+### Pendientes
+1. ⚠️ Migrar formulario del portafolio al patrón de EventTwo (Zod compartido)
+2. 📝 Mini showcase EventTwo Media
+3. 📝 Rate limiting persistente (Vercel KV) — solo si tráfico lo justifica
+
+---
 _Fecha: 27 de junio de 2026_
