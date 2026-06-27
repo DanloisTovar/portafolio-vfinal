@@ -90,9 +90,9 @@ export const ui = {
     'qa.showcase.placeholder_bug2': 'Placeholder: Upload Bug 2 GIF here',
     'wordpressProjects.title': 'Proyectos WordPress',
     'wordpressProjects.subtitle': 'Sitios web construidos con WordPress y Elementor',
-    'wordpressProjects.project1.title': 'Proyecto WordPress 1',
+    'wordpressProjects.project1.title': 'NIDO Coworking',
     'wordpressProjects.project1.desc':
-      'Sitio web corporativo construido con WordPress y Elementor. Diseño responsivo, optimización SEO y configuración de hosting.',
+      'Espacio de coworking en un bosque de Asturias. Sitio web con planes, espacios (open space, oficinas, salas de reuniones) y formulario de contacto. Construido con WordPress y Elementor.',
     'wordpressProjects.project2.title': 'Proyecto WordPress 2',
     'wordpressProjects.project2.desc':
       'Tienda online con WooCommerce y Elementor. Catálogo de productos, carrito de compras y pasarela de pago.',
@@ -211,9 +211,9 @@ export const ui = {
     'qa.showcase.placeholder_bug2': 'Placeholder: Upload Bug 2 GIF here',
     'wordpressProjects.title': 'WordPress Projects',
     'wordpressProjects.subtitle': 'Websites built with WordPress and Elementor',
-    'wordpressProjects.project1.title': 'WordPress Project 1',
+    'wordpressProjects.project1.title': 'NIDO Coworking',
     'wordpressProjects.project1.desc':
-      'Corporate website built with WordPress and Elementor. Responsive design, SEO optimization, and hosting setup.',
+      'Coworking space in a forest in Asturias, Spain. Website with plans, spaces (open space, offices, meeting rooms), and contact form. Built with WordPress and Elementor.',
     'wordpressProjects.project2.title': 'WordPress Project 2',
     'wordpressProjects.project2.desc':
       'Online store with WooCommerce and Elementor. Product catalog, shopping cart, and payment gateway.',

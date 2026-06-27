@@ -4,6 +4,7 @@ import SectionHeader from '../ui/SectionHeader.astro';
 import GlassCard from '../ui/GlassCard.astro';
 import TechBadge from '../ui/TechBadge.astro';
 import StarBorder from '../Animations/StarBorder/StarBorder';
+import coworkinDanlois from '../../assets/wordpress/coworkin-danlois.png';
 
 interface Props {
   lang: 'es' | 'en';
@@ -26,9 +27,9 @@ const projects: WPProject[] = [
   {
     title: t('wordpressProjects.project1.title'),
     desc: t('wordpressProjects.project1.desc'),
-    tags: ['WordPress', 'Elementor', 'Responsive', 'SEO', 'Hosting'],
-    image: PLACEHOLDER_IMAGE,
-    url: '#',
+    tags: ['WordPress', 'Elementor', 'Coworking', 'Booking', 'Responsive'],
+    image: coworkinDanlois.src,
+    url: 'https://coworkingdanlois.rbcampus.es/',
   },
   {
     title: t('wordpressProjects.project2.title'),
