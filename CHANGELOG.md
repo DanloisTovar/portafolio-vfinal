@@ -1,6 +1,7 @@
 ## <small>0.0.1 (2026-06-27)</small>
 
 * style(footer): 🎨 agregar hr gradiente sobre el copyright del footer ([1f5596e](https://github.com/DanloisTovar/portafolio-vfinal/commit/1f5596e))
+* style(footer): 🎨 agregar punto final azul en Danlois Tovar. ([18e0f9c](https://github.com/DanloisTovar/portafolio-vfinal/commit/18e0f9c))
 * style(footer): 🎨 cambiar PORTAFOLIO por Danlois Tovar con gradiente ([cfc4c9c](https://github.com/DanloisTovar/portafolio-vfinal/commit/cfc4c9c))
 * style(footer): 🎨 invertir colores — Danlois normal, Tovar gradiente ([5b06927](https://github.com/DanloisTovar/portafolio-vfinal/commit/5b06927))
 * style(projects): 🎨 agregar separadores gradient entre secciones de proyectos ([e0e48a6](https://github.com/DanloisTovar/portafolio-vfinal/commit/e0e48a6))
