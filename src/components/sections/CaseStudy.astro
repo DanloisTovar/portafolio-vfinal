@@ -22,9 +22,6 @@ const t = useTranslations(lang);
     class="absolute inset-0 -z-20 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20"
   >
   </div>
-  <div
-  >
-  </div>
   <div class="w-full max-w-[1400px] mx-auto px-4 md:px-8">
     <SectionHeader
       variant="gradient-cyan"
@@ -214,17 +211,17 @@ const t = useTranslations(lang);
 
   function initLightboxTriggers() {
     const triggers = document.querySelectorAll('.js-trigger-lightbox');
-    const caseStudyArticles = document.querySelectorAll('#case-study-gallery article');
+    const caseStudyItems = document.querySelectorAll('#case-study-gallery .case-study-item');
 
     triggers.forEach((trigger) => {
       trigger.addEventListener('click', (e) => {
         e.preventDefault();
 
-        const parentArticle = trigger.closest('#case-study-gallery article');
-        if (parentArticle && lgInstance) {
-          const articleIndex = Array.from(caseStudyArticles).indexOf(parentArticle);
-          if (articleIndex !== -1) {
-            lgInstance.openGallery(articleIndex);
+        const parentItem = trigger.closest('.case-study-item');
+        if (parentItem && lgInstance) {
+          const itemIndex = Array.from(caseStudyItems).indexOf(parentItem);
+          if (itemIndex !== -1) {
+            lgInstance.openGallery(itemIndex);
           }
         }
       });
