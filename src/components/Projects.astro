@@ -6,6 +6,7 @@ import StarBorder from './Animations/StarBorder/StarBorder';
 import imgWorkgroup from '../assets/imagen-workgroup.png';
 import imgLati from '../assets/imagen-lati.png';
 import imgPortfolio from '../assets/imagen-portafolio-web.png';
+import imgEventtwo from '../assets/eventtwo.png';
 
 interface Props {
   lang: 'es' | 'en';
@@ -24,6 +25,14 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const projects: Project[] = [
+  {
+    title: t('projects.eventtwo.title'),
+    desc: t('projects.eventtwo.desc'),
+    tags: ['Astro', 'React', 'TypeScript', 'Tailwind CSS', 'Motion', 'i18n', 'Zod', 'Vercel', 'WordPress Headless'],
+    image: imgEventtwo.src,
+    url: 'https://eventtwomedia.com/',
+    repo: '',
+  },
   {
     title: t('projects.portfolio.title'),
     desc: t('projects.portfolio.desc'),
