@@ -27,7 +27,7 @@ Portafolio profesional de Danlois Tovar — Desarrollador Front End. Construido 
 ## 🛠️ Herramientas de Desarrollo
 
 - **Linting**: ESLint + Prettier + Stylelint
-- **Testing**: Vitest (238 tests unitarios) + Nightwatch (E2E)
+- **Testing**: Vitest (570 tests unitarios) + Nightwatch (23 tests E2E en 7 specs)
 - **Git Hooks**: Husky + lint-staged + commitlint
 - **Changelog**: Conventional Changelog automatizado
 - **CI**: GitHub Actions (push/PR a main)
@@ -256,9 +256,36 @@ pnpm dev        # http://localhost:3003
 
 ## 🧪 Testing
 
-- **Unitarios**: 238 tests con Vitest + Testing Library
-- **E2E**: Nightwatch (Chrome + Firefox + Docker)
-- **CI**: GitHub Actions en cada push/PR a `main`
+### Unitarios (Vitest)
+**570 tests** en 62 archivos. Cobertura de todos los componentes UI atómicos, secciones del portafolio, funciones i18n, cursor glow, componentes React y constantes.
+
+```bash
+pnpm test              # 570 tests unitarios
+pnpm test:watch        # Modo watch
+pnpm coverage          # Reporte de cobertura (98.3% líneas)
+```
+
+### E2E (Nightwatch)
+**23 tests** en 7 specs. Chrome + Firefox + Docker.
+
+| Spec | Tests | Qué cubre |
+|---|---|---|
+| `home` | 1 | Renderizado de todas las secciones |
+| `interactions` | 3 | Theme toggle, news carrusel, validación formulario |
+| `links` | 4 | Social menu, navbar, footer, proyectos externos |
+| `navigation` | 3 | Cambio idioma, scroll suave, atributos footer |
+| `seo` | 2 | Meta tags ES/EN |
+| `projects` | 5 | EventTwo badge destacado, links externos, WordPress 4 cards |
+| `showcases` | 5 | CaseStudy lightGallery, QA Showcase cards |
+
+```bash
+pnpm dev              # Terminal 1
+pnpm test:e2e         # Terminal 2 (Chrome + Firefox)
+pnpm test:e2e:chrome  # Solo Chrome
+```
+
+### CI
+GitHub Actions en cada push/PR a `main`: lint → type-check → test → build.
 
 ## 📄 Licencia
 
