@@ -193,13 +193,13 @@ Horizontal scroll con 4 proyectos:
 Galería lightbox con antes/después de la refactorización de Workgroup.
 
 ### 7. WordPress Projects
-Proyectos del curso **"Confección y Publicación de Páginas Web" — Restauradores Bercianos, Oviedo** (formación reglada española). Horizontal scroll con 4 proyectos WordPress + Elementor:
+Proyectos del curso del SEPEPA **"Confección y Publicación de Páginas Web" — Restauradores Bercianos, Oviedo, Asturias** (formación reglada española). Horizontal scroll con 4 proyectos WordPress + Elementor:
 1. **NIDO Coworking** — Coworking en Asturias
 2. **Brasa Norte** — Restaurante mediterráneo
 3. **Clínica Oria** — Clínica de columna y articulaciones
 4. **MotorNova** — Taller mecánico
 
-> **Formación reglada española**: Estos proyectos fueron desarrollados durante el curso **"Confección y Publicación de Páginas Web"** en Restauradores Bercianos, Oviedo. La formación abarca WordPress, Elementor, diseño responsivo, SEO técnico, accesibilidad y publicación de sitios web completos con dominio y hosting real.
+> **Formación reglada española**: Estos proyectos fueron desarrollados durante el curso del SEPEPA **"Confección y Publicación de Páginas Web"** en el centro de formación Restauradores Bercianos, Oviedo, Asturias. La formación abarca WordPress, Elementor, diseño responsivo, accesibilidad y publicación de sitios web completos con dominio y hosting real.
 >
 > Esto demuestra formación oficial verificable, capacidad de ejecutar proyectos completos desde cero hasta producción, y manejo de herramientas profesionales del ecosistema WordPress.
 
