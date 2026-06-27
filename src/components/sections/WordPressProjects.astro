@@ -5,6 +5,8 @@ import GlassCard from '../ui/GlassCard.astro';
 import TechBadge from '../ui/TechBadge.astro';
 import StarBorder from '../Animations/StarBorder/StarBorder';
 import coworkinDanlois from '../../assets/wordpress/coworkin-danlois.png';
+import brasaNorte from '../../assets/wordpress/restaurant-brasa-norte.png';
+import clinicaOria from '../../assets/wordpress/clinica-oria.png';
 
 interface Props {
   lang: 'es' | 'en';
@@ -21,7 +23,6 @@ interface WPProject {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-const PLACEHOLDER_IMAGE = '/public/qa/test-plan-placeholder.png';
 
 const projects: WPProject[] = [
   {
@@ -34,16 +35,16 @@ const projects: WPProject[] = [
   {
     title: t('wordpressProjects.project2.title'),
     desc: t('wordpressProjects.project2.desc'),
-    tags: ['WordPress', 'Elementor', 'E-commerce', 'WooCommerce'],
-    image: PLACEHOLDER_IMAGE,
-    url: '#',
+    tags: ['WordPress', 'Elementor', 'Restaurante', 'Booking', 'Galería'],
+    image: brasaNorte.src,
+    url: 'https://restaurantedanlois.rbcampus.es/',
   },
   {
     title: t('wordpressProjects.project3.title'),
     desc: t('wordpressProjects.project3.desc'),
-    tags: ['WordPress', 'Elementor', 'Landing Page', 'Optimización'],
-    image: PLACEHOLDER_IMAGE,
-    url: '#',
+    tags: ['WordPress', 'Elementor', 'Clínica', 'Blog', 'Formulario'],
+    image: clinicaOria.src,
+    url: 'https://clinicadanlois.rbcampus.es/',
   },
 ];
 ---

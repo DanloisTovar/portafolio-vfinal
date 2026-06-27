@@ -96,12 +96,12 @@ export const ui = {
     'wordpressProjects.project1.title': 'NIDO Coworking',
     'wordpressProjects.project1.desc':
       'Espacio de coworking en un bosque de Asturias. Sitio web con planes, espacios (open space, oficinas, salas de reuniones) y formulario de contacto. Construido con WordPress y Elementor.',
-    'wordpressProjects.project2.title': 'Proyecto WordPress 2',
+    'wordpressProjects.project2.title': 'Brasa Norte',
     'wordpressProjects.project2.desc':
-      'Tienda online con WooCommerce y Elementor. Catálogo de productos, carrito de compras y pasarela de pago.',
-    'wordpressProjects.project3.title': 'Proyecto WordPress 3',
+      'Restaurante de cocina mediterránea a la brasa en Albacete. Sitio web con carta digital, menús especiales, formulario de reservas, galería de imágenes y sistema de opiniones. Construido con WordPress y Elementor.',
+    'wordpressProjects.project3.title': 'Clínica Oria',
     'wordpressProjects.project3.desc':
-      'Landing page de alta conversión con Elementor. Diseño optimizado para campañas de marketing y captación de leads.',
+      'Clínica especializada en tratamiento no invasivo de patologías dolorosas de columna y articulaciones en Gijón. Más de 30 años de trayectoria. Sitio web con páginas de tratamientos, blog y formulario de contacto. Construido con WordPress y Elementor.',
     'projects.caseStudy.title': 'Caso de estudio',
     'projects.caseStudy.subtitle': 'Proceso de Refactorización de la página web de Workgroup.',
     'projects.caseStudy.description':
@@ -220,12 +220,12 @@ export const ui = {
     'wordpressProjects.project1.title': 'NIDO Coworking',
     'wordpressProjects.project1.desc':
       'Coworking space in a forest in Asturias, Spain. Website with plans, spaces (open space, offices, meeting rooms), and contact form. Built with WordPress and Elementor.',
-    'wordpressProjects.project2.title': 'WordPress Project 2',
+    'wordpressProjects.project2.title': 'Brasa Norte',
     'wordpressProjects.project2.desc':
-      'Online store with WooCommerce and Elementor. Product catalog, shopping cart, and payment gateway.',
-    'wordpressProjects.project3.title': 'WordPress Project 3',
+      'Mediterranean grill restaurant in Albacete, Spain. Website with digital menu, special menus, booking form, image gallery, and customer reviews. Built with WordPress and Elementor.',
+    'wordpressProjects.project3.title': 'Clínica Oria',
     'wordpressProjects.project3.desc':
-      'High-conversion landing page with Elementor. Design optimized for marketing campaigns and lead capture.',
+      'Clinic specialized in non-invasive treatment of painful spinal and joint conditions in Gijón, Spain. Over 30 years of experience. Website with treatment pages, blog, and contact form. Built with WordPress and Elementor.',
     'projects.caseStudy.title': 'Case Study',
     'projects.caseStudy.subtitle': 'Refactoring Process of the Workgroup website.',
     'projects.caseStudy.description':
