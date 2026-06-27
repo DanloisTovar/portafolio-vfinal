@@ -1,5 +1,6 @@
 ## <small>0.0.1 (2026-06-27)</small>
 
+* ci: 👷 agregar workflow de CI con lint, type-check, tests y build ([a714be6](https://github.com/DanloisTovar/portafolio-vfinal/commit/a714be6))
 * chore: ⬆️ actualizar chromedriver a v149 ([c5cf545](https://github.com/DanloisTovar/portafolio-vfinal/commit/c5cf545))
 * chore(build): update generated files after merge ([b0884c0](https://github.com/DanloisTovar/portafolio-vfinal/commit/b0884c0))
 * chore(changelog): :memo: Actualizar CHANGELOG.md ([d16a5c8](https://github.com/DanloisTovar/portafolio-vfinal/commit/d16a5c8))
