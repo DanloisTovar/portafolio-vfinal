@@ -2,6 +2,7 @@
 
 * style(footer): 🎨 agregar hr gradiente sobre el copyright del footer ([1f5596e](https://github.com/DanloisTovar/portafolio-vfinal/commit/1f5596e))
 * style(footer): 🎨 cambiar PORTAFOLIO por Danlois Tovar con gradiente ([cfc4c9c](https://github.com/DanloisTovar/portafolio-vfinal/commit/cfc4c9c))
+* style(footer): 🎨 invertir colores — Danlois normal, Tovar gradiente ([5b06927](https://github.com/DanloisTovar/portafolio-vfinal/commit/5b06927))
 * style(projects): 🎨 agregar separadores gradient entre secciones de proyectos ([e0e48a6](https://github.com/DanloisTovar/portafolio-vfinal/commit/e0e48a6))
 * style(projects): 🎨 ajustar grosor de separadores a h-0.5 (2px) ([e512ec6](https://github.com/DanloisTovar/portafolio-vfinal/commit/e512ec6))
 * style(projects): 🎨 hacer separadores más anchos y espaciados entre secciones ([c917315](https://github.com/DanloisTovar/portafolio-vfinal/commit/c917315))
