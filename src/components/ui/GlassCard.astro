@@ -113,7 +113,7 @@ const cardGlowClass = (hasCardGlow !== undefined ? hasCardGlow : v.showCardGlow)
       <div class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     )
   }
-  <div class={`relative${v.zIndex ? ` ${v.zIndex}` : ''}`}>
+  <div class={`relative h-full${v.zIndex ? ` ${v.zIndex}` : ''}`}>
     <slot />
   </div>
 </div>
