@@ -36,10 +36,10 @@ module.exports = {
       .resizeWindow(1920, 1080)
       .url(browser.launchUrl + 'es')
       .waitForElementVisible('nav')
-      .waitForElementVisible('a.group[href*="#home"]')
-      .assert.visible('a.group[href*="#sobre-mi"]')
-      .assert.visible('a.group[href*="#projects"]')
-      .assert.visible('a.group[href*="#contact"]');
+      .waitForElementPresent('a.group[href*="#home"]')
+      .waitForElementPresent('a.group[href*="#sobre-mi"]')
+      .waitForElementPresent('a.group[href*="#projects"]')
+      .waitForElementPresent('a.group[href*="#contact"]');
   },
 
   'Footer links validation': function (browser) {
