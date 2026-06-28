@@ -50,7 +50,7 @@ const experiences = [
 	<!-- Steel Blue radial glow (only dark mode) -->
 	<div
 		class="absolute inset-0 -z-20 pointer-events-none hidden dark:block"
-		style="background-image: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.16) 0%, rgba(59, 130, 246, 0.09) 25%, rgba(59, 130, 246, 0.04) 35%, transparent 50%); background-size: 100% 100%;"
+		style="background-image: radial-gradient(circle at 50% 50%, rgb(59 130 246 / 16%) 0%, rgb(59 130 246 / 9%) 25%, rgb(59 130 246 / 4%) 35%, transparent 50%); background-size: 100% 100%;"
 	></div>
 	<!-- Decorative Background -->
 	<div class="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
@@ -126,11 +126,11 @@ const experiences = [
 
 <style>
 	#experiencia {
-		--experience-glare: rgba(37, 99, 235, 0.3);
+		--experience-glare: rgb(37 99 235 / 30%);
 	}
 
 	:global(.dark) #experiencia {
-		--experience-glare: rgba(255, 255, 255, 0.3);
+		--experience-glare: rgb(255 255 255 / 30%);
 	}
 
 	.experience-progress-line {
