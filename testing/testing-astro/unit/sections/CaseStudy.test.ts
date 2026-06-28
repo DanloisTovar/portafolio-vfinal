@@ -55,9 +55,10 @@ describe('CaseStudy.astro', () => {
     expect(content).toContain('.js-trigger-lightbox');
   });
 
-  it('should use GlassCard with project-showcase variant for code images', () => {
+  it('should use article elements for image cards', () => {
     const content = readFileSync(COMPONENT_PATH, 'utf-8');
-    expect(content).toContain('variant="project-showcase"');
+    expect(content).toContain('<article');
+    expect(content).toContain('case-study-item');
   });
 
   it('should include description card with glass-card-full variant', () => {

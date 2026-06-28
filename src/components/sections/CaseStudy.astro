@@ -31,7 +31,9 @@ const t = useTranslations(lang);
 
     <div id="case-study-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-12">
       <!-- Card 1: Image 1 (The Chaos) -->
-      <GlassCard variant="project-showcase" class="h-[28rem] md:h-[36rem] lg:h-[40rem]">
+      <article
+        class="relative flex-shrink-0 w-full group rounded-[2rem] h-[28rem] md:h-[36rem] lg:h-[40rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
+      >
         <StarBorder
           client:visible
           color="#3b82f6"
@@ -87,10 +89,12 @@ const t = useTranslations(lang);
             </div>
           </div>
         </div>
-      </GlassCard>
+      </article>
 
       <!-- Card 2: Image 2 (The Solution) -->
-      <GlassCard variant="project-showcase" class="h-[28rem] md:h-[36rem] lg:h-[40rem]">
+      <article
+        class="relative flex-shrink-0 w-full group rounded-[2rem] h-[28rem] md:h-[36rem] lg:h-[40rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
+      >
         <StarBorder
           client:visible
           color="#3b82f6"
@@ -146,7 +150,7 @@ const t = useTranslations(lang);
             </div>
           </div>
         </div>
-      </GlassCard>
+      </article>
     </div>
 
     <!-- Description card -->
@@ -211,17 +215,17 @@ const t = useTranslations(lang);
 
   function initLightboxTriggers() {
     const triggers = document.querySelectorAll('.js-trigger-lightbox');
-    const caseStudyItems = document.querySelectorAll('#case-study-gallery .case-study-item');
+    const caseStudyArticles = document.querySelectorAll('#case-study-gallery article');
 
     triggers.forEach((trigger) => {
       trigger.addEventListener('click', (e) => {
         e.preventDefault();
 
-        const parentItem = trigger.closest('.case-study-item');
-        if (parentItem && lgInstance) {
-          const itemIndex = Array.from(caseStudyItems).indexOf(parentItem);
-          if (itemIndex !== -1) {
-            lgInstance.openGallery(itemIndex);
+        const parentArticle = trigger.closest('#case-study-gallery article');
+        if (parentArticle && lgInstance) {
+          const articleIndex = Array.from(caseStudyArticles).indexOf(parentArticle);
+          if (articleIndex !== -1) {
+            lgInstance.openGallery(articleIndex);
           }
         }
       });
