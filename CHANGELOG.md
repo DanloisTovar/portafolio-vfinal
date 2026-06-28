@@ -12,6 +12,7 @@
 * fix(ci): 🐛 cambiar vitest a 'vitest run' y usar pnpm test en CI ([140303f](https://github.com/DanloisTovar/portafolio-vfinal/commit/140303f))
 * fix(ci): 🐛 corregir pnpm ignore builds y Node 24 en CI ([58773f8](https://github.com/DanloisTovar/portafolio-vfinal/commit/58773f8))
 * fix(ci): 🐛 corregir pnpm/action-setup version (v4→v2) para GitHub Actions ([93cc051](https://github.com/DanloisTovar/portafolio-vfinal/commit/93cc051))
+* fix(ci): 🐛 crear .npmrc con approve-builds (solución pnpm v10) ([4f98149](https://github.com/DanloisTovar/portafolio-vfinal/commit/4f98149))
 * fix(ci): 🐛 simplificar CI a solo test + build ([20877dc](https://github.com/DanloisTovar/portafolio-vfinal/commit/20877dc))
 * fix(ci): 🐛 usar npx vitest run en vez de vitest (watch mode) ([6dbd98e](https://github.com/DanloisTovar/portafolio-vfinal/commit/6dbd98e))
 * fix(ci): 🐛 usar pnpm config set approve-builds (sintaxis v10) ([c4f5f27](https://github.com/DanloisTovar/portafolio-vfinal/commit/c4f5f27))
