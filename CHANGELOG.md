@@ -45,6 +45,7 @@
 * fix(projects): 🐛 fix lightbox trigger in case study cards ([21e52a0](https://github.com/DanloisTovar/portafolio-vfinal/commit/21e52a0))
 * fix(react): revertir a client:load para renderización correcta del Counter ([1a32106](https://github.com/DanloisTovar/portafolio-vfinal/commit/1a32106))
 * fix(react19): corregir compatibilidad con React 19 en Astro ([60df757](https://github.com/DanloisTovar/portafolio-vfinal/commit/60df757))
+* fix(responsive): 📱 responsive tags, títulos y enlaces para tablet/iPad Pro ([7ae56de](https://github.com/DanloisTovar/portafolio-vfinal/commit/7ae56de))
 * fix(skills): 🐛 cambiar slot por prop icon en SectionHeader ([1a759dc](https://github.com/DanloisTovar/portafolio-vfinal/commit/1a759dc))
 * fix(skills): 🐛 restaurar estructura original de SQL subsection ([5e3916e](https://github.com/DanloisTovar/portafolio-vfinal/commit/5e3916e))
 * fix(ui): 🐛 corregir z-index y reactivar cursor-glow global ([8fa527c](https://github.com/DanloisTovar/portafolio-vfinal/commit/8fa527c))
