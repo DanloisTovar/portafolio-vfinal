@@ -17,7 +17,7 @@ jobs:
           node-version: '24'
       - run: corepack enable && corepack prepare pnpm@latest --activate
       - run: pnpm install --frozen-lockfile
-      - run: npx vitest run --coverage.enabled=false
+      - run: npx vitest run --reporter=verbose 2>&1
 
   build:
     name: Build
