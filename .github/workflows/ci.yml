@@ -16,9 +16,7 @@ jobs:
         with:
           node-version: '24'
       - run: corepack enable && corepack prepare pnpm@latest --activate
-      - run: pnpm install --frozen-lockfile
-        env:
-          PNPM_ALLOW_SCRIPTS: 'true'
+      - run: pnpm config set approve-builds @swc/core esbuild sharp geckodriver '@nightwatch/nightwatch-inspector' && pnpm install --frozen-lockfile
       - run: pnpm run test
 
   build:
@@ -31,7 +29,5 @@ jobs:
         with:
           node-version: '24'
       - run: corepack enable && corepack prepare pnpm@latest --activate
-      - run: pnpm install --frozen-lockfile
-        env:
-          PNPM_ALLOW_SCRIPTS: 'true'
+      - run: pnpm config set approve-builds @swc/core esbuild sharp geckodriver '@nightwatch/nightwatch-inspector' && pnpm install --frozen-lockfile
       - run: pnpm run build
