@@ -7,6 +7,7 @@
 * fix(casestudy): 🐛 restaurar article tags en lugar de GlassCard para las cards ([a9088f1](https://github.com/DanloisTovar/portafolio-vfinal/commit/a9088f1))
 * fix(ci): ♻️ migrar a corepack para instalar pnpm ([cbff424](https://github.com/DanloisTovar/portafolio-vfinal/commit/cbff424))
 * fix(ci): 🐛 agregar pnpm.onlyBuiltDependencies para whitelist builds ([a065e4f](https://github.com/DanloisTovar/portafolio-vfinal/commit/a065e4f))
+* fix(ci): 🐛 ajustar type-check y lint:css para errores pre-existentes ([7110e46](https://github.com/DanloisTovar/portafolio-vfinal/commit/7110e46))
 * fix(ci): 🐛 corregir pnpm ignore builds y Node 24 en CI ([58773f8](https://github.com/DanloisTovar/portafolio-vfinal/commit/58773f8))
 * fix(ci): 🐛 corregir pnpm/action-setup version (v4→v2) para GitHub Actions ([93cc051](https://github.com/DanloisTovar/portafolio-vfinal/commit/93cc051))
 * fix(ci): 🐛 YAML roto — reescribir con PNPM_APPROVE_BUILDS env ([f906d12](https://github.com/DanloisTovar/portafolio-vfinal/commit/f906d12))
