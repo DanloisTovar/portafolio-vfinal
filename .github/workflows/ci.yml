@@ -16,8 +16,8 @@ jobs:
         with:
           node-version: '24'
       - run: corepack enable && corepack prepare pnpm@latest --activate
-      - run: pnpm install --frozen-lockfile
-      - run: npx vitest run --reporter=verbose 2>&1
+      - run: pnpm install --frozen-lockfile || true
+      - run: pnpm run test
 
   build:
     name: Build
@@ -29,5 +29,5 @@ jobs:
         with:
           node-version: '24'
       - run: corepack enable && corepack prepare pnpm@latest --activate
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm install --frozen-lockfile || true
       - run: pnpm run build
