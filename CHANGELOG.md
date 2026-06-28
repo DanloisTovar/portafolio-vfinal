@@ -6,6 +6,8 @@
 * chore: 📝 actualizar gitignore y CHANGELOG ([7e267b4](https://github.com/DanloisTovar/portafolio-vfinal/commit/7e267b4))
 * chore: 🔥 eliminar CI temporalmente — se retoma después ([4e09129](https://github.com/DanloisTovar/portafolio-vfinal/commit/4e09129))
 * chore: 🔧 blindar empleos-para-postular en gitignore ([5314a50](https://github.com/DanloisTovar/portafolio-vfinal/commit/5314a50))
+* chore: 🔧 gitignore archivos personales, openspec y pendientes ([c436927](https://github.com/DanloisTovar/portafolio-vfinal/commit/c436927))
+* chore: 🔧 limpiar duplicados en gitignore ([0002439](https://github.com/DanloisTovar/portafolio-vfinal/commit/0002439))
 * chore: 🔧 remover archivo personal ([9fd6975](https://github.com/DanloisTovar/portafolio-vfinal/commit/9fd6975))
 * chore: 🔧 remover archivo personal del repo ([9b7b117](https://github.com/DanloisTovar/portafolio-vfinal/commit/9b7b117))
 * chore: 🔧 remover archivo personal del repo ([48732aa](https://github.com/DanloisTovar/portafolio-vfinal/commit/48732aa))
