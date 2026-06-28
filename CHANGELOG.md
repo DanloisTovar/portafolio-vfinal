@@ -14,6 +14,7 @@
 * fix(ci): 🐛 corregir pnpm/action-setup version (v4→v2) para GitHub Actions ([93cc051](https://github.com/DanloisTovar/portafolio-vfinal/commit/93cc051))
 * fix(ci): 🐛 simplificar CI a solo test + build ([20877dc](https://github.com/DanloisTovar/portafolio-vfinal/commit/20877dc))
 * fix(ci): 🐛 usar npx vitest run en vez de vitest (watch mode) ([6dbd98e](https://github.com/DanloisTovar/portafolio-vfinal/commit/6dbd98e))
+* fix(ci): 🐛 usar pnpm config set approve-builds (sintaxis v10) ([c4f5f27](https://github.com/DanloisTovar/portafolio-vfinal/commit/c4f5f27))
 * fix(ci): 🐛 YAML roto — reescribir con PNPM_APPROVE_BUILDS env ([f906d12](https://github.com/DanloisTovar/portafolio-vfinal/commit/f906d12))
 * fix(consola): :bug: elimina errores y warnings de la consola ([9050793](https://github.com/DanloisTovar/portafolio-vfinal/commit/9050793))
 * fix(contact): 🐛 corregir z-index del cursor glow en Contacto ([78bc0e0](https://github.com/DanloisTovar/portafolio-vfinal/commit/78bc0e0))
