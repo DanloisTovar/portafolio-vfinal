@@ -18,6 +18,7 @@
 * fix(ci): 🐛 probar pnpm.onlyBuiltDependencies[] en .npmrc ([77f333b](https://github.com/DanloisTovar/portafolio-vfinal/commit/77f333b))
 * fix(ci): 🐛 probar vitest sin coverage en CI ([c88bc43](https://github.com/DanloisTovar/portafolio-vfinal/commit/c88bc43))
 * fix(ci): 🐛 simplificar CI a solo test + build ([20877dc](https://github.com/DanloisTovar/portafolio-vfinal/commit/20877dc))
+* fix(ci): 🐛 usar npx vitest run directo (evitar pnpm run) ([29bc2a6](https://github.com/DanloisTovar/portafolio-vfinal/commit/29bc2a6))
 * fix(ci): 🐛 usar npx vitest run en vez de vitest (watch mode) ([6dbd98e](https://github.com/DanloisTovar/portafolio-vfinal/commit/6dbd98e))
 * fix(ci): 🐛 usar pnpm config set approve-builds (sintaxis v10) ([c4f5f27](https://github.com/DanloisTovar/portafolio-vfinal/commit/c4f5f27))
 * fix(ci): 🐛 YAML roto — reescribir con PNPM_APPROVE_BUILDS env ([f906d12](https://github.com/DanloisTovar/portafolio-vfinal/commit/f906d12))
