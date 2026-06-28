@@ -16,7 +16,9 @@ import {
   SiMongodb,
   SiLinux,
   SiJquery,
-  SiKubernetes
+  SiKubernetes,
+  SiWordpress,
+  SiElementor
 } from 'react-icons/si';
 
 const LogoLoop = ({ speed = 30 }) => {
@@ -37,6 +39,8 @@ const LogoLoop = ({ speed = 30 }) => {
     { node: <SiPostman />, title: "Postman", color: "#FF6C37" },
     { node: <SiKubernetes />, title: "Kubernetes", color: "#326CE5" },
     { node: <SiLinux />, title: "Linux", color: "#FCC624" },
+    { node: <SiWordpress />, title: "WordPress", color: "#21759B" },
+    { node: <SiElementor />, title: "Elementor", color: "#92003B" },
   ];
 
   // Duplicate logos for seamless loop

@@ -1,0 +1,46 @@
+---
+interface Props {
+  id?: string;
+  bg?: string;
+  darkBg?: string;
+  py?: string;
+  maxWidth?: string;
+  px?: string;
+  class?: string;
+  hasGradientBg?: boolean;
+  hasCursorGlow?: boolean;
+  isolated?: boolean;
+}
+
+const {
+  id,
+  bg = 'bg-gray-50',
+  darkBg = 'dark:bg-gray-950',
+  py = 'py-20',
+  maxWidth = 'max-w-7xl',
+  px = 'px-6 lg:px-8',
+  class: className,
+  hasGradientBg = true,
+  hasCursorGlow = false,
+  isolated = true,
+} = Astro.props;
+---
+
+<section
+  {id}
+  class={`section-glow relative overflow-hidden transition-colors duration-300${isolated ? ' isolate' : ''} ${py} ${bg} ${darkBg}${className ? ` ${className}` : ''}`}
+>
+  {
+    hasGradientBg && (
+      <div class="absolute inset-0 -z-20 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20" />
+    )
+  }
+  {
+    hasCursorGlow && (
+      <div class="section-cursor-glow pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300" />
+    )
+  }
+  <div class={`${maxWidth} mx-auto ${px} relative`}>
+    <slot />
+  </div>
+</section>

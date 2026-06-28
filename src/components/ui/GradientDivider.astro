@@ -1,0 +1,17 @@
+---
+interface Props {
+  variant: 'solid-blue' | 'blue-cyan';
+  class?: string;
+}
+
+const { variant, class: className } = Astro.props;
+
+const variants: Record<string, string> = {
+  'solid-blue': 'w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full',
+  'blue-cyan': 'w-24 h-1 bg-linear-to-r from-blue-600 to-cyan-500 mx-auto mt-6 rounded-full',
+};
+
+const baseClasses = variants[variant];
+---
+
+<div class={`${baseClasses}${className ? ` ${className}` : ''}`}></div>

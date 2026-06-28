@@ -1,20 +1,12 @@
 ---
 import { useTranslations } from '../i18n/utils';
+import SectionHeader from './ui/SectionHeader.astro';
+import GlassCard from './ui/GlassCard.astro';
 import StarBorder from './Animations/StarBorder/StarBorder';
 import imgWorkgroup from '../assets/imagen-workgroup.png';
 import imgLati from '../assets/imagen-lati.png';
 import imgPortfolio from '../assets/imagen-portafolio-web.png';
-
-/* imagenes de caso de estudio */
-import casoDeEstudioBueno1 from '../assets/caso_de_estudio/buen-codigo.png';
-import casoDeEstudioBueno2 from '../assets/caso_de_estudio/buencodigo1.png';
-import casoDeEstudioMalo1 from '../assets/caso_de_estudio/mal-codigo.png';
-import casoDeEstudioMalo2 from '../assets/caso_de_estudio/malcodigo1.png';
-
-/* imagenes de QA */
-import qaDocumentacion from '../assets/qa_showcases/qa-documentacion.png';
-import qaBug1 from '../assets/qa_showcases/GEF5-C7.gif';
-import qaBug2 from '../assets/qa_showcases/GEF7-C5.gif';
+import imgEventtwo from '../assets/eventtwo.png';
 
 interface Props {
   lang: 'es' | 'en';
@@ -33,7 +25,14 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const projects: Project[] = [
-  /* Portafolio personal */
+  {
+    title: t('projects.eventtwo.title'),
+    desc: t('projects.eventtwo.desc'),
+    tags: ['Astro', 'React', 'TypeScript', 'Tailwind CSS', 'Motion', 'i18n', 'Zod', 'Vercel', 'WordPress Headless'],
+    image: imgEventtwo.src,
+    url: 'https://eventtwomedia.com/',
+    repo: '',
+  },
   {
     title: t('projects.portfolio.title'),
     desc: t('projects.portfolio.desc'),
@@ -42,8 +41,6 @@ const projects: Project[] = [
     url: 'https://danloistovar.vercel.app/',
     repo: 'https://github.com/DanloisTovar/portafolio-vfinal.git',
   },
-
-  /* Workgroup */
   {
     title: t('projects.workgroup.title'),
     desc: t('projects.workgroup.desc'),
@@ -52,8 +49,6 @@ const projects: Project[] = [
     url: 'https://www.workgroup.com.ar/website.v3/',
     repo: '',
   },
-
-  /* LATI */
   {
     title: t('projects.lati.title'),
     desc: t('projects.lati.desc'),
@@ -65,35 +60,25 @@ const projects: Project[] = [
 ];
 ---
 
-{/* contenedor principal de proyectos */}
-<section id="projects" class="relative lg:h-[300vh] projects-pattern bg-white dark:bg-[#050b1b]">
-  {/* Sticky Container for Desktop */}
+<section id="projects" class="section-glow relative lg:h-[300vh]">
+  <!-- Cursor glow effect -->
   <div
     class="projects-sticky lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden flex flex-col justify-center py-20 lg:py-0"
   >
     <div class="w-full max-w-[1400px] mx-auto px-4 md:px-8 mb-8 lg:mb-12 relative z-10">
-      <div class="text-center mb-16">
-        <h2
-          class="text-4xl tracking-tight sm:text-5xl mb-4 text-gray-900 dark:text-white font-orbitron font-medium"
-        >
-          <span class="bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-            {t('projects.title')}
-          </span>
-        </h2>
-        <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-          {t('projects.subtitle')}
-        </p>
-        <div class="w-24 h-1 bg-linear-to-r from-blue-600 to-cyan-500 mx-auto mt-6 rounded-full">
-        </div>
-      </div>
+      <SectionHeader
+        variant="gradient-cyan"
+        title={t('projects.title')}
+        subtitle={t('projects.subtitle')}
+      />
 
-      {/* Desktop Instructions (Absolute Right) */}
+      <!-- Desktop Instructions (Absolute Right) -->
       <div class="hidden lg:flex flex-col items-end gap-1 opacity-60 absolute right-8 bottom-0">
         <span class="text-sm font-medium">SCROLL DOWN</span>
         <div class="w-px h-12 bg-current"></div>
       </div>
 
-      {/* Mobile Instructions (Centered below title for mobile)*/}
+      <!-- Mobile Instructions (Centered below title for mobile) -->
       <div
         class="lg:hidden flex justify-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 animate-pulse mt-6"
       >
@@ -101,22 +86,21 @@ const projects: Project[] = [
       </div>
     </div>
 
-    {/* Scroll Track Container */}
+    <!-- Scroll Track Container -->
     <div
       class="w-full overflow-x-auto lg:overflow-visible no-scrollbar px-4 md:px-8 lg:px-0 pb-8 lg:pb-0"
       id="projects-track-container"
     >
-      {
-        /* Mobile: Flex row with native scroll
-        Desktop: Flex row that gets transformed via JS */
-      }
       <div
         class="projects-track flex gap-6 md:gap-8 lg:gap-12 lg:px-[10vw] w-fit"
         id="projects-track"
       >
         {
           projects.map((project, index) => (
-            <article class="relative flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[40vw] max-w-[800px] group rounded-[2rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800">
+            <GlassCard
+              variant="project-showcase"
+              class="w-[85vw] sm:w-[400px] lg:w-[40vw] max-w-[800px]"
+            >
               <StarBorder
                 client:visible
                 color="#3b82f6"
@@ -124,7 +108,6 @@ const projects: Project[] = [
                 delay={`-${Math.random() * 10}s`}
                 className="transition-opacity duration-300 group-hover:opacity-0"
               />
-              {/* imagen area*/}
               <div class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-50 dark:opacity-60 lg:opacity-30 lg:dark:opacity-65 lg:group-hover:opacity-20 lg:dark:group-hover:opacity-60 transition-opacity duration-500" />
                 <img
@@ -133,8 +116,14 @@ const projects: Project[] = [
                   class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-102 transition-transform duration-700 ease-out"
                   loading="lazy"
                 />
-
-                {/*Floating Tags (Top Right)*/}
+                {index === 0 && (
+                  <div class="absolute top-4 left-4 z-[60]">
+                    <span class="px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full bg-blue-600 text-white shadow-lg flex items-center gap-1.5">
+                      <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                      {lang === 'es' ? 'Destacado' : 'Featured'}
+                    </span>
+                  </div>
+                )}
                 <div class="absolute top-4 right-4 z-[60] flex flex-wrap justify-end gap-2 max-w-[80%]">
                   {project.tags.slice(0, 4).map((tag) => (
                     <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/90 dark:bg-black/80 backdrop-blur-md text-gray-900 dark:text-white shadow-lg">
@@ -144,10 +133,8 @@ const projects: Project[] = [
                 </div>
               </div>
 
-              {/* Content Area - Now below image on mobile for better readability, overlay on desktop  ajustamos el overlay de las cards  con esto clases: lg:dark:opacity-100 y lg:dark:bg-transparent*/}
               <div class="p-6 md:p-8 relative z-20 bg-white dark:bg-gray-900 lg:absolute lg:inset-0 lg:bg-transparent lg:flex lg:flex-col lg:justify-end lg:bg-gradient-to-t lg:from-black/90 lg:via-black/50 lg:to-transparent lg:opacity-100 lg:dark:opacity-100 lg:dark:bg-transparent">
                 <div class="lg:transform lg:translate-y-4 lg:group-hover:translate-y-0 lg:transition-transform lg:duration-1000 lg:ease-in-out">
-                  {/* Mobile only tags (remaining) */}
                   <div class="flex lg:hidden flex-wrap gap-2 mb-3">
                     {project.tags.slice(2).map((tag) => (
                       <span class="px-2 py-1 text-[10px] uppercase font-bold text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 rounded-md">
@@ -155,16 +142,12 @@ const projects: Project[] = [
                       </span>
                     ))}
                   </div>
-
                   <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg">
                     {project.title}
                   </h3>
-
                   <p class="text-gray-600 dark:text-gray-300 lg:text-gray-200 text-sm md:text-base leading-relaxed line-clamp-3 lg:line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500 lg:mb-0 lg:dark:drop-shadow-md">
                     {project.desc}
                   </p>
-
-                  {/* Action Buttons */}
                   <div class="mt-4 lg:mt-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 lg:delay-100">
                     <div class="flex gap-3 flex-wrap">
                       {project.url ? (
@@ -200,418 +183,18 @@ const projects: Project[] = [
                   </div>
                 </div>
               </div>
-            </article>
+            </GlassCard>
           ))
         }
       </div>
     </div>
   </div>
 </section>
-{/* Caso de de estudio */}
-<section id="case-study" class="py-20 lg:py-32 bg-white dark:bg-[#050b1b] projects-pattern">
-  <div class="w-full max-w-[1400px] mx-auto px-4 md:px-8">
-    <div class="text-center mb-16">
-      <h2
-        class="text-4xl tracking-tight sm:text-5xl mb-4 text-gray-900 dark:text-white font-orbitron font-medium"
-      >
-        <span class="bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-          {t('projects.caseStudy.title')}
-        </span>
-      </h2>
-      <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-        {t('projects.caseStudy.subtitle')}
-      </p>
-      <div class="w-24 h-1 bg-linear-to-r from-blue-600 to-cyan-500 mx-auto mt-6 rounded-full">
-      </div>
-    </div>
-
-    <div id="case-study-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-12">
-      <article
-        class="relative flex-shrink-0 w-full group rounded-[2rem] h-[28rem] md:h-[36rem] lg:h-[40rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
-      >
-        <StarBorder
-          client:visible
-          color="#3b82f6"
-          speed={`${6 + Math.random() * 4}s`}
-          delay={`-${Math.random() * 10}s`}
-          className="transition-opacity duration-300 group-hover:opacity-0"
-        />
-        {/* imagen area*/}
-        <a
-          href={casoDeEstudioMalo2.src}
-          class="block lg:[display:unset] aspect-[5/3] lg:aspect-[16/10] overflow-hidden relative cursor-pointer case-study-item"
-          data-sub-html={`<h4>${t('projects.caseStudy.image1.title')}</h4><p>${t('projects.caseStudy.image1.desc')}</p>`}
-        >
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-50 dark:opacity-60 lg:opacity-30 lg:dark:opacity-65 lg:group-hover:opacity-20 lg:dark:group-hover:opacity-60 transition-opacity duration-500"
-          >
-          </div>
-          <img
-            src={casoDeEstudioMalo1.src}
-            alt={t('projects.caseStudy.image1.title')}
-            class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-102 transition-transform duration-700 ease-out"
-            loading="lazy"
-          />
-        </a>
-
-        {
-          /* Content Area - Now below image on mobile for better readability, overlay on desktop  ajustamos el overlay de las cards  con esto clases: lg:dark:opacity-100 y lg:dark:bg-transparent*/
-        }
-        <div
-          class="p-6 md:p-8 relative z-20 bg-white dark:bg-gray-900 lg:absolute lg:inset-0 lg:bg-transparent lg:flex lg:flex-col lg:justify-end lg:bg-gradient-to-t lg:from-black/90 lg:via-black/50 lg:to-transparent lg:opacity-100 lg:dark:opacity-100 lg:dark:bg-transparent"
-        >
-          <div
-            class="lg:transform lg:translate-y-4 lg:group-hover:translate-y-0 lg:transition-transform lg:duration-1000 lg:ease-in-out"
-          >
-            <h3
-              class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg"
-            >
-              {t('projects.caseStudy.image1.title')}
-            </h3>
-
-            <p
-              class="text-gray-600 dark:text-gray-300 lg:text-gray-200 text-sm md:text-base leading-relaxed line-clamp-3 lg:line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500 lg:mb-0 lg:dark:drop-shadow-md"
-            >
-              {t('projects.caseStudy.image1.desc')}
-            </p>
-
-            {/* Action Buttons */}
-
-            <div
-              class="mt-4 lg:mt-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 lg:delay-100"
-            >
-              <div class="flex gap-3 flex-wrap">
-                <a
-                  href={casoDeEstudioMalo2.src}
-                  class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline js-trigger-lightbox"
-                  data-sub-html={`<h4>${t('projects.caseStudy.image1.title')}</h4><p>${t('projects.caseStudy.image1.desc')}</p>`}
-                >
-                  {t('projects.caseStudy.button.view')}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article
-        class="relative flex-shrink-0 w-full group rounded-[2rem] h-[28rem] md:h-[36rem] lg:h-[40rem] overflow-hidden bg-white dark:bg-gray-900 shadow-2xl lg:shadow-xl hover:shadow-blue-500/30 dark:hover:shadow-blue-500/40 transition-all duration-500 border border-gray-100 dark:border-gray-800"
-      >
-        <StarBorder
-          client:visible
-          color="#3b82f6"
-          speed={`${6 + Math.random() * 4}s`}
-          delay={`-${Math.random() * 10}s`}
-          className="transition-opacity duration-300 group-hover:opacity-0"
-        />
-        {/* imagen area*/}
-        <a
-          href={casoDeEstudioBueno2.src}
-          class="block lg:[display:unset] aspect-[5/3] lg:aspect-[16/10] overflow-hidden relative cursor-pointer case-study-item"
-          data-sub-html={`<h4>${t('projects.caseStudy.image2.title')}</h4><p>${t('projects.caseStudy.image2.desc')}</p>`}
-        >
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-50 dark:opacity-60 lg:opacity-30 lg:dark:opacity-65 lg:group-hover:opacity-20 lg:dark:group-hover:opacity-60 transition-opacity duration-500"
-          >
-          </div>
-          <img
-            src={casoDeEstudioBueno1.src}
-            alt={t('projects.caseStudy.image2.title')}
-            class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-102 transition-transform duration-700 ease-out"
-            loading="lazy"
-          />
-        </a>
-
-        {
-          /* Content Area - Now below image on mobile for better readability, overlay on desktop  ajustamos el overlay de las cards  con esto clases: lg:dark:opacity-100 y lg:dark:bg-transparent*/
-        }
-        <div
-          class="p-6 md:p-8 relative z-20 bg-white dark:bg-gray-900 lg:absolute lg:inset-0 lg:bg-transparent lg:flex lg:flex-col lg:justify-end lg:bg-gradient-to-t lg:from-black/90 lg:via-black/50 lg:to-transparent lg:opacity-100 lg:dark:opacity-100 lg:dark:bg-transparent"
-        >
-          <div
-            class="lg:transform lg:translate-y-4 lg:group-hover:translate-y-0 lg:transition-transform lg:duration-1000 lg:ease-in-out"
-          >
-            <h3
-              class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg"
-            >
-              {t('projects.caseStudy.image2.title')}
-            </h3>
-
-            <p
-              class="text-gray-600 dark:text-gray-300 lg:text-gray-200 text-sm md:text-base leading-relaxed line-clamp-3 lg:line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500 lg:mb-0 lg:dark:drop-shadow-md"
-            >
-              {t('projects.caseStudy.image2.desc')}
-            </p>
-
-            {/* Action Buttons */}
-
-            <div
-              class="mt-4 lg:mt-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 lg:delay-100"
-            >
-              <div class="flex gap-3 flex-wrap">
-                <a
-                  href={casoDeEstudioBueno2.src}
-                  class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline js-trigger-lightbox"
-                  data-sub-html={`<h4>${t('projects.caseStudy.image2.title')}</h4><p>${t('projects.caseStudy.image2.desc')}</p>`}
-                >
-                  {t('projects.caseStudy.button.view')}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
-
-    <div class="w-full max-w-[1400px] mx-auto px-0 md:px-0 mt-12">
-      <div class="grid grid-cols-1 gap-6">
-        <div
-          class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-8 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
-        >
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          >
-          </div>
-          <div
-            class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          >
-          </div>
-          <div class="relative z-10 text-center">
-            <div
-              class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500 mx-auto"
-            >
-              <svg
-                class="w-6 h-6 text-blue-600 dark:text-blue-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-            <p
-              class="text-gray-600 dark:text-gray-300 text-lg md:text-xl leading-relaxed whitespace-pre-line text-justify"
-            >
-              {t('projects.caseStudy.description')}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* ------------------------------------QA analyst ---------------------------------- */}
-
-<section id="qa-showcase" class="py-20 lg:py-32 bg-white dark:bg-[#050b1b] projects-pattern">
-  <!-- Background gradient effects -->
-  <div
-    class="absolute inset-0 -z-10 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20"
-  >
-  </div>
-  <!-- Cursor glow effect for entire section -->
-  <div
-    class="section-cursor-glow pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300"
-  >
-  </div>
-
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
-    <!-- Section Title with gradient -->
-    <div class="text-center mb-16">
-      <h2
-        class="text-4xl tracking-tight sm:text-5xl mb-4 text-gray-900 dark:text-white font-orbitron font-medium"
-      >
-        <span class="bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-          {t('qa.showcase.title')}
-        </span>
-      </h2>
-      <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-        {t('qa.showcase.subtitle')}
-      </p>
-      <div class="w-24 h-1 bg-linear-to-r from-blue-600 to-cyan-500 mx-auto mt-6 rounded-full">
-      </div>
-    </div>
-
-    {/*Bento Grid Layout */}
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-12">
-      {/*Fila 1: Documentación (ancho completo) */}
-      <div
-        class="lg:col-span-2 group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-8 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
-      >
-        <div
-          class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-500/5 dark:from-blue-500/10 dark:to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        >
-        </div>
-        <div
-          class="cursor-glow pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        >
-        </div>
-        <div class="relative z-10">
-          <div class="flex items-center gap-3 mb-6">
-            <div
-              class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center"
-            >
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
-              {t('qa.showcase.documentation')}
-            </h3>
-          </div>
-          <p class="text-lg font-medium text-gray-900 dark:text-white mb-4">
-            {t('qa.showcase.testplan_title')}
-          </p>
-          <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-justify">
-            {t('qa.showcase.testplan_desc')}
-          </p>
-          <a
-            href={qaDocumentacion.src}
-            class="aspect-[16/6] bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center group-hover:scale-102 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
-            data-sub-html={`<h4>${t('qa.showcase.testplan_title')}</h4><p>${t('qa.showcase.testplan_desc')}</p>`}
-          >
-            <img
-              src={qaDocumentacion.src}
-              alt={t('qa.showcase.testplan_title')}
-              class="w-full h-full rounded-2xl"
-            />
-          </a>
-          {/* Action Button */}
-          <div class="mt-4 flex justify-center">
-            <button
-              type="button"
-              class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline js-trigger-lightbox"
-              data-qa-index="0"
-            >
-              {t('projects.caseStudy.button.view')}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Fila 2: Bug 1 -->
-      <div
-        class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-6 hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
-      >
-        <div
-          class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        >
-        </div>
-        <div class="relative z-10">
-          <div class="flex items-center gap-3 mb-4">
-            <div
-              class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center"
-            >
-              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"
-                ></path>
-              </svg>
-            </div>
-            <h4 class="font-semibold text-gray-900 dark:text-white">
-              {t('qa.showcase.bug1_title')}
-            </h4>
-          </div>
-          <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-justify">
-            {t('qa.showcase.bug1_desc')}
-          </p>
-          <a
-            href={qaBug1.src}
-            class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-102 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
-            data-sub-html={`<h4>${t('qa.showcase.bug1_title')}</h4><p>${t('qa.showcase.bug1_desc')}</p>`}
-          >
-            <img src={qaBug1.src} alt="QA Bug 1" class="w-full h-full rounded-2xl" />
-          </a>
-          {/* Action Button */}
-          <div class="mt-3 flex justify-center">
-            <button
-              type="button"
-              class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline js-trigger-lightbox"
-              data-qa-index="1"
-            >
-              {t('projects.caseStudy.button.view')}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Fila 2: Bug 2 -->
-      <div
-        class="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-6 hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-1 card-glow"
-      >
-        <div
-          class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        >
-        </div>
-        <div class="relative z-10">
-          <div class="flex items-center gap-3 mb-4">
-            <div
-              class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center"
-            >
-              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="m15 9-6 6"></path>
-                <path d="m9 9 6 6"></path>
-              </svg>
-            </div>
-            <h4 class="font-semibold text-gray-900 dark:text-white">
-              {t('qa.showcase.bug2_title')}
-            </h4>
-          </div>
-          <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-justify">
-            {t('qa.showcase.bug2_desc')}
-          </p>
-          <a
-            href={qaBug2.src}
-            class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-102 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden"
-            data-sub-html={`<h4>${t('qa.showcase.bug2_title')}</h4><p>${t('qa.showcase.bug2_desc')}</p>`}
-          >
-            <img src={qaBug2.src} alt="QA Bug 2" class="w-full h-full rounded-2xl" />
-          </a>
-          {/* Action Button */}
-          <div class="mt-3 flex justify-center">
-            <button
-              type="button"
-              class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline js-trigger-lightbox"
-              data-qa-index="2"
-            >
-              {t('projects.caseStudy.button.view')}
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-{/* --------------------------------fin QA analyst ---------------------------------- */}
-<style>
-  .projects-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%232172ff' fill-opacity='0.03' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'/%3E%3C/svg%3E");
-    background-attachment: fixed;
-  }
-</style>
-
 <script>
-  // Import LightGallery and plugins directly within the client-side script
-  import lightGallery from 'lightgallery';
-  import lgZoom from 'lightgallery/plugins/zoom';
-  import lgThumbnail from 'lightgallery/plugins/thumbnail';
 
-  // Importar estilos de LightGallery
-  import 'lightgallery/css/lightgallery.css';
-  import 'lightgallery/css/lg-zoom.css';
-  import 'lightgallery/css/lg-thumbnail.css';
+
+  document.addEventListener('astro:page-load', () => {
+  });
 
   let section = document.getElementById('projects');
   let track = document.getElementById('projects-track');
@@ -620,7 +203,6 @@ const projects: Project[] = [
   function initScroll() {
     if (!section || !track) return;
 
-    // Reset transforms if switching modes
     if (!isDesktop) {
       track.style.transform = 'none';
       return;
@@ -632,20 +214,16 @@ const projects: Project[] = [
       const rect = section!.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
-      // Calculate how far we've scrolled into the section
-      // The section is tall (300vh), so top goes negative
       const offsetTop = -rect.top;
       const totalScrollDistance = rect.height - viewportHeight;
 
       if (totalScrollDistance > 0) {
         let percentage = offsetTop / totalScrollDistance;
-        // Clamp percentage between 0 and 1
         percentage = Math.max(0, Math.min(1, percentage));
 
-        // Calculate max horizontal scroll
         const containerWidth = window.innerWidth;
         const trackWidth = track!.scrollWidth;
-        const maxTranslate = trackWidth - containerWidth + containerWidth * 0.2; // Add some padding (20vw)
+        const maxTranslate = trackWidth - containerWidth + containerWidth * 0.2;
 
         const translateX = -(maxTranslate * percentage);
 
@@ -656,11 +234,9 @@ const projects: Project[] = [
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    // Initial call
     handleScroll();
   }
 
-  // Handle Resize
   window.addEventListener('resize', () => {
     const newIsDesktop = window.matchMedia('(min-width: 1024px)').matches;
     if (newIsDesktop !== isDesktop) {
@@ -669,106 +245,17 @@ const projects: Project[] = [
     }
   });
 
-  // Initialize Scroll
   initScroll();
 
-  let lgInstance = null;
-
-  // Re-run Scroll initialization on View Transitions (if using Astro ViewTransitions)
   document.addEventListener('astro:page-load', () => {
     section = document.getElementById('projects');
     track = document.getElementById('projects-track');
     isDesktop = window.matchMedia('(min-width: 1024px)').matches;
     initScroll();
-    initLightGallery(); // <--- Inicializar lightGallery en cada carga de página
-    initLightboxTriggers();
-  });
-
-  // LightGallery Initialization
-  function initLightGallery() {
-    const caseStudyGallery = document.getElementById('case-study-gallery');
-
-    if (lgInstance) {
-      lgInstance.destroy();
-      lgInstance = null;
-    }
-
-    // Inicializar LightGallery en Caso de Estudio
-    if (caseStudyGallery) {
-      lgInstance = lightGallery(caseStudyGallery, {
-        plugins: [lgZoom, lgThumbnail],
-        licenseKey: 'GPL-3.0',
-        selector: '.case-study-item',
-        actualSize: false,
-        download: false,
-      });
-    }
-  }
-
-  function initLightboxTriggers() {
-    const triggers = document.querySelectorAll('.js-trigger-lightbox');
-    const caseStudyArticles = document.querySelectorAll('#case-study-gallery article');
-    const qaShowcaseGallery = document.getElementById('qa-showcase');
-    let qaLgInstance: any = null;
-
-    // Initialize QA Showcase LightGallery separately
-    if (qaShowcaseGallery) {
-      qaLgInstance = lightGallery(qaShowcaseGallery, {
-        plugins: [lgZoom, lgThumbnail],
-        licenseKey: 'GPL-3.0',
-        selector: '.qa-showcase-item',
-        actualSize: false,
-        download: false,
-      });
-    }
-
-    triggers.forEach((trigger) => {
-      trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        // Check if trigger is in case-study section
-        const parentArticle = trigger.closest('#case-study-gallery article');
-        if (parentArticle && lgInstance) {
-          const articleIndex = Array.from(caseStudyArticles).indexOf(parentArticle);
-          if (articleIndex !== -1) {
-            lgInstance.openGallery(articleIndex);
-          }
-          return;
-        }
-
-        // Check if trigger is a QA Showcase button (has data-qa-index)
-        const qaIndex = trigger.getAttribute('data-qa-index');
-        if (qaIndex !== null && qaLgInstance) {
-          qaLgInstance.openGallery(parseInt(qaIndex));
-        }
-      });
-    });
-  }
-
-  // Initialize LightGallery and triggers on DOMContentLoaded for initial load
-  document.addEventListener('DOMContentLoaded', () => {
-    initLightGallery();
-    initLightboxTriggers();
-
-    // Card-level glow effect
-    const cards = document.querySelectorAll('.card-glow');
-    cards.forEach((card) => {
-      card.addEventListener('mousemove', (e) => {
-        const mouseEvent = e as MouseEvent;
-        const htmlCard = card as HTMLElement;
-        const rect = htmlCard.getBoundingClientRect();
-        const x = ((mouseEvent.clientX - rect.left) / rect.width) * 100;
-        const y = ((mouseEvent.clientY - rect.top) / rect.height) * 100;
-
-        htmlCard.style.setProperty('--mouse-x', `${x}%`);
-        htmlCard.style.setProperty('--mouse-y', `${y}%`);
-      });
-    });
   });
 </script>
 
 <style is:global>
-  /* Efectos hover personalizados */
   .group:hover img {
     box-shadow:
       0 0 15px rgb(168 103 4 / 70%),
@@ -776,97 +263,4 @@ const projects: Project[] = [
     transition: all 0.3s ease-out;
   }
 
-  /* Card-level cursor glow */
-  .cursor-glow {
-    border-radius: 1.5rem;
-    background: radial-gradient(
-      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgb(59 130 246 / 25%),
-      transparent 40%
-    );
-  }
-
-  .dark .cursor-glow {
-    background: radial-gradient(
-      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgb(96 165 250 / 20%),
-      transparent 40%
-    );
-  }
-
-  /* Estilos para lightbox - VERSIÓN FUNCIONAL */
-  .lg-custom-theme .lg-close {
-    color: #a86704 !important;
-    font-size: 28px !important;
-    background: rgb(0 0 0 / 70%) !important;
-    width: 40px !important;
-    height: 40px !important;
-    line-height: 40px !important;
-    border-radius: 50% !important;
-    text-shadow: 0 0 5px #000 !important;
-    transition: all 0.3s !important;
-    opacity: 1 !important;
-    z-index: 999999 !important;
-    top: 20px !important;
-    right: 20px !important;
-  }
-
-  .lg-custom-theme .lg-close:hover {
-    color: #d4a017 !important;
-    transform: scale(1.1) !important;
-  }
-
-  .lg-custom-theme .lg-backdrop {
-    background-color: rgb(0 0 0 / 95%) !important;
-  }
-
-  .lg-custom-theme .lg-image {
-    border-radius: 8px !important;
-    box-shadow: 0 0 20px rgb(0 0 0 / 50%) !important;
-  }
-
-  .lg-custom-theme .lg-sub-html {
-    background: rgb(0 0 0 / 70%) !important;
-    padding: 15px !important;
-    border-radius: 0 0 8px 8px !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    margin: 0 auto !important;
-    max-width: 80% !important;
-  }
-
-  .lg-custom-theme .lg-sub-html h4 {
-    color: #a86704 !important;
-    font-weight: bold !important;
-    margin: 0 !important;
-    font-size: 1.2rem !important;
-    text-align: center !important;
-  }
-
-  .lg-custom-theme .lg-toolbar {
-    background-color: transparent !important;
-  }
-
-  .lg-custom-theme .lg-actions .lg-next,
-  .lg-custom-theme .lg-actions .lg-prev {
-    background-color: rgb(168 103 4 / 70%) !important;
-    border-radius: 50% !important;
-    width: 40px !important;
-    height: 40px !important;
-    line-height: 40px !important;
-    border: none !important; /* Añadido para igualar el hover */
-  }
-
-  .lg-custom-theme .lg-actions .lg-next:hover,
-  .lg-custom-theme .lg-actions .lg-prev:hover {
-    background-color: rgb(168 103 4 / 90%) !important;
-  }
-
-  /* stylelint-disable-next-line */
-  .galeria__font-h2--styles {
-    font-family: var(--font-forum);
-    color: var(--color-primario-titulos-gris);
-    font-weight: 400;
-  }
 </style>

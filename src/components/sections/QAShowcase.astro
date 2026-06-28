@@ -1,0 +1,221 @@
+---
+import { useTranslations } from '../../i18n/utils';
+import SectionHeader from '../ui/SectionHeader.astro';
+import GlassCard from '../ui/GlassCard.astro';
+
+import qaDocumentacion from '../../assets/qa_showcases/qa-documentacion.png';
+import qaBug1 from '../../assets/qa_showcases/GEF5-C7.gif';
+import qaBug2 from '../../assets/qa_showcases/GEF7-C5.gif';
+
+interface Props {
+  lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="qa-showcase" class="section-glow relative overflow-hidden isolate py-20 lg:py-32">
+  <div
+    class="absolute inset-0 -z-20 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20"
+  >
+  </div>
+  <div
+  >
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+    <SectionHeader
+      variant="gradient-cyan"
+      title={t('qa.showcase.title')}
+      subtitle={t('qa.showcase.subtitle')}
+    />
+
+    <!-- Bento Grid Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-12">
+      <!-- Row 1: Documentation (full width) -->
+      <div class="lg:col-span-2">
+        <GlassCard variant="glass-card-full">
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center"
+            >
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+              {t('qa.showcase.documentation')}
+            </h3>
+          </div>
+          <p class="text-lg font-medium text-gray-900 dark:text-white mb-4">
+            {t('qa.showcase.testplan_title')}
+          </p>
+          <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-justify">
+            {t('qa.showcase.testplan_desc')}
+          </p>
+          <a
+            href={qaDocumentacion.src}
+            class="aspect-[16/6] bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center group-hover:scale-102 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden block"
+            data-sub-html={`<h4>${t('qa.showcase.testplan_title')}</h4><p>${t('qa.showcase.testplan_desc')}</p>`}
+          >
+            <img
+              src={qaDocumentacion.src}
+              alt={t('qa.showcase.testplan_title')}
+              class="w-full h-full rounded-2xl"
+            />
+          </a>
+          <!-- Action Button -->
+          <div class="mt-4 flex justify-center">
+            <button
+              type="button"
+              class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline js-trigger-lightbox"
+              data-qa-index="0"
+            >
+              {t('projects.caseStudy.button.view')}
+            </button>
+          </div>
+        </GlassCard>
+      </div>
+
+      <!-- Row 2: Bug 1 -->
+      <GlassCard variant="glass-compact" hasCursorGlow={true}>
+        <div class="flex items-center gap-3 mb-4">
+          <div
+            class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center"
+          >
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"
+              ></path>
+            </svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 dark:text-white">
+            {t('qa.showcase.bug1_title')}
+          </h4>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-justify">
+          {t('qa.showcase.bug1_desc')}
+        </p>
+        <a
+          href={qaBug1.src}
+          class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-102 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden block"
+          data-sub-html={`<h4>${t('qa.showcase.bug1_title')}</h4><p>${t('qa.showcase.bug1_desc')}</p>`}
+        >
+          <img src={qaBug1.src} alt="QA Bug 1" class="w-full h-full rounded-2xl" />
+        </a>
+        <!-- Action Button -->
+        <div class="mt-3 flex justify-center">
+          <button
+            type="button"
+            class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline js-trigger-lightbox"
+            data-qa-index="1"
+          >
+            {t('projects.caseStudy.button.view')}
+          </button>
+        </div>
+      </GlassCard>
+
+      <!-- Row 2: Bug 2 -->
+      <GlassCard variant="glass-compact" hasCursorGlow={true}>
+        <div class="flex items-center gap-3 mb-4">
+          <div
+            class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center"
+          >
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m15 9-6 6"></path>
+              <path d="m9 9 6 6"></path>
+            </svg>
+          </div>
+          <h4 class="font-semibold text-gray-900 dark:text-white">
+            {t('qa.showcase.bug2_title')}
+          </h4>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-justify">
+          {t('qa.showcase.bug2_desc')}
+        </p>
+        <a
+          href={qaBug2.src}
+          class="aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center justify-center group-hover:scale-102 transition-transform duration-500 qa-showcase-item cursor-pointer overflow-hidden block"
+          data-sub-html={`<h4>${t('qa.showcase.bug2_title')}</h4><p>${t('qa.showcase.bug2_desc')}</p>`}
+        >
+          <img src={qaBug2.src} alt="QA Bug 2" class="w-full h-full rounded-2xl" />
+        </a>
+        <!-- Action Button -->
+        <div class="mt-3 flex justify-center">
+          <button
+            type="button"
+            class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline js-trigger-lightbox"
+            data-qa-index="2"
+          >
+            {t('projects.caseStudy.button.view')}
+          </button>
+        </div>
+      </GlassCard>
+    </div>
+  </div>
+</section>
+<script>
+  import lightGallery from 'lightgallery';
+  import lgZoom from 'lightgallery/plugins/zoom';
+  import lgThumbnail from 'lightgallery/plugins/thumbnail';
+
+  import 'lightgallery/css/lightgallery.css';
+  import 'lightgallery/css/lg-zoom.css';
+  import 'lightgallery/css/lg-thumbnail.css';
+
+  let qaLgInstance = null;
+
+  function initLightGallery() {
+    const qaShowcaseGallery = document.getElementById('qa-showcase');
+
+    if (qaLgInstance) {
+      qaLgInstance.destroy();
+      qaLgInstance = null;
+    }
+
+    if (qaShowcaseGallery) {
+      qaLgInstance = lightGallery(qaShowcaseGallery, {
+        plugins: [lgZoom, lgThumbnail],
+        licenseKey: 'GPL-3.0',
+        selector: '.qa-showcase-item',
+        actualSize: false,
+        download: false,
+      });
+    }
+  }
+
+  function initLightboxTriggers() {
+    const triggers = document.querySelectorAll('.js-trigger-lightbox');
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const qaIndex = trigger.getAttribute('data-qa-index');
+        if (qaIndex !== null && qaLgInstance) {
+          qaLgInstance.openGallery(parseInt(qaIndex));
+        }
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initLightGallery();
+    initLightboxTriggers();
+  });
+
+  document.addEventListener('astro:page-load', () => {
+    initLightGallery();
+    initLightboxTriggers();
+  });
+</script>

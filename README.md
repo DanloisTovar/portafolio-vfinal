@@ -1,6 +1,6 @@
-# Portafolio version final - Astro + React + Tailwind CSS v4
+# Portafolio — Astro + React + Tailwind CSS v4
 
-Proyecto de portafolio construido con Astro, React y Tailwind CSS v4, con una configuración completa de desarrollo profesional, soporte multiidioma (ES/EN) y animaciones avanzadas.
+Portafolio profesional de Danlois Tovar — Desarrollador Front End. Construido con Astro, React y Tailwind CSS v4, con soporte multiidioma (ES/EN), animaciones avanzadas y CI/CD automatizado.
 
 ## 🚀 Stack Tecnológico
 
@@ -10,30 +10,34 @@ Proyecto de portafolio construido con Astro, React y Tailwind CSS v4, con una co
 - **Language**: TypeScript 5.x
 - **Package Manager**: pnpm
 - **Internacionalización**: i18n personalizado (ES/EN)
+- **Deploy**: Vercel (SSG con @astrojs/vercel adapter)
+- **CI/CD**: GitHub Actions
 
 ## 🎨 Características Principales
 
 - ✨ **Soporte Multiidioma**: Sistema i18n integrado para español e inglés
-- 🌓 **Dark Mode**: Variable de tema con @variant de Tailwind v4
-- 🎭 **Animaciones Avanzadas**: GlareHover, LogoLoop, StarBorder, TargetCursor, LightRays
-- 🎯 **Componentes Reutilizables**: Navbar, LanguageToggle, ThemeToggle, SocialMenu
+- 🌓 **Dark Mode**: Toggle de tema con soporte de preferencia del sistema
+- 🎭 **Animaciones Avanzadas**: GlareHover, LogoLoop, StarBorder, LightRays, CircularText
+- 🧩 **Componentes UI Atómicos**: 7 componentes reutilizables (SectionHeader, GlassCard, IconBox, Button, TechBadge, Section, GradientDivider)
+- 🖱️ **Cursor Glow Global**: Efecto de brillo que sigue al mouse en todas las secciones sin cortes
 - 📱 **Diseño Responsive**: Totalmente responsive con Tailwind CSS
 - ♿ **Accesibilidad**: Componentes con atributos ARIA
+- 🚀 **CI/CD**: GitHub Actions con lint, type-check, tests y build automáticos
 
 ## 🛠️ Herramientas de Desarrollo
 
 - **Linting**: ESLint + Prettier + Stylelint
-- **Testing**: Vitest (Unit Tests) + Nightwatch (E2E)
-- **Git Hooks**: Husky + lint-staged
-- **Commits**: Commitlint (Conventional Commits)
+- **Testing**: Vitest (570 tests unitarios, 62 archivos) + Nightwatch (190 assertions E2E en 7 specs, Chrome + Firefox)
+- **Git Hooks**: Husky + lint-staged + commitlint
 - **Changelog**: Conventional Changelog automatizado
+- **CI**: GitHub Actions (push/PR a main)
 
 ## 📦 Scripts Disponibles
 
 ### Desarrollo
 
 ```bash
-pnpm dev          # Iniciar servidor de desarrollo
+pnpm dev          # Iniciar servidor de desarrollo (puerto 3003)
 pnpm build        # Construir para producción
 pnpm preview      # Vista previa de la build
 ```
@@ -45,143 +49,180 @@ pnpm lint         # Ejecutar ESLint
 pnpm lint:fix     # Corregir problemas de ESLint
 pnpm lint:ts      # Verificar TypeScript
 pnpm format       # Formatear código con Prettier
-pnpm lint:css     # Lint de CSS/SCSS
+pnpm lint:css     # Lint de CSS
 pnpm lint:css:fix # Corregir problemas de CSS
 ```
 
 ### Testing
 
 ```bash
-pnpm test              # Ejecutar tests unitarios
+pnpm test              # Tests unitarios (Vitest)
 pnpm test:watch        # Tests en modo watch
 pnpm test:ui           # UI de Vitest
-pnpm coverage          # Generar reporte de cobertura
+pnpm coverage          # Reporte de cobertura
 pnpm test:e2e          # Tests E2E (Chrome + Firefox)
 pnpm test:e2e:chrome   # Tests E2E solo Chrome
 pnpm test:e2e:firefox  # Tests E2E solo Firefox
 ```
 
-### Otros
-
-```bash
-pnpm changelog    # Generar CHANGELOG.md
-```
-
 ## 📊 Estado de Cobertura
 
-![Coverage](https://img.shields.io/badge/coverage-98%25-green?style=for-the-badge&logo=vitest)
+![Coverage](https://img.shields.io/badge/coverage-95%25-green?style=for-the-badge&logo=vitest)
 
-El proyecto mantiene un alto estándar de calidad con una cobertura global superior al 80%.
+- **Sentencias**: 95.31%
+- **Ramas**: 87.09%
+- **Funciones**: 96.55%
+- **Líneas**: 96.66%
 
-- **Sentencias**: 96.7%
-- **Ramas**: 86.9%
-- **Funciones**: 100%
-- **Líneas**: 98.3%
-
-Para generar un reporte detallado:
+> **Nota sobre la baja respecto a 98% anterior**: Las líneas uncovered de `cursorGlow.ts` (55-60) corresponden al event listener `astro:after-swap` que solo se dispara en navegación SPA de Astro — imposible de testear unitariamente. El coverage de componentes `.astro` se mide con análisis estático (62 test files de secciones y componentes UI), no con ejecución directa de V8.
 
 ```bash
-pnpm coverage
+pnpm coverage   # Reporte en ./coverage/index.html
 ```
-
-Reportes disponibles en `./coverage/index.html`.
 
 ## 🏗️ Estructura del Proyecto
 
 ```
 /
-├── public/                   # Archivos estáticos
+├── .github/workflows/         # CI/CD (GitHub Actions)
+│   └── ci.yml                 # Lint, type-check, test, build
+├── public/                    # Archivos estáticos
 ├── src/
-│   ├── assets/              # Imágenes y recursos
-│   ├── actions/             # Acciones de servidor
+│   ├── assets/                # Imágenes y recursos
+│   │   ├── wordpress/         # Screenshots proyectos WordPress
+│   │   ├── caso_de_estudio/   # Imágenes Case Study
+│   │   └── qa_showcases/      # GIFs y screenshots QA
+│   ├── actions/               # Acciones de servidor (Astro)
 │   ├── components/
-│   │   ├── Animations/      # Componentes de animación
+│   │   ├── Animations/        # Componentes de animación
 │   │   │   ├── GlareHover/
 │   │   │   ├── LogoLoop/
-│   │   │   ├── StarBorder/
-│   │   │   └── TargetCursor/
-│   │   ├── Backgrounds/     # Componentes de fondo
+│   │   │   └── StarBorder/
+│   │   ├── Backgrounds/       # Efectos de fondo
 │   │   │   └── LightRays/
-│   │   ├── TextAnimations/  # Animaciones de texto
+│   │   ├── TextAnimations/    # Animaciones de texto
 │   │   │   └── CircularText/
-│   │   ├── About.astro      # Sección About
-│   │   ├── Contact.astro    # Sección Contact
-│   │   ├── Experience.astro # Sección Experience
-│   │   ├── Footer.astro     # Footer
-│   │   ├── Hero.astro       # Sección Hero
+│   │   ├── sections/          # Sub-secciones extraídas
+│   │   │   ├── CaseStudy.astro
+│   │   │   ├── QAShowcase.astro
+│   │   │   └── WordPressProjects.astro
+│   │   ├── ui/                # Componentes UI atómicos
+│   │   │   ├── Section.astro
+│   │   │   ├── SectionHeader.astro
+│   │   │   ├── GlassCard.astro
+│   │   │   ├── IconBox.astro
+│   │   │   ├── Button.astro
+│   │   │   ├── TechBadge.astro
+│   │   │   └── GradientDivider.astro
+│   │   ├── About.astro        # Sección About
+│   │   ├── Contact.astro      # Sección Contacto
+│   │   ├── Experience.astro   # Sección Experiencia
+│   │   ├── Footer.astro       # Footer
+│   │   ├── Hero.astro         # Sección Hero
 │   │   ├── LanguageToggle.tsx # Toggle idioma (ES/EN)
-│   │   ├── Navbar.tsx       # Barra de navegación
-│   │   ├── News.astro       # Sección News
-│   │   ├── Projects.astro   # Sección Projects
-│   │   ├── Skills.astro     # Sección Skills
-│   │   ├── SocialMenu.astro # Menú de redes sociales
-│   │   ├── ThemeToggle.tsx  # Toggle de tema (Light/Dark)
-│   │   └── Welcome.astro    # Componente Welcome
+│   │   ├── Navbar.tsx         # Navegación
+│   │   ├── News.astro         # Sección Noticias (RSS feed)
+│   │   ├── Projects.astro     # Sección Proyectos (horizontal scroll)
+│   │   ├── Skills.astro       # Sección Habilidades
+│   │   ├── SocialMenu.astro   # Menú redes sociales
+│   │   └── ThemeToggle.tsx    # Toggle tema (Light/Dark)
 │   ├── i18n/
-│   │   ├── ui.ts           # Traducciones
-│   │   └── utils.ts        # Utilidades i18n
+│   │   ├── ui.ts              # Traducciones ES/EN
+│   │   └── utils.ts           # Utilidades i18n
 │   ├── layouts/
-│   │   └── Layout.astro    # Layout principal
+│   │   └── Layout.astro       # Layout principal + cursor glow global
+│   ├── lib/
+│   │   └── cursorGlow.ts      # Módulo compartido de cursor glow
 │   ├── pages/
-│   │   ├── index.astro     # Página de inicio (redirect)
+│   │   ├── index.astro        # Redirect (ES default)
 │   │   └── [lang]/
-│   │       └── index.astro # Página principal multiidioma
+│   │       └── index.astro    # Página principal multiidioma
 │   └── styles/
-│       └── global.css      # Estilos globales (Tailwind v4)
-├── testing/                # Configuración de tests
-├── tests/                  # Archivos de test
-├── astro.config.mjs        # Configuración de Astro
-├── tsconfig.json           # Configuración de TypeScript
-├── eslint.config.js        # Configuración de ESLint
-├── .prettierrc             # Configuración de Prettier
-├── .stylelintrc.json       # Configuración de Stylelint
-├── vitest.config.ts        # Configuración de Vitest
-├── nightwatch.conf.cjs     # Configuración de Nightwatch
-├── commitlint.config.js    # Configuración de Commitlint
+│       ├── global.css         # Estilos globales (Tailwind v4)
+│       └── cursor-glow.css    # Estilos cursor glow global
+├── testing/                   # Configuración de tests
+├── openspec/                  # Documentación de cambios
+├── astro.config.mjs
+├── tsconfig.json
+├── eslint.config.js
+├── .prettierrc
+├── .stylelintrc.json
+├── vitest.config.ts
+├── nightwatch.conf.cjs
+├── commitlint.config.js
 ├── package.json
 └── README.md
 ```
 
-## 🚦 Comenzar
+## 🧩 Componentes UI Atómicos
 
-1. **Instalar dependencias**:
+7 componentes reutilizables extraídos de patrones duplicados (~920 líneas eliminadas):
 
-   ```bash
-   pnpm install
-   ```
+| Componente | Variantes | Uso |
+|---|---|---|
+| **SectionHeader** | gradient-cyan, gradient-accent | Títulos de sección con gradiente |
+| **GlassCard** | glass-card-full, glass-compact, project-showcase, experience, contact-form, soft-skills | Tarjetas con efecto vidrio |
+| **IconBox** | exp, footer, skill-icon, soft-skill | Contenedor de iconos |
+| **Button** | primary, secondary | Botones con icono SVG |
+| **TechBadge** | hero, duration, floating, skill, footer | Badges de tecnología |
+| **Section** | (configurable vía props) | Wrapper de sección con glow y gradiente |
+| **GradientDivider** | default | Divisor horizontal con gradiente |
 
-2. **Iniciar servidor de desarrollo**:
+## 📂 Secciones del Portafolio
 
-   ```bash
-   pnpm dev
-   ```
+### 1. Hero
+Presentación principal con foto, badges animados, botones CTA y stack tecnológico.
 
-3. **Abrir navegador**:
-   Visita `http://localhost:4321`
+### 2. About (Sobre mí)
+Información personal con visor Spline 3D y tarjetas de habilidades blandas.
+
+### 3. Skills (Habilidades)
+Hard skills y soft skills en grid de tarjetas con iconos.
+
+### 4. Experience (Experiencia)
+Timeline vertical con nodos animados y tarjetas glare-hover.
+
+### 5. Projects (Proyectos — Código Limpio)
+Horizontal scroll con 4 proyectos:
+1. **EventTwo Media** ⭐ — Plataforma de eventos en vivo. **105 tests, 84.5% coverage, WordPress Headless, GDPR compliant, Schema.org SEO.** (Astro, React, TypeScript, Tailwind CSS)
+2. **Portafolio Web** — Este mismo sitio (Astro, React, TypeScript, Tailwind CSS)
+3. **Workgroup** — Sitio corporativo (HTML, CSS, Bootstrap, PHP)
+4. **LATI** — Sitio institucional (HTML, CSS, Bootstrap, PHP)
+
+### 6. Case Study (Caso de Estudio)
+Galería lightbox con antes/después de la refactorización de Workgroup.
+
+### 7. WordPress Projects
+Proyectos del curso del SEPEPA **"Confección y Publicación de Páginas Web" — Restauradores Bercianos, Oviedo, Asturias** (formación reglada española). Horizontal scroll con 4 proyectos WordPress + Elementor:
+1. **NIDO Coworking** — Coworking en Asturias
+2. **Brasa Norte** — Restaurante mediterráneo
+3. **Clínica Oria** — Clínica de columna y articulaciones
+4. **MotorNova** — Taller mecánico
+
+> **Formación reglada española**: Estos proyectos fueron desarrollados durante el curso del SEPEPA **"Confección y Publicación de Páginas Web"** en el centro de formación Restauradores Bercianos, Oviedo, Asturias. La formación abarca WordPress, Elementor, diseño responsivo, accesibilidad y publicación de sitios web completos con dominio y hosting real.
+>
+> Esto demuestra formación oficial verificable, capacidad de ejecutar proyectos completos desde cero hasta producción, y manejo de herramientas profesionales del ecosistema WordPress.
+
+### 8. QA Showcase
+Bug hunting y documentación de testing con lightbox de GIFs.
+
+### 9. Contact (Contacto)
+Formulario con validación Zod vía Astro Actions + glow effects.
+
+### 10. News (Noticias)
+Carrusel de noticias tech vía RSS (The Verge, Dev.to).
+
+### 11. Footer
+Links, iconos de redes sociales con efecto neon y copyright.
+
+## 🖱️ Cursor Glow Global
+
+Efecto de brillo radial (400px) que sigue al mouse en todas las secciones. Implementado como un único elemento `fixed` en Layout.astro:
+- Sin cortes entre secciones
+- Un solo listener `mousemove` global
+- Se activa vía `elementFromPoint` + `closest('.section-glow')`
 
 ## 🌐 Internacionalización (i18n)
-
-El proyecto soporta múltiples idiomas (Español e Inglés) mediante un sistema i18n personalizado:
-
-### Estructura de Traducciones
-
-```typescript
-// src/i18n/ui.ts
-export const ui = {
-  es: {
-    'nav.home': 'Inicio',
-    'nav.about': 'Acerca de',
-    // ... más traducciones
-  },
-  en: {
-    'nav.home': 'Home',
-    'nav.about': 'About',
-    // ... more translations
-  },
-};
-```
-
-### Usar Traducciones
 
 ```astro
 ---
@@ -189,117 +230,68 @@ import { useTranslations, getLangFromUrl } from '@/i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-
 <h1>{t('nav.home')}</h1>
 ```
 
 ## 🎨 Tailwind CSS v4
 
-El proyecto utiliza Tailwind CSS v4 con nuevas características:
-
-### At-rules de Tailwind v4
-
 ```css
-/* Modo oscuro personalizado */
 @variant dark (&:where(.dark, .dark *));
-
-/* Variables de tema */
 @theme {
   --font-orbitron: orbitron, sans-serif;
-  --font-sans: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', sans-serif;
 }
 ```
 
-### Configuración de Stylelint para Tailwind v4
+## 🚦 Comenzar
 
-El archivo `.stylelintrc.json` está configurado para reconocer las at-rules de Tailwind v4:
-
-```json
-{
-  "ignoreAtRules": [
-    "tailwind",
-    "apply",
-    "variants",
-    "variant",
-    "responsive",
-    "screen",
-    "layer",
-    "theme"
-  ]
-}
+```bash
+pnpm install
+pnpm dev        # http://localhost:3003
 ```
-
-## 🌓 Dark Mode
-
-El proyecto soporta modo oscuro mediante:
-
-- Variable CSS personalizada: `--theme-mode`
-- Componente `ThemeToggle.tsx` para cambiar el tema
-- Estilos adaptados para cada tema
-
-## 🎯 Componentes Destacados
-
-### LanguageToggle
-
-Componente para cambiar entre idiomas (ES/EN) con banderas emoji.
-
-### ThemeToggle
-
-Componente para cambiar entre modo claro y oscuro.
-
-### Animaciones Avanzadas
-
-- **GlareHover**: Efecto de brillo al pasar el mouse
-- **LogoLoop**: Animación de loop para logos
-- **StarBorder**: Borde con efecto de estrellas
-- **TargetCursor**: Cursor personalizado con efecto de objetivo
-- **LightRays**: Efecto de rayos de luz de fondo
 
 ## 📝 Commits Convencionales
 
-Este proyecto usa [Conventional Commits](https://www.conventionalcommits.org/) con emojis:
-
 - `feat:` ✨ Nueva característica
 - `fix:` 🐛 Corrección de bug
-- `refactor:` 🎨 Refactorización de código
-- `docs:` 📝 Cambios en documentación
-- `style:` 💅 Cambios en estilos
-- `test:` ✅ Cambios en tests
-- `chore:` 🔧 Cambios en configuración o dependencias
-- `docs:` Cambios en documentación
-- `style:` Formateo, punto y coma faltante, etc.
-- `refactor:` Refactorización de código
-- `test:` Agregar o modificar tests
-- `chore:` Mantenimiento
-
-Ejemplo:
-
-```bash
-git commit -m "feat: agregar componente de navegación"
-```
+- `refactor:` ♻️ Refactorización
+- `style:` 🎨 Cambios de estilo
+- `docs:` 📝 Documentación
+- `test:` ✅ Tests
+- `chore:` 🔧 Configuración / dependencias
+- `ci:` 👷 CI/CD
 
 ## 🧪 Testing
 
-### Tests Unitarios (Vitest)
-
-Coloca tus tests en archivos `*.test.ts` o `*.spec.ts` junto a tus componentes.
-
-### Tests E2E (Nightwatch)
-
-Los tests E2E están en `tests/e2e/`. Para ejecutarlos, asegúrate de que el servidor esté corriendo:
+### Unitarios (Vitest)
+**570 tests** en 62 archivos. Cobertura de todos los componentes UI atómicos, secciones del portafolio, funciones i18n, cursor glow, componentes React y constantes.
 
 ```bash
-pnpm dev          # Terminal 1
-pnpm test:e2e     # Terminal 2
+pnpm test              # 570 tests unitarios
+pnpm test:watch        # Modo watch
+pnpm coverage          # Reporte de cobertura (98.3% líneas)
 ```
 
-## �� Documentación
+### E2E (Nightwatch)
+**190 assertions** en 7 specs × 2 navegadores (Chrome + Firefox). También disponible para Docker.
 
-- [Astro](https://docs.astro.build)
-- [React](https://react.dev)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Vitest](https://vitest.dev)
-- [Nightwatch](https://nightwatchjs.org)
+| Spec | Tests | Qué cubre |
+|---|---|---|
+| `home` | 1 | Renderizado de 10 secciones |
+| `interactions` | 3 | Theme toggle, news carrusel, validación formulario |
+| `links` | 4 | Social menu, navbar, footer, proyectos externos |
+| `navigation` | 3 | Cambio idioma, scroll suave, atributos footer |
+| `seo` | 2 | Meta tags ES/EN |
+| `projects` | 5 | EventTwo link + target, GitHub repo, WordPress 4 cards |
+| `showcases` | 5 | CaseStudy gallery, QA Showcase cards |
+
+```bash
+pnpm dev              # Terminal 1
+pnpm test:e2e         # Terminal 2 (Chrome + Firefox)
+pnpm test:e2e:chrome  # Solo Chrome
+```
+
+### CI
+GitHub Actions en cada push/PR a `main`: lint → type-check → test → build.
 
 ## 📄 Licencia
 

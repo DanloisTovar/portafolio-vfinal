@@ -4,6 +4,9 @@ import Hero from '../../components/Hero.astro';
 import About from '../../components/About.astro';
 import Experience from '../../components/Experience.astro';
 import Projects from '../../components/Projects.astro';
+import CaseStudy from '../../components/sections/CaseStudy.astro';
+import QAShowcase from '../../components/sections/QAShowcase.astro';
+import WordPressProjects from '../../components/sections/WordPressProjects.astro';
 import News from '../../components/News.astro';
 import Contact from '../../components/Contact.astro';
 import Skills from '../../components/Skills.astro';
@@ -27,13 +30,48 @@ const { lang } = Astro.params;
 >
   <main>
     <Hero lang={lang as 'es' | 'en'} />
+    <hr
+      class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
+    />
     <About lang={lang as 'es' | 'en'} />
+    <hr
+      class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
+    />
     <Skills lang={lang as 'es' | 'en'} />
+    <hr
+      class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
+    />
     <Experience lang={lang as 'es' | 'en'} />
-    <Projects lang={lang as 'es' | 'en'} />
-    <News lang={lang as 'es' | 'en'} />
+    <hr
+      class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
+    />
+    <div class="projects-pattern bg-white dark:bg-[#050b1b]">
+      <Projects lang={lang as 'es' | 'en'} />
+      <hr
+        class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
+      />
+      <CaseStudy lang={lang as 'es' | 'en'} />
+      <hr
+        class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
+      />
+      <WordPressProjects lang={lang as 'es' | 'en'} />
+      <hr
+        class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
+      />
+      <QAShowcase lang={lang as 'es' | 'en'} />
+    </div>
+    <hr
+      class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
+    />
     <Contact lang={lang as 'es' | 'en'} />
+    <hr
+      class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
+    />
+    <News lang={lang as 'es' | 'en'} />
   </main>
 
+  <hr
+    class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
+  />
   <Footer lang={lang as 'es' | 'en'} />
 </Layout>

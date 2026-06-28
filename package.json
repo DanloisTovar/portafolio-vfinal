@@ -24,6 +24,8 @@
     "test:e2e:astro": "nightwatch --config ./nightwatch.conf.cjs --env chrome,firefox,docker",
     "test:e2e:docker": "nightwatch --config ./nightwatch.conf.cjs --env docker",
     "test:e2e:docker:conf": "nightwatch --config ./nightwatch.docker.cjs --env chrome,firefox",
+    "test:e2e:docker:chrome": "nightwatch --config ./nightwatch.docker.cjs --env chrome",
+    "test:e2e:docker:firefox": "nightwatch --config ./nightwatch.docker.cjs --env firefox",
     "test:e2e:all": "nightwatch --config ./nightwatch.conf.cjs --env chrome,firefox,docker",
     "test:all": "pnpm test:e2e && pnpm test run",
     "commitlint": "commitlint --config ./commitlint.config.js --edit \"$1\"",

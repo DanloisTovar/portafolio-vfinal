@@ -1,0 +1,44 @@
+/* Card-level cursor glow */
+.cursor-glow {
+  border-radius: 1.5rem;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgb(59 130 246 / 25%),
+    transparent 40%
+  );
+}
+
+.dark .cursor-glow {
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgb(96 165 250 / 20%),
+    transparent 40%
+  );
+}
+
+/* Section-wide cursor glow — global fixed element */
+#global-cursor-glow {
+  background: radial-gradient(
+    400px circle at var(--section-mouse-x, 50%) var(--section-mouse-y, 50%),
+    rgb(59 130 246 / 15%),
+    transparent 50%
+  );
+}
+
+.dark #global-cursor-glow {
+  background: radial-gradient(
+    400px circle at var(--section-mouse-x, 50%) var(--section-mouse-y, 50%),
+    rgb(96 165 250 / 12%),
+    transparent 50%
+  );
+}
+
+/* Hide scrollbar utility for scrollable containers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

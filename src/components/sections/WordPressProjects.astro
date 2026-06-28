@@ -1,0 +1,232 @@
+---
+import { useTranslations } from '../../i18n/utils';
+import SectionHeader from '../ui/SectionHeader.astro';
+import GlassCard from '../ui/GlassCard.astro';
+import TechBadge from '../ui/TechBadge.astro';
+import StarBorder from '../Animations/StarBorder/StarBorder';
+import coworkinDanlois from '../../assets/wordpress/coworkin-danlois.png';
+import brasaNorte from '../../assets/wordpress/restaurant-brasa-norte.png';
+import clinicaOria from '../../assets/wordpress/clinica-oria.png';
+import motorNova from '../../assets/wordpress/taller-motornova.png';
+
+interface Props {
+  lang: 'es' | 'en';
+}
+
+interface WPProject {
+  title: string;
+  desc: string;
+  tags: string[];
+  image: string;
+  url: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+
+const projects: WPProject[] = [
+  {
+    title: t('wordpressProjects.project1.title'),
+    desc: t('wordpressProjects.project1.desc'),
+    tags: ['WordPress', 'Elementor', 'Coworking', 'Booking', 'Responsive'],
+    image: coworkinDanlois.src,
+    url: 'https://coworkingdanlois.rbcampus.es/',
+  },
+  {
+    title: t('wordpressProjects.project2.title'),
+    desc: t('wordpressProjects.project2.desc'),
+    tags: ['WordPress', 'Elementor', 'Restaurante', 'Booking', 'Galería'],
+    image: brasaNorte.src,
+    url: 'https://restaurantedanlois.rbcampus.es/',
+  },
+  {
+    title: t('wordpressProjects.project3.title'),
+    desc: t('wordpressProjects.project3.desc'),
+    tags: ['WordPress', 'Elementor', 'Clínica', 'Blog', 'Formulario'],
+    image: clinicaOria.src,
+    url: 'https://clinicadanlois.rbcampus.es/',
+  },
+  {
+    title: t('wordpressProjects.project4.title'),
+    desc: t('wordpressProjects.project4.desc'),
+    tags: ['WordPress', 'Elementor', 'Taller', 'Servicios', 'Responsive'],
+    image: motorNova.src,
+    url: 'https://tallerdanlois.rbcampus.es/',
+  },
+];
+---
+
+<section id="wordpress-projects" class="section-glow relative lg:h-[300vh]">
+  <!-- Cursor glow effect -->
+  <div
+    class="projects-sticky lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden flex flex-col justify-center py-20 lg:py-0"
+  >
+    <div class="w-full max-w-[1400px] mx-auto px-4 md:px-8 mb-8 lg:mb-12 relative z-10">
+      <SectionHeader
+        variant="gradient-cyan"
+        title={t('wordpressProjects.title')}
+        subtitle={t('wordpressProjects.subtitle')}
+      />
+
+      <!-- Desktop Instructions (Absolute Right) -->
+      <div class="hidden lg:flex flex-col items-end gap-1 opacity-60 absolute right-8 bottom-0">
+        <span class="text-sm font-medium">SCROLL DOWN</span>
+        <div class="w-px h-12 bg-current"></div>
+      </div>
+
+      <!-- Mobile Instructions (Centered below title for mobile) -->
+      <div
+        class="lg:hidden flex justify-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 animate-pulse mt-6"
+      >
+        <span>← Swipe to explore →</span>
+      </div>
+    </div>
+
+    <!-- Scroll Track Container -->
+    <div
+      class="w-full overflow-x-auto lg:overflow-visible no-scrollbar px-4 md:px-8 lg:px-0 pb-8 lg:pb-0"
+      id="wordpress-track-container"
+    >
+      <div
+        class="projects-track flex gap-6 md:gap-8 lg:gap-12 lg:px-[10vw] w-fit"
+        id="wordpress-track"
+      >
+        {
+          projects.map((project) => (
+            <GlassCard
+              variant="project-showcase"
+              class="w-[85vw] sm:w-[400px] lg:w-[40vw] max-w-[800px]"
+            >
+              <StarBorder
+                client:visible
+                color="#3b82f6"
+                speed={`${6 + Math.random() * 4}s`}
+                delay={`-${Math.random() * 10}s`}
+                className="transition-opacity duration-300 group-hover:opacity-0"
+              />
+              <div class="aspect-[4/3] lg:aspect-[16/10] overflow-hidden relative">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-50 dark:opacity-60 lg:opacity-30 lg:dark:opacity-65 lg:group-hover:opacity-20 lg:dark:group-hover:opacity-60 transition-opacity duration-500" />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-102 transition-transform duration-700 ease-out"
+                  loading="lazy"
+                />
+                <div class="absolute top-4 right-4 z-[60] flex flex-wrap justify-end gap-2 max-w-[80%]">
+                  {project.tags.slice(0, 4).map((tag) => (
+                    <TechBadge variant="floating" label={tag} />
+                  ))}
+                </div>
+              </div>
+
+              <div class="p-6 md:p-8 relative z-20 bg-white dark:bg-gray-900 lg:absolute lg:inset-0 lg:bg-transparent lg:flex lg:flex-col lg:justify-end lg:bg-gradient-to-t lg:from-black/90 lg:via-black/50 lg:to-transparent lg:opacity-100 lg:dark:opacity-100 lg:dark:bg-transparent">
+                <div class="lg:transform lg:translate-y-4 lg:group-hover:translate-y-0 lg:transition-transform lg:duration-1000 lg:ease-in-out">
+                  <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white lg:text-white mb-3 lg:dark:drop-shadow-lg">
+                    {project.title}
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-300 lg:text-gray-200 text-sm md:text-base leading-relaxed line-clamp-3 lg:line-clamp-2 lg:group-hover:line-clamp-none transition-all duration-500 lg:mb-0 lg:dark:drop-shadow-md">
+                    {project.desc}
+                  </p>
+                  <div class="mt-4 lg:mt-6 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 lg:delay-100">
+                    <div class="flex gap-3 flex-wrap">
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 lg:text-white hover:underline"
+                      >
+                        {lang === 'es' ? 'Ver sitio' : 'View site'} <span class="text-lg">↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </GlassCard>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Course context card (outside the 300vh scroll section) -->
+<div class="w-full max-w-[1400px] mx-auto px-4 md:px-8 pb-32 relative z-10">
+  <GlassCard variant="glass-card-full">
+    <div class="text-center">
+      <div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500 mx-auto">
+        <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+        </svg>
+      </div>
+      <p class="text-gray-600 dark:text-gray-300 text-lg md:text-xl leading-relaxed whitespace-pre-line text-justify">
+        {lang === 'es'
+          ? 'Estos proyectos fueron desarrollados durante el curso del SEPEPA "Confección y Publicación de Páginas Web" en el centro de formación Restauradores Bercianos, Oviedo, Asturias — formación reglada española.\n\nWordPress, Elementor, diseño responsivo, accesibilidad y publicación de sitios web completos con dominio y hosting real.'
+          : 'These projects were developed during the SEPEPA course "Web Page Creation and Publication" at the Restauradores Bercianos training center, Oviedo, Asturias — official Spanish training.\n\nWordPress, Elementor, responsive design, accessibility, and deployment of complete websites with real domains and hosting.'}
+      </p>
+    </div>
+  </GlassCard>
+</div>
+<script>
+
+
+  
+  let section = document.getElementById('wordpress-projects');
+  let track = document.getElementById('wordpress-track');
+  let isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+
+  function initScroll() {
+    if (!section || !track) return;
+
+    if (!isDesktop) {
+      track.style.transform = 'none';
+      return;
+    }
+
+    const handleScroll = () => {
+      if (!isDesktop) return;
+
+      const rect = section!.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      const offsetTop = -rect.top;
+      const totalScrollDistance = rect.height - viewportHeight;
+
+      if (totalScrollDistance > 0) {
+        let percentage = offsetTop / totalScrollDistance;
+        percentage = Math.max(0, Math.min(1, percentage));
+
+        const containerWidth = window.innerWidth;
+        const trackWidth = track!.scrollWidth;
+        const maxTranslate = trackWidth - containerWidth + containerWidth * 0.2;
+
+        const translateX = -(maxTranslate * percentage);
+
+        requestAnimationFrame(() => {
+          track!.style.transform = `translateX(${translateX}px)`;
+        });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
+
+  window.addEventListener('resize', () => {
+    const newIsDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    if (newIsDesktop !== isDesktop) {
+      isDesktop = newIsDesktop;
+      initScroll();
+    }
+  });
+
+  initScroll();
+
+  document.addEventListener('astro:page-load', () => {
+    section = document.getElementById('wordpress-projects');
+    track = document.getElementById('wordpress-track');
+    isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    initScroll();
+  });
+</script>

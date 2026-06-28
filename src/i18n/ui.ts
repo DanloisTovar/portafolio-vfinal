@@ -41,6 +41,9 @@ export const ui = {
     'projects.lati.title': 'Laboratorio de Asistencia Técnica a la Industria (LATI)',
     'projects.lati.desc':
       'Maquetación institucional orientada a claridad y cumplimiento: estructura semántica, optimización básica de SEO y carga, integración con flujo existente en PHP. Entregables consistentes y mantenibles.',
+    'projects.eventtwo.title': 'EventTwo Media',
+    'projects.eventtwo.desc':
+      'Plataforma de eventos en vivo con WordPress Headless como backend. 105 tests unitarios con 84.5% de cobertura, Schema.org SEO, GDPR compliant. Conciertos, stand-up comedy y conferencias en escenarios globales. Construido con Astro, React, TypeScript y Tailwind CSS.',
     'skills.title': 'Habilidades',
     'skills.hard': 'Habilidades Técnicas',
     'skills.soft': 'Habilidades Blandas',
@@ -88,6 +91,20 @@ export const ui = {
     'qa.showcase.placeholder_image': 'Placeholder: Upload your Test Plan image here',
     'qa.showcase.placeholder_bug1': 'Placeholder: Upload Bug 1 GIF here',
     'qa.showcase.placeholder_bug2': 'Placeholder: Upload Bug 2 GIF here',
+    'wordpressProjects.title': 'Proyectos WordPress',
+    'wordpressProjects.subtitle': 'Sitios web construidos con WordPress y Elementor',
+    'wordpressProjects.project1.title': 'NIDO Coworking',
+    'wordpressProjects.project1.desc':
+      'Espacio de coworking en un bosque de Asturias. Sitio web con planes, espacios (open space, oficinas, salas de reuniones) y formulario de contacto. Construido con WordPress y Elementor.',
+    'wordpressProjects.project2.title': 'Brasa Norte',
+    'wordpressProjects.project2.desc':
+      'Restaurante de cocina mediterránea a la brasa en Albacete. Sitio web con carta digital, menús especiales, formulario de reservas, galería de imágenes y sistema de opiniones. Construido con WordPress y Elementor.',
+    'wordpressProjects.project3.title': 'Clínica Oria',
+    'wordpressProjects.project3.desc':
+      'Clínica especializada en tratamiento no invasivo de patologías dolorosas de columna y articulaciones en Gijón. Más de 30 años de trayectoria. Sitio web con páginas de tratamientos, blog y formulario de contacto. Construido con WordPress y Elementor.',
+    'wordpressProjects.project4.title': 'MotorNova',
+    'wordpressProjects.project4.desc':
+      'Taller mecánico en Oviedo especializado en mantenimiento, diagnosis y reparación de vehículos. Servicios de revisiones, frenos, neumáticos, diagnosis electrónica y climatización. Construido con WordPress y Elementor.',
     'projects.caseStudy.title': 'Caso de estudio',
     'projects.caseStudy.subtitle': 'Proceso de Refactorización de la página web de Workgroup.',
     'projects.caseStudy.description':
@@ -151,6 +168,9 @@ export const ui = {
     'projects.lati.title': 'Technical Assistance to Industry Laboratory (LATI)',
     'projects.lati.desc':
       'Institutional layout oriented towards clarity and compliance: semantic structure, basic SEO and load optimization, integration with existing PHP flow. Consistent and maintainable deliverables.',
+    'projects.eventtwo.title': 'EventTwo Media',
+    'projects.eventtwo.desc':
+      'Live events platform with WordPress Headless as backend. 105 unit tests with 84.5% coverage, Schema.org SEO, GDPR compliant. Concerts, stand-up comedy, and conferences on global stages. Built with Astro, React, TypeScript, and Tailwind CSS.',
     'skills.title': 'Skills',
     'skills.hard': 'Hard Skills',
     'skills.soft': 'Soft Skills',
@@ -198,6 +218,20 @@ export const ui = {
     'qa.showcase.placeholder_image': 'Placeholder: Upload your Test Plan image here',
     'qa.showcase.placeholder_bug1': 'Placeholder: Upload Bug 1 GIF here',
     'qa.showcase.placeholder_bug2': 'Placeholder: Upload Bug 2 GIF here',
+    'wordpressProjects.title': 'WordPress Projects',
+    'wordpressProjects.subtitle': 'Websites built with WordPress and Elementor',
+    'wordpressProjects.project1.title': 'NIDO Coworking',
+    'wordpressProjects.project1.desc':
+      'Coworking space in a forest in Asturias, Spain. Website with plans, spaces (open space, offices, meeting rooms), and contact form. Built with WordPress and Elementor.',
+    'wordpressProjects.project2.title': 'Brasa Norte',
+    'wordpressProjects.project2.desc':
+      'Mediterranean grill restaurant in Albacete, Spain. Website with digital menu, special menus, booking form, image gallery, and customer reviews. Built with WordPress and Elementor.',
+    'wordpressProjects.project3.title': 'Clínica Oria',
+    'wordpressProjects.project3.desc':
+      'Clinic specialized in non-invasive treatment of painful spinal and joint conditions in Gijón, Spain. Over 30 years of experience. Website with treatment pages, blog, and contact form. Built with WordPress and Elementor.',
+    'wordpressProjects.project4.title': 'MotorNova',
+    'wordpressProjects.project4.desc':
+      'Auto repair shop in Oviedo, Spain, specialized in maintenance, diagnosis, and vehicle repair. Services include inspections, brakes, tires, electronic diagnosis, and climate control. Built with WordPress and Elementor.',
     'projects.caseStudy.title': 'Case Study',
     'projects.caseStudy.subtitle': 'Refactoring Process of the Workgroup website.',
     'projects.caseStudy.description':
