@@ -1,8 +1,9 @@
-## <small>0.0.1 (2026-06-27)</small>
+## <small>0.0.1 (2026-06-28)</small>
 
 * fix(assets): move CV to public folder and update link ([a29f5d0](https://github.com/DanloisTovar/portafolio-vfinal/commit/a29f5d0))
 * fix(auth): corregir validación de email ([3898da5](https://github.com/DanloisTovar/portafolio-vfinal/commit/3898da5))
 * fix(casestudy): 🐛 reparar lightGallery y limpiar div vacío ([83d782c](https://github.com/DanloisTovar/portafolio-vfinal/commit/83d782c))
+* fix(casestudy): 🐛 restaurar article tags en lugar de GlassCard para las cards ([a9088f1](https://github.com/DanloisTovar/portafolio-vfinal/commit/a9088f1))
 * fix(consola): :bug: elimina errores y warnings de la consola ([9050793](https://github.com/DanloisTovar/portafolio-vfinal/commit/9050793))
 * fix(contact): 🐛 corregir z-index del cursor glow en Contacto ([78bc0e0](https://github.com/DanloisTovar/portafolio-vfinal/commit/78bc0e0))
 * fix(css): 🐛 corregir importación de estilos de LightGallery ([301670a](https://github.com/DanloisTovar/portafolio-vfinal/commit/301670a))
@@ -27,6 +28,7 @@
 * fix(skills): 🐛 restaurar estructura original de SQL subsection ([5e3916e](https://github.com/DanloisTovar/portafolio-vfinal/commit/5e3916e))
 * fix(ui): 🐛 corregir z-index y reactivar cursor-glow global ([8fa527c](https://github.com/DanloisTovar/portafolio-vfinal/commit/8fa527c))
 * fix(ui): 🐛 reemplazar banderas emoji por iconos SVG ([7a467cd](https://github.com/DanloisTovar/portafolio-vfinal/commit/7a467cd))
+* fix(wordpress): 🐛 mover bloque del curso fuera de la sección 300vh y ajustar espaciado ([ad3596d](https://github.com/DanloisTovar/portafolio-vfinal/commit/ad3596d))
 * docs: 📝 actualizar coverage en README con explicación de la baja ([be4fc32](https://github.com/DanloisTovar/portafolio-vfinal/commit/be4fc32))
 * docs: 📝 actualizar README con 570 unitarios y 190 aserciones E2E ([be6c5d6](https://github.com/DanloisTovar/portafolio-vfinal/commit/be6c5d6))
 * docs: 📝 actualizar README con todas las nuevas características ([c1f6be8](https://github.com/DanloisTovar/portafolio-vfinal/commit/c1f6be8))
