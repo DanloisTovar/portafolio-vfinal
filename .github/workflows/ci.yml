@@ -17,7 +17,7 @@ jobs:
           node-version: '22'
       - run: npm install -g pnpm@9
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run test
+      - run: npx vitest run
 
   build:
     name: Build

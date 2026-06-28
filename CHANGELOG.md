@@ -13,6 +13,7 @@
 * fix(ci): 🐛 corregir pnpm ignore builds y Node 24 en CI ([58773f8](https://github.com/DanloisTovar/portafolio-vfinal/commit/58773f8))
 * fix(ci): 🐛 corregir pnpm/action-setup version (v4→v2) para GitHub Actions ([93cc051](https://github.com/DanloisTovar/portafolio-vfinal/commit/93cc051))
 * fix(ci): 🐛 crear .npmrc con approve-builds (solución pnpm v10) ([4f98149](https://github.com/DanloisTovar/portafolio-vfinal/commit/4f98149))
+* fix(ci): 🐛 eliminar yml y crear uno nuevo — pnpm@9, Node 22 ([2e17f63](https://github.com/DanloisTovar/portafolio-vfinal/commit/2e17f63))
 * fix(ci): 🐛 ignorar exit code de pnpm install (el warning no es fatal) ([ab7f2de](https://github.com/DanloisTovar/portafolio-vfinal/commit/ab7f2de))
 * fix(ci): 🐛 probar pnpm.onlyBuiltDependencies[] en .npmrc ([77f333b](https://github.com/DanloisTovar/portafolio-vfinal/commit/77f333b))
 * fix(ci): 🐛 probar vitest sin coverage en CI ([c88bc43](https://github.com/DanloisTovar/portafolio-vfinal/commit/c88bc43))
