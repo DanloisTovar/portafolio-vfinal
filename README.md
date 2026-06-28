@@ -193,7 +193,7 @@ Horizontal scroll con 4 proyectos:
 Galería lightbox con antes/después de la refactorización de Workgroup.
 
 ### 7. WordPress Projects
-Proyectos del curso del SEPEPA **"Confección y Publicación de Páginas Web" — Restauradores Bercianos, Oviedo, Asturias** (formación reglada española). Horizontal scroll con 4 proyectos WordPress + Elementor:
+Proyectos del curso del SEPEPA **"Confección y Publicación de Páginas Web" — Restauradores Bercianos, Oviedo, Asturias** (formación reglada española). Horizontal scroll con 4 proyectos WordPress + Elementor + bloque descriptivo del curso:
 1. **NIDO Coworking** — Coworking en Asturias
 2. **Brasa Norte** — Restaurante mediterráneo
 3. **Clínica Oria** — Clínica de columna y articulaciones
@@ -213,7 +213,7 @@ Formulario con validación Zod vía Astro Actions + glow effects.
 Carrusel de noticias tech vía RSS (The Verge, Dev.to).
 
 ### 11. Footer
-Links, iconos de redes sociales con efecto neon y copyright.
+Links rápidos, iconos neon-glass, "Danlois Tovar." con tipografía Orbitron y gradiente azul.
 
 ## 🖱️ Cursor Glow Global
 
