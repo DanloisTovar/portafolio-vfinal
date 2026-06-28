@@ -33,15 +33,9 @@ module.exports = {
 
   'Navbar links validation': function (browser) {
     browser
+      .resizeWindow(1920, 1080)
       .url(browser.launchUrl + 'es')
       .waitForElementVisible('nav')
-      .execute(function () {
-        const btn = document.querySelector('button[aria-label="Open menu"]');
-        if (btn && window.getComputedStyle(btn).display !== 'none') {
-          btn.click();
-        }
-      })
-      .pause(1000)
       .waitForElementVisible('a.group[href*="#home"]')
       .assert.visible('a.group[href*="#sobre-mi"]')
       .assert.visible('a.group[href*="#projects"]')
