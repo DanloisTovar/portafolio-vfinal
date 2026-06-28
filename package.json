@@ -23,7 +23,7 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,astro,json,md}\"",
     "lint:css": "stylelint \"src/**/*.{css,astro}\" --custom-syntax postcss-html",
     "lint:css:fix": "stylelint \"src/**/*.{css,astro}\" --custom-syntax postcss-html --fix",
-    "test": "vitest",
+    "test": "vitest run",
     "test:watch": "vitest --watch",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
