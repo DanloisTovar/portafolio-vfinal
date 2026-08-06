@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://danloisdev.com',
+  site: 'https://danloistovar.vercel.app',
   integrations: [react(), sitemap()],
   adapter: vercel(), // Descomenta cuando depliegues en Vercel
   server: {

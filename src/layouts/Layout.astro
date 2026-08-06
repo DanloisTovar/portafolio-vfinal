@@ -20,8 +20,8 @@ const {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://danloisdev.com');
-const ogImageURL = new URL(image, Astro.site || 'https://danloisdev.com');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://danloistovar.vercel.app');
+const ogImageURL = new URL(image, Astro.site || 'https://danloistovar.vercel.app');
 
 const navItems = [
   { label: t('nav.home'), href: `/${lang}#home`, icon: 'home' },
@@ -85,7 +85,7 @@ const navItems = [
         '@type': 'Person',
         name: 'Danlois Tovar',
         jobTitle: lang === 'es' ? 'Desarrollador Front End' : 'Front End Developer',
-        url: Astro.site || 'https://danloisdev.com',
+        url: Astro.site || 'https://danloistovar.vercel.app',
         description: description,
         sameAs: [
           'https://github.com/DanloisTovar',
