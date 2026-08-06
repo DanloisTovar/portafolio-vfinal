@@ -47,6 +47,7 @@ const navItems = [
     <meta name="author" content="Danlois Tovar" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#3b82f6" />
+    <meta name="google-site-verification" content="ikPszI1qHZFBEAYmJwSTUA_I1hMOwpsCilbu4GzgfAU" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
@@ -140,7 +141,12 @@ const navItems = [
     <slot />
 
     <!-- Global cursor glow — single fixed element, no section-edge clipping -->
-    <div id="global-cursor-glow" class="pointer-events-none fixed inset-0 z-0 opacity-0" style="transition: opacity 0.3s ease;"></div>
+    <div
+      id="global-cursor-glow"
+      class="pointer-events-none fixed inset-0 z-0 opacity-0"
+      style="transition: opacity 0.3s ease;"
+    >
+    </div>
   </body>
 </html>
 
