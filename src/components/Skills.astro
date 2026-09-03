@@ -10,6 +10,7 @@ import {
   BookOpen,
   Award,
   Database,
+  Code2,
 } from 'lucide-react';
 import Section from './ui/Section.astro';
 import SectionHeader from './ui/SectionHeader.astro';
@@ -27,6 +28,18 @@ const t = useTranslations(lang);
 
 // Education Data
 const education = [
+  {
+    degree:
+      lang === 'es'
+        ? 'Confección y Publicación de Páginas Web'
+        : 'Web Page Creation and Publication',
+    institution:
+      lang === 'es'
+        ? 'Centro de Formación Restauradores Bercianos, Oviedo, Asturias, España'
+        : 'Restauradores Bercianos Training Center, Oviedo, Asturias, Spain',
+    year: '2026',
+    icon: Code2,
+  },
   {
     degree:
       lang === 'es' ? 'Licenciatura en Tecnologías Digitales' : 'Bachelor in Digital Technologies',
