@@ -37,7 +37,7 @@ Portafolio profesional de Danlois Tovar — Desarrollador Front End. Construido 
 ### Desarrollo
 
 ```bash
-pnpm dev          # Iniciar servidor de desarrollo (puerto 3003)
+pnpm dev          # Iniciar servidor de desarrollo (puerto 4321)
 pnpm build        # Construir para producción
 pnpm preview      # Vista previa de la build
 ```
@@ -70,7 +70,7 @@ pnpm test:e2e:firefox  # Tests E2E solo Firefox
 ![Coverage](https://img.shields.io/badge/coverage-95%25-green?style=for-the-badge&logo=vitest)
 
 - **Sentencias**: 95.31%
-- **Ramas**: 87.09%
+- **Ramas**: 87.63%
 - **Funciones**: 96.55%
 - **Líneas**: 96.66%
 
@@ -246,7 +246,7 @@ const t = useTranslations(lang);
 
 ```bash
 pnpm install
-pnpm dev        # http://localhost:3003
+pnpm dev        # http://localhost:4321
 ```
 
 ## 📝 Commits Convencionales
@@ -268,7 +268,7 @@ pnpm dev        # http://localhost:3003
 ```bash
 pnpm test              # 570 tests unitarios
 pnpm test:watch        # Modo watch
-pnpm coverage          # Reporte de cobertura (98.3% líneas)
+pnpm coverage          # Reporte de cobertura (96.66% líneas)
 ```
 
 ### E2E (Nightwatch)
