@@ -62,7 +62,10 @@ const metrics = [
 
     <!-- CI badge -->
     <div class="flex justify-center mb-8">
-      <CiBadge label={t('portfolioShowcase.ci')} />
+      <CiBadge
+        label={t('portfolioShowcase.ci')}
+        href="https://github.com/DanloisTovar/portafolio-vfinal/actions"
+      />
     </div>
 
     <!-- Metrics grid -->
@@ -132,6 +135,10 @@ const metrics = [
         </GlassCard>
       </div>
     </div>
+
+    <p class="text-center text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto mt-12 mb-8 text-balance">
+      {t('portfolioShowcase.standard')}
+    </p>
 
     <!-- GitHub CTA -->
     <div class="flex justify-center mt-12">

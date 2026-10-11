@@ -154,6 +154,7 @@ export const ui = {
     'portfolioShowcase.features.desc':
       'Cursor glow global, animaciones con Motion (GlareHover, LogoLoop, StarBorder), lightbox de galerías, formulario con validación Zod + Astro Actions, y feed de noticias vía RSS.',
     'portfolioShowcase.cta': 'Ver el código en GitHub',
+    'portfolioShowcase.standard': 'Este es el estándar que aplico a cada proyecto en el que trabajo.',
   },
   en: {
     'nav.home': 'Home',
@@ -300,5 +301,6 @@ export const ui = {
     'portfolioShowcase.features.desc':
       'Global cursor glow, Motion animations (GlareHover, LogoLoop, StarBorder), gallery lightbox, form with Zod validation + Astro Actions, and an RSS news feed.',
     'portfolioShowcase.cta': 'View the code on GitHub',
+    'portfolioShowcase.standard': 'This is the standard I bring to every project I work on.',
   },
 } as const;

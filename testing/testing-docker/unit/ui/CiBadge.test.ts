@@ -27,4 +27,9 @@ describe('CiBadge.astro', () => {
     expect(content).toContain('animate-ping');
     expect(content).toContain('bg-green-500');
   });
+
+  it('should support an optional href prop', () => {
+    const content = readFileSync(COMPONENT_PATH, 'utf-8');
+    expect(content).toContain('href?: string');
+  });
 });
