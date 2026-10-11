@@ -137,6 +137,24 @@ export const ui = {
       'Consulta 3: Mostrar todas las promociones de descuento activas',
     'skills.advancedSql.query3.desc':
       'Mostrar todas las promociones de descuento para clientes que se encuentren activas, para una entidad específica, considerando fecha de validez y flags de estado.',
+    'portfolioShowcase.title': 'Cómo construí este portafolio',
+    'portfolioShowcase.subtitle':
+      'No es una web. Es software de producción: arquitectura, testing y CI/CD.',
+    'portfolioShowcase.ci': 'CI passing · GitHub Actions',
+    'portfolioShowcase.metric.tests': 'Tests unitarios',
+    'portfolioShowcase.metric.coverage': 'Cobertura',
+    'portfolioShowcase.metric.e2e': 'Assertions E2E',
+    'portfolioShowcase.metric.seo': 'Lighthouse SEO',
+    'portfolioShowcase.arch.title': 'Arquitectura',
+    'portfolioShowcase.arch.desc':
+      'Astro 5 + React 19 + Tailwind CSS v4. Componentes atómicos reutilizables (7 UI), i18n propio ES/EN y sistema de animaciones. Código tipado con TypeScript.',
+    'portfolioShowcase.quality.title': 'Calidad',
+    'portfolioShowcase.quality.desc':
+      'CI/CD con GitHub Actions en cada push: lint, type-check, tests y build. ESLint + Prettier + Stylelint, commits convencionales con commitlint y hooks de Husky.',
+    'portfolioShowcase.features.title': 'Features técnicas',
+    'portfolioShowcase.features.desc':
+      'Cursor glow global, animaciones con Motion (GlareHover, LogoLoop, StarBorder), lightbox de galerías, formulario con validación Zod + Astro Actions, y feed de noticias vía RSS.',
+    'portfolioShowcase.cta': 'Ver el código en GitHub',
   },
   en: {
     'nav.home': 'Home',
@@ -266,5 +284,23 @@ export const ui = {
     'skills.advancedSql.query3.title': 'Query 3: Show all active discount promotions',
     'skills.advancedSql.query3.desc':
       'Show all active customer discount promotions for a specific entity, considering validity date and status flags.',
+    'portfolioShowcase.title': 'How I built this portfolio',
+    'portfolioShowcase.subtitle':
+      "It's not a website. It's production software: architecture, testing, and CI/CD.",
+    'portfolioShowcase.ci': 'CI passing · GitHub Actions',
+    'portfolioShowcase.metric.tests': 'Unit tests',
+    'portfolioShowcase.metric.coverage': 'Coverage',
+    'portfolioShowcase.metric.e2e': 'E2E assertions',
+    'portfolioShowcase.metric.seo': 'Lighthouse SEO',
+    'portfolioShowcase.arch.title': 'Architecture',
+    'portfolioShowcase.arch.desc':
+      'Astro 5 + React 19 + Tailwind CSS v4. Reusable atomic components (7 UI), custom ES/EN i18n, and an animation system. TypeScript-typed code.',
+    'portfolioShowcase.quality.title': 'Quality',
+    'portfolioShowcase.quality.desc':
+      'CI/CD with GitHub Actions on every push: lint, type-check, tests, and build. ESLint + Prettier + Stylelint, conventional commits with commitlint, and Husky hooks.',
+    'portfolioShowcase.features.title': 'Technical features',
+    'portfolioShowcase.features.desc':
+      'Global cursor glow, Motion animations (GlareHover, LogoLoop, StarBorder), gallery lightbox, form with Zod validation + Astro Actions, and an RSS news feed.',
+    'portfolioShowcase.cta': 'View the code on GitHub',
   },
 } as const;

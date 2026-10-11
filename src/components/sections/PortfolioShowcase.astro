@@ -1,0 +1,202 @@
+---
+import { useTranslations } from '../../i18n/utils';
+import { Boxes, ShieldCheck, Cpu } from 'lucide-react';
+import SectionHeader from '../ui/SectionHeader.astro';
+import GlassCard from '../ui/GlassCard.astro';
+import IconBox from '../ui/IconBox.astro';
+import StatCard from '../ui/StatCard.astro';
+import CiBadge from '../ui/CiBadge.astro';
+import Button from '../ui/Button.astro';
+
+interface Props {
+  lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const metrics = [
+  {
+    target: '570',
+    decimals: '0',
+    suffix: '',
+    initial: '570',
+    label: t('portfolioShowcase.metric.tests'),
+  },
+  {
+    target: '95.31',
+    decimals: '2',
+    suffix: '%',
+    initial: '95.31%',
+    label: t('portfolioShowcase.metric.coverage'),
+  },
+  {
+    target: '190',
+    decimals: '0',
+    suffix: '',
+    initial: '190',
+    label: t('portfolioShowcase.metric.e2e'),
+  },
+  {
+    target: '100',
+    decimals: '0',
+    suffix: '',
+    initial: '100',
+    label: t('portfolioShowcase.metric.seo'),
+  },
+];
+---
+
+<section id="portfolio-showcase" class="section-glow relative overflow-hidden isolate py-20 lg:py-32">
+  <div
+    class="absolute inset-0 -z-20 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20"
+  >
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+    <SectionHeader
+      variant="gradient-cyan"
+      title={t('portfolioShowcase.title')}
+      subtitle={t('portfolioShowcase.subtitle')}
+    />
+
+    <!-- CI badge -->
+    <div class="flex justify-center mb-8">
+      <CiBadge label={t('portfolioShowcase.ci')} />
+    </div>
+
+    <!-- Metrics grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      {
+        metrics.map((metric) => (
+          <StatCard
+            target={metric.target}
+            initial={metric.initial}
+            label={metric.label}
+            decimals={metric.decimals}
+            suffix={metric.suffix}
+          />
+        ))
+      }
+    </div>
+
+    <!-- Engineering bento -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mt-12">
+      <GlassCard variant="glass-card-full" class="h-full">
+        <div class="flex flex-col gap-4 h-full">
+          <div class="flex items-center gap-4">
+            <IconBox size="lg" color="gradient">
+              <Boxes size={24} />
+            </IconBox>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+              {t('portfolioShowcase.arch.title')}
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+            {t('portfolioShowcase.arch.desc')}
+          </p>
+        </div>
+      </GlassCard>
+
+      <GlassCard variant="glass-card-full" class="h-full">
+        <div class="flex flex-col gap-4 h-full">
+          <div class="flex items-center gap-4">
+            <IconBox size="lg" color="gradient">
+              <ShieldCheck size={24} />
+            </IconBox>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+              {t('portfolioShowcase.quality.title')}
+            </h3>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+            {t('portfolioShowcase.quality.desc')}
+          </p>
+        </div>
+      </GlassCard>
+
+      <div class="lg:col-span-2">
+        <GlassCard variant="glass-card-full" class="h-full">
+          <div class="flex flex-col gap-4 h-full">
+            <div class="flex items-center gap-4">
+              <IconBox size="lg" color="gradient">
+                <Cpu size={24} />
+              </IconBox>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                {t('portfolioShowcase.features.title')}
+              </h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+              {t('portfolioShowcase.features.desc')}
+            </p>
+          </div>
+        </GlassCard>
+      </div>
+    </div>
+
+    <!-- GitHub CTA -->
+    <div class="flex justify-center mt-12">
+      <Button
+        variant="gist"
+        label={t('portfolioShowcase.cta')}
+        href="https://github.com/DanloisTovar/portafolio-vfinal"
+        target="_blank"
+        rel="noopener noreferrer"
+      />
+    </div>
+  </div>
+</section>
+
+<script>
+  import { inView } from 'motion';
+
+  const DURATION = 1500;
+
+  function animateCounter(el: HTMLElement) {
+    if (el.dataset.done === 'true') return;
+
+    const target = Number(el.dataset.target ?? '0');
+    const decimals = Number(el.dataset.decimals ?? '0');
+    const suffix = el.dataset.suffix ?? '';
+
+    const stop = inView(
+      el,
+      () => {
+        // Guard so the count-up runs only once per element.
+        if (el.dataset.done === 'true') return;
+        el.dataset.done = 'true';
+
+        const start = performance.now();
+
+        const tick = (now: number) => {
+          const progress = Math.min((now - start) / DURATION, 1);
+          // Ease-out cubic.
+          const eased = 1 - Math.pow(1 - progress, 3);
+
+          if (progress < 1) {
+            el.textContent = `${(target * eased).toFixed(decimals)}${suffix}`;
+            requestAnimationFrame(tick);
+          } else {
+            el.textContent = `${target.toFixed(decimals)}${suffix}`;
+          }
+        };
+
+        requestAnimationFrame(tick);
+        stop();
+      },
+      { margin: '0px 0px -20% 0px' }
+    );
+  }
+
+  function initCounters() {
+    const counters = document.querySelectorAll<HTMLElement>('[data-counter]');
+    counters.forEach((el) => {
+      // Avoid binding a second observer on repeated page-load events.
+      if (el.dataset.bound === 'true') return;
+      el.dataset.bound = 'true';
+      animateCounter(el);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initCounters);
+  document.addEventListener('astro:page-load', initCounters);
+</script>
