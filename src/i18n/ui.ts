@@ -138,8 +138,7 @@ export const ui = {
     'skills.advancedSql.query3.desc':
       'Mostrar todas las promociones de descuento para clientes que se encuentren activas, para una entidad específica, considerando fecha de validez y flags de estado.',
     'portfolioShowcase.title': 'Cómo construí este portafolio',
-    'portfolioShowcase.subtitle':
-      'No es una web. Es software de producción: arquitectura, testing y CI/CD.',
+    'portfolioShowcase.subtitle': 'Arquitectura, testing y CI/CD aplicados a un proyecto real.',
     'portfolioShowcase.ci': 'CI passing · GitHub Actions',
     'portfolioShowcase.metric.tests': 'Tests unitarios',
     'portfolioShowcase.metric.coverage': 'Cobertura',
@@ -285,8 +284,7 @@ export const ui = {
     'skills.advancedSql.query3.desc':
       'Show all active customer discount promotions for a specific entity, considering validity date and status flags.',
     'portfolioShowcase.title': 'How I built this portfolio',
-    'portfolioShowcase.subtitle':
-      "It's not a website. It's production software: architecture, testing, and CI/CD.",
+    'portfolioShowcase.subtitle': 'Architecture, testing, and CI/CD applied to a real project.',
     'portfolioShowcase.ci': 'CI passing · GitHub Actions',
     'portfolioShowcase.metric.tests': 'Unit tests',
     'portfolioShowcase.metric.coverage': 'Coverage',
