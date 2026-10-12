@@ -23,6 +23,11 @@ describe('InfoCard.astro', () => {
     expect(content).toContain('<slot');
   });
 
+  it('should render a named slot for extra content', () => {
+    const content = readFileSync(COMPONENT_PATH, 'utf-8');
+    expect(content).toContain('name="extra"');
+  });
+
   it('should compose GlassCard with the glass-card-full variant', () => {
     const content = readFileSync(COMPONENT_PATH, 'utf-8');
     expect(content).toContain('GlassCard');

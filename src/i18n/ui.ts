@@ -175,6 +175,10 @@ export const ui = {
     'eventtwoShowcase.postman.title': 'API Testing con Postman',
     'eventtwoShowcase.postman.desc':
       'Validación de la API GraphQL: consultas, campos ACF anidados y manejo de errores, con assertions automatizadas.',
+    'eventtwoShowcase.postman.item1': 'GetEvents — campos ACF anidados',
+    'eventtwoShowcase.postman.item2': 'GetEvents — variable $first',
+    'eventtwoShowcase.postman.item3': 'GetCategories — categorías con count',
+    'eventtwoShowcase.postman.item4': 'Query inválida — manejo de errores (GraphQL errors)',
     'eventtwoShowcase.cta': 'Ver el sitio en vivo',
   },
   en: {
@@ -343,6 +347,10 @@ export const ui = {
     'eventtwoShowcase.postman.title': 'API Testing with Postman',
     'eventtwoShowcase.postman.desc':
       'GraphQL API validation: queries, nested ACF fields, and error handling, with automated assertions.',
+    'eventtwoShowcase.postman.item1': 'GetEvents — nested ACF fields',
+    'eventtwoShowcase.postman.item2': 'GetEvents — $first variable',
+    'eventtwoShowcase.postman.item3': 'GetCategories — categories with count',
+    'eventtwoShowcase.postman.item4': 'Invalid query — error handling (GraphQL errors)',
     'eventtwoShowcase.cta': 'View the live site',
   },
 } as const;

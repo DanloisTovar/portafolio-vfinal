@@ -1,6 +1,16 @@
 ---
 import { useTranslations } from '../../i18n/utils';
-import { Server, Hammer, Zap, ArrowRight, ShieldAlert, Search, Lock, Send } from 'lucide-react';
+import {
+  Server,
+  Hammer,
+  Zap,
+  ArrowRight,
+  ShieldAlert,
+  Search,
+  Lock,
+  Send,
+  CheckCircle2,
+} from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader.astro';
 import GlassCard from '../ui/GlassCard.astro';
 import IconBox from '../ui/IconBox.astro';
@@ -22,6 +32,13 @@ const flowSteps = [
 ];
 
 const stack = ['WordPress', 'WPGraphQL', 'ACF', 'Astro', 'React', 'TypeScript', 'Tailwind CSS'];
+
+const postmanChecks = [
+  t('eventtwoShowcase.postman.item1'),
+  t('eventtwoShowcase.postman.item2'),
+  t('eventtwoShowcase.postman.item3'),
+  t('eventtwoShowcase.postman.item4'),
+];
 ---
 
 <section id="eventtwo-showcase" class="section-glow relative overflow-hidden isolate py-20 lg:py-32">
@@ -100,6 +117,20 @@ const stack = ['WordPress', 'WPGraphQL', 'ACF', 'Astro', 'React', 'TypeScript', 
         description={t('eventtwoShowcase.postman.desc')}
       >
         <Send size={24} />
+        <ul slot="extra" class="space-y-2">
+          {
+            postmanChecks.map((item) => (
+              <li class="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                <CheckCircle2
+                  size={18}
+                  className="text-green-500 shrink-0 mt-0.5"
+                  aria-hidden="true"
+                />
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
       </InfoCard>
     </div>
 
