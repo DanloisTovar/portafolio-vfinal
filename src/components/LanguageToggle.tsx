@@ -7,10 +7,20 @@ interface Props {
 export default function LanguageToggle({ currentLang }: Props) {
   const toggleLang = () => {
     const newLang = currentLang === 'es' ? 'en' : 'es';
-    // Simple redirect for now, can be improved to preserve path
-    const currentPath = window.location.pathname;
-    const newPath = currentPath.replace(`/${currentLang}`, `/${newLang}`);
-    window.location.href = newPath;
+    const newPath = window.location.pathname.replace(`/${currentLang}`, `/${newLang}`);
+
+    // Preserve the section the user is reading instead of jumping to the top.
+    // Prefer the section currently in view; fall back to the URL hash.
+    let hash = '';
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('section[id]'));
+    const pasadas = sections.filter((s) => s.getBoundingClientRect().top <= 120);
+    if (pasadas.length > 0) {
+      hash = `#${pasadas[pasadas.length - 1].id}`;
+    } else {
+      hash = window.location.hash;
+    }
+
+    window.location.href = newPath + hash;
   };
 
   return (
