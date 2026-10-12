@@ -43,7 +43,7 @@ export const ui = {
       'Maquetación institucional orientada a claridad y cumplimiento: estructura semántica, optimización básica de SEO y carga, integración con flujo existente en PHP. Entregables consistentes y mantenibles.',
     'projects.eventtwo.title': 'EventTwo Media',
     'projects.eventtwo.desc':
-      'Plataforma de eventos en vivo con WordPress Headless como backend. 105 tests unitarios con 84.5% de cobertura, Schema.org SEO, GDPR compliant. Conciertos, stand-up comedy y conferencias en escenarios globales. Construido con Astro, React, TypeScript y Tailwind CSS.',
+      'Plataforma de eventos para un cliente real. WordPress Headless + Astro estático, con el contenido gestionado desde un CMS.',
     'skills.title': 'Habilidades',
     'skills.hard': 'Habilidades Técnicas',
     'skills.soft': 'Habilidades Blandas',
@@ -156,6 +156,26 @@ export const ui = {
       'Cursor glow global, animaciones con Motion (GlareHover, LogoLoop, StarBorder), lightbox de galerías, formulario con validación Zod + Astro Actions, y feed de noticias vía RSS.',
     'portfolioShowcase.cta': 'Ver el código en GitHub',
     'portfolioShowcase.standard': 'Este es el estándar que aplico a cada proyecto en el que trabajo.',
+    'eventtwoShowcase.title': 'EventTwo Media',
+    'eventtwoShowcase.subtitle':
+      'Plataforma de eventos para un cliente real: WordPress Headless con un sitio Astro estático.',
+    'eventtwoShowcase.flow.label': 'La arquitectura',
+    'eventtwoShowcase.flow.wp': 'WordPress + WPGraphQL + ACF',
+    'eventtwoShowcase.flow.build': 'Build de Astro',
+    'eventtwoShowcase.flow.static': 'HTML estático',
+    'eventtwoShowcase.build.title': 'La API como dependencia de build',
+    'eventtwoShowcase.build.desc':
+      'Si WordPress falla durante el build, el deploy falla en lugar de publicar datos viejos o falsos. El contenido se sincroniza con un rebuild al publicar.',
+    'eventtwoShowcase.seo.title': 'SEO y datos estructurados',
+    'eventtwoShowcase.seo.desc':
+      'JSON-LD (Event, BreadcrumbList, Organization), canonical y Open Graph por página, y sitemap automático. Sitio 100% estático servido sin WordPress ni base de datos en runtime.',
+    'eventtwoShowcase.compliance.title': 'Cumplimiento y accesibilidad',
+    'eventtwoShowcase.compliance.desc':
+      'Consentimiento de cookies (GDPR/LSSI), validación de formulario con Zod compartida cliente/servidor, y accesibilidad verificada con axe-core (WCAG A/AA).',
+    'eventtwoShowcase.postman.title': 'API Testing con Postman',
+    'eventtwoShowcase.postman.desc':
+      'Validación de la API GraphQL: consultas, campos ACF anidados y manejo de errores, con assertions automatizadas.',
+    'eventtwoShowcase.cta': 'Ver el sitio en vivo',
   },
   en: {
     'nav.home': 'Home',
@@ -194,7 +214,7 @@ export const ui = {
       'Institutional layout oriented towards clarity and compliance: semantic structure, basic SEO and load optimization, integration with existing PHP flow. Consistent and maintainable deliverables.',
     'projects.eventtwo.title': 'EventTwo Media',
     'projects.eventtwo.desc':
-      'Live events platform with WordPress Headless as backend. 105 unit tests with 84.5% coverage, Schema.org SEO, GDPR compliant. Concerts, stand-up comedy, and conferences on global stages. Built with Astro, React, TypeScript, and Tailwind CSS.',
+      'Events platform for a real client. WordPress Headless + a static Astro site, with CMS-managed content.',
     'skills.title': 'Skills',
     'skills.hard': 'Hard Skills',
     'skills.soft': 'Soft Skills',
@@ -304,5 +324,25 @@ export const ui = {
       'Global cursor glow, Motion animations (GlareHover, LogoLoop, StarBorder), gallery lightbox, form with Zod validation + Astro Actions, and an RSS news feed.',
     'portfolioShowcase.cta': 'View the code on GitHub',
     'portfolioShowcase.standard': 'This is the standard I bring to every project I work on.',
+    'eventtwoShowcase.title': 'EventTwo Media',
+    'eventtwoShowcase.subtitle':
+      'Events platform for a real client: WordPress Headless with a static Astro site.',
+    'eventtwoShowcase.flow.label': 'The architecture',
+    'eventtwoShowcase.flow.wp': 'WordPress + WPGraphQL + ACF',
+    'eventtwoShowcase.flow.build': 'Astro build',
+    'eventtwoShowcase.flow.static': 'Static HTML',
+    'eventtwoShowcase.build.title': 'The API as a build dependency',
+    'eventtwoShowcase.build.desc':
+      'If WordPress fails during the build, the deploy fails instead of publishing stale or fake data. Content syncs via a rebuild on publish.',
+    'eventtwoShowcase.seo.title': 'SEO and structured data',
+    'eventtwoShowcase.seo.desc':
+      'JSON-LD (Event, BreadcrumbList, Organization), per-page canonical and Open Graph, and an automatic sitemap. A 100% static site served with no WordPress or database at runtime.',
+    'eventtwoShowcase.compliance.title': 'Compliance and accessibility',
+    'eventtwoShowcase.compliance.desc':
+      'Cookie consent (GDPR), client/server-shared Zod form validation, and accessibility verified with axe-core (WCAG A/AA).',
+    'eventtwoShowcase.postman.title': 'API Testing with Postman',
+    'eventtwoShowcase.postman.desc':
+      'GraphQL API validation: queries, nested ACF fields, and error handling, with automated assertions.',
+    'eventtwoShowcase.cta': 'View the live site',
   },
 } as const;

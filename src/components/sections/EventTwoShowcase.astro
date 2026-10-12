@@ -1,0 +1,122 @@
+---
+import { useTranslations } from '../../i18n/utils';
+import { Server, Hammer, Zap, ArrowRight, ShieldAlert, Search, Lock, Send } from 'lucide-react';
+import SectionHeader from '../ui/SectionHeader.astro';
+import GlassCard from '../ui/GlassCard.astro';
+import IconBox from '../ui/IconBox.astro';
+import InfoCard from '../ui/InfoCard.astro';
+import TechBadge from '../ui/TechBadge.astro';
+import Button from '../ui/Button.astro';
+
+interface Props {
+  lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const flowSteps = [
+  { icon: Server, label: t('eventtwoShowcase.flow.wp') },
+  { icon: Hammer, label: t('eventtwoShowcase.flow.build') },
+  { icon: Zap, label: t('eventtwoShowcase.flow.static') },
+];
+
+const stack = ['WordPress', 'WPGraphQL', 'ACF', 'Astro', 'React', 'TypeScript', 'Tailwind CSS'];
+---
+
+<section id="eventtwo-showcase" class="section-glow relative overflow-hidden isolate py-20 lg:py-32">
+  <div
+    class="absolute inset-0 -z-20 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20"
+  >
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+    <SectionHeader
+      variant="gradient-cyan"
+      title={t('eventtwoShowcase.title')}
+      subtitle={t('eventtwoShowcase.subtitle')}
+    />
+
+    <!-- Architecture flow -->
+    <GlassCard variant="glass-card-full">
+      <p
+        class="text-center text-sm font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-6"
+      >
+        {t('eventtwoShowcase.flow.label')}
+      </p>
+
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+        {
+          flowSteps.map((step, index) => (
+            <>
+              <div class="flex flex-col items-center gap-3">
+                <IconBox size="lg" color="gradient">
+                  <step.icon size={24} />
+                </IconBox>
+                <span class="text-sm font-medium text-gray-900 dark:text-white text-center">
+                  {step.label}
+                </span>
+              </div>
+              {index < flowSteps.length - 1 && (
+                <ArrowRight
+                  size={24}
+                  className="text-blue-500/60 rotate-90 md:rotate-0"
+                  aria-hidden="true"
+                />
+              )}
+            </>
+          ))
+        }
+      </div>
+    </GlassCard>
+
+    <!-- Engineering bento -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mt-12">
+      <InfoCard
+        title={t('eventtwoShowcase.build.title')}
+        description={t('eventtwoShowcase.build.desc')}
+      >
+        <ShieldAlert size={24} />
+      </InfoCard>
+
+      <InfoCard title={t('eventtwoShowcase.seo.title')} description={t('eventtwoShowcase.seo.desc')}>
+        <Search size={24} />
+      </InfoCard>
+
+      <div class="lg:col-span-2">
+        <InfoCard
+          title={t('eventtwoShowcase.compliance.title')}
+          description={t('eventtwoShowcase.compliance.desc')}
+        >
+          <Lock size={24} />
+        </InfoCard>
+      </div>
+    </div>
+
+    <!-- API testing card -->
+    <div class="mt-8">
+      <InfoCard
+        title={t('eventtwoShowcase.postman.title')}
+        description={t('eventtwoShowcase.postman.desc')}
+      >
+        <Send size={24} />
+      </InfoCard>
+    </div>
+
+    <!-- Stack -->
+    <div class="flex flex-wrap justify-center gap-2 mt-10">
+      {stack.map((tech) => <TechBadge variant="duration" label={tech} />)}
+    </div>
+
+    <!-- Live site CTA -->
+    <div class="flex justify-center mt-12">
+      <Button
+        variant="gist"
+        label={t('eventtwoShowcase.cta')}
+        href="https://www.eventtwomedia.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      />
+    </div>
+  </div>
+</section>
