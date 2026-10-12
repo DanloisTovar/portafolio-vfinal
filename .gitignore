@@ -47,7 +47,10 @@ logs/
 performance-trace.json
 
 # Colección Postman local — pega a API de producción, NO committear
-public/postman/
+postman/
+
+# Documentos internos de planificación (ODD) — no públicos
+odd/
 
 # Archivos personales - no committear
 empleos-para-postular-*.md
