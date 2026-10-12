@@ -9,10 +9,12 @@ module.exports = {
       .verify.visible('#sobre-mi') // About
       .verify.visible('#skills') // Skills
       .verify.visible('#experiencia') // Experience
+      .verify.visible('#portfolio-showcase') // Portfolio Showcase
       .verify.visible('#projects') // Projects (clean code)
       .verify.visible('#case-study') // Case Study
       .verify.visible('#wordpress-projects') // WordPress Projects
       .verify.visible('#qa-showcase') // QA Showcase
+      .verify.visible('#eventtwo-showcase') // EventTwo Showcase
       .verify.visible('#news') // News
       .verify.visible('#contact') // Contact
       .end();
