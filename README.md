@@ -27,7 +27,7 @@ Portafolio profesional de Danlois Tovar — Desarrollador Front End. Construido 
 ## 🛠️ Herramientas de Desarrollo
 
 - **Linting**: ESLint + Prettier + Stylelint
-- **Testing**: Vitest (664 tests unitarios, 72 archivos) + Nightwatch (194 assertions E2E en 7 specs, Chrome + Firefox)
+- **Testing**: Vitest (664 tests unitarios, 72 archivos) + Nightwatch (202 assertions E2E en 7 specs, Chrome + Firefox)
 - **Git Hooks**: Husky + lint-staged + commitlint
 - **Changelog**: Conventional Changelog automatizado
 - **CI**: GitHub Actions (push/PR a main)
@@ -288,7 +288,7 @@ pnpm coverage          # Reporte de cobertura (96.66% líneas)
 ```
 
 ### E2E (Nightwatch)
-**194 assertions** en 7 specs × 2 navegadores (Chrome + Firefox). También disponible para Docker.
+**202 assertions** en 7 specs × 2 navegadores (Chrome + Firefox). También disponible para Docker.
 
 | Spec | Tests | Qué cubre |
 |---|---|---|
