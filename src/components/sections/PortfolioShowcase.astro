@@ -2,8 +2,7 @@
 import { useTranslations } from '../../i18n/utils';
 import { Boxes, ShieldCheck, Cpu } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader.astro';
-import GlassCard from '../ui/GlassCard.astro';
-import IconBox from '../ui/IconBox.astro';
+import InfoCard from '../ui/InfoCard.astro';
 import StatCard from '../ui/StatCard.astro';
 import CiBadge from '../ui/CiBadge.astro';
 import Button from '../ui/Button.astro';
@@ -86,54 +85,27 @@ const metrics = [
 
     <!-- Engineering bento -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mt-12">
-      <GlassCard variant="glass-card-full" class="h-full">
-        <div class="flex flex-col gap-4 h-full">
-          <div class="flex items-center gap-4">
-            <IconBox size="lg" color="gradient">
-              <Boxes size={24} />
-            </IconBox>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-              {t('portfolioShowcase.arch.title')}
-            </h3>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
-            {t('portfolioShowcase.arch.desc')}
-          </p>
-        </div>
-      </GlassCard>
+      <InfoCard
+        title={t('portfolioShowcase.arch.title')}
+        description={t('portfolioShowcase.arch.desc')}
+      >
+        <Boxes size={24} />
+      </InfoCard>
 
-      <GlassCard variant="glass-card-full" class="h-full">
-        <div class="flex flex-col gap-4 h-full">
-          <div class="flex items-center gap-4">
-            <IconBox size="lg" color="gradient">
-              <ShieldCheck size={24} />
-            </IconBox>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-              {t('portfolioShowcase.quality.title')}
-            </h3>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
-            {t('portfolioShowcase.quality.desc')}
-          </p>
-        </div>
-      </GlassCard>
+      <InfoCard
+        title={t('portfolioShowcase.quality.title')}
+        description={t('portfolioShowcase.quality.desc')}
+      >
+        <ShieldCheck size={24} />
+      </InfoCard>
 
       <div class="lg:col-span-2">
-        <GlassCard variant="glass-card-full" class="h-full">
-          <div class="flex flex-col gap-4 h-full">
-            <div class="flex items-center gap-4">
-              <IconBox size="lg" color="gradient">
-                <Cpu size={24} />
-              </IconBox>
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                {t('portfolioShowcase.features.title')}
-              </h3>
-            </div>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
-              {t('portfolioShowcase.features.desc')}
-            </p>
-          </div>
-        </GlassCard>
+        <InfoCard
+          title={t('portfolioShowcase.features.title')}
+          description={t('portfolioShowcase.features.desc')}
+        >
+          <Cpu size={24} />
+        </InfoCard>
       </div>
     </div>
 
