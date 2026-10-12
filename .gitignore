@@ -46,6 +46,9 @@ logs/
 .vercel/
 performance-trace.json
 
+# Colección Postman local — pega a API de producción, NO committear
+public/postman/
+
 # Archivos personales - no committear
 empleos-para-postular-*.md
 recomendacion-*.md
