@@ -147,6 +147,24 @@ const navItems = [
       style="transition: opacity 0.3s ease;"
     >
     </div>
+
+    <script is:inline>
+      // Tras un cambio de idioma: saltar a la sección SIN animación de scroll
+      // (evita el "viaje" lento desde arriba).
+      if (sessionStorage.getItem('lang-scroll-jump')) {
+        sessionStorage.removeItem('lang-scroll-jump');
+        if (location.hash) {
+          const target = document.querySelector(location.hash);
+          if (target) {
+            document.documentElement.classList.remove('scroll-smooth');
+            target.scrollIntoView({ behavior: 'instant', block: 'start' });
+            requestAnimationFrame(() =>
+              document.documentElement.classList.add('scroll-smooth')
+            );
+          }
+        }
+      }
+    </script>
   </body>
 </html>
 

@@ -20,6 +20,8 @@ export default function LanguageToggle({ currentLang }: Props) {
       hash = window.location.hash;
     }
 
+    // Flag: la nueva página salta al ancla de forma instantánea (sin animación).
+    sessionStorage.setItem('lang-scroll-jump', '1');
     window.location.href = newPath + hash;
   };
 
