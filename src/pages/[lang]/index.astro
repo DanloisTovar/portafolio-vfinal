@@ -46,6 +46,10 @@ const { lang } = Astro.params;
     <hr
       class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
     />
+    <PortfolioShowcase lang={lang as 'es' | 'en'} />
+    <hr
+      class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
+    />
     <div class="projects-pattern bg-white dark:bg-[#050b1b]">
       <Projects lang={lang as 'es' | 'en'} />
       <hr
@@ -60,10 +64,6 @@ const { lang } = Astro.params;
         class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
       />
       <QAShowcase lang={lang as 'es' | 'en'} />
-      <hr
-        class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
-      />
-      <PortfolioShowcase lang={lang as 'es' | 'en'} />
     </div>
     <hr
       class="w-full h-px border-0 bg-linear-to-r from-blue-600 to-cyan-500 opacity-40 my-0 rounded-full"
