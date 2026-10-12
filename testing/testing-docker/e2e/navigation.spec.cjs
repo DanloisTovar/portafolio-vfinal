@@ -10,6 +10,31 @@ module.exports = {
       .assert.urlContains('/en');
   },
 
+  'Language switch preserves the section': function (browser) {
+    browser
+      .url(browser.launchUrl + 'es')
+      .waitForElementVisible('html[lang="es"]')
+      .execute(function () {
+        const el = document.getElementById('experiencia');
+        if (el) el.scrollIntoView({ block: 'start' });
+      })
+      .pause(700)
+      .click('button[aria-label="Change language"]')
+      .waitForElementVisible('html[lang="en"]')
+      .pause(1000)
+      .assert.urlContains('/en#')
+      .execute(
+        function () {
+          return window.scrollY;
+        },
+        [],
+        function (result) {
+          this.assert.ok(result.value > 1000, 'Mantuvo la sección (no volvió al tope)');
+        }
+      )
+      .end();
+  },
+
   'Navbar Smooth Scrolling': function (browser) {
     browser
       .url(browser.launchUrl + 'es')
