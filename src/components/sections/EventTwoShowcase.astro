@@ -16,6 +16,7 @@ import GlassCard from '../ui/GlassCard.astro';
 import IconBox from '../ui/IconBox.astro';
 import InfoCard from '../ui/InfoCard.astro';
 import TechBadge from '../ui/TechBadge.astro';
+import StatCard from '../ui/StatCard.astro';
 import Button from '../ui/Button.astro';
 
 interface Props {
@@ -39,6 +40,30 @@ const postmanChecks = [
   t('eventtwoShowcase.postman.item3'),
   t('eventtwoShowcase.postman.item4'),
 ];
+
+const metrics = [
+  {
+    target: '105',
+    decimals: '0',
+    suffix: '',
+    initial: '105',
+    label: t('eventtwoShowcase.metric.tests'),
+  },
+  {
+    target: '84.5',
+    decimals: '1',
+    suffix: '%',
+    initial: '84.5%',
+    label: t('eventtwoShowcase.metric.coverage'),
+  },
+  {
+    target: '144',
+    decimals: '0',
+    suffix: '',
+    initial: '144',
+    label: t('eventtwoShowcase.metric.e2e'),
+  },
+];
 ---
 
 <section id="eventtwo-showcase" class="section-glow relative overflow-hidden isolate py-20 lg:py-32">
@@ -53,6 +78,21 @@ const postmanChecks = [
       title={t('eventtwoShowcase.title')}
       subtitle={t('eventtwoShowcase.subtitle')}
     />
+
+    <!-- Real project metrics -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-12">
+      {
+        metrics.map((metric) => (
+          <StatCard
+            target={metric.target}
+            initial={metric.initial}
+            label={metric.label}
+            decimals={metric.decimals}
+            suffix={metric.suffix}
+          />
+        ))
+      }
+    </div>
 
     <!-- Architecture flow -->
     <GlassCard variant="glass-card-full">

@@ -179,6 +179,9 @@ export const ui = {
     'eventtwoShowcase.postman.item2': 'GetEvents — variable $first',
     'eventtwoShowcase.postman.item3': 'GetCategories — categorías con count',
     'eventtwoShowcase.postman.item4': 'Query inválida — manejo de errores (GraphQL errors)',
+    'eventtwoShowcase.metric.tests': 'Tests unitarios',
+    'eventtwoShowcase.metric.coverage': 'Cobertura',
+    'eventtwoShowcase.metric.e2e': 'Assertions E2E',
     'eventtwoShowcase.cta': 'Ver el sitio en vivo',
   },
   en: {
@@ -351,6 +354,9 @@ export const ui = {
     'eventtwoShowcase.postman.item2': 'GetEvents — $first variable',
     'eventtwoShowcase.postman.item3': 'GetCategories — categories with count',
     'eventtwoShowcase.postman.item4': 'Invalid query — error handling (GraphQL errors)',
+    'eventtwoShowcase.metric.tests': 'Unit tests',
+    'eventtwoShowcase.metric.coverage': 'Coverage',
+    'eventtwoShowcase.metric.e2e': 'E2E assertions',
     'eventtwoShowcase.cta': 'View the live site',
   },
 } as const;
