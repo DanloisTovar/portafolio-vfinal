@@ -124,13 +124,44 @@ const navItems = [
       }
     </script>
     <script is:inline>
-      // Cargar Spline Viewer solo si no está ya registrado
-      if (!customElements.get('spline-viewer')) {
-        const script = document.createElement('script');
-        script.type = 'module';
-        script.src = 'https://unpkg.com/@splinetool/viewer@1.12.50/build/spline-viewer.js';
-        document.head.appendChild(script);
-      }
+      // Cargar Spline Viewer de forma diferida: solo cuando un <spline-viewer>
+      // está por entrar en pantalla. Evita descargar ~635 KB en páginas sin Spline.
+      (function () {
+        if (customElements.get('spline-viewer')) return;
+
+        const init = () => {
+          const viewers = document.querySelectorAll('spline-viewer');
+          if (viewers.length === 0) return; // Esta página no usa Spline
+
+          let loaded = false;
+          const loadSpline = () => {
+            if (loaded || customElements.get('spline-viewer')) return;
+            loaded = true;
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.src = 'https://unpkg.com/@splinetool/viewer@1.12.50/build/spline-viewer.js';
+            document.head.appendChild(script);
+          };
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              if (entries.some((entry) => entry.isIntersecting)) {
+                loadSpline();
+                observer.disconnect();
+              }
+            },
+            { rootMargin: '200px' }
+          );
+
+          viewers.forEach((viewer) => observer.observe(viewer));
+        };
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init, { once: true });
+        } else {
+          init();
+        }
+      })();
     </script>
   </head>
   <body

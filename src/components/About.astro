@@ -162,11 +162,22 @@ const t = useTranslations(lang);
       };
 
       if (!tryHide()) {
-        const root = v.shadowRoot || v;
+        // El viewer carga de forma diferida (lazy): su shadowRoot recién aparece
+        // cuando el script de Spline se descarga al acercarse a la sección.
+        // Reintentamos hasta que monte el logo o se agoten los intentos.
+        let attempts = 0;
+        const interval = setInterval(() => {
+          attempts += 1;
+          if (tryHide() || attempts >= 80) clearInterval(interval); // ~20s
+        }, 250);
+
         const obs = new MutationObserver(() => {
-          if (tryHide()) obs.disconnect();
+          if (tryHide()) {
+            obs.disconnect();
+            clearInterval(interval);
+          }
         });
-        obs.observe(root, { childList: true, subtree: true });
+        obs.observe(v, { childList: true, subtree: true, attributes: true });
       }
     });
   }
