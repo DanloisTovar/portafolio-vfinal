@@ -1,5 +1,6 @@
 ---
 import { useTranslations } from '../../i18n/utils';
+import { Image } from 'astro:assets';
 import SectionHeader from '../ui/SectionHeader.astro';
 import GlassCard from '../ui/GlassCard.astro';
 import StarBorder from '../Animations/StarBorder/StarBorder';
@@ -50,10 +51,14 @@ const t = useTranslations(lang);
             class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-50 dark:opacity-60 lg:opacity-30 lg:dark:opacity-65 lg:group-hover:opacity-20 lg:dark:group-hover:opacity-60 transition-opacity duration-500"
           >
           </div>
-          <img
-            src={casoDeEstudioMalo1.src}
+          <Image
+            src={casoDeEstudioMalo1}
             alt={t('projects.caseStudy.image1.title')}
             class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-102 transition-transform duration-700 ease-out"
+            widths={[400, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            format="webp"
+            quality={80}
             loading="lazy"
           />
         </a>
@@ -111,10 +116,14 @@ const t = useTranslations(lang);
             class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-50 dark:opacity-60 lg:opacity-30 lg:dark:opacity-65 lg:group-hover:opacity-20 lg:dark:group-hover:opacity-60 transition-opacity duration-500"
           >
           </div>
-          <img
-            src={casoDeEstudioBueno1.src}
+          <Image
+            src={casoDeEstudioBueno1}
             alt={t('projects.caseStudy.image2.title')}
             class="w-full h-full object-cover lg:scale-100 lg:group-hover:scale-102 transition-transform duration-700 ease-out"
+            widths={[400, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            format="webp"
+            quality={80}
             loading="lazy"
           />
         </a>

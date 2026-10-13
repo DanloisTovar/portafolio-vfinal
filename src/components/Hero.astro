@@ -1,5 +1,6 @@
 ---
 import { useTranslations } from '../i18n/utils';
+import { Image } from 'astro:assets';
 import LightRays from './Backgrounds/LightRays/LightRays';
 import CircularText from './TextAnimations/CircularText/CircularText';
 import Button from './ui/Button.astro';
@@ -70,13 +71,16 @@ const techTags = [
           <div
             class="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-blue-500/30 shadow-2xl"
           >
-            <img
-              src={portfolioImg.src}
+            <Image
+              src={portfolioImg}
               alt="Foto de perfil de DanloisDev"
               class="w-full h-full object-cover"
+              widths={[320, 640]}
+              sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 320px"
+              format="webp"
+              quality={80}
+              loading="eager"
               fetchpriority="high"
-              width="400"
-              height="400"
             />
           </div>
 
