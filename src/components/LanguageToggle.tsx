@@ -29,7 +29,7 @@ export default function LanguageToggle({ currentLang }: Props) {
     <button
       onClick={toggleLang}
       className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors flex items-center gap-1 sm:gap-2 font-medium"
-      aria-label="Change language"
+      aria-label={`Change language (${currentLang.toUpperCase()})`}
     >
       <FlagIcon
         lang={currentLang === 'es' ? 'es' : 'en'}

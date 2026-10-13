@@ -236,8 +236,14 @@ const t = useTranslations(lang);
       track.appendChild(card);
 
       // Indicator dot
+      // The button keeps a >=24px hit area; the tiny visual dot is an inner span.
       const dot = document.createElement('button');
-      dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-blue-600 w-6' : 'bg-gray-300 dark:bg-gray-700'}`;
+      dot.className = 'min-w-[24px] min-h-[24px] inline-flex items-center justify-center';
+      dot.setAttribute('aria-label', `Ir a la noticia ${index + 1}`);
+      dot.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+      const dotVisual = document.createElement('span');
+      dotVisual.className = `block w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-blue-600 w-6' : 'bg-gray-300 dark:bg-gray-700'}`;
+      dot.appendChild(dotVisual);
       dot.onclick = () => {
         track.scrollTo({
           left: card.offsetLeft - track.offsetLeft,
@@ -254,13 +260,16 @@ const t = useTranslations(lang);
       );
       const dots = indicatorsContainer.querySelectorAll('button');
       dots.forEach((dot, i) => {
+        const visual = dot.firstElementChild;
+        if (!visual) return;
         if (i === index) {
-          dot.classList.add('bg-blue-600', 'w-6');
-          dot.classList.remove('bg-gray-300', 'dark:bg-gray-700');
+          visual.classList.add('bg-blue-600', 'w-6');
+          visual.classList.remove('bg-gray-300', 'dark:bg-gray-700');
         } else {
-          dot.classList.remove('bg-blue-600', 'w-6');
-          dot.classList.add('bg-gray-300', 'dark:bg-gray-700');
+          visual.classList.remove('bg-blue-600', 'w-6');
+          visual.classList.add('bg-gray-300', 'dark:bg-gray-700');
         }
+        dot.setAttribute('aria-current', i === index ? 'true' : 'false');
       });
 
       // Update buttons

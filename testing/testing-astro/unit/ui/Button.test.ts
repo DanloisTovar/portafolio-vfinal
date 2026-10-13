@@ -18,9 +18,9 @@ describe('Button.astro', () => {
     });
   });
 
-  it('should have bg-blue-500 and text-white for primary variant', () => {
+  it('should have bg-[#2d6eef] and text-white for primary variant', () => {
     const content = readFileSync(COMPONENT_PATH, 'utf-8');
-    expect(content).toContain('bg-blue-500');
+    expect(content).toContain('bg-[#2d6eef]');
     expect(content).toContain('text-white');
   });
 

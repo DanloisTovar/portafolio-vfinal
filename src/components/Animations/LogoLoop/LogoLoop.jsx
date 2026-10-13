@@ -54,7 +54,7 @@ const LogoLoop = ({ speed = 30 }) => {
       >
         {duplicatedLogos.map((logo, index) => (
           <div key={index} className="logo-item">
-            <div className="logo-icon" style={{ color: logo.color }}>
+            <div className="logo-icon" aria-hidden="true" style={{ color: logo.color }}>
               {logo.node}
             </div>
             <span className="logo-name">{logo.title}</span>

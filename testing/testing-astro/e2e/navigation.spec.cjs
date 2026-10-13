@@ -3,7 +3,7 @@ module.exports = {
     browser
       .url(browser.launchUrl + 'es')
       .waitForElementVisible('html[lang="es"]')
-      .click('button[aria-label="Change language"]')
+      .click('button[aria-label^="Change language"]')
       .waitForElementVisible('html[lang="en"]')
       .refresh()
       .waitForElementVisible('html[lang="en"]')
@@ -19,7 +19,7 @@ module.exports = {
         if (el) el.scrollIntoView({ block: 'start' });
       })
       .pause(700)
-      .click('button[aria-label="Change language"]')
+      .click('button[aria-label^="Change language"]')
       .waitForElementVisible('html[lang="en"]')
       .pause(1000)
       .assert.urlContains('/en#')
