@@ -7,6 +7,7 @@ Portafolio profesional de Danlois Tovar — Desarrollador Front End. Construido 
 - **Framework**: Astro 5.x
 - **UI Library**: React 19.x
 - **Styling**: Tailwind CSS 4.x (con @theme y @variant)
+- **Optimización de Imágenes**: sharp (WebP + srcset responsivo)
 - **Language**: TypeScript 5.x
 - **Package Manager**: pnpm
 - **Internacionalización**: i18n personalizado (ES/EN)
@@ -21,6 +22,7 @@ Portafolio profesional de Danlois Tovar — Desarrollador Front End. Construido 
 - 🧩 **Componentes UI Atómicos**: 11 componentes reutilizables (SectionHeader, GlassCard, IconBox, Button, TechBadge, Section, SectionDivider, GradientDivider, InfoCard, StatCard, CiBadge)
 - 🖱️ **Cursor Glow Global**: Efecto de brillo que sigue al mouse en todas las secciones sin cortes
 - 📱 **Diseño Responsive**: Totalmente responsive con Tailwind CSS
+- 🖼️ **Imágenes Optimizadas**: WebP automático con srcset responsivo (sharp)
 - ♿ **Accesibilidad**: Componentes con atributos ARIA
 - 🚀 **CI/CD**: GitHub Actions con lint, type-check, tests y build automáticos
 
