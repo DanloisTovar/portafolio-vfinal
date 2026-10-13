@@ -162,22 +162,11 @@ const t = useTranslations(lang);
       };
 
       if (!tryHide()) {
-        // El viewer carga de forma diferida (lazy): su shadowRoot recién aparece
-        // cuando el script de Spline se descarga al acercarse a la sección.
-        // Reintentamos hasta que monte el logo o se agoten los intentos.
-        let attempts = 0;
-        const interval = setInterval(() => {
-          attempts += 1;
-          if (tryHide() || attempts >= 80) clearInterval(interval); // ~20s
-        }, 250);
-
+        const root = v.shadowRoot || v;
         const obs = new MutationObserver(() => {
-          if (tryHide()) {
-            obs.disconnect();
-            clearInterval(interval);
-          }
+          if (tryHide()) obs.disconnect();
         });
-        obs.observe(v, { childList: true, subtree: true, attributes: true });
+        obs.observe(root, { childList: true, subtree: true });
       }
     });
   }
