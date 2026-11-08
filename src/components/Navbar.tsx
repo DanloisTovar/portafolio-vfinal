@@ -1,16 +1,5 @@
 import { useState } from 'react';
-import {
-  Menu,
-  X,
-  Code,
-  Home,
-  User,
-  Cpu,
-  Briefcase,
-  LayoutGrid,
-  Newspaper,
-  Mail,
-} from 'lucide-react';
+import { Menu, X, Home, User, Cpu, Briefcase, LayoutGrid, Newspaper, Mail } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import LanguageToggle from './LanguageToggle';
 import { clsx } from 'clsx';
@@ -57,9 +46,12 @@ export default function Navbar({ items, currentLang }: Props) {
             href={`/${currentLang}#home`}
             className="flex items-center gap-1 sm:gap-2 pl-2 hover:opacity-80 transition-opacity whitespace-nowrap"
           >
-            <div className="p-1.5 rounded-full bg-blue-600/10 dark:bg-blue-400/10 text-blue-600 dark:text-blue-400">
-              <Code size={25} />
-            </div>
+            <span
+              aria-hidden="true"
+              className="font-orbitron font-bold text-base sm:text-lg leading-none text-blue-600 dark:text-blue-400"
+            >
+              &lt;DT&gt;
+            </span>
             <span className="font-bold text-xs sm:text-base font-orbitron">Danlois Tovar </span>
           </a>
 
