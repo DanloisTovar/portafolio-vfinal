@@ -1,6 +1,18 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# `conventional-changelog -r 0` regenera desde el historial completo, así que al
+# pushear un commit `chore(changelog)` ese commit entra en su propia entrada y el
+# archivo queda sucio otra vez → loop infinito de commits de changelog.
+# Si HEAD ya es de changelog, no hay nada nuevo que agregar: se saltea.
+last_subject=$(git log -1 --format=%s)
+case "$last_subject" in
+  chore\(changelog\)*)
+    echo "[husky] HEAD ya es un commit de changelog: salto la regeneración."
+    exit 0
+    ;;
+esac
+
 echo "[husky] Generando CHANGELOG antes del push..."
 
 pnpm changelog || {
