@@ -34,7 +34,7 @@ export const PROJECT_LINKS = [
   },
   {
     id: 'workgroup',
-    url: 'https://www.workgroup.com.ar/website.v3/',
+    url: 'https://www.workgroup.com.ar/',
     repo: null,
   },
   {
