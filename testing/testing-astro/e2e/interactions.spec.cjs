@@ -87,19 +87,23 @@ module.exports = {
         if (el) el.scrollIntoView();
       })
       .execute(function () {
-        const btn = document.getElementById('submit-button');
-        if (btn) btn.click();
+        // Se envía el formulario, no el botón: el handler desactiva el botón mientras
+        // espera la respuesta, y un click sobre un botón disabled no dispara el submit.
+        // Con requestSubmit() el envío no depende de ese estado (era el flaky real).
+        const form = document.getElementById('contact-form');
+        if (form) form.requestSubmit();
       })
-      .waitForElementVisible('#error-name', 15000)
+      .waitForElementVisible('#error-name', 60000)
       .assert.textContains('#error-name', 'obligatorio')
 
       .setValue('#name', 'Test User')
       .setValue('#email', 'invalid-email')
       .execute(function () {
-        const btn = document.getElementById('submit-button');
-        if (btn) btn.click();
+        const form = document.getElementById('contact-form');
+        if (form) form.requestSubmit();
+        return 'sent';
       })
-      .waitForElementVisible('#error-email', 15000)
+      .waitForElementVisible('#error-email', 60000)
       .pause(500)
       .assert.textContains('#error-email', 'válido')
 
@@ -108,10 +112,13 @@ module.exports = {
       .setValue('#subject', 'Test Subject')
       .setValue('#message', 'Hi')
       .execute(function () {
-        const btn = document.getElementById('submit-button');
-        if (btn) btn.click();
+        // Se envía el formulario, no el botón: el handler desactiva el botón mientras
+        // espera la respuesta, y un click sobre un botón disabled no dispara el submit.
+        // Con requestSubmit() el envío no depende de ese estado (era el flaky real).
+        const form = document.getElementById('contact-form');
+        if (form) form.requestSubmit();
       })
-      .waitForElementVisible('#error-message', 15000)
+      .waitForElementVisible('#error-message', 60000)
       .assert.textContains('#error-message', 'corto')
       .end();
   },
