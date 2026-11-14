@@ -78,6 +78,9 @@ module.exports = {
   'Contact Form validations': function (browser) {
     browser
       .url(browser.launchUrl + 'es')
+      // Esperar a que el JS del formulario esté enganchado: sin esto, en navegadores
+      // rápidos el click llega antes de la hidratación y no aparece ningún error.
+      .waitForElementPresent('#contact-form[data-ready="true"]', 15000)
       .waitForElementVisible('#contact', 10000)
       .execute(function () {
         const el = document.getElementById('contact');
@@ -87,7 +90,7 @@ module.exports = {
         const btn = document.getElementById('submit-button');
         if (btn) btn.click();
       })
-      .waitForElementVisible('#error-name')
+      .waitForElementVisible('#error-name', 15000)
       .assert.textContains('#error-name', 'obligatorio')
 
       .setValue('#name', 'Test User')
@@ -96,7 +99,7 @@ module.exports = {
         const btn = document.getElementById('submit-button');
         if (btn) btn.click();
       })
-      .waitForElementVisible('#error-email')
+      .waitForElementVisible('#error-email', 15000)
       .pause(500)
       .assert.textContains('#error-email', 'válido')
 
@@ -108,7 +111,7 @@ module.exports = {
         const btn = document.getElementById('submit-button');
         if (btn) btn.click();
       })
-      .waitForElementVisible('#error-message')
+      .waitForElementVisible('#error-message', 15000)
       .assert.textContains('#error-message', 'corto')
       .end();
   },

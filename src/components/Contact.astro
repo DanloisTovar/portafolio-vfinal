@@ -48,9 +48,7 @@ const subtitle =
   </div>
 
   <!-- Cursor glow effect for entire section -->
-  <div
-  >
-  </div>
+  <div></div>
 
   <div class="max-w-4xl mx-auto relative z-10">
     <SectionHeader
@@ -329,6 +327,11 @@ const subtitle =
       statusMessage.innerText = messages[lang].success;
     }
   });
+
+  // Marca de "formulario listo": va DESPUÉS de enganchar el listener, así el test
+  // E2E no puede clickear en la ventana en que el handler todavía no existe
+  // (era la causa de que la validación no mostrara errores en navegadores rápidos).
+  if (form) form.dataset.ready = 'true';
 </script>
 
 <style is:global>

@@ -41,25 +41,30 @@ module.exports = {
       .end();
   },
 
-  'WordPress projects section has 4 project links in DOM': function (browser) {
+  'WordPress projects section shows the 4 project cards': function (browser) {
     browser
       .url(browser.launchUrl + 'es')
       .waitForElementVisible('#wordpress-projects')
-      .waitForElementPresent('#wordpress-projects a[href*="coworkingdanlois"]')
-      .waitForElementPresent('#wordpress-projects a[href*="restaurantedanlois"]')
-      .waitForElementPresent('#wordpress-projects a[href*="clinicadanlois"]')
-      .waitForElementPresent('#wordpress-projects a[href*="tallerdanlois"]')
+      // Presencia en el DOM (no texto visible): las cards viven en un carrusel
+      // horizontal y en Firefox las que quedan fuera del viewport no exponen texto.
+      .assert.elementPresent('#wordpress-projects img[alt="NIDO Coworking"]')
+      .assert.elementPresent('#wordpress-projects img[alt="Brasa Norte"]')
+      .assert.elementPresent('#wordpress-projects img[alt="Clínica Oria"]')
+      .assert.elementPresent('#wordpress-projects img[alt="MotorNova"]')
       .end();
   },
 
-  'WordPress project links are external': function (browser) {
+  // Las demos están desactivadas a propósito: el hosting del centro de formación está
+  // sin espacio, Elementor no regenera su CSS y los sitios se ven sin estilos.
+  // Si alguien reactiva los links sin arreglar eso, este test falla.
+  'WordPress demos stay disabled while the institute hosting is broken': function (browser) {
     browser
       .url(browser.launchUrl + 'es')
-      .waitForElementPresent('#wordpress-projects a[href*="coworkingdanlois"]')
-      .verify.attributeEquals(
-        '#wordpress-projects a[href*="coworkingdanlois"]',
-        'target',
-        '_blank'
+      .waitForElementVisible('#wordpress-projects')
+      .assert.not.elementPresent('#wordpress-projects a[href*="rbcampus.es"]')
+      .assert.textContains(
+        '#wordpress-projects',
+        'Demo no disponible temporalmente'
       )
       .end();
   },
