@@ -67,6 +67,8 @@ pnpm test:e2e:chrome   # Tests E2E solo Chrome
 pnpm test:e2e:firefox  # Tests E2E solo Firefox
 ```
 
+> Los E2E corren contra el dev server: tiene que estar levantado en `http://localhost:4321` (`pnpm dev`). El script `test:e2e` lo pre-calienta con un `curl` antes de arrancar, porque la primera compilación de Vite es la más cara. En headless (`--headless`) los tiempos bajan mucho; con navegadores visibles y en paralelo el dev server puede tardar 20-40 s por página, por eso los waits del formulario son de 60 s.
+
 ## 📊 Estado de Cobertura
 
 ![Coverage](https://img.shields.io/badge/coverage-95%25-green?style=for-the-badge&logo=vitest)
@@ -310,16 +312,15 @@ pnpm coverage          # Reporte de cobertura (96.66% líneas)
 ### E2E (Nightwatch)
 
 **206 assertions** en 7 specs × 2 navegadores (Chrome + Firefox). El modo Docker corre **los mismos specs** (`nightwatch.docker.cjs`), cambiando solo el `launch_url` al contenedor: no hay una segunda copia de los tests.
-
-| Spec           | Tests | Qué cubre                                              |
+| Spec | Tests | Qué cubre |
 | -------------- | ----- | ------------------------------------------------------ |
-| `home`         | 1     | Renderizado de 12 secciones                            |
-| `interactions` | 3     | Theme toggle, news carrusel, validación formulario     |
-| `links`        | 4     | Social menu, navbar, footer, proyectos externos        |
-| `navigation`   | 3     | Cambio idioma, scroll suave, atributos footer          |
-| `seo`          | 2     | Meta tags ES/EN                                        |
-| `projects`     | 5     | EventTwo link + target, GitHub repo, WordPress 4 cards |
-| `showcases`    | 5     | CaseStudy gallery, QA Showcase cards                   |
+| `home` | 1 | Renderizado de 12 secciones |
+| `interactions` | 3 | Theme toggle, news carrusel, validación formulario |
+| `links` | 4 | Social menu, navbar, footer, proyectos externos |
+| `navigation` | 3 | Cambio idioma, scroll suave, atributos footer |
+| `seo` | 2 | Meta tags ES/EN |
+| `projects` | 5 | EventTwo link + target, GitHub repo, WordPress 4 cards |
+| `showcases` | 5 | CaseStudy gallery, QA Showcase cards |
 
 ```bash
 pnpm dev              # Terminal 1
