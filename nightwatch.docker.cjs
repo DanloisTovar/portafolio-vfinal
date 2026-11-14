@@ -1,6 +1,7 @@
 /* eslint-disable */
 module.exports = {
-  src_folders: ['testing/testing-docker/e2e'],
+  // Mismo suite que nightwatch.conf.cjs: sólo cambia el launch_url (contenedor en :3001)
+  src_folders: ['testing/testing-astro/e2e'],
   page_objects_path: [],
   custom_commands_path: [],
 

@@ -29,7 +29,7 @@ Portafolio profesional de Danlois Tovar — Desarrollador Front End. Construido 
 ## 🛠️ Herramientas de Desarrollo
 
 - **Linting**: ESLint + Prettier + Stylelint
-- **Testing**: Vitest (664 tests unitarios, 72 archivos) + Nightwatch (202 assertions E2E en 7 specs, Chrome + Firefox)
+- **Testing**: Vitest (332 tests unitarios, 36 archivos) + Nightwatch (202 assertions E2E en 7 specs, Chrome + Firefox)
 - **Git Hooks**: Husky + lint-staged + commitlint
 - **Changelog**: Conventional Changelog automatizado
 - **CI**: GitHub Actions (push/PR a main)
@@ -166,49 +166,59 @@ pnpm coverage   # Reporte en ./coverage/index.html
 
 11 componentes reutilizables extraídos de patrones duplicados (~920 líneas eliminadas):
 
-| Componente | Variantes | Uso |
-|---|---|---|
-| **SectionHeader** | gradient-cyan, gradient-accent | Títulos de sección con gradiente |
-| **GlassCard** | glass-card-full, glass-compact, project-showcase, experience, contact-form, soft-skills | Tarjetas con efecto vidrio |
-| **IconBox** | exp, footer, skill-icon, soft-skill | Contenedor de iconos |
-| **Button** | primary, secondary | Botones con icono SVG |
-| **TechBadge** | hero, duration, floating, skill, footer | Badges de tecnología |
-| **Section** | (configurable vía props) | Wrapper de sección con glow y gradiente |
-| **SectionDivider** | default | Divisor de sección con gradiente |
-| **GradientDivider** | default | Divisor horizontal con gradiente |
-| **InfoCard** | (slot para icono + título + descripción) | Card informativa (bento de showcases) |
-| **StatCard** | (contador animado) | Card de métrica con número grande |
-| **CiBadge** | (link opcional) | Badge de estado CI con punto pulsante |
+| Componente          | Variantes                                                                               | Uso                                     |
+| ------------------- | --------------------------------------------------------------------------------------- | --------------------------------------- |
+| **SectionHeader**   | gradient-cyan, gradient-accent                                                          | Títulos de sección con gradiente        |
+| **GlassCard**       | glass-card-full, glass-compact, project-showcase, experience, contact-form, soft-skills | Tarjetas con efecto vidrio              |
+| **IconBox**         | exp, footer, skill-icon, soft-skill                                                     | Contenedor de iconos                    |
+| **Button**          | primary, secondary                                                                      | Botones con icono SVG                   |
+| **TechBadge**       | hero, duration, floating, skill, footer                                                 | Badges de tecnología                    |
+| **Section**         | (configurable vía props)                                                                | Wrapper de sección con glow y gradiente |
+| **SectionDivider**  | default                                                                                 | Divisor de sección con gradiente        |
+| **GradientDivider** | default                                                                                 | Divisor horizontal con gradiente        |
+| **InfoCard**        | (slot para icono + título + descripción)                                                | Card informativa (bento de showcases)   |
+| **StatCard**        | (contador animado)                                                                      | Card de métrica con número grande       |
+| **CiBadge**         | (link opcional)                                                                         | Badge de estado CI con punto pulsante   |
 
 ## 📂 Secciones del Portafolio
 
 ### 1. Hero
+
 Presentación principal con foto, badges animados, botones CTA y stack tecnológico.
 
 ### 2. About (Sobre mí)
+
 Información personal con visor Spline 3D y tarjetas de habilidades blandas.
 
 ### 3. Skills (Habilidades)
+
 Hard skills, soft skills, educación y muestras de SQL en grid de tarjetas con iconos.
 
 ### 4. Experience (Experiencia)
+
 Timeline vertical con nodos animados y tarjetas glare-hover (incluye las prácticas en Estudio 27).
 
 ### 5. Portfolio Showcase (Cómo construí este portafolio)
+
 Presenta el propio portafolio como software de producción: badge CI clickeable, métricas animadas (tests, cobertura, E2E, Lighthouse SEO), bento de arquitectura/calidad/features y CTA al repo.
 
 ### 6. Projects (Proyectos — Código Limpio)
+
 Horizontal scroll con 4 proyectos:
+
 1. **EventTwo Media** ⭐ — Plataforma de eventos para un cliente real (case study completo en la sección 10). (Astro, React, TypeScript, Tailwind CSS)
 2. **Portafolio Web** — Este mismo sitio (Astro, React, TypeScript, Tailwind CSS)
 3. **Workgroup** — Sitio corporativo (HTML, CSS, Bootstrap, PHP)
 4. **LATI** — Sitio institucional (HTML, CSS, Bootstrap, PHP)
 
 ### 7. Case Study (Caso de Estudio)
+
 Galería lightbox con antes/después de la refactorización de Workgroup.
 
 ### 8. WordPress Projects
+
 Proyectos del curso del SEPEPA **"Confección y Publicación de Páginas Web" — Restauradores Bercianos, Oviedo, Asturias** (formación reglada española). Horizontal scroll con 4 proyectos WordPress + Elementor + bloque descriptivo del curso:
+
 1. **NIDO Coworking** — Coworking en Asturias
 2. **Brasa Norte** — Restaurante mediterráneo
 3. **Clínica Oria** — Clínica de columna y articulaciones
@@ -219,23 +229,29 @@ Proyectos del curso del SEPEPA **"Confección y Publicación de Páginas Web" �
 > Esto demuestra formación oficial verificable, capacidad de ejecutar proyectos completos desde cero hasta producción, y manejo de herramientas profesionales del ecosistema WordPress.
 
 ### 9. QA Showcase
+
 Bug hunting y documentación de testing con lightbox de GIFs.
 
 ### 10. EventTwo Showcase
+
 Case study del proyecto de cliente real: arquitectura **WordPress Headless + Astro SSG**, el contrato de build (el deploy falla si WordPress falla, en vez de publicar datos viejos), SEO + Schema.org, cumplimiento y accesibilidad, y checklist de API testing con Postman. CTA al sitio en vivo.
 
 ### 11. Contact (Contacto)
+
 Formulario con validación Zod vía Astro Actions + glow effects.
 
 ### 12. News (Noticias)
+
 Carrusel de noticias tech vía RSS (The Verge, Dev.to).
 
 ### 13. Footer
+
 Links rápidos, iconos neon-glass, "Danlois Tovar." con tipografía Orbitron y gradiente azul.
 
 ## 🖱️ Cursor Glow Global
 
 Efecto de brillo radial (400px) que sigue al mouse en todas las secciones. Implementado como un único elemento `fixed` en Layout.astro:
+
 - Sin cortes entre secciones
 - Un solo listener `mousemove` global
 - Se activa vía `elementFromPoint` + `closest('.section-glow')`
@@ -248,6 +264,7 @@ import { useTranslations, getLangFromUrl } from '@/i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
+
 <h1>{t('nav.home')}</h1>
 ```
 
@@ -281,26 +298,28 @@ pnpm dev        # http://localhost:4321
 ## 🧪 Testing
 
 ### Unitarios (Vitest)
-**664 tests** en 72 archivos. Cobertura de todos los componentes UI atómicos, secciones del portafolio, funciones i18n, cursor glow, componentes React y constantes.
+
+**332 tests** en 36 archivos. Cobertura de todos los componentes UI atómicos, secciones del portafolio, funciones i18n, cursor glow, componentes React y constantes.
 
 ```bash
-pnpm test              # 664 tests unitarios
+pnpm test              # 332 tests unitarios
 pnpm test:watch        # Modo watch
 pnpm coverage          # Reporte de cobertura (96.66% líneas)
 ```
 
 ### E2E (Nightwatch)
-**202 assertions** en 7 specs × 2 navegadores (Chrome + Firefox). También disponible para Docker.
 
-| Spec | Tests | Qué cubre |
-|---|---|---|
-| `home` | 1 | Renderizado de 12 secciones |
-| `interactions` | 3 | Theme toggle, news carrusel, validación formulario |
-| `links` | 4 | Social menu, navbar, footer, proyectos externos |
-| `navigation` | 3 | Cambio idioma, scroll suave, atributos footer |
-| `seo` | 2 | Meta tags ES/EN |
-| `projects` | 5 | EventTwo link + target, GitHub repo, WordPress 4 cards |
-| `showcases` | 5 | CaseStudy gallery, QA Showcase cards |
+**202 assertions** en 7 specs × 2 navegadores (Chrome + Firefox). El modo Docker corre **los mismos specs** (`nightwatch.docker.cjs`), cambiando solo el `launch_url` al contenedor: no hay una segunda copia de los tests.
+
+| Spec           | Tests | Qué cubre                                              |
+| -------------- | ----- | ------------------------------------------------------ |
+| `home`         | 1     | Renderizado de 12 secciones                            |
+| `interactions` | 3     | Theme toggle, news carrusel, validación formulario     |
+| `links`        | 4     | Social menu, navbar, footer, proyectos externos        |
+| `navigation`   | 3     | Cambio idioma, scroll suave, atributos footer          |
+| `seo`          | 2     | Meta tags ES/EN                                        |
+| `projects`     | 5     | EventTwo link + target, GitHub repo, WordPress 4 cards |
+| `showcases`    | 5     | CaseStudy gallery, QA Showcase cards                   |
 
 ```bash
 pnpm dev              # Terminal 1
@@ -309,6 +328,7 @@ pnpm test:e2e:chrome  # Solo Chrome
 ```
 
 ### CI
+
 GitHub Actions en cada push/PR a `main`: lint → type-check → test → build.
 
 ## 📄 Licencia

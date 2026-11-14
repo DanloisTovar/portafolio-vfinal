@@ -7,15 +7,8 @@ export default defineConfig({
     include: [
       'src/**/*.{test,spec}.{js,ts,jsx,tsx}',
       'testing/testing-astro/unit/**/*.{test,spec}.{js,ts,jsx,tsx}',
-      'testing/testing-docker/unit/**/*.{test,spec}.{js,ts,jsx,tsx}',
     ],
-    exclude: [
-      'node_modules',
-      'dist',
-      '.astro',
-      'testing/testing-astro/e2e/**',
-      'testing/testing-docker/e2e/**',
-    ],
+    exclude: ['node_modules', 'dist', '.astro', 'testing/testing-astro/e2e/**'],
     setupFiles: ['./vitest.setup.ts'],
     pool: 'forks',
     coverage: {
@@ -32,7 +25,6 @@ export default defineConfig({
         'dist/',
         '.astro/',
         'testing/testing-astro/e2e/**',
-        'testing/testing-docker/e2e/**',
         '**/*.config.{js,ts,mjs,cjs}',
         '**/nightwatch.conf.cjs',
         '**/*.css',

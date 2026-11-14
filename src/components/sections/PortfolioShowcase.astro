@@ -16,10 +16,10 @@ const t = useTranslations(lang);
 
 const metrics = [
   {
-    target: '664',
+    target: '332',
     decimals: '0',
     suffix: '',
-    initial: '664',
+    initial: '332',
     label: t('portfolioShowcase.metric.tests'),
   },
   {
@@ -46,7 +46,10 @@ const metrics = [
 ];
 ---
 
-<section id="portfolio-showcase" class="section-glow relative overflow-hidden isolate py-20 lg:py-32">
+<section
+  id="portfolio-showcase"
+  class="section-glow relative overflow-hidden isolate py-20 lg:py-32"
+>
   <div
     class="absolute inset-0 -z-20 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20"
   >
@@ -109,7 +112,9 @@ const metrics = [
       </div>
     </div>
 
-    <p class="text-center text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto mt-12 mb-8 text-balance">
+    <p
+      class="text-center text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto mt-12 mb-8 text-balance"
+    >
       {t('portfolioShowcase.standard')}
     </p>
 
