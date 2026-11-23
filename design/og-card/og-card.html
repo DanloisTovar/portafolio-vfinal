@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Tarjeta Open Graph — Danlois Tovar</title>
+<!--
+  Fuente de la imagen que se comparte en WhatsApp / LinkedIn / Twitter.
+  Genera public/images/og-image.jpg. Instrucciones: ver README.md de esta carpeta.
+  No se usa en el sitio: es una plantilla de diseño, no una página.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { width: 1200px; height: 630px; }
+
+  body {
+    background: #030712;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Glow azul, el mismo lenguaje del sitio */
+  .glow-1 {
+    position: absolute;
+    width: 780px; height: 780px;
+    left: -180px; top: -300px;
+    background: radial-gradient(circle, rgba(59,130,246,0.20) 0%, rgba(59,130,246,0) 65%);
+  }
+  .glow-2 {
+    position: absolute;
+    width: 620px; height: 620px;
+    right: -180px; bottom: -280px;
+    background: radial-gradient(circle, rgba(37,99,235,0.16) 0%, rgba(37,99,235,0) 65%);
+  }
+  /* Retícula sutil */
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(148,163,184,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,0.045) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .content {
+    position: relative;
+    padding-left: 88px;
+    padding-right: 88px;
+    padding-bottom: 42px;
+    width: 100%;
+  }
+
+  .name {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 100px;
+    line-height: 1.02;
+    letter-spacing: -1.5px;
+    color: #ffffff;
+  }
+
+  .role {
+    margin-top: 22px;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: #60a5fa;
+  }
+
+  .rule {
+    margin-top: 34px;
+    width: 140px; height: 3px;
+    background: linear-gradient(90deg, #3b82f6, rgba(59,130,246,0));
+    border-radius: 2px;
+  }
+
+  .stack {
+    margin-top: 30px;
+    font-size: 26px;
+    font-weight: 500;
+    color: #9ca3af;
+    letter-spacing: 0.2px;
+  }
+
+  .url {
+    margin-top: 14px;
+    font-size: 24px;
+    font-weight: 400;
+    color: #4b5563;
+    letter-spacing: 0.3px;
+  }
+
+  /* Monograma */
+  .mono {
+    position: absolute;
+    right: 88px; top: 84px;
+    width: 104px; height: 104px;
+    border: 2px solid rgba(148,163,184,0.28);
+    border-radius: 20px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(15,23,42,0.55);
+  }
+  .mono span {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 46px;
+    letter-spacing: 1px;
+    color: #e2e8f0;
+  }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
+  <div class="mono"><span>DT</span></div>
+
+  <div class="content">
+    <div class="name">Danlois Tovar</div>
+    <div class="role">Desarrollador Front End</div>
+    <div class="rule"></div>
+    <div class="stack">Astro · React · TypeScript · Tailwind CSS</div>
+    <div class="url">danloistovar.vercel.app</div>
+  </div>
+</body>
+</html>
