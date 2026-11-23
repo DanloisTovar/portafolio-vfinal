@@ -24,7 +24,7 @@ Portafolio profesional de Danlois Tovar — Desarrollador Front End. Construido 
 - 📱 **Diseño Responsive**: Totalmente responsive con Tailwind CSS
 - 🖼️ **Imágenes Optimizadas**: WebP automático con srcset responsivo (sharp)
 - ♿ **Accesibilidad**: Componentes con atributos ARIA
-- 🚀 **CI/CD**: GitHub Actions con lint, type-check, tests y build automáticos
+- 🚀 **Calidad en dos capas**: Husky + lint-staged (ESLint, Stylelint, Prettier y commitlint) en cada commit, y GitHub Actions (tests y build) en cada push
 
 ## 🛠️ Herramientas de Desarrollo
 
@@ -89,7 +89,7 @@ pnpm coverage   # Reporte en ./coverage/index.html
 ```
 /
 ├── .github/workflows/         # CI/CD (GitHub Actions)
-│   └── ci.yml                 # Lint, type-check, test, build
+│   └── ci.yml                 # Tests y build
 ├── public/                    # Archivos estáticos
 ├── src/
 │   ├── assets/                # Imágenes y recursos
@@ -330,7 +330,9 @@ pnpm test:e2e:chrome  # Solo Chrome
 
 ### CI
 
-GitHub Actions en cada push/PR a `main`: lint → type-check → test → build.
+GitHub Actions en cada push/PR a `main`: **test → build**. El lint, el formato y los commits
+convencionales no corren en CI: se ejecutan en local con **Husky + lint-staged** en cada commit
+(ESLint, Stylelint, Prettier) y **commitlint** en el mensaje.
 
 ## 📄 Licencia
 

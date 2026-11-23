@@ -151,7 +151,7 @@ export const ui = {
       'Astro 5 + React 19 + Tailwind CSS v4. Componentes atómicos reutilizables (7 UI), i18n propio ES/EN y sistema de animaciones. Código tipado con TypeScript.',
     'portfolioShowcase.quality.title': 'Calidad',
     'portfolioShowcase.quality.desc':
-      'CI/CD con GitHub Actions en cada push: lint, type-check, tests y build. ESLint + Prettier + Stylelint, commits convencionales con commitlint y hooks de Husky.',
+      'Calidad en dos capas: Husky + lint-staged en cada commit (ESLint, Stylelint, Prettier y commitlint) y GitHub Actions en cada push (tests y build).',
     'portfolioShowcase.features.title': 'Features técnicas',
     'portfolioShowcase.features.desc':
       'Cursor glow global, animaciones con Motion (GlareHover, LogoLoop, StarBorder), lightbox de galerías, formulario con validación Zod + Astro Actions, y feed de noticias vía RSS.',
@@ -329,7 +329,7 @@ export const ui = {
       'Astro 5 + React 19 + Tailwind CSS v4. Reusable atomic components (7 UI), custom ES/EN i18n, and an animation system. TypeScript-typed code.',
     'portfolioShowcase.quality.title': 'Quality',
     'portfolioShowcase.quality.desc':
-      'CI/CD with GitHub Actions on every push: lint, type-check, tests, and build. ESLint + Prettier + Stylelint, conventional commits with commitlint, and Husky hooks.',
+      'Quality in two layers: Husky + lint-staged on every commit (ESLint, Stylelint, Prettier and commitlint) and GitHub Actions on every push (tests and build).',
     'portfolioShowcase.features.title': 'Technical features',
     'portfolioShowcase.features.desc':
       'Global cursor glow, Motion animations (GlareHover, LogoLoop, StarBorder), gallery lightbox, form with Zod validation + Astro Actions, and an RSS news feed.',
