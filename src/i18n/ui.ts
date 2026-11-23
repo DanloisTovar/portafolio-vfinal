@@ -60,7 +60,8 @@ export const ui = {
     'experience.title': 'Experiencia Laboral',
     'experience.subtitle': 'Mi trayectoria profesional y contribuciones técnicas',
     'experience.job1.role': 'Prácticas Profesionales — Desarrollo Web',
-    'experience.job1.company': 'Estudio 27 · Diseño Web y Marketing Digital, Oviedo, Asturias, España',
+    'experience.job1.company':
+      'Estudio 27 · Diseño Web y Marketing Digital, Oviedo, Asturias, España',
     'experience.job1.duration': 'jul. 2026 - sep. 2026',
     'experience.job1.desc':
       'Prácticas profesionales en agencia de desarrollo web, creando y manteniendo sitios WordPress para clientes reales.<br><br><strong>Logros destacados:</strong><br>• Maquetación de sitio web de 12 páginas para cliente según sus mockups de diseño.<br>• Desarrollo de tienda online con WooCommerce y optimización de imágenes para rendimiento.<br>• Creación de página web para empresa de metales (WordPress + Elementor).<br>• Actualización de contenido y posts en blog de centro geriátrico.',
@@ -155,7 +156,8 @@ export const ui = {
     'portfolioShowcase.features.desc':
       'Cursor glow global, animaciones con Motion (GlareHover, LogoLoop, StarBorder), lightbox de galerías, formulario con validación Zod + Astro Actions, y feed de noticias vía RSS.',
     'portfolioShowcase.cta': 'Ver el código en GitHub',
-    'portfolioShowcase.standard': 'Este es el estándar que aplico a cada proyecto en el que trabajo.',
+    'portfolioShowcase.standard':
+      'Este es el estándar que aplico a cada proyecto en el que trabajo.',
     'eventtwoShowcase.title': 'EventTwo Media',
     'eventtwoShowcase.subtitle':
       'Plataforma de eventos para un cliente real: WordPress Headless con un sitio Astro estático.',
@@ -174,13 +176,13 @@ export const ui = {
       'Consentimiento de cookies (GDPR/LSSI), validación de formulario con Zod compartida cliente/servidor, y accesibilidad verificada con axe-core (WCAG A/AA).',
     'eventtwoShowcase.postman.title': 'API Testing con Postman',
     'eventtwoShowcase.postman.desc':
-      'Validación de la API GraphQL: consultas, campos ACF anidados y manejo de errores, con assertions automatizadas.',
+      'Validación de la API GraphQL: consultas, campos ACF anidados y manejo de errores. 19 requests con 45 assertions automatizadas.',
     'eventtwoShowcase.postman.item1': 'GetEvents — campos ACF anidados',
     'eventtwoShowcase.postman.item2': 'GetEvents — variable $first',
     'eventtwoShowcase.postman.item3': 'GetCategories — categorías con count',
     'eventtwoShowcase.postman.item4': 'Query inválida — manejo de errores (GraphQL errors)',
     'eventtwoShowcase.metric.tests': 'Tests unitarios',
-    'eventtwoShowcase.metric.coverage': 'Cobertura',
+    'eventtwoShowcase.metric.coverage': 'Cobertura de sentencias',
     'eventtwoShowcase.metric.e2e': 'Assertions E2E',
     'eventtwoShowcase.cta': 'Ver el sitio en vivo',
   },
@@ -238,7 +240,8 @@ export const ui = {
     'experience.title': 'Work Experience',
     'experience.subtitle': 'My professional journey and technical contributions',
     'experience.job1.role': 'Professional Internship — Web Development',
-    'experience.job1.company': 'Estudio 27 · Web Design & Digital Marketing, Oviedo, Asturias, Spain',
+    'experience.job1.company':
+      'Estudio 27 · Web Design & Digital Marketing, Oviedo, Asturias, Spain',
     'experience.job1.duration': 'Jul 2026 - Sep 2026',
     'experience.job1.desc':
       'Professional internship at a web development agency, creating and maintaining WordPress sites for real clients.<br><br><strong>Key achievements:</strong><br>• Built a 12-page website for a client following their design mockups.<br>• Developed an online store with WooCommerce and optimized images for performance.<br>• Created a website for a metal company (WordPress + Elementor).<br>• Updated content and posts on a geriatric center blog.',
@@ -349,13 +352,13 @@ export const ui = {
       'Cookie consent (GDPR), client/server-shared Zod form validation, and accessibility verified with axe-core (WCAG A/AA).',
     'eventtwoShowcase.postman.title': 'API Testing with Postman',
     'eventtwoShowcase.postman.desc':
-      'GraphQL API validation: queries, nested ACF fields, and error handling, with automated assertions.',
+      'GraphQL API validation: queries, nested ACF fields, and error handling. 19 requests with 45 automated assertions.',
     'eventtwoShowcase.postman.item1': 'GetEvents — nested ACF fields',
     'eventtwoShowcase.postman.item2': 'GetEvents — $first variable',
     'eventtwoShowcase.postman.item3': 'GetCategories — categories with count',
     'eventtwoShowcase.postman.item4': 'Invalid query — error handling (GraphQL errors)',
     'eventtwoShowcase.metric.tests': 'Unit tests',
-    'eventtwoShowcase.metric.coverage': 'Coverage',
+    'eventtwoShowcase.metric.coverage': 'Statement coverage',
     'eventtwoShowcase.metric.e2e': 'E2E assertions',
     'eventtwoShowcase.cta': 'View the live site',
   },

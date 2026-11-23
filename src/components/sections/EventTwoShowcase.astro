@@ -43,30 +43,33 @@ const postmanChecks = [
 
 const metrics = [
   {
-    target: '105',
+    target: '172',
     decimals: '0',
     suffix: '',
-    initial: '105',
+    initial: '172',
     label: t('eventtwoShowcase.metric.tests'),
   },
   {
-    target: '84.5',
+    target: '94.7',
     decimals: '1',
     suffix: '%',
-    initial: '84.5%',
+    initial: '94.7%',
     label: t('eventtwoShowcase.metric.coverage'),
   },
   {
-    target: '144',
+    target: '318',
     decimals: '0',
     suffix: '',
-    initial: '144',
+    initial: '318',
     label: t('eventtwoShowcase.metric.e2e'),
   },
 ];
 ---
 
-<section id="eventtwo-showcase" class="section-glow relative overflow-hidden isolate py-20 lg:py-32">
+<section
+  id="eventtwo-showcase"
+  class="section-glow relative overflow-hidden isolate py-20 lg:py-32"
+>
   <div
     class="absolute inset-0 -z-20 bg-gradient-to-br from-blue-50/50 via-transparent to-blue-50/50 dark:from-blue-950/20 dark:via-transparent dark:to-blue-950/20"
   >
@@ -136,7 +139,10 @@ const metrics = [
         <ShieldAlert size={24} />
       </InfoCard>
 
-      <InfoCard title={t('eventtwoShowcase.seo.title')} description={t('eventtwoShowcase.seo.desc')}>
+      <InfoCard
+        title={t('eventtwoShowcase.seo.title')}
+        description={t('eventtwoShowcase.seo.desc')}
+      >
         <Search size={24} />
       </InfoCard>
 
